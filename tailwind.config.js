@@ -4,6 +4,18 @@ module.exports = {
     presets: [require("nativewind/preset")],
     theme: {
         extend: {
+            fontSize: {
+                'xs': ['12px', '16px'],
+                'sm': ['14px', '20px'],
+                'base': ['16px', '24px'],
+                'lg': ['18px', '28px'],
+                'xl': ['20px', '28px'],
+                '2xl': ['24px', '32px'],
+                '3xl': ['30px', '36px'],
+                '4xl': ['36px', '40px'],
+                '5xl': ['48px', '1'],
+                '6xl': ['60px', '1'],
+            },
             fontFamily: {
                 Jakarta: ["Jakarta", "sans-serif"],
                 JakartaBold: ["Jakarta-Bold", "sans-serif"],
@@ -15,6 +27,7 @@ module.exports = {
             },
             colors: {
                 backgroundV1: "#F1EEE8",
+                textNeutralV1: "#666666",
                 customPrimary: "#E36137",
                 customSecondary: "#203C74",
                 primary: {

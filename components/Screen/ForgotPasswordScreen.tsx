@@ -1,0 +1,159 @@
+import CustomButton from '@/components/Common/CustomButton';
+import TextScaled from '@/components/Common/TextScaled';
+import { images } from '@/constants';
+import { getScaleFactor } from '@/lib/scaling';
+import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
+import { useCallback, useState } from 'react';
+import { Alert, Image, ScrollView, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+const ForgotPasswordScreen = () => {
+    const [form, setForm] = useState({
+        phone: '',
+    });
+
+    const onSendOTPPress = useCallback(async () => {
+        if (!form.phone.trim()) {
+            Alert.alert("Lỗi", "Vui lòng nhập số điện thoại");
+            return;
+        }
+
+        // Navigate to OTP screen
+        router.push('/(auth)/otp');
+    }, [form.phone]);
+
+    const onBackPress = useCallback(() => {
+        router.back();
+    }, []);
+
+    return (
+        <SafeAreaView className='flex-1 bg-backgroundV1'>
+            <ScrollView className='flex-1 bg-backgroundV1'>
+                {/* Header */}
+                <View
+                    style={{
+                        height: getScaleFactor() * 44,
+                        minHeight: getScaleFactor() * 44,
+                    }}
+                    className="relative flex-row justify-center items-center w-full">
+                    <TouchableOpacity
+                        onPress={onBackPress}
+                        style={{
+                            position: 'absolute',
+                            left: getScaleFactor() * 16,
+                            width: getScaleFactor() * 24,
+                            height: getScaleFactor() * 24,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Ionicons
+                            name="chevron-back"
+                            size={getScaleFactor() * 24}
+                            color="#000000"
+                        />
+                    </TouchableOpacity>
+                    <TextScaled
+                        size="base"
+                        className="justify-start font-bold text-center"
+                    >
+                        Quên mật khẩu
+                    </TextScaled>
+                </View>
+
+                {/* Main Content */}
+                <View
+                    style={{
+                        paddingHorizontal: getScaleFactor() * 16,
+                        paddingVertical: getScaleFactor() * 32,
+                        gap: getScaleFactor() * 32,
+                    }}
+                    className="flex flex-col justify-center items-center"
+                >
+                    {/* Logo */}
+                    <Image
+                        style={{
+                            width: getScaleFactor() * 80,
+                            height: getScaleFactor() * 80,
+                        }}
+                        source={images.logo}
+                        resizeMode="contain"
+                    />
+                    {/* Instruction Text */}
+                    <View
+                        className="flex flex-col justify-center items-center"
+                    >
+                        <TextScaled
+                            size="base"
+                            className="px-4 text-center text-textNeutralV1"
+                        >
+                            Mã OTP lấy lại mật khẩu sẽ được gửi tới số điện thoại của bạn. Vui lòng nhập đúng số điện thoại bạn đã dùng để đăng ký.
+                        </TextScaled>
+                    </View>
+
+                    {/* Phone Number Input */}
+                    <View
+                        style={{
+                            gap: getScaleFactor() * 4,
+                        }}
+                        className="flex flex-col justify-start items-start w-full"
+                    >
+                        <TextScaled
+                            size="base"
+                            className="justify-start font-bold text-Neutral-900"
+                        >
+                            Số điện thoại
+                        </TextScaled>
+                        <View style={{ position: 'relative', width: '100%' }}>
+                            <TextInput
+                                placeholder="Nhập số điện thoại"
+                                value={form.phone}
+                                onChangeText={(value) => setForm({ ...form, phone: value })}
+                                keyboardType="phone-pad"
+                                style={{
+                                    width: '100%',
+                                    padding: getScaleFactor() * 8,
+                                    paddingRight: getScaleFactor() * 40, // Make space for the icon
+                                    height: getScaleFactor() * 40,
+                                    backgroundColor: 'white',
+                                    borderRadius: 8,
+                                    fontSize: getScaleFactor() * 16,
+                                }}
+                                placeholderTextColor="#AAAAAA"
+                            />
+                            {form.phone.length > 0 && (
+                                <TouchableOpacity
+                                    onPress={() => setForm({ ...form, phone: '' })}
+                                    style={{
+                                        position: 'absolute',
+                                        right: getScaleFactor() * 8,
+                                        top: getScaleFactor() * 8,
+                                        width: getScaleFactor() * 24,
+                                        height: getScaleFactor() * 24,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    <Ionicons
+                                        name="close-circle"
+                                        size={getScaleFactor() * 24}
+                                        color="#D9D9DB"
+                                    />
+                                </TouchableOpacity>
+                            )}
+                        </View>
+                    </View>
+
+                    {/* Send OTP Button */}
+                    <CustomButton
+                        title="Gửi mã OTP"
+                        onPress={onSendOTPPress}
+                    />
+                </View>
+            </ScrollView>
+        </SafeAreaView>
+    );
+};
+
+export default ForgotPasswordScreen;

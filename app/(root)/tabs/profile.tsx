@@ -1,8 +1,5 @@
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-import InputField from "@/components/Common/InputField";
-
 export default function ProfileScreen() {
   const user = {
     firstName: "Người",
@@ -33,39 +30,6 @@ export default function ProfileScreen() {
 
         <View className="flex flex-col justify-center items-start p-4 bg-white rounded-lg shadow-sm shadow-neutral-300">
           <View className="flex flex-col justify-start items-start w-full">
-            <InputField
-              label="Tên"
-              placeholder={user?.firstName || "Không tìm thấy"}
-              containerStyle="w-full"
-              inputStyle="p-3.5"
-              editable={false}
-            />
-
-            <InputField
-              label="Họ"
-              placeholder={user?.lastName || "Không tìm thấy"}
-              containerStyle="w-full"
-              inputStyle="p-3.5"
-              editable={false}
-            />
-
-            <InputField
-              label="Email"
-              placeholder={
-                user?.primaryEmailAddress?.emailAddress || "Không tìm thấy"
-              }
-              containerStyle="w-full"
-              inputStyle="p-3.5"
-              editable={false}
-            />
-
-            <InputField
-              label="Số điện thoại"
-              placeholder={user?.primaryPhoneNumber?.phoneNumber || "Không tìm thấy"}
-              containerStyle="w-full"
-              inputStyle="p-3.5"
-              editable={false}
-            />
           </View>
         </View>
       </ScrollView>

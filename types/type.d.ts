@@ -1,4 +1,4 @@
-import { TextInputProps, TouchableOpacityProps } from "react-native";
+import { TouchableOpacityProps } from "react-native";
 
 declare enum RideStatus {
   CONFIRMED = 'confirmed',       // Tài xế đã nhận chuyến
@@ -53,8 +53,8 @@ declare interface Ride {
 
 declare interface ButtonProps extends TouchableOpacityProps {
   title: string;
-  bgVariant?: "primary" | "secondary" | "danger" | "outline" | "success";
-  textVariant?: "primary" | "default" | "secondary" | "danger" | "success";
+  bgVariant?: "primary" | "secondary" | "danger" | "outline" | "success" | "transparent";
+  textVariant?: "primary" | "default" | "secondary" | "danger" | "success" | "transparent" | "outline";
   IconLeft?: React.ComponentType<any>;
   IconRight?: React.ComponentType<any>;
   className?: string;
@@ -75,18 +75,6 @@ declare interface GoogleInputProps {
     address: string;
   }) => void;
 }
-
-declare interface InputFieldProps extends TextInputProps {
-  label: string;
-  icon?: any;
-  secureTextEntry?: boolean;
-  labelStyle?: string;
-  containerStyle?: string;
-  inputStyle?: string;
-  iconStyle?: string;
-  className?: string;
-}
-
 declare interface PaymentProps {
   fullName: string;
   email: string;

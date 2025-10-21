@@ -48,6 +48,13 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "developmentClient": {
+      "silentLaunch": true
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceMap": false
     }
   }
 }

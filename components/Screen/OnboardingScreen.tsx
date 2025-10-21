@@ -14,8 +14,8 @@ const OnboardingScreen = () => {
     const isLastSlide = activeIndex === onboarding.length - 1;
 
     return (
-        <SafeAreaView className='flex justify-between items-center p-4 h-full bg-white'>
-            <SwiperFlatList 
+        <SafeAreaView className='flex justify-between items-center p-4 h-full bg-backgroundV1'>
+            <SwiperFlatList
                 ref={swiperRef}
                 autoplay={false}
                 autoplayDelay={2}
@@ -23,7 +23,7 @@ const OnboardingScreen = () => {
                 showPagination={true}
                 paginationStyle={{
                     position: 'absolute',
-                    bottom: 150,
+                    bottom: 250,
                     left: 0,
                     right: 0,
                     flexDirection: 'row',
@@ -45,32 +45,41 @@ const OnboardingScreen = () => {
                 onChangeIndex={({ index }) => setActiveIndex(index)}
                 data={onboarding}
                 renderItem={({ item, index }) => (
-                    <View key={item.id} className='flex justify-center items-center p-5' style={{ width: screenWidth }}>
+                    <View key={item.id} className='flex justify-center items-center' style={{ width: screenWidth - 32 }}>
                         <Image source={item.image}
-                            style={{ 
-                                width: 200, 
-                                height: 200,
-                                maxHeight: 200
+                            style={{
+                                width: screenWidth,
+                                height: screenWidth * 0.6,
                             }}
-                            resizeMode='contain' />
-                        <View className='flex flex-row justify-center items-center mt-10 w-full'>
-                            <Text className='mx-10 text-3xl font-bold text-center text-black'>{item.title}</Text>
-                        </View>
-                        <Text className="text-lg font-JakartaSemiBold text-center text-[#858585] mx-10 mt-3">
+                            resizeMode='contain'
+                        />
+                        <Text className='mt-8 text-xl font-medium text-center text-black'>{item.title}</Text>
+                        <Text className="px-4 mt-2 text-lg text-center text-textNeutralV1">
                             {item.description}
                         </Text>
                     </View>
                 )}
             />
-            <View className='px-4 my-10 w-full'>  
+            <View className='flex-col gap-2 justify-between items-center px-4 my-10 w-full'>
                 <CustomButton
-                title={isLastSlide ? "Bắt Đầu Thôi" : "Tiếp tục"}
-                onPress={() =>
-                    isLastSlide
-                        ? router.replace("/(auth)/sign-up")
-                        : swiperRef.current?.scrollToIndex({ index: activeIndex + 1 })
-                }
-                className='w-full' /></View>
+                    title={isLastSlide ? "Đăng nhập" : "Tiếp tục"}
+                    onPress={() =>
+                        isLastSlide
+                            ? router.replace("/(auth)/sign-in")
+                            : swiperRef.current?.scrollToIndex({ index: activeIndex + 1 })
+                    }
+                    className='w-full' />
+                    <CustomButton
+                    bgVariant={isLastSlide ? "outline" : "transparent"}
+                    textVariant={isLastSlide ? "outline" : "transparent"}
+                    title={isLastSlide ? "Đăng ký" : "Bỏ qua"}
+                    onPress={() =>
+                        isLastSlide
+                            ? router.replace("/(auth)/sign-up")
+                            : swiperRef.current?.scrollToIndex({ index: activeIndex + 1 })
+                    }
+                    className='w-full' />
+            </View>
         </SafeAreaView>
     );
 };
