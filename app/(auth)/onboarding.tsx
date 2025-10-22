@@ -1,7 +1,7 @@
-import OnboardingScreen from '@/components/Screen/OnboardingScreen';
-
+import HomeScreen from '@/components/Screen/HomeScreen';
 const Onboarding = () => {
-    return <OnboardingScreen />;
+    // return <OnboardingScreen />;
+    return <HomeScreen />;
 };
 
 export default Onboarding;

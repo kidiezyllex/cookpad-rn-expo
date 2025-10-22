@@ -7,12 +7,16 @@ type FontSize = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5x
 interface TextScaledProps extends TextProps {
   size?: FontSize;
   children: React.ReactNode;
+  numberOfLines?: number;
+  ellipsizeMode?: 'head' | 'middle' | 'tail' | 'clip';
 }
 
 const TextScaled: React.FC<TextScaledProps> = ({ 
   size = 'base', 
   style, 
   children, 
+  numberOfLines,
+  ellipsizeMode,
   ...props 
 }) => {
   const scaledStyle = getScaledFontStyle(size);
@@ -20,6 +24,8 @@ const TextScaled: React.FC<TextScaledProps> = ({
   return (
     <Text 
       style={[scaledStyle, style]} 
+      numberOfLines={numberOfLines}
+      ellipsizeMode={ellipsizeMode}
       {...props}
     >
       {children}

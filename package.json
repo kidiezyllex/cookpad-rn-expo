@@ -9,7 +9,7 @@
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android --clear",
     "ios": "expo start --ios --clear",
-    "web": "expo start --web --clear",
+    "web": "expo start --web --clear --dev-client",
     "lint": "expo lint",
     "prebuild": "expo prebuild --clear",
     "optimize": "node ./scripts/optimize-dev.js"

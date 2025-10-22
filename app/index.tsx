@@ -5,7 +5,11 @@ import "../global.css";
 
 const Home = () => {
   useEffect(() => {
-    router.replace('/(auth)/onboarding' as any);
+    const timer = setTimeout(() => {
+      router.replace('/(auth)/onboarding' as any);
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return null;

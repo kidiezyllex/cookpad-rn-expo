@@ -1,4 +1,5 @@
 import activeBellIcon from "@/assets/icons/active-bell-icon.png";
+import activeFunnelIcon from "@/assets/icons/active-funnel-icon.png";
 import activeHomeIcon from "@/assets/icons/active-house-icon.png";
 import activePlusIcon from "@/assets/icons/active-plus-icon.png";
 import activeSearchIcon from "@/assets/icons/active-search-icon.png";
@@ -6,11 +7,13 @@ import activeUserIcon from "@/assets/icons/active-user-icon.png";
 import backArrow from "@/assets/icons/back-arrow.png";
 import bellIcon from "@/assets/icons/bell-icon.png";
 import chatIcon from "@/assets/icons/chat-icon.png";
+import clockIcon from "@/assets/icons/clock-icon.png";
 import threeDotsIcon from "@/assets/icons/dots-three-icon.png";
 import heartIcon from "@/assets/icons/heart-icon.png";
 import homeIcon from "@/assets/icons/house-icon.png";
 import plusIcon from "@/assets/icons/plus-icon.png";
 import saveIcon from "@/assets/icons/save-icon.png";
+import save2Icon from "@/assets/icons/save2-icon.png";
 import searchIcon from "@/assets/icons/search-icon.png";
 import userIcon from "@/assets/icons/user-icon.png";
 import check from "@/assets/images/check.png";
@@ -63,6 +66,9 @@ export const icons = {
     userIcon,
     activeUserIcon,
     threeDotsIcon,
+    activeFunnelIcon,
+    clockIcon,
+    save2Icon,
 };
 
 export const onboarding = [

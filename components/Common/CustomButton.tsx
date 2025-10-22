@@ -59,9 +59,9 @@ const CustomButton = ({
     }}
     {...props}
   >
-    {IconLeft && <IconLeft />}
+    {IconLeft && (typeof IconLeft === 'function' ? <IconLeft /> : IconLeft)}
     <TextScaled size="base" className={`font-bold ${getTextVariantStyle(textVariant)}`}>{title}</TextScaled>
-    {IconRight && <IconRight />}
+    {IconRight && (typeof IconRight === 'function' ? <IconRight /> : IconRight)}
   </Pressable>
 );
 
