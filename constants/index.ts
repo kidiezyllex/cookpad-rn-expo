@@ -17,12 +17,17 @@ import save2Icon from "@/assets/icons/save2-icon.png";
 import searchIcon from "@/assets/icons/search-icon.png";
 import userIcon from "@/assets/icons/user-icon.png";
 import check from "@/assets/images/check.png";
-import getStarted from "@/assets/images/get-started.png";
+import featuredFood1 from "@/assets/images/FeaturedFood/featuredFood1.jpg";
+import featuredFood2 from "@/assets/images/FeaturedFood/featuredFood2.jpg";
+import featuredFood3 from "@/assets/images/FeaturedFood/featuredFood3.jpg";
+import featuredFood4 from "@/assets/images/FeaturedFood/featuredFood4.jpg";
+import featuredFood5 from "@/assets/images/FeaturedFood/featuredFood5.jpg";
+import featuredFood6 from "@/assets/images/FeaturedFood/featuredFood6.jpg";
+import featuredFood7 from "@/assets/images/FeaturedFood/featuredFood7.jpg";
+import featuredFood8 from "@/assets/images/FeaturedFood/featuredFood8.jpg";
 import homeHero from "@/assets/images/home-hero.png";
-import { default as logo, default as placeholder200 } from "@/assets/images/logo.png";
+import { default as logo, default as placeholder111, default as placeholder200, default as placeholder55, default as placeholder80 } from "@/assets/images/logo.png";
 import messageBubble from "@/assets/images/message-bubble.png";
-import message from "@/assets/images/message.png";
-import noResult from "@/assets/images/no-result.png";
 import onboarding1 from "@/assets/images/onboarding1.png";
 import onboarding2 from "@/assets/images/onboarding2.png";
 import onboarding3 from "@/assets/images/onboarding3.png";
@@ -30,16 +35,12 @@ import registerSuccess from "@/assets/images/register-success.png";
 import sampleAvatar from "@/assets/images/sample-avatar.png";
 import sampleAvatar2 from "@/assets/images/sample-avatar2.png";
 import sampleFood1 from "@/assets/images/sample-food1.jpg";
-import signUpCar from "@/assets/images/signup-car.png";
+
 export const images = {
     onboarding1,
     onboarding2,
     onboarding3,
-    getStarted,
-    signUpCar,
     check,
-    noResult,
-    message,
     logo,
     registerSuccess,
     placeholder200,
@@ -48,6 +49,17 @@ export const images = {
     sampleAvatar,
     sampleFood1,
     sampleAvatar2,
+    featuredFood1,
+    featuredFood2,
+    featuredFood3,
+    featuredFood4,
+    featuredFood5,
+    featuredFood6,
+    featuredFood7,
+    featuredFood8,
+    placeholder80,
+    placeholder111,
+    placeholder55,
 };
 
 export const icons = {

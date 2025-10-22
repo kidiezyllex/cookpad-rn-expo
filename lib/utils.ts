@@ -1,14 +1,3 @@
-import { Ride } from "@/types/type";
-
-export const sortRides = (rides: Ride[]): Ride[] => {
-  const result = rides.sort((a, b) => {
-    const dateA = new Date(`${a.created_at}T${a.ride_time}`);
-    const dateB = new Date(`${b.created_at}T${b.ride_time}`);
-    return dateB.getTime() - dateA.getTime();
-  });
-
-  return result.reverse();
-};
 
 export function formatTime(minutes: number): string {
   const formattedMinutes = Math.round(minutes) || 0;
@@ -59,19 +48,6 @@ export function formatTimeVN(minutes: number): string {
   const remainingMinutes = minutes % 60;
   
   return `${hours.toString().padStart(2, '0')}:${remainingMinutes.toString().padStart(2, '0')}`;
-}
-
-export function formatCurrency(amount: string | number): string {
-  const exchangeRate = 24000;
-  const numericAmount = typeof amount === 'string' ? parseFloat(amount) : amount;
-  const vndAmount = Math.round(numericAmount * exchangeRate);
-  return vndAmount.toLocaleString('vi-VN');
-}
-
-export function convertVNDToUSD(vndAmount: string | number): number {
-  const exchangeRate = 24000;
-  const numericAmount = typeof vndAmount === 'string' ? parseFloat(vndAmount) : vndAmount;
-  return numericAmount / exchangeRate;
 }
 
 export function getVietnamTime(): string {
