@@ -69,14 +69,14 @@ const OnboardingScreen = () => {
                             : swiperRef.current?.scrollToIndex({ index: activeIndex + 1 })
                     }
                     className='w-full' />
-                    <CustomButton
+                <CustomButton
                     bgVariant={isLastSlide ? "outline" : "transparent"}
                     textVariant={isLastSlide ? "outline" : "transparent"}
                     title={isLastSlide ? "Đăng ký" : "Bỏ qua"}
                     onPress={() =>
                         isLastSlide
                             ? router.replace("/(auth)/sign-up")
-                            : swiperRef.current?.scrollToIndex({ index: activeIndex + 1 })
+                            : router.replace("/(auth)/sign-in")
                     }
                     className='w-full' />
             </View>

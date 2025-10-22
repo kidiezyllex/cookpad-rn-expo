@@ -1,16 +1,10 @@
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
-import { router } from 'expo-router';
-import { useCallback } from 'react';
 import { Image, ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const RegisterSuccessScreen = () => {
-    const onLoginPress = useCallback(() => {
-        router.replace('/(auth)/sign-in');
-    }, []);
-
     return (
         <SafeAreaView className='flex-1 bg-backgroundV1'>
             <ScrollView className='flex-1 bg-backgroundV1'>

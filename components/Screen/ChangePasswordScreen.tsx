@@ -3,26 +3,30 @@ import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
 import { Ionicons } from '@expo/vector-icons';
-import { Link, router } from 'expo-router';
+import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { Image, ScrollView, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, ScrollView, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const LogInScreen = () => {
+const ChangePasswordScreen = () => {
   const [form, setForm] = useState({
-    email: '',
     password: '',
+    confirmPassword: '',
   });
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const onSignInPress = useCallback(async () => {
-    // Check for specific credentials to go to HomeScreen
-    if (form.email === "home" && form.password === "123") {
-      router.replace("/(root)/tabs/home");
-    } else {
-      router.replace("/(auth)/favorite-topic");
+  const onSignUpPress = useCallback(async () => {
+    if (form.password !== form.confirmPassword) {
+      Alert.alert("Lỗi", "Mật khẩu xác nhận không khớp");
+      return;
     }
-  }, [form.email, form.password]);
+    router.push('/(auth)/otp');
+  }, [form.password, form.confirmPassword]);
+
+  const onBackPress = useCallback(() => {
+    router.back();
+  }, []);
 
   return (
     <SafeAreaView className='flex-1 bg-backgroundV1'>
@@ -34,11 +38,28 @@ const LogInScreen = () => {
             minHeight: getScaleFactor() * 44,
           }}
           className="relative flex-row justify-center items-center w-full">
+          <TouchableOpacity
+            onPress={onBackPress}
+            style={{
+              position: 'absolute',
+              left: getScaleFactor() * 16,
+              width: getScaleFactor() * 24,
+              height: getScaleFactor() * 24,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Ionicons
+              name="chevron-back"
+              size={getScaleFactor() * 24}
+              color="#000000"
+            />
+          </TouchableOpacity>
           <TextScaled
             size="base"
             className="justify-start font-bold text-center"
           >
-            Đăng nhập
+            Đổi mật khẩu
           </TextScaled>
         </View>
 
@@ -68,35 +89,6 @@ const LogInScreen = () => {
             }}
             className="flex flex-col justify-start items-end w-full"
           >
-            {/* Email/Phone Input */}
-            <View
-              style={{
-                gap: getScaleFactor() * 4,
-              }}
-              className="flex flex-col justify-start items-start w-full"
-            >
-              <TextScaled
-                size="base"
-                className="justify-start font-bold text-Neutral-900"
-              >
-                Tài khoản
-              </TextScaled>
-              <TextInput
-                placeholder="Email hoặc số điện thoại"
-                value={form.email}
-                onChangeText={(value) => setForm({ ...form, email: value })}
-                style={{
-                  width: '100%',
-                  padding: getScaleFactor() * 8,
-                  height: getScaleFactor() * 40,
-                  backgroundColor: 'white',
-                  borderRadius: 8,
-                  fontSize: getScaleFactor() * 16,
-                }}
-                placeholderTextColor="#AAAAAA"
-              />
-            </View>
-
             {/* Password Input */}
             <View
               style={{
@@ -114,7 +106,7 @@ const LogInScreen = () => {
                   size="base"
                   className="justify-start font-bold"
                 >
-                  Mật khẩu
+                  Mật khẩu mới
                 </TextScaled>
               </View>
               <View style={{ position: 'relative', width: '100%' }}>
@@ -155,51 +147,74 @@ const LogInScreen = () => {
               </View>
             </View>
 
-            {/* Forgot Password */}
-            <TouchableOpacity
-              onPress={() => router.push('/forgot-password')}
+            {/* Confirm Password Input */}
+            <View
+              style={{
+                gap: getScaleFactor() * 4,
+              }}
+              className="flex flex-col justify-start items-start w-full"
             >
-              <TextScaled
-                size="sm"
-                className="justify-start font-semibold text-black"
+              <View
+                style={{
+                  gap: getScaleFactor() * 4,
+                }}
+                className="justify-start items-center"
               >
-                Quên mật khẩu?
-              </TextScaled>
-            </TouchableOpacity>
+                <TextScaled
+                  size="base"
+                  className="justify-start font-bold"
+                >
+                  Nhập lại mật khẩu mới
+                </TextScaled>
+              </View>
+              <View style={{ position: 'relative', width: '100%' }}>
+                <TextInput
+                  placeholder="Nhập lại mật khẩu"
+                  secureTextEntry={!showConfirmPassword}
+                  value={form.confirmPassword}
+                  onChangeText={(value) => setForm({ ...form, confirmPassword: value })}
+                  style={{
+                    width: '100%',
+                    padding: getScaleFactor() * 8,
+                    paddingRight: getScaleFactor() * 40, // Make space for the icon
+                    height: getScaleFactor() * 40,
+                    backgroundColor: 'white',
+                    borderRadius: 8,
+                    fontSize: getScaleFactor() * 16,
+                  }}
+                  placeholderTextColor="#AAAAAA"
+                />
+                <TouchableOpacity
+                  onPress={() => setShowConfirmPassword(!showConfirmPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: getScaleFactor() * 8,
+                    top: getScaleFactor() * 8,
+                    width: getScaleFactor() * 24,
+                    height: getScaleFactor() * 24,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Ionicons
+                    name={showConfirmPassword ? 'eye-off' : 'eye'}
+                    size={getScaleFactor() * 24}
+                    color={showConfirmPassword ? '#666666' : '#AAAAAA'}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
 
-          {/* Login Button */}
+          {/* Confirm Button */}
           <CustomButton
             title="Xác nhận"
-            onPress={onSignInPress}
+            onPress={onSignUpPress}
           />
-
-          {/* Sign Up Link */}
-          <View
-            style={{
-              gap: getScaleFactor() * 4,
-            }}
-            className="flex-row justify-start items-start"
-          >
-            <TextScaled
-              size="sm"
-              className="justify-start text-black"
-            >
-              Bạn chưa có tài khoản?
-            </TextScaled>
-            <Link href="/(auth)/sign-up">
-              <TextScaled
-                size="sm"
-                className="justify-start font-semibold text-black"
-              >
-                Đăng ký
-              </TextScaled>
-            </Link>
-          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default LogInScreen;
+export default ChangePasswordScreen;

@@ -185,7 +185,7 @@ const QRPaymentModal: React.FC<QRPaymentModalProps> = ({
                   }}
                 />
               </View>
-              <Text className="mt-2 text-sm text-gray-500 font-JakartaRegular">
+              <Text className="mt-2 text-sm text-textNeutralV1 font-JakartaRegular">
                 Vui lòng không tắt ứng dụng...
               </Text>
             </>

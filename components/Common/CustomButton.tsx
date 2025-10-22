@@ -1,4 +1,4 @@
-import { TouchableOpacity } from 'react-native';
+import { Pressable } from 'react-native';
 
 import { getScaleFactor } from '@/lib/scaling';
 import { ButtonProps } from "@/types/type";
@@ -50,15 +50,19 @@ const CustomButton = ({
   className,
   ...props
 }: ButtonProps) => (
-  <TouchableOpacity onPress={onPress}
+  <Pressable 
+    onPress={onPress}
     className={`flex flex-row justify-center items-center px-6 py-2 w-full rounded-lg shadow-md shadow-neutral-400/70 ${getBgVariantStyle(bgVariant)} ${className}`}
-    style={{ height: getScaleFactor() * 40, minHeight: getScaleFactor() * 40 }}
-    {...props}>
+    style={{ 
+      height: getScaleFactor() * 40, 
+      minHeight: getScaleFactor() * 40,
+    }}
+    {...props}
+  >
     {IconLeft && <IconLeft />}
     <TextScaled size="base" className={`font-bold ${getTextVariantStyle(textVariant)}`}>{title}</TextScaled>
     {IconRight && <IconRight />}
-  </TouchableOpacity>
-
+  </Pressable>
 );
 
 export default CustomButton;

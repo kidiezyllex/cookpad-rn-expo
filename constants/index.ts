@@ -1,36 +1,32 @@
-import aichat from "@/assets/icons/aichat.jpg";
-import arrowDown from "@/assets/icons/arrow-down.png";
-import arrowUp from "@/assets/icons/arrow-up.png";
+import activeBellIcon from "@/assets/icons/active-bell-icon.png";
+import activeHomeIcon from "@/assets/icons/active-house-icon.png";
+import activePlusIcon from "@/assets/icons/active-plus-icon.png";
+import activeSearchIcon from "@/assets/icons/active-search-icon.png";
+import activeUserIcon from "@/assets/icons/active-user-icon.png";
 import backArrow from "@/assets/icons/back-arrow.png";
-import chat from "@/assets/icons/chat.png";
-import checkmark from "@/assets/icons/check.png";
-import close from "@/assets/icons/close.png";
-import dollar from "@/assets/icons/dollar.png";
-import email from "@/assets/icons/email.png";
-import eyecross from "@/assets/icons/eyecross.png";
-import google from "@/assets/icons/google.png";
-import home from "@/assets/icons/home.png";
-import list from "@/assets/icons/list.png";
-import lock from "@/assets/icons/lock.png";
-import out from "@/assets/icons/out.png";
-import person from "@/assets/icons/person.png";
-import pin from "@/assets/icons/pin.png";
-import point from "@/assets/icons/point.png";
-import profile from "@/assets/icons/profile.png";
-import search from "@/assets/icons/search.png";
-import star from "@/assets/icons/star.png";
-import target from "@/assets/icons/target.png";
-import to from "@/assets/icons/to.png";
-import userchat from "@/assets/icons/userchat.jpg";
+import bellIcon from "@/assets/icons/bell-icon.png";
+import chatIcon from "@/assets/icons/chat-icon.png";
+import threeDotsIcon from "@/assets/icons/dots-three-icon.png";
+import heartIcon from "@/assets/icons/heart-icon.png";
+import homeIcon from "@/assets/icons/house-icon.png";
+import plusIcon from "@/assets/icons/plus-icon.png";
+import saveIcon from "@/assets/icons/save-icon.png";
+import searchIcon from "@/assets/icons/search-icon.png";
+import userIcon from "@/assets/icons/user-icon.png";
 import check from "@/assets/images/check.png";
 import getStarted from "@/assets/images/get-started.png";
-import logo from "@/assets/images/logo.png";
+import homeHero from "@/assets/images/home-hero.png";
+import { default as logo, default as placeholder200 } from "@/assets/images/logo.png";
+import messageBubble from "@/assets/images/message-bubble.png";
 import message from "@/assets/images/message.png";
 import noResult from "@/assets/images/no-result.png";
 import onboarding1 from "@/assets/images/onboarding1.png";
 import onboarding2 from "@/assets/images/onboarding2.png";
 import onboarding3 from "@/assets/images/onboarding3.png";
 import registerSuccess from "@/assets/images/register-success.png";
+import sampleAvatar from "@/assets/images/sample-avatar.png";
+import sampleAvatar2 from "@/assets/images/sample-avatar2.png";
+import sampleFood1 from "@/assets/images/sample-food1.jpg";
 import signUpCar from "@/assets/images/signup-car.png";
 export const images = {
     onboarding1,
@@ -43,33 +39,30 @@ export const images = {
     message,
     logo,
     registerSuccess,
+    placeholder200,
+    homeHero,
+    messageBubble,
+    sampleAvatar,
+    sampleFood1,
+    sampleAvatar2,
 };
 
 export const icons = {
-    aichat,
-    arrowDown,
-    arrowUp,
     backArrow,
-    chat,
-    checkmark,
-    close,
-    dollar,
-    email,
-    eyecross,
-    google,
-    home,
-    list,
-    lock,
-    out,
-    person,
-    pin,
-    point,
-    profile,
-    search,
-    star,
-    target,
-    to,
-    userchat,
+    chatIcon,
+    heartIcon,
+    saveIcon,
+    homeIcon,
+    activeHomeIcon,
+    searchIcon,
+    activeSearchIcon,
+    plusIcon,
+    activePlusIcon,
+    bellIcon,
+    activeBellIcon,
+    userIcon,
+    activeUserIcon,
+    threeDotsIcon,
 };
 
 export const onboarding = [
