@@ -51,7 +51,7 @@ const CreateRecipeScreen = () => {
             >
                 <TextScaled
                     size="base"
-                    className="text-gray-500"
+                    className="text-textNeutralV1"
                 >
                     {item.amount}
                 </TextScaled>
@@ -118,7 +118,7 @@ const CreateRecipeScreen = () => {
                 >
                     <TextScaled
                         size="base"
-                        className="text-gray-500"
+                        className="text-textNeutralV1"
                     >
                         {item.description}
                     </TextScaled>
@@ -463,7 +463,7 @@ const CreateRecipeScreen = () => {
                             >
                                 <TextScaled
                                     size="base"
-                                    className="text-gray-500"
+                                    className="text-textNeutralV1"
                                 >
                                     Tên món ngon nhất nhà mình
                                 </TextScaled>
@@ -513,7 +513,7 @@ const CreateRecipeScreen = () => {
                             >
                                 <TextScaled
                                     size="base"
-                                    className="text-gray-500"
+                                    className="text-textNeutralV1"
                                 >
                                     Hãy chia sẻ với mọi người về món này của bạn nhé. Ai hay điều gì đã truyền cảm hứng cho bạn nấu nó? Tại sao nó đặc biệt? Bạn thích thưởng thức nó theo cách nào?
                                 </TextScaled>
@@ -592,7 +592,7 @@ const CreateRecipeScreen = () => {
                                     </View>
                                     <TextScaled
                                         size="base"
-                                        className="text-center text-gray-500"
+                                        className="text-center text-textNeutralV1"
                                     >
                                         2
                                     </TextScaled>
@@ -670,7 +670,7 @@ const CreateRecipeScreen = () => {
                                 >
                                     <TextScaled
                                         size="base"
-                                        className="text-gray-500"
+                                        className="text-textNeutralV1"
                                     >
                                         Giờ/Phút
                                     </TextScaled>
@@ -750,7 +750,7 @@ const CreateRecipeScreen = () => {
                                 >
                                     <TextScaled
                                         size="base"
-                                        className="text-gray-500"
+                                        className="text-textNeutralV1"
                                     >
                                         Thành phần 1
                                     </TextScaled>

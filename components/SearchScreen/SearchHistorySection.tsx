@@ -1,27 +1,9 @@
-import CustomButton from '@/components/Common/CustomButton';
-import CustomFilter from '@/components/Common/CustomFilter';
-import TextScaled from '@/components/Common/TextScaled';
 import { icons, images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
-import { useState } from 'react';
 import { Image, View } from 'react-native';
-import { SwiperFlatList } from 'react-native-swiper-flatlist';
-import RecipeCard from './RecipeCard';
-
-const ingredientsData = [
-    { id: '1', name: 'Tôm', isSelected: true },
-    { id: '2', name: 'Bánh mỳ', isSelected: false },
-    { id: '3', name: 'Cá', isSelected: false },
-    { id: '4', name: 'Thịt lợn', isSelected: false },
-    { id: '5', name: 'Thịt bò', isSelected: false },
-    { id: '6', name: 'Trứng', isSelected: false },
-    { id: '7', name: 'Gà', isSelected: false },
-    { id: '8', name: 'Rau xanh', isSelected: false },
-    { id: '9', name: 'Cà chua', isSelected: false },
-    { id: '10', name: 'Hành tây', isSelected: false },
-    { id: '11', name: 'Tỏi', isSelected: false },
-    { id: '12', name: 'Gừng', isSelected: false },
-];
+import SwiperFlatList from 'react-native-swiper-flatlist';
+import TextScaled from '../Common/TextScaled';
+import RecipeCard from '../HomeScreen/InspirationTab/RecipeCard';
 
 const featuredRecipesData = [
     { id: '1', name: 'Tôm hoàng đế ánh kim', image: images.featuredFood1, time: '3h 30m', likes: 234 },
@@ -34,53 +16,45 @@ const featuredRecipesData = [
     { id: '8', name: 'Trứng chiên thịt bằm', image: images.featuredFood8, time: '20m', likes: 123 },
 ];
 
-const IngredientsSection = () => {
-    const [selectedIngredients, setSelectedIngredients] = useState<string[]>(['1']);
-    const [isFilterSelected, setIsFilterSelected] = useState(true);
-
-    const toggleIngredient = (id: string) => {
-        setSelectedIngredients(prev =>
-            prev.includes(id)
-                ? prev.filter(item => item !== id)
-                : [...prev, id]
-        );
-    };
-
-    const toggleFilterIcon = () => {
-        setIsFilterSelected(prev => !prev);
-    };
-
-
+const SearchHistorySection = () => {
     return (
-        <View
+        <View 
             style={{
-                width: "100%",
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                marginBottom: getScaleFactor() * 24,
                 paddingHorizontal: getScaleFactor() * 16,
+                paddingTop: getScaleFactor() * 16,
             }}
+            className='flex-col'
         >
             <TextScaled
-                style={{
-                    marginBottom: getScaleFactor() * 16,
-                }}
-                size="xl"
+                size="base"
                 className="font-bold text-black"
+                style={{
+                    marginBottom: getScaleFactor() * 8,
+                }}
             >
-                Trong tủ lạnh nhà bạn có gì?
+                Lịch sử tìm kiếm
             </TextScaled>
-            <CustomFilter
-                data={ingredientsData}
-                selectedItems={selectedIngredients}
-                onToggleItem={toggleIngredient}
-                showFilterIcon={true}
-                isFilterSelected={isFilterSelected}
-                onToggleFilter={toggleFilterIcon}
-            />
-            
-            {/* Featured recipes horizontal scroll */}
+            <View 
+                style={{
+                    marginBottom: getScaleFactor() * 8,
+                }}
+                className='flex-row justify-between items-center w-full'
+            >
+                <TextScaled
+                    size="sm"
+                    className="font-light text-textNeutralV1"
+                >
+                    Món bạn đã xem gần đây
+                </TextScaled>
+                <Image
+                    source={icons.forwardArrow}
+                    style={{
+                        width: getScaleFactor() * 20,
+                        height: getScaleFactor() * 20,
+                    }}
+                    resizeMode="contain"
+                />
+            </View>
             <View
                 style={{
                     height: getScaleFactor() * 158,
@@ -126,14 +100,8 @@ const IngredientsSection = () => {
                     }}
                 />
             </View>
-
-            <CustomButton
-                title="Tìm kiếm theo nguyên liệu"
-                onPress={() => { }}
-                IconLeft={<Image source={icons.searchIcon} style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24, tintColor: 'white' }} resizeMode="contain" />}
-            />
         </View>
     );
 };
 
-export default IngredientsSection;
+export default SearchHistorySection;

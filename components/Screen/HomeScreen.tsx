@@ -20,7 +20,7 @@ const postsData = [
             hashtags: ['Gà nướng', 'Tiêu Đen', 'NCKD'],
             likes: 16,
             comments: 34,
-            image: images.placeholder200
+            image: images.sampleFood1
         },
         comments: [
             { user: 'Nobita', text: 'Vippro quá mày' },
@@ -39,7 +39,7 @@ const postsData = [
             hashtags: ['Sò điệp', 'Tôm', 'Bánh mì gạo lứt', 'Hải sản'],
             likes: 16,
             comments: 34,
-            image: images.placeholder200
+            image: images.sampleFood1
         },
         comments: [
             { user: 'Otaku Lê', text: 'Nsfdggdgdgdgergsgrsg' },
@@ -58,7 +58,7 @@ const postsData = [
             hashtags: ['Món chay', 'Trứng', 'Bơ'],
             likes: 134,
             comments: 233,
-            image: images.placeholder200
+            image: images.sampleFood1
         },
         comments: [
             { user: 'Mun Ngáo', text: 'Trứng dở vcl đéo thèm ăn, công thức như ' },

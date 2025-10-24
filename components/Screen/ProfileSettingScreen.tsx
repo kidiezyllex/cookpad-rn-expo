@@ -64,7 +64,7 @@ const LogoutButton = () => (
     }}
     disabled
   >
-    <TextScaled size="sm" className="font-bold text-gray-500">
+    <TextScaled size="sm" className="font-bold text-textNeutralV1">
       Đăng xuất
     </TextScaled>
     <Image

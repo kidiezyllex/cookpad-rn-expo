@@ -100,11 +100,11 @@ const RecipeCard = ({ item }: { item: typeof mockRecipes[0] }) => (
             style={{ width: getScaleFactor() * 16, height: getScaleFactor() * 16 }}
             resizeMode="contain"
           />
-          <TextScaled size="xs" className="text-gray-500">
+          <TextScaled size="xs" className="text-textNeutralV1">
             {item.views}
           </TextScaled>
         </View>
-        <TextScaled size="xs" className="text-gray-500">
+        <TextScaled size="xs" className="text-textNeutralV1">
           {item.time}
         </TextScaled>
       </View>
@@ -146,13 +146,13 @@ const ProfileScreen = () => {
             className="flex-row items-center"
             style={{ gap: getScaleFactor() * 8 }}
           >
-            <TextScaled size="xs" className="text-gray-500">
+            <TextScaled size="xs" className="text-textNeutralV1">
               12 Bạn bếp
             </TextScaled>
             <TextScaled size="sm" className="font-bold text-black">
               .
             </TextScaled>
-            <TextScaled size="xs" className="text-gray-500">
+            <TextScaled size="xs" className="text-textNeutralV1">
               22 Công thức
             </TextScaled>
           </View>
@@ -187,7 +187,7 @@ const ProfileScreen = () => {
                 <TextScaled 
                   size="base" 
                   className={`font-bold ${
-                    activeTab === tab ? 'text-black' : 'text-gray-500'
+                    activeTab === tab ? 'text-black' : 'text-textNeutralV1'
                   }`}
                 >
                   {tab}
@@ -215,7 +215,7 @@ const ProfileScreen = () => {
                 style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }}
                 resizeMode="contain"
               />
-              <TextScaled size="sm" className="font-medium text-gray-500">
+              <TextScaled size="sm" className="font-medium text-textNeutralV1">
                 Tìm kiếm
               </TextScaled>
             </View>

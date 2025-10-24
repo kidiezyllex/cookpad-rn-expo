@@ -6,8 +6,10 @@ import activeSearchIcon from "@/assets/icons/active-search-icon.png";
 import activeUserIcon from "@/assets/icons/active-user-icon.png";
 import backArrow from "@/assets/icons/back-arrow.png";
 import bellIcon from "@/assets/icons/bell-icon.png";
+import caretLeftIcon from "@/assets/icons/caret-left-icon.png";
 import chatIcon from "@/assets/icons/chat-icon.png";
 import clockIcon from "@/assets/icons/clock-icon.png";
+import closeIcon from "@/assets/icons/close-icon.png";
 import threeDotsIcon from "@/assets/icons/dots-three-icon.png";
 import fireIcon from "@/assets/icons/fire-icon.png";
 import forwardArrow from "@/assets/icons/forward-arrow.png";
@@ -17,6 +19,7 @@ import plusIcon from "@/assets/icons/plus-icon.png";
 import saveIcon from "@/assets/icons/save-icon.png";
 import save2Icon from "@/assets/icons/save2-icon.png";
 import searchIcon from "@/assets/icons/search-icon.png";
+import timerIcon from "@/assets/icons/timer-icon.png";
 import userIcon from "@/assets/icons/user-icon.png";
 import check from "@/assets/images/check.png";
 import featuredFood1 from "@/assets/images/FeaturedFood/featuredFood1.jpg";
@@ -84,6 +87,9 @@ export const icons = {
     save2Icon,
     fireIcon,
     forwardArrow,
+    caretLeftIcon,
+    closeIcon,
+    timerIcon,
 };
 
 export const onboarding = [
