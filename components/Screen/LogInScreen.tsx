@@ -17,7 +17,7 @@ const LogInScreen = () => {
 
   const onSignInPress = useCallback(async () => {
     // Check for specific credentials to go to HomeScreen
-    if (form.email === "home" && form.password === "123") {
+    if (form.email === "H" && form.password === "1") {
       router.replace("/(root)/tabs/home");
     } else {
       router.replace("/(auth)/favorite-topic");

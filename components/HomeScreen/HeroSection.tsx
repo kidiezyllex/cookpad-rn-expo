@@ -29,33 +29,44 @@ const HeroSection = ({ activeTab, onTabChange }: HeroSectionProps) => {
                 source={images.homeHero}
                 resizeMode="contain"
             />
-            <Image
-                source={images.messageBubble}
-                resizeMode="contain"
-                style={{
-                    position: 'absolute',
-                    width: getScaleFactor() * 186,
-                    height: getScaleFactor() * 98,
-                    right: getScaleFactor() * 20,
-                    top: getScaleFactor() * 50,
-                }}
-            />
+            
             <View
                 style={{
                     position: 'absolute',
-                    right: getScaleFactor() * 30,
-                    top: getScaleFactor() * 68,
-                    maxWidth: getScaleFactor() * 140,
+                    right: getScaleFactor() * 19,
+                    top: getScaleFactor() * 50,
+                    width: getScaleFactor() * 186,
+                    height: getScaleFactor() * 98,
                 }}
-                className='flex-col justify-start items-start'
+                 className='justify-center items-center'
             >
+                <Image
+                source={images.messageBubble}
+                resizeMode="contain"
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    resizeMode: "contain",
+                    position: 'absolute',
+                    left: 0,
+                    bottom: 0,
+                    right: 0,
+                    top: 0,
+                }}
+            />
                 <TextScaled
                     size="sm"
+                    style={{
+                        maxWidth: getScaleFactor() * 141,
+                    }}
                     className="font-medium text-customSecondary"
                 >
                     Chào ngày mới, <TextScaled size="base" className="font-bold text-blue-900">Hòa</TextScaled>
                 </TextScaled>
                 <TextScaled
+                    style={{
+                        maxWidth: getScaleFactor() * 141,
+                    }}
                     size="xs"
                     className="font-light text-customSecondary"
                 >

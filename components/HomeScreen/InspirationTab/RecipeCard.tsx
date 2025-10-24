@@ -9,8 +9,6 @@ interface RecipeCardProps {
     image: any;
     time: string;
     likes: number;
-    width?: number;
-    height?: number;
     showOverlay?: boolean;
 }
 
@@ -20,8 +18,6 @@ const RecipeCard = ({
     image, 
     time, 
     likes, 
-    width = 160, 
-    height = 112,
     showOverlay = true 
 }: RecipeCardProps) => {
     return (

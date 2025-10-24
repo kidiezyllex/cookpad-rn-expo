@@ -1,9 +1,7 @@
-import { Text, View } from 'react-native';
+import SearchScreen from '@/components/Screen/SearchScreen';
 
-export default function SearchScreen() {
+export default function Search() {
   return (
-    <View className="flex-1 justify-center items-center bg-white">
-      <Text className="text-lg font-semibold">Search Screen</Text>
-    </View>
+    <SearchScreen />
   );
 }

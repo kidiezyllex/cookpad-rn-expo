@@ -152,8 +152,6 @@ const IngredientsSection = () => {
                                 image={item.image}
                                 time={item.time}
                                 likes={item.likes}
-                                width={112}
-                                height={112}
                             />
                         </View>
                     )}
