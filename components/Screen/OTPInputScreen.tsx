@@ -127,7 +127,7 @@ const OTPInputScreen = () => {
                 }}
                  theme={{
                    containerStyle: {
-                     gap: getScaleFactor() * 22,
+                     gap: 100,
                    },
                    pinCodeContainerStyle: {
                      width: getScaleFactor() * 64,

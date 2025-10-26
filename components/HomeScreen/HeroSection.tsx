@@ -20,8 +20,8 @@ const HeroSection = ({ activeTab, onTabChange }: HeroSectionProps) => {
             {/* Hero section */}
             <Image
                 style={{
-                    width: getScaleFactor() * 200,
-                    height: getScaleFactor() * 200,
+                    width: 1000,
+                    height: 1000,
                     position: 'absolute',
                     left: 0,
                     bottom: 0,

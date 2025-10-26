@@ -14,35 +14,35 @@ const mockRecipes = [
     title: "Lòng xào dưa",
     views: 234,
     time: "12 giờ",
-    images: [images.placeholder111, images.placeholder55, images.placeholder55]
+    images: [images.sampleFood1, images.sampleFood1, images.sampleFood1]
   },
   {
     id: 2,
     title: "Hải sản",
     views: 234,
     time: "17 giờ",
-    images: [images.placeholder111, images.placeholder55, images.placeholder55]
+    images: [images.sampleFood1, images.sampleFood1, images.sampleFood1]
   },
   {
     id: 3,
     title: "Món Healthy",
     views: 234,
     time: "5 ngày",
-    images: [images.placeholder111, images.placeholder55, images.placeholder55]
+    images: [images.sampleFood1, images.sampleFood1, images.sampleFood1]
   },
   {
     id: 4,
     title: "Ức gà chiên",
     views: 234,
     time: "7 ngày",
-    images: [images.placeholder111, images.placeholder55, images.placeholder55]
+    images: [images.sampleFood1, images.sampleFood1, images.sampleFood1]
   },
   {
     id: 5,
     title: "Nước ép",
     views: 234,
     time: "9 ngày",
-    images: [images.placeholder111, images.placeholder55, images.placeholder55]
+    images: [images.sampleFood1, images.sampleFood1, images.sampleFood1]
   }
 ];
 
@@ -134,7 +134,7 @@ const ProfileScreen = () => {
               style={{
                 width: getScaleFactor() * 80,
                 height: getScaleFactor() * 80,
-                borderRadius: getScaleFactor() * 40,
+                borderRadius: 100,
               }}
               resizeMode="cover"
             />

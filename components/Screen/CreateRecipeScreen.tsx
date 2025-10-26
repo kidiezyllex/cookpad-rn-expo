@@ -210,7 +210,7 @@ const CreateRecipeScreen = () => {
                     <View
                         style={{
                             width: '100%',
-                            height: getScaleFactor() * 200,
+                            height: 1000,
                             position: 'relative',
                             backgroundColor: '#FFFFFF',
                             borderRadius: getScaleFactor() * 8,
@@ -379,7 +379,7 @@ const CreateRecipeScreen = () => {
                                 >
                                     <Ionicons
                                         name="chevron-back"
-                                        size={getScaleFactor() * 20}
+                                        size={100}
                                         color="#000000"
                                     />
                                 </Pressable>
@@ -401,7 +401,7 @@ const CreateRecipeScreen = () => {
                                 >
                                     <Ionicons
                                         name="chevron-forward"
-                                        size={getScaleFactor() * 20}
+                                        size={100}
                                         color="#000000"
                                     />
                                 </Pressable>
@@ -636,7 +636,7 @@ const CreateRecipeScreen = () => {
                     <View
                         style={{
                             width: '100%',
-                            height: getScaleFactor() * 200,
+                            height: 1000,
                             position: 'relative',
                             backgroundColor: '#EEEEEE',
                             borderRadius: getScaleFactor() * 8,
@@ -799,7 +799,7 @@ const CreateRecipeScreen = () => {
                             top: getScaleFactor() * 21,
                             position: 'absolute',
                             backgroundColor: 'black',
-                            borderRadius: getScaleFactor() * 100,
+                            borderRadius: 100,
                         }}
                     />
                 </View>

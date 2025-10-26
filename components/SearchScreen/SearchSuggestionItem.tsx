@@ -54,7 +54,7 @@ const SearchSuggestionItem = ({ item }: SearchSuggestionItemProps) => {
                         width: getScaleFactor() * 24,
                         height: getScaleFactor() * 24,
                         padding: getScaleFactor() * 8,
-                        borderRadius: getScaleFactor() * 99,
+                        borderRadius: 100,
                         flexDirection: 'row',
                         justifyContent: 'center',
                         alignItems: 'center',
