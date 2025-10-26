@@ -12,6 +12,7 @@ import chatIcon from "@/assets/icons/chat-icon.png";
 import clockIcon from "@/assets/icons/clock-icon.png";
 import closeIcon from "@/assets/icons/close-icon.png";
 import threeDotsIcon from "@/assets/icons/dots-three-icon.png";
+import downUpIcon from "@/assets/icons/down-up-icon.png";
 import fireIcon from "@/assets/icons/fire-icon.png";
 import forwardArrow from "@/assets/icons/forward-arrow.png";
 import heartIcon from "@/assets/icons/heart-icon.png";
@@ -20,6 +21,7 @@ import plusIcon from "@/assets/icons/plus-icon.png";
 import saveIcon from "@/assets/icons/save-icon.png";
 import save2Icon from "@/assets/icons/save2-icon.png";
 import searchIcon from "@/assets/icons/search-icon.png";
+import smallPlusIcon from "@/assets/icons/small-plus-icon.png";
 import timerIcon from "@/assets/icons/timer-icon.png";
 import userIcon from "@/assets/icons/user-icon.png";
 import videoIcon from "@/assets/icons/video-icon.png";
@@ -46,6 +48,8 @@ import registerSuccess from "@/assets/images/register-success.png";
 import sampleAvatar from "@/assets/images/sample-avatar.png";
 import sampleAvatar2 from "@/assets/images/sample-avatar2.png";
 import sampleFood1 from "@/assets/images/sample-food1.jpg";
+import sampleFood2 from "@/assets/images/sample-food2.jpg";
+import sampleFood3 from "@/assets/images/sample-food3.jpg";
 import searchHero from "@/assets/images/search-hero.png";
 import table from "@/assets/images/table.png";
 export const images = {
@@ -74,9 +78,13 @@ export const images = {
     personalChestBanner,
     menu,
     table,
+    sampleFood2,
+    sampleFood3,
 };
 
 export const icons = {
+    downUpIcon,
+    smallPlusIcon,
     videoIcon,
     cameraIcon,
     backArrow,
