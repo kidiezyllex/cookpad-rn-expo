@@ -17,8 +17,8 @@ const HeroSection = () => {
             {/* Hero section */}
             <Image
                 style={{
-                    width: 1000,
-                    height: 1000,
+                    width: 200,
+                    height: 200,
                     position: 'absolute',
                     right: 0,
                     bottom: 0,

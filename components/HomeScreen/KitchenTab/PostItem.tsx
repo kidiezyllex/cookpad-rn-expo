@@ -113,7 +113,7 @@ const PostItem = ({ item }: PostItemProps) => {
                 <Image
                     style={{
                         width: '100%',
-                        height: 1000,
+                        height: 200,
                         borderTopLeftRadius: getScaleFactor() * 8,
                         borderTopRightRadius: getScaleFactor() * 8,
                         overflow: 'hidden'
@@ -156,8 +156,8 @@ const PostItem = ({ item }: PostItemProps) => {
                             >
                                 <Image
                                     style={{
-                                        width: 100,
-                                        height: 100,
+                                        width: 20,
+                                        height: 20,
                                     }}
                                     source={icons.heartIcon}
                                     resizeMode="contain"
@@ -179,8 +179,8 @@ const PostItem = ({ item }: PostItemProps) => {
                             >
                                 <Image
                                     style={{
-                                        width: 100,
-                                        height: 100,
+                                        width: 20,
+                                        height: 20,
                                     }}
                                     source={icons.chatIcon}
                                     resizeMode="contain"
@@ -203,8 +203,8 @@ const PostItem = ({ item }: PostItemProps) => {
                         >
                             <Image
                                 style={{
-                                    width: 100,
-                                    height: 100,
+                                    width: 20,
+                                    height: 20,
                                 }}
                                 source={icons.saveIcon}
                                 resizeMode="contain"

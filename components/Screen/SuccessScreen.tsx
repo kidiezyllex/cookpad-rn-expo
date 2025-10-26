@@ -19,8 +19,8 @@ const RegisterSuccessScreen = () => {
                 >
                     <Image
                         style={{
-                            width: 1000,
-                            height: 1000,
+                            width: 200,
+                            height: 200,
                         }}
                         source={images.registerSuccess}
                         resizeMode="contain"

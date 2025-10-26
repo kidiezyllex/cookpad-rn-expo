@@ -95,8 +95,8 @@ const PersonalChestScreen = () => {
                 />
                 <Image
                     style={{
-                        width: 1000,
-                        height: 1000,
+                        width: 200,
+                        height: 200,
                         position: 'absolute',
                         top: getScaleFactor() * 82,
                         left: '50%',

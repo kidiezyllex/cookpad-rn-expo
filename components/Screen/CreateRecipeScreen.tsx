@@ -210,7 +210,7 @@ const CreateRecipeScreen = () => {
                     <View
                         style={{
                             width: '100%',
-                            height: 1000,
+                            height: 200,
                             position: 'relative',
                             backgroundColor: '#FFFFFF',
                             borderRadius: getScaleFactor() * 8,
@@ -636,7 +636,7 @@ const CreateRecipeScreen = () => {
                     <View
                         style={{
                             width: '100%',
-                            height: 1000,
+                            height: 200,
                             position: 'relative',
                             backgroundColor: '#EEEEEE',
                             borderRadius: getScaleFactor() * 8,
