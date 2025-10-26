@@ -6,6 +6,8 @@ import TextScaled from './TextScaled';
 
 const getBgVariantStyle = (variant: ButtonProps["bgVariant"]) => {
   switch (variant) {
+    case "ghost":
+      return "bg-[#FFEFE9]";
     case "secondary":
       return "bg-gray-500";
     case "danger":
@@ -23,20 +25,24 @@ const getBgVariantStyle = (variant: ButtonProps["bgVariant"]) => {
 
 const getTextVariantStyle = (variant: ButtonProps["textVariant"]) => {
   switch (variant) {
+    case "ghost":
+      return "#E36137";
     case "primary":
-      return "text-black";
+      return "#ffffff";
     case "secondary":
-      return "text-gray-100";
+      return "#F3F4F6";
     case "danger":
-      return "text-red-100";
+      return "#FEE2E2";
     case "success":
-      return "text-green-100";
+      return "#D1FAE5";
     case "outline":
-      return "text-customPrimary";
+      return "#E36137";
     case "transparent":
-      return "text-customPrimary";
+      return "#E36137";
+    case "default":
+      return "#ffffff";
     default:
-      return "text-white";
+      return "#ffffff";
   }
 };
 
@@ -60,7 +66,7 @@ const CustomButton = ({
     {...props}
   >
     {IconLeft && (typeof IconLeft === 'function' ? <IconLeft /> : IconLeft)}
-    <TextScaled size="base" className={`font-bold ${getTextVariantStyle(textVariant)}`}>{title}</TextScaled>
+    <TextScaled style={{color: getTextVariantStyle(textVariant)}} size="base" className={`font-bold`}>{title}</TextScaled>
     {IconRight && (typeof IconRight === 'function' ? <IconRight /> : IconRight)}
   </Pressable>
 );

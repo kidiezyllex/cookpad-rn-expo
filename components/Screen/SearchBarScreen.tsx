@@ -58,7 +58,7 @@ const SearchBarScreen = () => {
                     backgroundColor: '#F1EEE8',
                 }}
             >
-                {/* Status Bar and Search Input */}
+                {/* Status Bar and Search Iput */}
                 <View
                     style={{
                         width: '100%',
