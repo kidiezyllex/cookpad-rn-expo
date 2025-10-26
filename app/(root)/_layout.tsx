@@ -12,6 +12,10 @@ const Layout = () => {
         <Stack.Screen name="search-results" options={{ headerShown: false }} />
         <Stack.Screen name="personal-chest" options={{ headerShown: false }} />
         <Stack.Screen name="create-recipe" options={{ headerShown: false }} />
+        <Stack.Screen name="setting" options={{ headerShown: false }} />
+        <Stack.Screen name="edit-profile" options={{ headerShown: false }} />
+        <Stack.Screen name="security" options={{ headerShown: false }} />
+        <Stack.Screen name="premium" options={{ headerShown: false }} />
       </Stack>
   );
 };
