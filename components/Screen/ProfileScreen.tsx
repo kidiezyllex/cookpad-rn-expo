@@ -47,7 +47,8 @@ const mockRecipes = [
 ];
 
 const RecipeCard = ({ item }: { item: typeof mockRecipes[0] }) => (
-  <View
+  <Pressable
+    onPress={() => router.push('/table-selection')}
     className="bg-white rounded-lg shadow-sm"
     style={{
       shadowColor: '#000',
@@ -109,7 +110,7 @@ const RecipeCard = ({ item }: { item: typeof mockRecipes[0] }) => (
         </TextScaled>
       </View>
     </View>
-  </View>
+  </Pressable>
 );
 
 const ProfileScreen = () => {

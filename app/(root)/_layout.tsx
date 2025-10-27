@@ -16,6 +16,7 @@ const Layout = () => {
         <Stack.Screen name="edit-profile" options={{ headerShown: false }} />
         <Stack.Screen name="security" options={{ headerShown: false }} />
         <Stack.Screen name="premium" options={{ headerShown: false }} />
+        <Stack.Screen name="table-selection" options={{ headerShown: false }} />
       </Stack>
   );
 };
