@@ -62,6 +62,7 @@ const CustomButton = ({
     style={{ 
       height: getScaleFactor() * 40, 
       minHeight: getScaleFactor() * 40,
+      gap: getScaleFactor() * 8,
     }}
     {...props}
   >

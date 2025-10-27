@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { FlatList, Image, Pressable, ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import BackHeader from '../Common/BackHeader';
 import CustomButton from '../Common/CustomButton';
 import TextScaled from '../Common/TextScaled';
 
@@ -148,38 +149,10 @@ const CreateRecipeScreen = () => {
 
     return (
         <SafeAreaView className="flex-1" edges={['top', 'bottom', 'left', 'right']} style={{ backgroundColor: 'white' }}>
-            {/* Header */}
-            <View
-                style={{
-                    height: getScaleFactor() * 44,
-                    minHeight: getScaleFactor() * 44,
-                    backgroundColor: 'white',
-                }}
-                className="relative flex-row justify-center items-center w-full">
-                <Pressable
-                    onPress={() => router.back()}
-                    style={{
-                        position: 'absolute',
-                        left: getScaleFactor() * 16,
-                        width: getScaleFactor() * 24,
-                        height: getScaleFactor() * 24,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Ionicons
-                        name="chevron-back"
-                        size={getScaleFactor() * 24}
-                        color="#000000"
-                    />
-                </Pressable>
-                <TextScaled
-                    size="base"
-                    className="font-bold text-center"
-                >
-                    Công thức món ăn
-                </TextScaled>
-            </View>
+            <BackHeader 
+                headerTitle="Công thức món ăn" 
+                onPress={() => router.back()} 
+            />
 
             <ScrollView
                 className="flex-1"

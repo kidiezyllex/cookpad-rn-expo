@@ -7,6 +7,7 @@ import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { Alert, Image, ScrollView, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import BackHeader from '../Common/BackHeader';
 
 const ForgotPasswordScreen = () => {
     const [form, setForm] = useState({
@@ -30,37 +31,10 @@ const ForgotPasswordScreen = () => {
     return (
         <SafeAreaView className='flex-1 bg-backgroundV1'>
             <ScrollView className='flex-1 bg-backgroundV1'>
-                {/* Header */}
-                <View
-                    style={{
-                        height: getScaleFactor() * 44,
-                        minHeight: getScaleFactor() * 44,
-                    }}
-                    className="relative flex-row justify-center items-center w-full">
-                    <TouchableOpacity
-                        onPress={onBackPress}
-                        style={{
-                            position: 'absolute',
-                            left: getScaleFactor() * 16,
-                            width: getScaleFactor() * 24,
-                            height: getScaleFactor() * 24,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <Ionicons
-                            name="chevron-back"
-                            size={getScaleFactor() * 24}
-                            color="#000000"
-                        />
-                    </TouchableOpacity>
-                    <TextScaled
-                        size="base"
-                        className="justify-start font-bold text-center"
-                    >
-                        Quên mật khẩu
-                    </TextScaled>
-                </View>
+                <BackHeader 
+                    headerTitle="Quên mật khẩu" 
+                    onPress={onBackPress} 
+                />
 
                 {/* Main Content */}
                 <View

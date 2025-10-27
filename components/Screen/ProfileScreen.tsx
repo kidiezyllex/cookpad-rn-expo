@@ -118,7 +118,8 @@ const ProfileScreen = () => {
   const tabs = ['Bảng', 'Yêu thích', 'Công thức'];
 
   return (
-    <SafeAreaView className="flex-1" edges={['bottom', 'left', 'right']}>      <ScrollView
+    <SafeAreaView className="flex-1" edges={['bottom', 'left', 'right']}>
+      <ScrollView
       className="flex-1 bg-backgroundV1"
       contentContainerStyle={{ paddingBottom: getScaleFactor() * 120 }}
     >
@@ -157,7 +158,7 @@ const ProfileScreen = () => {
         </View>
         <CustomButton
           title="Chỉnh sửa cài đặt"
-          onPress={() => router.push('/profile-setting')}
+          onPress={() => router.push('/setting')}
           className="px-6 py-2"
           style={{
             width: 'auto',

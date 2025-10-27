@@ -21,8 +21,10 @@ import plusIcon from "@/assets/icons/plus-icon.png";
 import saveIcon from "@/assets/icons/save-icon.png";
 import save2Icon from "@/assets/icons/save2-icon.png";
 import searchIcon from "@/assets/icons/search-icon.png";
+import signOutIcon from "@/assets/icons/sign-out-icon.png";
 import smallPlusIcon from "@/assets/icons/small-plus-icon.png";
 import timerIcon from "@/assets/icons/timer-icon.png";
+import upRightIcon from "@/assets/icons/up-right-icon.png";
 import userIcon from "@/assets/icons/user-icon.png";
 import videoIcon from "@/assets/icons/video-icon.png";
 import check from "@/assets/images/check.png";
@@ -83,6 +85,8 @@ export const images = {
 };
 
 export const icons = {
+    upRightIcon,
+    signOutIcon,
     downUpIcon,
     smallPlusIcon,
     videoIcon,

@@ -1,3 +1,4 @@
+import BackHeader from '@/components/Common/BackHeader';
 import CustomButton from '@/components/Common/CustomButton';
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
@@ -31,37 +32,10 @@ const ChangePasswordScreen = () => {
   return (
     <SafeAreaView className='flex-1 bg-backgroundV1'>
       <ScrollView className='flex-1 bg-backgroundV1'>
-        {/* Header */}
-        <View
-          style={{
-            height: getScaleFactor() * 44,
-            minHeight: getScaleFactor() * 44,
-          }}
-          className="relative flex-row justify-center items-center w-full">
-          <TouchableOpacity
-            onPress={onBackPress}
-            style={{
-              position: 'absolute',
-              left: getScaleFactor() * 16,
-              width: getScaleFactor() * 24,
-              height: getScaleFactor() * 24,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Ionicons
-              name="chevron-back"
-              size={getScaleFactor() * 24}
-              color="#000000"
-            />
-          </TouchableOpacity>
-          <TextScaled
-            size="base"
-            className="justify-start font-bold text-center"
-          >
-            Đổi mật khẩu
-          </TextScaled>
-        </View>
+        <BackHeader 
+          headerTitle="Đổi mật khẩu" 
+          onPress={onBackPress} 
+        />
 
         {/* Main Content */}
         <View

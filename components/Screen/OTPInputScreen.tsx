@@ -1,8 +1,8 @@
+import BackHeader from '@/components/Common/BackHeader';
 import CustomButton from '@/components/Common/CustomButton';
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
-import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { Alert, Image, ScrollView, TouchableOpacity, View } from 'react-native';
@@ -33,37 +33,10 @@ const OTPInputScreen = () => {
   return (
     <SafeAreaView className='flex-1 bg-backgroundV1'>
       <ScrollView className='flex-1 bg-backgroundV1'>
-        {/* Header */}
-        <View
-          style={{
-            height: getScaleFactor() * 44,
-            minHeight: getScaleFactor() * 44,
-          }}
-          className="relative flex-row justify-center items-center w-full">
-          <TouchableOpacity
-            onPress={onBackPress}
-            style={{
-              position: 'absolute',
-              left: getScaleFactor() * 16,
-              width: getScaleFactor() * 24,
-              height: getScaleFactor() * 24,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Ionicons
-              name="chevron-back"
-              size={getScaleFactor() * 24}
-              color="#000000"
-            />
-          </TouchableOpacity>
-          <TextScaled
-            size="base"
-            className="justify-start font-bold text-center"
-          >
-            Nhập OTP
-          </TextScaled>
-        </View> 
+        <BackHeader 
+          headerTitle="Nhập OTP" 
+          onPress={onBackPress} 
+        /> 
 
         {/* Main Content */}
         <View

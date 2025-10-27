@@ -1,3 +1,4 @@
+import BackHeader from "@/components/Common/BackHeader";
 import TextScaled from "@/components/Common/TextScaled";
 import { icons, images } from "@/constants";
 import { getScaleFactor } from "@/lib/scaling";
@@ -15,25 +16,10 @@ const EditProfileScreen = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-backgroundV1">
-      {/* Header with back button */}
-      <View 
-        className="flex-row items-center px-4 py-2"
-        style={{ gap: getScaleFactor() * 16 }}
-      >
-        <Pressable
-          onPress={() => router.back()}
-          className="p-2"
-        >
-          <Image
-            source={icons.backArrow}
-            style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }}
-            resizeMode="contain"
-          />
-        </Pressable>
-        <TextScaled size="lg" className="font-bold text-black">
-          Chỉnh sửa hồ sơ
-        </TextScaled>
-      </View>
+      <BackHeader 
+        headerTitle="Chỉnh sửa hồ sơ" 
+        onPress={() => router.back()} 
+      />
 
       <ScrollView
         className="flex-1"
