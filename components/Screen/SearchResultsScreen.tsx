@@ -1,5 +1,5 @@
 import CustomFilter from '@/components/Common/CustomFilter';
-import { icons, images } from '@/constants';
+import { icons } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
 import { useRoute } from '@react-navigation/native';
 import { useState } from 'react';
@@ -16,17 +16,6 @@ const dietaryFilterData = [
     { id: '6', name: 'Keto', isSelected: false },
     { id: '7', name: 'Paleo', isSelected: false },
     { id: '8', name: 'Mediterranean', isSelected: false },
-];
-
-const searchedDishesData = [
-    { id: '1', name: 'Tôm hoàng đế ánh kim', image: images.featuredFood1, time: '3h 30m', likes: 234 },
-    { id: '2', name: 'Tôm nướng sốt tiêu đen', image: images.featuredFood2, time: '2h 15m', likes: 189 },
-    { id: '3', name: 'Lẩu hải sản với nước sốt tôm', image: images.featuredFood3, time: '1h 45m', likes: 156 },
-    { id: '4', name: 'Sò huyết rau mùi', image: images.featuredFood4, time: '1h 20m', likes: 98 },
-    { id: '5', name: 'Tôm sốt mắm ớt', image: images.featuredFood5, time: '45m', likes: 267 },
-    { id: '6', name: 'Tôm sốt mắm ớt', image: images.featuredFood6, time: '45m', likes: 267 },
-    { id: '7', name: 'Tôm sốt mắm ớt', image: images.featuredFood7, time: '45m', likes: 267 },
-    { id: '8', name: 'Tôm sốt mắm ớt', image: images.featuredFood8, time: '45m', likes: 267 },
 ];
 const SearchResultsScreen = () => {
     const route = useRoute();
@@ -116,7 +105,7 @@ const SearchResultsScreen = () => {
                     onToggleFilter={toggleFilterIcon}
                 />
 
-                <FoodGrid featuredRecipesData={searchedDishesData} />
+                <FoodGrid />
             </ScrollView>
         </SafeAreaView>
     );

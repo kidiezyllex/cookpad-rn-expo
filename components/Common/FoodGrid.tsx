@@ -1,5 +1,5 @@
 import TextScaled from '@/components/Common/TextScaled';
-import { icons } from '@/constants';
+import { icons, images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
 import { Image, View } from 'react-native';
 
@@ -12,10 +12,22 @@ interface FoodItem {
 }
 
 interface FoodGridProps {
-    featuredRecipesData: FoodItem[];
+    featuredRecipesData?: FoodItem[];
 }
 
 const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
+    const searchedDishesData = [
+        { id: '1', name: 'Tôm hoàng đế ánh kim', image: images.featuredFood1, time: '3h 30m', likes: 234 },
+        { id: '2', name: 'Tôm nướng sốt tiêu đen', image: images.featuredFood2, time: '2h 15m', likes: 189 },
+        { id: '3', name: 'Lẩu hải sản với nước sốt tôm', image: images.featuredFood3, time: '1h 45m', likes: 156 },
+        { id: '4', name: 'Sò huyết rau mùi', image: images.featuredFood4, time: '1h 20m', likes: 98 },
+        { id: '5', name: 'Tôm sốt mắm ớt', image: images.featuredFood5, time: '45m', likes: 267 },
+        { id: '6', name: 'Tôm sốt mắm ớt', image: images.featuredFood6, time: '45m', likes: 267 },
+        { id: '7', name: 'Tôm sốt mắm ớt', image: images.featuredFood7, time: '45m', likes: 267 },
+        { id: '8', name: 'Tôm sốt mắm ớt', image: images.featuredFood8, time: '45m', likes: 267 },
+    ];
+
+    const data = featuredRecipesData || searchedDishesData;
     return (
         <View
             style={{
@@ -44,7 +56,7 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                         paddingRight: getScaleFactor() * 4,
                     }}
                 >
-                    {featuredRecipesData.slice(0, 4).map((item, index) => (
+                    {data.slice(0, 4).map((item, index) => (
                         <View
                             key={item.id}
                             style={{
@@ -111,7 +123,7 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                         paddingLeft: getScaleFactor() * 4,
                     }}
                 >
-                    {featuredRecipesData.slice(4, 8).map((item, index) => (
+                    {data.slice(4, 8).map((item, index) => (
                         <View
                             key={item.id}
                             style={{

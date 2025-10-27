@@ -3,11 +3,8 @@ import TextScaled from '@/components/Common/TextScaled';
 import { getScaleFactor } from '@/lib/scaling';
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Dimensions, View } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-const { width: screenWidth } = Dimensions.get('window');
-
 const cookingSkillLevels = [
   "Không có kinh nghiệm",
   "Cơ bản", 

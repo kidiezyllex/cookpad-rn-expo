@@ -1,38 +1,13 @@
 import CustomButton from '@/components/Common/CustomButton';
 import CustomFilter from '@/components/Common/CustomFilter';
 import TextScaled from '@/components/Common/TextScaled';
-import { icons, images } from '@/constants';
+import { icons } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
 import { useState } from 'react';
 import { Image, View } from 'react-native';
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
+import { featuredRecipesData, ingredientsData } from '../mockData';
 import RecipeCard from './RecipeCard';
-
-const ingredientsData = [
-    { id: '1', name: 'Tôm', isSelected: true },
-    { id: '2', name: 'Bánh mỳ', isSelected: false },
-    { id: '3', name: 'Cá', isSelected: false },
-    { id: '4', name: 'Thịt lợn', isSelected: false },
-    { id: '5', name: 'Thịt bò', isSelected: false },
-    { id: '6', name: 'Trứng', isSelected: false },
-    { id: '7', name: 'Gà', isSelected: false },
-    { id: '8', name: 'Rau xanh', isSelected: false },
-    { id: '9', name: 'Cà chua', isSelected: false },
-    { id: '10', name: 'Hành tây', isSelected: false },
-    { id: '11', name: 'Tỏi', isSelected: false },
-    { id: '12', name: 'Gừng', isSelected: false },
-];
-
-const featuredRecipesData = [
-    { id: '1', name: 'Tôm hoàng đế ánh kim', image: images.featuredFood1, time: '3h 30m', likes: 234 },
-    { id: '2', name: 'Tôm nướng sốt tiêu đen', image: images.featuredFood2, time: '2h 15m', likes: 189 },
-    { id: '3', name: 'Lẩu hải sản với nước sốt tôm', image: images.featuredFood3, time: '1h 45m', likes: 156 },
-    { id: '4', name: 'Sò huyết rau mùi', image: images.featuredFood4, time: '1h 20m', likes: 98 },
-    { id: '5', name: 'Tôm sốt mắm ớt', image: images.featuredFood5, time: '45m', likes: 267 },
-    { id: '6', name: 'Cá nướng lá chuối', image: images.featuredFood6, time: '1h 15m', likes: 189 },
-    { id: '7', name: 'Thịt bò xào rau củ', image: images.featuredFood7, time: '30m', likes: 156 },
-    { id: '8', name: 'Trứng chiên thịt bằm', image: images.featuredFood8, time: '20m', likes: 123 },
-];
 
 const IngredientsSection = () => {
     const [selectedIngredients, setSelectedIngredients] = useState<string[]>(['1']);

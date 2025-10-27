@@ -47,17 +47,12 @@ export default function TabBarWrapper() {
   const pathname = usePathname();
   const router = useRouter();
   const getActiveTab = () => {
-    // Normalize pathname and handle different path formats
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
-    
-    // Check for exact matches first
     if (normalizedPath === "/(root)/tabs/home" || normalizedPath === "/(root)/tabs" || normalizedPath === "/") return "home";
     if (normalizedPath === "/(root)/tabs/search") return "search";
     if (normalizedPath === "/(root)/tabs/plus") return "plus";
     if (normalizedPath === "/(root)/tabs/bell") return "bell";
     if (normalizedPath === "/(root)/tabs/profile") return "profile";
-    
-    // Check for partial matches (in case pathname format is different)
     if (normalizedPath.includes('/home')) return "home";
     if (normalizedPath.includes('/search')) return "search";
     if (normalizedPath.includes('/plus')) return "plus";

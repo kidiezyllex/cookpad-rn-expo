@@ -1,117 +1,14 @@
 import CustomButton from "@/components/Common/CustomButton";
 import TextScaled from "@/components/Common/TextScaled";
+import RecipeCard from "@/components/ProfileScreen/RecipeCard";
 import { icons, images } from "@/constants";
 import { getScaleFactor } from "@/lib/scaling";
 import { router } from "expo-router";
 import React from "react";
 import { FlatList, Image, Pressable, ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-// Mock data for recipes
-const mockRecipes = [
-  {
-    id: 1,
-    title: "Lòng xào dưa",
-    views: 234,
-    time: "12 giờ",
-    images: [images.sampleFood1, images.sampleFood2, images.sampleFood3]
-  },
-  {
-    id: 2,
-    title: "Hải sản",
-    views: 234,
-    time: "17 giờ",
-    images: [images.sampleFood1, images.sampleFood2, images.sampleFood3]
-  },
-  {
-    id: 3,
-    title: "Món Healthy",
-    views: 234,
-    time: "5 ngày",
-    images: [images.sampleFood1, images.sampleFood2, images.sampleFood3]
-  },
-  {
-    id: 4,
-    title: "Ức gà chiên",
-    views: 234,
-    time: "7 ngày",
-    images: [images.sampleFood1, images.sampleFood2, images.sampleFood3]
-  },
-  {
-    id: 5,
-    title: "Nước ép",
-    views: 234,
-    time: "9 ngày",
-    images: [images.sampleFood1, images.sampleFood2, images.sampleFood3]
-  }
-];
-
-const RecipeCard = ({ item }: { item: typeof mockRecipes[0] }) => (
-  <Pressable
-    onPress={() => router.push('/table-selection')}
-    className="bg-white rounded-lg shadow-sm"
-    style={{
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: getScaleFactor() * 3 },
-      shadowOpacity: 0.1,
-      shadowRadius: getScaleFactor() * 12,
-      elevation: 3,
-    }}
-  >
-    <View className="flex-row">
-      <Image
-        source={item.images[0]}
-        style={{
-          width: getScaleFactor() * 112,
-          height: getScaleFactor() * 112,
-          borderTopLeftRadius: getScaleFactor() * 8,
-          borderRightWidth: 1,
-          borderColor: 'white',
-        }}
-        resizeMode="cover"
-      />
-      <View>
-        <Image
-          source={item.images[1]}
-          style={{
-            width: getScaleFactor() * 56,
-            height: getScaleFactor() * 56,
-            borderTopRightRadius: getScaleFactor() * 8,
-          }}
-          resizeMode="cover"
-        />
-        <Image
-          source={item.images[2]}
-          style={{
-            width: getScaleFactor() * 56,
-            height: getScaleFactor() * 56,
-          }}
-          resizeMode="cover"
-        />
-      </View>
-    </View>
-    <View style={{ paddingHorizontal: getScaleFactor() * 8, paddingVertical: getScaleFactor() * 8 }}>
-      <TextScaled style={{ marginBottom: getScaleFactor() * 4 }} size="sm" className="font-medium text-black">
-        {item.title}
-      </TextScaled>
-      <View style={{ gap: getScaleFactor() * 8 }} className="flex-row items-center">
-        <View style={{ gap: getScaleFactor() * 4 }} className="flex-row items-center">
-          <Image
-            source={icons.saveIcon}
-            style={{ width: getScaleFactor() * 16, height: getScaleFactor() * 16 }}
-            resizeMode="contain"
-          />
-          <TextScaled size="xs" className="text-textNeutralV1">
-            {item.views}
-          </TextScaled>
-        </View>
-        <TextScaled size="xs" className="text-textNeutralV1">
-          {item.time}
-        </TextScaled>
-      </View>
-    </View>
-  </Pressable>
-);
+import FoodGrid from "../Common/FoodGrid";
+import { mockRecipes } from "../ProfileScreen/mockData";
 
 const ProfileScreen = () => {
   const [activeTab, setActiveTab] = React.useState('Bảng');
@@ -239,30 +136,64 @@ const ProfileScreen = () => {
         </View>
       </View>
 
-      {/* Recipe Grid */}
-      <View
-        className="flex-col justify-center items-center"
-        style={{ gap: getScaleFactor() * 24, }}
-      >
-        <FlatList
-          data={mockRecipes}
-          renderItem={({ item }) => <RecipeCard item={item} />}
-          keyExtractor={(item) => item.id.toString()}
-          numColumns={2}
-          scrollEnabled={false}
-          style={{
-            width: '100%',
-            paddingHorizontal: getScaleFactor() * 16,
-            paddingBottom: getScaleFactor() * 4,
-          }}
-          contentContainerStyle={{
-            gap: getScaleFactor() * 16,
-          }}
-          columnWrapperStyle={{
-            gap: getScaleFactor() * 8,
-          }}
-        />
-      </View>
+      {/* Tab Content */}
+      {activeTab === 'Bảng' && (
+        <View
+          className="flex-col justify-center items-center"
+          style={{ gap: getScaleFactor() * 24 }}
+        >
+          <FlatList
+            data={mockRecipes}
+            renderItem={({ item }) => <RecipeCard item={item} />}
+            keyExtractor={(item) => item.id.toString()}
+            numColumns={2}
+            scrollEnabled={false}
+            style={{
+              width: '100%',
+              paddingHorizontal: getScaleFactor() * 16,
+              paddingBottom: getScaleFactor() * 4,
+            }}
+            contentContainerStyle={{
+              gap: getScaleFactor() * 16,
+            }}
+            columnWrapperStyle={{
+              gap: getScaleFactor() * 8,
+            }}
+          />
+        </View>
+      )}
+
+      {activeTab === 'Yêu thích' && (
+        <View style={{ paddingHorizontal: getScaleFactor() * 16 }}>
+          <FoodGrid />
+        </View>
+      )}
+
+      {activeTab === 'Công thức' && (
+        <View
+          className="flex-col justify-center items-center"
+          style={{ gap: getScaleFactor() * 24 }}
+        >
+          <FlatList
+            data={mockRecipes}
+            renderItem={({ item }) => <RecipeCard item={item} />}
+            keyExtractor={(item) => item.id.toString()}
+            numColumns={2}
+            scrollEnabled={false}
+            style={{
+              width: '100%',
+              paddingHorizontal: getScaleFactor() * 16,
+              paddingBottom: getScaleFactor() * 4,
+            }}
+            contentContainerStyle={{
+              gap: getScaleFactor() * 16,
+            }}
+            columnWrapperStyle={{
+              gap: getScaleFactor() * 8,
+            }}
+          />
+        </View>
+      )}
     </ScrollView>
     </SafeAreaView>
   );
