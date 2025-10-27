@@ -1,6 +1,7 @@
 import CustomButton from "@/components/Common/CustomButton";
 import TextScaled from "@/components/Common/TextScaled";
 import RecipeCard from "@/components/ProfileScreen/RecipeCard";
+import RecipeListItem from "@/components/ProfileScreen/RecipeListItem";
 import { icons, images } from "@/constants";
 import { getScaleFactor } from "@/lib/scaling";
 import { router } from "expo-router";
@@ -8,7 +9,7 @@ import React from "react";
 import { FlatList, Image, Pressable, ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FoodGrid from "../Common/FoodGrid";
-import { mockRecipes } from "../ProfileScreen/mockData";
+import { mockRecipeList, mockRecipes } from "../ProfileScreen/mockData";
 
 const ProfileScreen = () => {
   const [activeTab, setActiveTab] = React.useState('Bảng');
@@ -21,7 +22,7 @@ const ProfileScreen = () => {
       className="flex-1 bg-backgroundV1"
       contentContainerStyle={{ paddingBottom: getScaleFactor() * 120 }}
     >
-      {/* Profile Header */}
+      {/* Avatar and Name, Chỉnh sửa cài đặt*/}
       <View
         className="flex-col justify-center items-center"
         style={{ marginTop: getScaleFactor() * 40 }}
@@ -171,26 +172,17 @@ const ProfileScreen = () => {
 
       {activeTab === 'Công thức' && (
         <View
-          className="flex-col justify-center items-center"
-          style={{ gap: getScaleFactor() * 24 }}
+          style={{
+            gap: getScaleFactor() * 8,
+            paddingHorizontal: getScaleFactor() * 16,
+            paddingBottom: getScaleFactor() * 16,
+          }}
         >
           <FlatList
-            data={mockRecipes}
-            renderItem={({ item }) => <RecipeCard item={item} />}
+            data={mockRecipeList}
+            renderItem={({ item }) => <RecipeListItem item={item} />}
             keyExtractor={(item) => item.id.toString()}
-            numColumns={2}
             scrollEnabled={false}
-            style={{
-              width: '100%',
-              paddingHorizontal: getScaleFactor() * 16,
-              paddingBottom: getScaleFactor() * 4,
-            }}
-            contentContainerStyle={{
-              gap: getScaleFactor() * 16,
-            }}
-            columnWrapperStyle={{
-              gap: getScaleFactor() * 8,
-            }}
           />
         </View>
       )}

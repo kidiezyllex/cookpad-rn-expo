@@ -37,3 +37,60 @@ export const mockRecipes = [
       images: [images.sampleFood1, images.sampleFood2, images.sampleFood3]
     }
   ];
+
+export const mockRecipeList = [
+  {
+    id: 1,
+    title: "Gà nướng sốt tiêu",
+    description: "Create a 1/7 scale commercialized figurine of the characters in the picture. The figurine wears an extremely glossy suit in a realistic style, in a real environment. The figurine is placed on a computer desk. The figurine features a round, transparent acrylic base with no text. The image depict a freaking garbage bin on the faceground. I don't know exactly",
+    image: images.sampleFood1,
+    comments: 16,
+    saves: 34,
+    views: 65
+  },
+  {
+    id: 2,
+    title: "Tôm hoàng đế ánh kim",
+    description: "Create a 1/7 scale commercialized figurine of the characters in the picture. The figurine wears an extremely glossy suit in a realistic style, in a real environment. The figurine is placed on a computer desk. The figurine features a round, transparent acrylic base with no text. The image depict a freaking garbage bin on the faceground. I don't know exactly",
+    image: images.sampleFood2,
+    comments: 16,
+    saves: 34,
+    views: 65
+  },
+  {
+    id: 3,
+    title: "Gà nướng sốt tiêu",
+    description: "Create a 1/7 scale commercialized figurine of the characters in the picture. The figurine wears an extremely glossy suit in a realistic style, in a real environment. The figurine is placed on a computer desk. The figurine features a round, transparent acrylic base with no text. The image depict a freaking garbage bin on the faceground. I don't know exactly",
+    image: images.sampleFood3,
+    comments: 16,
+    saves: 34,
+    views: 65
+  },
+  {
+    id: 4,
+    title: "Gà nướng sốt tiêu",
+    description: "Create a 1/7 scale commercialized figurine of the characters in the picture. The figurine wears an extremely glossy suit in a realistic style, in a real environment. The figurine is placed on a computer desk. The figurine features a round, transparent acrylic base with no text. The image depict a freaking garbage bin on the faceground. I don't know exactly",
+    image: images.sampleFood1,
+    comments: 16,
+    saves: 34,
+    views: 65
+  },
+  {
+    id: 5,
+    title: "Gà nướng sốt tiêu",
+    description: "Create a 1/7 scale commercialized figurine of the characters in the picture. The figurine wears an extremely glossy suit in a realistic style, in a real environment. The figurine is placed on a computer desk. The figurine features a round, transparent acrylic base with no text. The image depict a freaking garbage bin on the faceground. I don't know exactly",
+    image: images.sampleFood2,
+    comments: 16,
+    saves: 34,
+    views: 65
+  },
+  {
+    id: 6,
+    title: "Gà nướng sốt tiêu",
+    description: "Create a 1/7 scale commercialized figurine of the characters in the picture. The figurine wears an extremely glossy suit in a realistic style, in a real environment. The figurine is placed on a computer desk. The figurine features a round, transparent acrylic base with no text. The image depict a freaking garbage bin on the faceground. I don't know exactly",
+    image: images.sampleFood3,
+    comments: 16,
+    saves: 34,
+    views: 65
+  }
+];

@@ -85,7 +85,7 @@ export const messagesData = [
     },
   ];
 
-  export const notificationsData = [
+export const notificationsData = [
     {
         id: '1',
         title: 'Hôm nay',
