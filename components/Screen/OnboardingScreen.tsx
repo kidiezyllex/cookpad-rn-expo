@@ -1,5 +1,6 @@
 import CustomButton from '@/components/Common/CustomButton';
 import { onboarding } from '@/constants';
+import { getScaleFactor } from '@/lib/scaling';
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import { Dimensions, Image, Text, View } from 'react-native';
@@ -14,7 +15,11 @@ const OnboardingScreen = () => {
     const isLastSlide = activeIndex === onboarding.length - 1;
 
     return (
-        <SafeAreaView className='flex justify-between items-center p-4 h-full bg-backgroundV1'>
+        <SafeAreaView
+            style={{
+                paddingHorizontal: getScaleFactor() * 16,
+            }}
+            className='flex justify-between items-center h-full bg-backgroundV1'>
             <SwiperFlatList
                 ref={swiperRef}
                 autoplay={false}
@@ -53,14 +58,28 @@ const OnboardingScreen = () => {
                             }}
                             resizeMode='contain'
                         />
-                        <Text className='mt-8 text-xl font-medium text-center text-black'>{item.title}</Text>
-                        <Text className="px-4 mt-2 text-lg text-center text-textNeutralV1">
+                        <Text
+                            style={{
+                                marginTop: getScaleFactor() * 32,
+                            }}
+                            className='text-xl font-medium text-center text-black'>{item.title}</Text>
+                        <Text
+                            style={{
+                                marginTop: getScaleFactor() * 8,
+                                paddingHorizontal: getScaleFactor() * 16,
+                            }}
+                            className="text-lg text-center text-textNeutralV1">
                             {item.description}
                         </Text>
                     </View>
                 )}
             />
-            <View className='flex-col gap-2 justify-between items-center px-4 my-10 w-full'>
+            <View
+                style={{
+                    gap: getScaleFactor() * 8,
+                    marginVertical: getScaleFactor() * 40
+                }}
+                className='flex-col justify-between items-center w-full'>
                 <CustomButton
                     title={isLastSlide ? "Đăng nhập" : "Tiếp tục"}
                     onPress={() =>

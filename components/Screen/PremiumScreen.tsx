@@ -3,31 +3,18 @@ import TextScaled from "@/components/Common/TextScaled";
 import { icons, images } from "@/constants";
 import { getScaleFactor } from "@/lib/scaling";
 import { router } from "expo-router";
-import { Image, Pressable, ScrollView, View } from "react-native";
+import { Image, ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BackHeader from "../Common/BackHeader";
 
 const PremiumScreen = () => {
   return (
-    <SafeAreaView className="flex-1 bg-backgroundV1">
-      {/* Header with back button */}
-      <View 
-        className="flex-row items-center px-4 py-2"
-        style={{ gap: getScaleFactor() * 16 }}
-      >
-        <Pressable
-          onPress={() => router.back()}
-          className="p-2"
-        >
-          <Image
-            source={icons.backArrow}
-            style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }}
-            resizeMode="contain"
-          />
-        </Pressable>
-        <TextScaled size="lg" className="font-bold text-black">
-          Premium
-        </TextScaled>
-      </View>
+    <SafeAreaView className="flex-1 bg-[#2D2D2D]">
+      <BackHeader
+        headerTitle="Premium"
+        onPress={() => router.back()}
+        isDark={true}
+      />
 
       <ScrollView
         className="flex-1"
@@ -36,6 +23,7 @@ const PremiumScreen = () => {
           paddingHorizontal: getScaleFactor() * 16,
           alignItems: 'flex-start',
           gap: getScaleFactor() * 80,
+          marginTop: getScaleFactor() * 32,
         }}
       >
         {/* Title Section */}
@@ -43,25 +31,15 @@ const PremiumScreen = () => {
           className="flex-col justify-start items-start"
           style={{ width: '100%' }}
         >
-          <View 
-            className="px-4"
-            style={{ width: '100%' }}
-          >
             <TextScaled size="xl" className="font-bold text-white">
               Chuyển đổi sang gói Premium để trở thành{' '}
               <TextScaled size="xl" className="font-bold text-customPrimary">
                 Vua Đầu Bếp
               </TextScaled>
             </TextScaled>
-          </View>
-          <View 
-            className="px-4"
-            style={{ width: '100%', marginTop: getScaleFactor() * 4 }}
-          >
-            <TextScaled size="xs" className="text-white">
+            <TextScaled size="sm" className="text-white">
               Hoàn thiện các công thức nấu ăn của bạn bằng công cụ phân tích gu ăn uống, hiển thị công thức hoàn chỉnh và video các bước thực hành món.
             </TextScaled>
-          </View>
         </View>
 
         {/* Avatar Section */}
@@ -86,12 +64,12 @@ const PremiumScreen = () => {
             
             {/* Arrow Icon */}
             <View 
-              className="h-11 flex-row justify-start items-center"
-              style={{ gap: getScaleFactor() * 10 }}
+              className="flex-row justify-start items-center"
+              style={{ height: getScaleFactor() * 44 }}
             >
               <Image
-                source={icons.clockIcon}
-                style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }}
+                source={icons.forwardArrow}
+                style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24, tintColor: '#FFFFFF' }}
                 resizeMode="contain"
               />
             </View>
@@ -100,8 +78,8 @@ const PremiumScreen = () => {
             <View 
               className="relative"
               style={{
-                width: getScaleFactor() * 56,
-                height: getScaleFactor() * 64,
+                width: getScaleFactor() * 53,
+                height: getScaleFactor() * 65,
               }}
             >
               <Image
@@ -109,7 +87,7 @@ const PremiumScreen = () => {
                 style={{
                   width: getScaleFactor() * 44,
                   height: getScaleFactor() * 44,
-                  borderRadius: getScaleFactor() * 99,
+                  borderRadius: 100,
                   borderWidth: 2,
                   borderColor: '#E36137',
                   position: 'absolute',
@@ -118,16 +96,15 @@ const PremiumScreen = () => {
                 }}
                 resizeMode="cover"
               />
-              {/* Crown Icon */}
+              {/* Chef Icon */}
               <Image
-                source={icons.clockIcon}
+                source={icons.chefIcon}
                 style={{
-                  width: getScaleFactor() * 24,
-                  height: getScaleFactor() * 20,
+                  width: getScaleFactor() * 28,
+                  height: getScaleFactor() * 28,
                   position: 'absolute',
-                  left: getScaleFactor() * 32,
+                  right: 0,
                   top: 0,
-                  transform: [{ rotate: '30deg' }],
                 }}
                 resizeMode="contain"
               />
@@ -137,14 +114,7 @@ const PremiumScreen = () => {
           {/* Premium Button */}
           <CustomButton
             title="Chuyển đổi thành Premium"
-            onPress={() => {
-              // Handle premium upgrade
-              console.log('Premium upgrade clicked');
-            }}
-            className="px-6 py-2"
-            style={{
-              width: 'auto',
-            }}
+            style={{ maxWidth: getScaleFactor() * 265 }}
           />
         </View>
       </ScrollView>

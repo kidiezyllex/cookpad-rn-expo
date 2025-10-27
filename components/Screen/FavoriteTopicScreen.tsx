@@ -54,7 +54,11 @@ const FavoriteTopicScreen = () => {
       </View>
 
       {/* Main content */}
-      <View className="flex flex-col gap-8 justify-center items-center">
+      <View className="flex flex-col justify-center items-center"
+        style={{
+          gap: getScaleFactor() * 32,
+        }}
+      >
         {/* Title */}
         <View 
           className="flex justify-center items-center bg-red-500"
@@ -68,7 +72,11 @@ const FavoriteTopicScreen = () => {
         </View>
 
         {/* Skill level options */}
-        <View className="flex flex-col gap-2 justify-start items-center">
+        <View className="flex flex-col justify-start items-center"
+          style={{
+            gap: getScaleFactor() * 8,
+          }}
+        >
           {cookingSkillLevels.map((level, index) => (
             <CustomButton
               key={index}
@@ -92,8 +100,11 @@ const FavoriteTopicScreen = () => {
 
       {/* Bottom section */}
       <View 
-        className="flex flex-col gap-2 justify-center items-center"
-        style={{ marginBottom: getScaleFactor() * 40 }}
+        className="flex flex-col justify-center items-center"
+        style={{
+          gap: getScaleFactor() * 8,
+          marginBottom: getScaleFactor() * 40,
+        }}
       >
         {/* Note text */}
         <View 

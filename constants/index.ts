@@ -9,14 +9,17 @@ import bellIcon from "@/assets/icons/bell-icon.png";
 import cameraIcon from "@/assets/icons/camera-icon.png";
 import caretLeftIcon from "@/assets/icons/caret-left-icon.png";
 import chatIcon from "@/assets/icons/chat-icon.png";
+import chefIcon from "@/assets/icons/chef-icon.png";
 import clockIcon from "@/assets/icons/clock-icon.png";
 import closeIcon from "@/assets/icons/close-icon.png";
 import threeDotsIcon from "@/assets/icons/dots-three-icon.png";
 import downUpIcon from "@/assets/icons/down-up-icon.png";
+import faceIcon from "@/assets/icons/faceid-icon.png";
 import fireIcon from "@/assets/icons/fire-icon.png";
 import forwardArrow from "@/assets/icons/forward-arrow.png";
 import heartIcon from "@/assets/icons/heart-icon.png";
 import homeIcon from "@/assets/icons/house-icon.png";
+import lockIcon from "@/assets/icons/lock-icon.png";
 import plusIcon from "@/assets/icons/plus-icon.png";
 import saveIcon from "@/assets/icons/save-icon.png";
 import save2Icon from "@/assets/icons/save2-icon.png";
@@ -85,6 +88,9 @@ export const images = {
 };
 
 export const icons = {
+    chefIcon,
+    lockIcon,
+    faceIcon,
     upRightIcon,
     signOutIcon,
     downUpIcon,

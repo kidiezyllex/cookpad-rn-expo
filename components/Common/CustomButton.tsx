@@ -1,4 +1,5 @@
-import { Pressable } from 'react-native';
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
 
 import { getScaleFactor } from '@/lib/scaling';
 import { ButtonProps } from "@/types/type";
@@ -55,21 +56,34 @@ const CustomButton = ({
   IconRight,
   className,
   ...props
-}: ButtonProps) => (
-  <Pressable 
-    onPress={onPress}
-    className={`flex flex-row justify-center items-center px-6 py-2 w-full rounded-lg shadow-md shadow-neutral-400/70 ${getBgVariantStyle(bgVariant)} ${className}`}
-    style={{ 
-      height: getScaleFactor() * 40, 
-      minHeight: getScaleFactor() * 40,
-      gap: getScaleFactor() * 8,
-    }}
-    {...props}
-  >
-    {IconLeft && (typeof IconLeft === 'function' ? <IconLeft /> : IconLeft)}
-    <TextScaled style={{color: getTextVariantStyle(textVariant)}} size="base" className={`font-bold`}>{title}</TextScaled>
-    {IconRight && (typeof IconRight === 'function' ? <IconRight /> : IconRight)}
-  </Pressable>
-);
+}: ButtonProps) => {
+  const [isPressed, setIsPressed] = useState(false);
+
+  return (
+    <Pressable 
+      onPress={onPress}
+      onPressIn={() => setIsPressed(true)}
+      onPressOut={() => setIsPressed(false)}
+      className="w-full"
+      {...props}
+    >
+      <View
+        className={`flex flex-row justify-center items-center rounded-lg shadow-md shadow-neutral-400/70 ${getBgVariantStyle(bgVariant)} ${className}`}
+        style={{ 
+          height: getScaleFactor() * 40, 
+          minHeight: getScaleFactor() * 40,
+          paddingHorizontal: getScaleFactor() * 24,
+          paddingVertical: getScaleFactor() * 8,
+          gap: getScaleFactor() * 8,
+          opacity: isPressed ? 0.9 : 1,
+        }}
+      >
+        {IconLeft && (typeof IconLeft === 'function' ? <IconLeft /> : IconLeft)}
+        <TextScaled style={{color: getTextVariantStyle(textVariant)}} size="base" className={`font-bold`}>{title}</TextScaled>
+        {IconRight && (typeof IconRight === 'function' ? <IconRight /> : IconRight)}
+      </View>
+    </Pressable>
+  );
+};
 
 export default CustomButton;

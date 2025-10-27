@@ -8,6 +8,7 @@ import { Link, router } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { Alert, Image, ScrollView, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Input from '../Common/Input';
 
 const SignUpScreen = () => {
   const [form, setForm] = useState({
@@ -86,19 +87,10 @@ const SignUpScreen = () => {
               >
                 Tài khoản
               </TextScaled>
-              <TextInput
+              <Input
                 placeholder="Email hoặc số điện thoại"
                 value={form.email}
                 onChangeText={(value) => setForm({ ...form, email: value })}
-                style={{
-                  width: '100%',
-                  padding: getScaleFactor() * 8,
-                  height: getScaleFactor() * 40,
-                  backgroundColor: 'white',
-                  borderRadius: 8,
-                  fontSize: getScaleFactor() * 16,
-                }}
-                placeholderTextColor="#AAAAAA"
               />
             </View>
 
@@ -115,20 +107,11 @@ const SignUpScreen = () => {
               >
                 Số điện thoại
               </TextScaled>
-              <TextInput
+              <Input
                 placeholder="Nhập số điện thoại"
                 value={form.phone}
                 onChangeText={(value) => setForm({ ...form, phone: value })}
                 keyboardType="phone-pad"
-                style={{
-                  width: '100%',
-                  padding: getScaleFactor() * 8,
-                  height: getScaleFactor() * 40,
-                  backgroundColor: 'white',
-                  borderRadius: 8,
-                  fontSize: getScaleFactor() * 16,
-                }}
-                placeholderTextColor="#AAAAAA"
               />
             </View>
 

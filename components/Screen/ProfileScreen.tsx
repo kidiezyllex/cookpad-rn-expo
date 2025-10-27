@@ -159,11 +159,12 @@ const ProfileScreen = () => {
         <CustomButton
           title="Chỉnh sửa cài đặt"
           onPress={() => router.push('/setting')}
-          className="px-6 py-2"
           style={{
             width: 'auto',
             height: getScaleFactor() * 40,
             marginBottom: getScaleFactor() * 24,
+            paddingHorizontal: getScaleFactor() * 24,
+            paddingVertical: getScaleFactor() * 8,
           }}
         />
       </View>

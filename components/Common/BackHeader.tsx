@@ -7,9 +7,10 @@ import TextScaled from './TextScaled';
 interface BackHeaderProps {
   headerTitle: string;
   onPress: () => void;
+  isDark?: boolean;
 }
 
-const BackHeader: React.FC<BackHeaderProps> = ({ headerTitle, onPress }) => {
+const BackHeader: React.FC<BackHeaderProps> = ({ headerTitle, onPress, isDark = false }) => {
   return (
     <View
       style={{
@@ -32,12 +33,12 @@ const BackHeader: React.FC<BackHeaderProps> = ({ headerTitle, onPress }) => {
         <Ionicons
           name="chevron-back"
           size={getScaleFactor() * 24}
-          color="#000000"
+          color={isDark ? "#FFFFFF" : "#000000"}
         />
       </TouchableOpacity>
       <TextScaled
         size="base"
-        className="justify-start font-bold text-center"
+        className={`justify-start font-bold text-center ${isDark ? 'text-white' : 'text-black'}`}
       >
         {headerTitle}
       </TextScaled>

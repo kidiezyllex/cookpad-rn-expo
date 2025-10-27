@@ -3,7 +3,7 @@ import TextScaled from "@/components/Common/TextScaled";
 import { icons } from "@/constants";
 import { getScaleFactor } from "@/lib/scaling";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { router, useRouter } from "expo-router";
 import { Image, Pressable, ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomButton from "../Common/CustomButton";
@@ -87,7 +87,7 @@ const SettingsSection = ({ section, onItemPress }: { section: typeof settingsSec
         bgVariant="ghost"
         textVariant="ghost"
         IconRight={<Image source={icons.signOutIcon} style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }} resizeMode="contain" />}
-        onPress={() => {}}
+        onPress={() => router.replace('/(auth)/sign-in')}
       />
       </View>
     )}

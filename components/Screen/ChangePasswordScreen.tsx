@@ -150,7 +150,7 @@ const ChangePasswordScreen = () => {
                   style={{
                     width: '100%',
                     padding: getScaleFactor() * 8,
-                    paddingRight: getScaleFactor() * 40, // Make space for the icon
+                    paddingRight: getScaleFactor() * 40,
                     height: getScaleFactor() * 40,
                     backgroundColor: 'white',
                     borderRadius: 8,

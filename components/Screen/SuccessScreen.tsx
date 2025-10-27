@@ -4,7 +4,7 @@ import { getScaleFactor } from '@/lib/scaling';
 import { Image, ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const RegisterSuccessScreen = () => {
+const SuccessScreen = () => {
     return (
         <SafeAreaView className='flex-1 bg-backgroundV1'>
             <ScrollView className='flex-1 bg-backgroundV1'>
@@ -38,8 +38,11 @@ const RegisterSuccessScreen = () => {
                             Đăng ký thành công!
                         </TextScaled>
                         <TextScaled
+                            style={{
+                                paddingHorizontal: getScaleFactor() * 16,
+                            }}
                             size="base"
-                            className="px-4 leading-normal text-center text-textNeutralV1"
+                            className="leading-normal text-center text-textNeutralV1"
                         >
                             Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.
                         </TextScaled>
@@ -50,4 +53,4 @@ const RegisterSuccessScreen = () => {
     );
 };
 
-export default RegisterSuccessScreen;
+export default SuccessScreen;

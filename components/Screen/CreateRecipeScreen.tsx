@@ -6,15 +6,14 @@ import { FlatList, Image, Pressable, ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import BackHeader from '../Common/BackHeader';
 import CustomButton from '../Common/CustomButton';
+import Input from '../Common/Input';
 import TextScaled from '../Common/TextScaled';
 
-// Mock data for ingredients
 const ingredientsData = [
     { id: '1', name: 'Thành phần 1', amount: '250g bột' },
     { id: '2', name: 'Thành phần 2', amount: '250g bột' },
 ];
 
-// Mock data for cooking steps
 const cookingStepsData = [
     { id: '1', step: 'Bước 1', description: 'Miêu tả bước 1' },
     { id: '2', step: 'Bước 2', description: 'Miêu tả bước 2' },
@@ -237,26 +236,13 @@ const CreateRecipeScreen = () => {
                         >
                             Tên món ăn
                         </TextScaled>
-                        <View
-                            style={{
-                                alignSelf: 'stretch',
-                                height: getScaleFactor() * 40,
-                                padding: getScaleFactor() * 8,
-                                backgroundColor: '#FFFFFF',
-                                borderRadius: getScaleFactor() * 8,
-                                flexDirection: 'row',
-                                justifyContent: 'flex-start',
-                                alignItems: 'center',
-                                gap: getScaleFactor() * 8,
+                        <Input
+                            placeholder="Tên món ngon nhất nhà mình"
+                            value=""
+                            onChangeText={(text) => {
+                                // Handle text change
                             }}
-                        >
-                            <TextScaled
-                                size="base"
-                                className="text-textNeutralV1 font-light"
-                            >
-                                Tên món ngon nhất nhà mình
-                            </TextScaled>
-                        </View>
+                        />
                     </View>
 
                     {/* Recipe Description */}

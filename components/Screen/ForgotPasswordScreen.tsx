@@ -60,7 +60,10 @@ const ForgotPasswordScreen = () => {
                     >
                         <TextScaled
                             size="base"
-                            className="px-4 text-center text-textNeutralV1"
+                            className="text-center text-textNeutralV1"
+                            style={{
+                                paddingHorizontal: getScaleFactor() * 16,
+                            }}
                         >
                             Mã OTP lấy lại mật khẩu sẽ được gửi tới số điện thoại của bạn. Vui lòng nhập đúng số điện thoại bạn đã dùng để đăng ký.
                         </TextScaled>

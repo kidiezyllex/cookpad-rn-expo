@@ -1,24 +1,26 @@
 import TextScaled from "@/components/Common/TextScaled";
 import { icons } from "@/constants";
 import { getScaleFactor } from "@/lib/scaling";
+import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
-import { FlatList, Image, Pressable, ScrollView, Switch, View } from "react-native";
+import { Image, Pressable, ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Switch } from "react-native-switch";
+import BackHeader from "../Common/BackHeader";
 
-// Mock data for security options
 const securityOptions = [
   {
     id: 1,
     title: "Đổi mật khẩu",
-    icon: "lock",
+    icon: icons.lockIcon,
     hasToggle: false,
-    onPress: () => router.push('/change-password'),
+    onPress: () => router.push('/(auth)/change-password'),
   },
   {
     id: 2,
     title: "Đồng bộ Face /Touch ID",
-    icon: "face",
+    icon: icons.faceIcon,
     hasToggle: true,
     onPress: () => {},
   },
@@ -30,30 +32,48 @@ const SecurityOption = ({ option }: { option: typeof securityOptions[0] }) => {
   return (
     <Pressable
       onPress={option.hasToggle ? undefined : option.onPress}
-      className="px-4 py-2 rounded-lg flex-row justify-start items-center"
-      style={{ gap: getScaleFactor() * 8 }}
+      className="flex-row justify-between items-center"
+      style={{ 
+        minHeight: getScaleFactor() * 40, 
+        gap: getScaleFactor() * 8, 
+        paddingVertical: getScaleFactor() * 8 
+      }}
     >
       <Image
-        source={icons.clockIcon}
+        source={option.icon}
         style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }}
         resizeMode="contain"
       />
-      <TextScaled size="base" className="flex-1 justify-start font-bold text-black">
+      <TextScaled size="base" className="flex-1 font-bold text-black">
         {option.title}
       </TextScaled>
       {option.hasToggle ? (
         <Switch
-          trackColor={{ false: '#E5E5E5', true: '#E36137' }}
-          thumbColor={isEnabled ? '#ffffff' : '#f4f3f4'}
-          ios_backgroundColor="#E5E5E5"
-          onValueChange={setIsEnabled}
           value={isEnabled}
+          onValueChange={setIsEnabled}
+          disabled={false}
+          activeText={''}
+          inActiveText={''}
+          circleSize={getScaleFactor() * 20}
+          barHeight={getScaleFactor() * 24}
+          circleBorderWidth={0}
+          backgroundActive={'#E36137'}
+          backgroundInactive={'#E5E5E5'}
+          circleActiveColor={'#ffffff'}
+          circleInActiveColor={'#f4f3f4'}
+          changeValueImmediately={true}
+          renderActiveText={false}
+          renderInActiveText={false}
+          switchLeftPx={2}
+          switchRightPx={2}
+          switchWidthMultiplier={2.2}
+          switchBorderRadius={getScaleFactor() * 12}
         />
       ) : (
-        <Image
-          source={icons.clockIcon}
-          style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }}
-          resizeMode="contain"
+        <Ionicons
+          name="chevron-forward"
+          size={getScaleFactor() * 24}
+          color="#2D2D2D"
         />
       )}
     </Pressable>
@@ -63,44 +83,24 @@ const SecurityOption = ({ option }: { option: typeof securityOptions[0] }) => {
 const SecurityScreen = () => {
   return (
     <SafeAreaView className="flex-1 bg-backgroundV1">
-      {/* Header with back button */}
-      <View 
-        className="flex-row items-center px-4 py-2"
-        style={{ gap: getScaleFactor() * 16 }}
-      >
-        <Pressable
-          onPress={() => router.back()}
-          className="p-2"
-        >
-          <Image
-            source={icons.backArrow}
-            style={{ width: getScaleFactor() * 24, height: getScaleFactor() * 24 }}
-            resizeMode="contain"
-          />
-        </Pressable>
-        <TextScaled size="lg" className="font-bold text-black">
-          Bảo mật
-        </TextScaled>
-      </View>
+      <BackHeader
+        headerTitle="Bảo mật"
+        onPress={() => router.back()}
+      />
 
       <ScrollView
         className="flex-1"
-        contentContainerStyle={{ 
+        contentContainerStyle={{
           paddingBottom: getScaleFactor() * 120,
           paddingHorizontal: getScaleFactor() * 16,
+          paddingTop: getScaleFactor() * 32,
         }}
       >
-        <View 
-          className="w-full flex-col justify-start items-start"
-          style={{ gap: getScaleFactor() * 8 }}
-        >
-          <FlatList
-            data={securityOptions}
-            renderItem={({ item }) => <SecurityOption option={item} />}
-            keyExtractor={(item) => item.id.toString()}
-            scrollEnabled={false}
-          />
-        </View>
+        <View className="w-full">
+            {securityOptions.map((option) => (
+              <SecurityOption key={option.id} option={option} />
+            ))}
+          </View>
       </ScrollView>
     </SafeAreaView>
   );
