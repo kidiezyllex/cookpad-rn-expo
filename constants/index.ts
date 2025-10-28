@@ -9,17 +9,20 @@ import bellIcon from "@/assets/icons/bell-icon.png";
 import cameraIcon from "@/assets/icons/camera-icon.png";
 import caretLeftIcon from "@/assets/icons/caret-left-icon.png";
 import chatIcon from "@/assets/icons/chat-icon.png";
+import check2Icon from "@/assets/icons/check-icon.png";
 import chefIcon from "@/assets/icons/chef-icon.png";
 import clockIcon from "@/assets/icons/clock-icon.png";
 import closeIcon from "@/assets/icons/close-icon.png";
 import threeDotsIcon from "@/assets/icons/dots-three-icon.png";
 import downUpIcon from "@/assets/icons/down-up-icon.png";
+import eyeIcon from "@/assets/icons/eye-icon.png";
 import faceIcon from "@/assets/icons/faceid-icon.png";
 import fireIcon from "@/assets/icons/fire-icon.png";
 import forwardArrow from "@/assets/icons/forward-arrow.png";
 import heartIcon from "@/assets/icons/heart-icon.png";
 import homeIcon from "@/assets/icons/house-icon.png";
 import lockIcon from "@/assets/icons/lock-icon.png";
+import playIcon from "@/assets/icons/play-icon.png";
 import plusIcon from "@/assets/icons/plus-icon.png";
 import saveIcon from "@/assets/icons/save-icon.png";
 import save2Icon from "@/assets/icons/save2-icon.png";
@@ -30,7 +33,7 @@ import timerIcon from "@/assets/icons/timer-icon.png";
 import upRightIcon from "@/assets/icons/up-right-icon.png";
 import userIcon from "@/assets/icons/user-icon.png";
 import videoIcon from "@/assets/icons/video-icon.png";
-import check from "@/assets/images/check.png";
+import { default as check, default as checkIcon } from "@/assets/images/check.png";
 import featuredFood1 from "@/assets/images/FeaturedFood/featuredFood1.jpg";
 import featuredFood2 from "@/assets/images/FeaturedFood/featuredFood2.jpg";
 import featuredFood3 from "@/assets/images/FeaturedFood/featuredFood3.jpg";
@@ -57,6 +60,7 @@ import sampleFood2 from "@/assets/images/sample-food2.jpg";
 import sampleFood3 from "@/assets/images/sample-food3.jpg";
 import searchHero from "@/assets/images/search-hero.png";
 import table from "@/assets/images/table.png";
+import videoTutorial from "@/assets/videos/tutorial.mp4";
 export const images = {
     searchHero,
     onboarding1,
@@ -88,6 +92,9 @@ export const images = {
 };
 
 export const icons = {
+    playIcon,
+    check2Icon,
+    eyeIcon,
     chefIcon,
     lockIcon,
     faceIcon,
@@ -120,6 +127,11 @@ export const icons = {
     caretLeftIcon,
     closeIcon,
     timerIcon,
+    checkIcon,
+};
+
+export const videos = {
+    videoTutorial,
 };
 
 export const onboarding = [
@@ -144,4 +156,15 @@ export const onboarding = [
             "Lên kế hoạch ăn uống chi tiết cho từng đối tượng dựa theo lời khuyên từ các chuyên gia, đảm bảo  dinh dưỡng và ngon miệng.",
         image: images.onboarding3,
     },
+];
+
+export const featuredRecipesData = [
+    { id: '1', name: 'Tôm hoàng đế ánh kim', image: images.featuredFood1, time: '3h 30m', likes: 234 },
+    { id: '2', name: 'Tôm nướng sốt tiêu đen', image: images.featuredFood2, time: '2h 15m', likes: 189 },
+    { id: '3', name: 'Lẩu hải sản với nước sốt tôm', image: images.featuredFood3, time: '1h 45m', likes: 156 },
+    { id: '4', name: 'Sò huyết rau mùi', image: images.featuredFood4, time: '1h 20m', likes: 98 },
+    { id: '5', name: 'Tôm sốt mắm ớt', image: images.featuredFood5, time: '45m', likes: 267 },
+    { id: '6', name: 'Cá nướng lá chuối', image: images.featuredFood6, time: '1h 15m', likes: 189 },
+    { id: '7', name: 'Thịt bò xào rau củ', image: images.featuredFood7, time: '30m', likes: 156 },
+    { id: '8', name: 'Trứng chiên thịt bằm', image: images.featuredFood8, time: '20m', likes: 123 },
 ];

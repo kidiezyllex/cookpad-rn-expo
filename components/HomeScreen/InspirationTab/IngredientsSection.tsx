@@ -1,13 +1,12 @@
 import CustomButton from '@/components/Common/CustomButton';
 import CustomFilter from '@/components/Common/CustomFilter';
+import RecipeCarousel from '@/components/Common/RecipeCarousel';
 import TextScaled from '@/components/Common/TextScaled';
 import { icons } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
 import { useState } from 'react';
 import { Image, View } from 'react-native';
-import { SwiperFlatList } from 'react-native-swiper-flatlist';
-import { featuredRecipesData, ingredientsData } from '../mockData';
-import RecipeCard from './RecipeCard';
+import { ingredientsData } from '../mockData';
 
 const IngredientsSection = () => {
     const [selectedIngredients, setSelectedIngredients] = useState<string[]>(['1']);
@@ -55,52 +54,7 @@ const IngredientsSection = () => {
                 onToggleFilter={toggleFilterIcon}
             />
             
-            {/* Featured recipes horizontal scroll */}
-            <View
-                style={{
-                    height: getScaleFactor() * 158,
-                    marginBottom: getScaleFactor() * 16,
-                }}
-            >
-                <SwiperFlatList
-                    data={featuredRecipesData}
-                    renderItem={({ item }) => (
-                        <View
-                            style={{
-                                marginRight: getScaleFactor() * 8,
-                            }}
-                        >
-                            <RecipeCard
-                                id={item.id}
-                                name={item.name}
-                                image={item.image}
-                                time={item.time}
-                                likes={item.likes}
-                            />
-                        </View>
-                    )}
-                    keyExtractor={(item) => item.id}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={{
-                        paddingHorizontal: 0,
-                    }}
-                    paginationStyle={{
-                        marginBottom: getScaleFactor() * -20,
-                    }}
-                    paginationStyleItem={{
-                        width: getScaleFactor() * 6,
-                        height: getScaleFactor() * 6,
-                        marginHorizontal: getScaleFactor() * 2,
-                    }}
-                    paginationStyleItemActive={{
-                        backgroundColor: '#E36137',
-                    }}
-                    paginationStyleItemInactive={{
-                        backgroundColor: '#E0E0E0',
-                    }}
-                />
-            </View>
+           <RecipeCarousel />
 
             <CustomButton
                 title="Tìm kiếm theo nguyên liệu"

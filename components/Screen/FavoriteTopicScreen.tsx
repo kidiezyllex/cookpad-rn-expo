@@ -22,7 +22,6 @@ const FavoriteTopicScreen = () => {
   };
 
   const handleContinue = () => {
-    // Navigate to main app after selection
     router.replace("/(root)/tabs/home");
   };
 

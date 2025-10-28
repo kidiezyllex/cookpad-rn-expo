@@ -1,7 +1,8 @@
 import TextScaled from '@/components/Common/TextScaled';
 import { icons, images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
-import { Image, View } from 'react-native';
+import { router } from 'expo-router';
+import { Image, Pressable, View } from 'react-native';
 
 interface FoodItem {
     id: string;
@@ -57,8 +58,9 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                     }}
                 >
                     {data.slice(0, 4).map((item, index) => (
-                        <View
+                        <Pressable
                             key={item.id}
+                            onPress={() => router.push('/food-detail')}
                             style={{
                                 width: "100%",
                                 height: getScaleFactor() * (index === 0 || index === 1 ? 240 : 160),
@@ -108,7 +110,7 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                                 </TextScaled>
                                 <Image source={icons.threeDotsIcon} style={{ width: getScaleFactor() * 16, height: getScaleFactor() * 16 }} />
                             </View>
-                        </View>
+                        </Pressable>
                     ))}
                 </View>
 
@@ -124,8 +126,9 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                     }}
                 >
                     {data.slice(4, 8).map((item, index) => (
-                        <View
+                        <Pressable
                             key={item.id}
+                            onPress={() => router.push('/food-detail')}
                             style={{
                                 width: "100%",
                                 height: getScaleFactor() * (index === 0 ? 144 : index === 1 ? 224 : index === 2 ? 256 : 240),
@@ -175,7 +178,7 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                                 </TextScaled>
                                 <Image source={icons.threeDotsIcon} style={{ width: getScaleFactor() * 16, height: getScaleFactor() * 16 }} />
                             </View>
-                        </View>
+                        </Pressable>
                     ))}
                 </View>
             </View>

@@ -1,7 +1,7 @@
 import { getScaleFactor } from '@/lib/scaling';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import TextScaled from './TextScaled';
 
 interface BackHeaderProps {
@@ -19,7 +19,7 @@ const BackHeader: React.FC<BackHeaderProps> = ({ headerTitle, onPress, isDark = 
       }}
       className="relative flex-row justify-center items-center w-full"
     >
-      <TouchableOpacity
+      <Pressable
         onPress={onPress}
         style={{
           position: 'absolute',
@@ -35,7 +35,7 @@ const BackHeader: React.FC<BackHeaderProps> = ({ headerTitle, onPress, isDark = 
           size={getScaleFactor() * 24}
           color={isDark ? "#FFFFFF" : "#000000"}
         />
-      </TouchableOpacity>
+      </Pressable>
       <TextScaled
         size="base"
         className={`justify-start font-bold text-center ${isDark ? 'text-white' : 'text-black'}`}
