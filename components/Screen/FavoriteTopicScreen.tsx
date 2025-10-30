@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import { Dimensions, Pressable, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import SwiperFlatList from 'react-native-swiper-flatlist';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
 const { width: screenWidth } = Dimensions.get('window');
 
@@ -34,24 +34,21 @@ const slides = [
   }
 ];
 
-const progressWidths = [
-  33.33,
-  66.66,
-  100,
-];
+const progressWidths = [33.33, 66.66, 100];
 
 const FavoriteTopicScreen = () => {
-  const swiperRef = useRef<SwiperFlatList | null>(null);
+  // ĐÚNG: Không để | null để tránh lỗi ref
+  const swiperRef = useRef<SwiperFlatList>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [selections, setSelections] = useState<(string | null)[]>([null, null, null]);
   const { setSuccess } = useSuccessStore();
 
-  const handleSelectOption = (slideIdx: number, value: string) => {
+  const handleSelectOption = (slideIndex: number, value: string) => {
     const updated = [...selections];
-    updated[slideIdx] = value;
+    updated[slideIndex] = value;
     setSelections(updated);
 
-    const isLastSlide = slideIdx === slides.length - 1;
+    const isLastSlide = slideIndex === slides.length - 1;
     if (isLastSlide) {
       setSuccess(
         'Bạn đã hoàn thành các câu hỏi!',
@@ -60,9 +57,18 @@ const FavoriteTopicScreen = () => {
       );
       router.replace('/(auth)/register-success');
     } else {
-      const nextIndex = slideIdx + 1;
-      swiperRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      // activeIndex will be updated by onChangeIndex after slide completes
+      const nextIndex = slideIndex + 1;
+
+      // Cập nhật activeIndex NGAY LẬP TỨC
+      setActiveIndex(nextIndex);
+
+      // Scroll đến slide tiếp theo (chỉ gọi nếu ref đã sẵn sàng)
+      if (swiperRef.current) {
+        swiperRef.current.scrollToIndex({
+          index: nextIndex,
+          animated: true,
+        });
+      }
     }
   };
 
@@ -95,10 +101,10 @@ const FavoriteTopicScreen = () => {
             }}
           />
         </View>
+
+        {/* Swiper */}
         <SwiperFlatList
           ref={swiperRef}
-          showPagination={false}
-          onChangeIndex={({ index }) => setActiveIndex(index)}
           data={slides}
           renderItem={({ item, index }) => (
             <View
@@ -107,17 +113,22 @@ const FavoriteTopicScreen = () => {
             >
               <TextScaled
                 className="font-bold text-start text-black"
-                style={{minHeight: getScaleFactor() * 60, marginBottom: getScaleFactor() * 32, fontSize: getScaleFactor() * 22}}
+                style={{
+                  minHeight: getScaleFactor() * 60,
+                  marginBottom: getScaleFactor() * 32,
+                  fontSize: getScaleFactor() * 22,
+                }}
               >
                 {item.title}
               </TextScaled>
+
               <View
                 style={{
                   gap: getScaleFactor() * 8,
                   width: '100%',
                 }}
               >
-                {item.options.map((option: string) => (
+                {item.options.map((option: any) => (
                   <Pressable
                     key={option}
                     className="w-full"
@@ -137,7 +148,9 @@ const FavoriteTopicScreen = () => {
                   >
                     <TextScaled
                       size="base"
-                      className={`font-bold text-start ${selections[index] === option ? 'text-white' : 'text-customPrimary'}`}
+                      className={`font-bold text-start ${
+                        selections[index] === option ? 'text-white' : 'text-customPrimary'
+                      }`}
                     >
                       {option}
                     </TextScaled>
@@ -146,8 +159,22 @@ const FavoriteTopicScreen = () => {
               </View>
             </View>
           )}
+          onChangeIndex={({ index }) => {
+            setActiveIndex(index); // Đồng bộ khi swipe tay
+          }}
+          // Cấu hình bắt buộc để scroll mượt
+          pagingEnabled
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          disableGesture={false}
+          // Tăng hiệu suất
+          removeClippedSubviews={true}
+          initialNumToRender={1}
+          maxToRenderPerBatch={1}
+          windowSize={3}
         />
       </View>
+
       {/* Bottom helper */}
       <View style={{ width: '100%', marginBottom: getScaleFactor() * 16 }}>
         <TextScaled

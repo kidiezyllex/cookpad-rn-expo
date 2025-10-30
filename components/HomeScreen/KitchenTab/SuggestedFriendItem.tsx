@@ -1,8 +1,7 @@
-import CustomButton from '@/components/Common/CustomButton';
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
-import { Image, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 
 interface SuggestedFriendItemProps {
     item: {
@@ -39,7 +38,7 @@ const SuggestedFriendItem = ({ item }: SuggestedFriendItemProps) => {
                     flexDirection: 'column',
                     justifyContent: 'flex-start',
                     alignItems: 'flex-start',
-                    gap: getScaleFactor() * 4
+                    gap: getScaleFactor() * 4,
                 }}
             >
                 <View
@@ -111,31 +110,51 @@ const SuggestedFriendItem = ({ item }: SuggestedFriendItemProps) => {
                     style={{
                         width: '100%',
                         flexDirection: 'row',
-                        justifyContent: 'center',
-                        gap: getScaleFactor() * 8
+                        justifyContent: 'flex-start',
+                        gap: getScaleFactor() * 8,
                     }}
                 >
-                    <CustomButton
-                        title="Thêm Bạn bếp"
-                        className="flex-1"
-                        style={{
-                            paddingHorizontal: getScaleFactor() * 16,
-                            paddingVertical: getScaleFactor() * 4,
-                        }}
+                    <Pressable
                         onPress={() => { }}
-                    />
-                    <CustomButton
-                        title="Gỡ"
-                        textVariant="outline"
                         style={{
+                            flex: 1,
+                            paddingVertical: getScaleFactor() * 4,
+                            paddingHorizontal: getScaleFactor() * 16,
+                            height: getScaleFactor() * 32,
+                            backgroundColor: '#E36137',
+                            borderRadius: getScaleFactor() * 6,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            flexShrink: 1,
+                        }}
+                    >
+                        <TextScaled
+                            size="sm"
+                            className="font-semibold text-white"
+                        >
+                            Thêm Bạn bếp
+                        </TextScaled>
+                    </Pressable>
+                    <Pressable
+                        onPress={() => { }}
+                        style={{
+                            maxWidth: getScaleFactor() * 52,
+                            paddingVertical: getScaleFactor() * 4,
+                            paddingHorizontal: getScaleFactor() * 16,
+                            height: getScaleFactor() * 32,
                             backgroundColor: '#FFEFE9',
-                            paddingHorizontal: getScaleFactor() * 16,
-                            paddingVertical: getScaleFactor() * 4,
-                            width: 'auto',
-                            height: getScaleFactor() * 40,
+                            borderRadius: getScaleFactor() * 6,
+                            justifyContent: 'center',
+                            alignItems: 'center',
                         }}
-                        onPress={() => { }}
-                    />
+                    >
+                        <TextScaled
+                            size="sm"
+                            className="font-semibold text-customPrimary"
+                        >
+                            Gỡ
+                        </TextScaled>
+                    </Pressable>
                 </View>
             </View>
         </View>
