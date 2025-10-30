@@ -4,7 +4,7 @@
     "slug": "CookPad",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logo.png",
     "scheme": "CookPad",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -14,27 +14,27 @@
     "android": {
       "edgeToEdgeEnabled": true,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "bundler": "metro",
       "output": "server",
-      "favicon": "./assets/images/icon.png"
+      "favicon": "./assets/images/logo.png"
     },
     "plugins": [
       [
         "expo-router",
         {
-          "origin": "https://CookPad.com/"
+          "origin": "https://cookpad.com/"
         }
       ],
       [
         "expo-splash-screen",
         {
           "backgroundColor": "#F1EEE8",
-          "image": "./assets/splash-icon.png",
+          "image": "./assets/images/logo.png",
           "imageWidth": 200,
           "resizeMode": "contain"
         }

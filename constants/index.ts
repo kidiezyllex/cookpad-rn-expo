@@ -59,9 +59,17 @@ import sampleFood1 from "@/assets/images/sample-food1.jpg";
 import sampleFood2 from "@/assets/images/sample-food2.jpg";
 import sampleFood3 from "@/assets/images/sample-food3.jpg";
 import searchHero from "@/assets/images/search-hero.png";
+import splash1 from "@/assets/images/splash1.png";
+import splash2 from "@/assets/images/splash2.png";
+import splash3 from "@/assets/images/splash3.png";
+import splash4 from "@/assets/images/splash4.png";
 import table from "@/assets/images/table.png";
 import videoTutorial from "@/assets/videos/tutorial.mp4";
 export const images = {
+    splash1,
+    splash2,
+    splash3,
+    splash4,
     searchHero,
     onboarding1,
     onboarding2,

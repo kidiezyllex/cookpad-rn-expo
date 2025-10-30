@@ -1,12 +1,14 @@
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import * as ExpoSplashScreen from "expo-splash-screen";
+import { useEffect, useState } from "react";
 import "react-native-worklets";
+import SplashScreen from "../components/Screen/SplashScreen";
 
-SplashScreen.preventAutoHideAsync();
+// Ngăn không cho splash của Expo tự động ẩn
+ExpoSplashScreen.preventAutoHideAsync();
 
-SplashScreen.setOptions({
+ExpoSplashScreen.setOptions({
   duration: 1000,
   fade: true,
 });
@@ -21,15 +23,21 @@ export default function RootLayout() {
     "Jakarta": require("../assets/fonts/PlusJakartaSans-Regular.ttf"),
     "Jakarta-SemiBold": require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
   });
+  const [splashDone, setSplashDone] = useState(false);
 
+  // Ẩn splash expo khi font và splash custom đều xong
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
+    if (loaded && splashDone) {
+      ExpoSplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [loaded, splashDone]);
 
   if (!loaded) {
     return null;
+  }
+
+  if (!splashDone) {
+    return <SplashScreen onFinish={() => setSplashDone(true)} />;
   }
 
   return (
