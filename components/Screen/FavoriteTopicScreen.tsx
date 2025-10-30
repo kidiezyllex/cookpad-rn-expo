@@ -1,10 +1,11 @@
 import TextScaled from '@/components/Common/TextScaled';
 import { getScaleFactor } from '@/lib/scaling';
+import { useSuccessStore } from '@/store/successStore';
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import { Dimensions, Pressable, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import SwiperFlatList, { SwiperFlatList as SwiperFlatListType } from 'react-native-swiper-flatlist';
+import SwiperFlatList from 'react-native-swiper-flatlist';
 
 const { width: screenWidth } = Dimensions.get('window');
 
@@ -40,14 +41,29 @@ const progressWidths = [
 ];
 
 const FavoriteTopicScreen = () => {
-  const swiperRef = useRef<SwiperFlatListType | null>(null);
+  const swiperRef = useRef<SwiperFlatList | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [selections, setSelections] = useState<(string | null)[]>([null, null, null]);
+  const { setSuccess } = useSuccessStore();
 
   const handleSelectOption = (slideIdx: number, value: string) => {
     const updated = [...selections];
     updated[slideIdx] = value;
     setSelections(updated);
+
+    const isLastSlide = slideIdx === slides.length - 1;
+    if (isLastSlide) {
+      setSuccess(
+        'Bạn đã hoàn thành các câu hỏi!',
+        'Tuyệt vời! Lựa chọn của bạn đã được ghi nhận. Chúng tôi sẽ cá nhân hoá gợi ý món ăn phù hợp nhất với khẩu vị của bạn.',
+        '/(root)/tabs/home'
+      );
+      router.replace('/(auth)/register-success');
+    } else {
+      const nextIndex = slideIdx + 1;
+      swiperRef.current?.scrollToIndex({ index: nextIndex, animated: true });
+      // activeIndex will be updated by onChangeIndex after slide completes
+    }
   };
 
   const handleSkip = () => {
@@ -81,7 +97,6 @@ const FavoriteTopicScreen = () => {
         </View>
         <SwiperFlatList
           ref={swiperRef}
-          index={activeIndex}
           showPagination={false}
           onChangeIndex={({ index }) => setActiveIndex(index)}
           data={slides}
