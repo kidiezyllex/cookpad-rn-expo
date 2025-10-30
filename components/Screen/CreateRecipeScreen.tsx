@@ -2,7 +2,7 @@ import { icons } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import { FlatList, Image, Pressable, ScrollView, View } from 'react-native';
+import { Dimensions, FlatList, Image, Pressable, ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import BackHeader from '../Common/BackHeader';
 import CustomButton from '../Common/CustomButton';
@@ -18,6 +18,7 @@ const cookingStepsData = [
     { id: '1', step: 'Bước 1', description: 'Miêu tả bước 1' },
     { id: '2', step: 'Bước 2', description: 'Miêu tả bước 2' },
 ];
+const { width: screenWidth } = Dimensions.get('window');
 
 const CreateRecipeScreen = () => {
     const renderIngredientItem = ({ item }: { item: typeof ingredientsData[0] }) => (
@@ -716,6 +717,7 @@ const CreateRecipeScreen = () => {
                 <View
                     style={{
                         width: '100%',
+                        maxWidth: screenWidth,
                         paddingHorizontal: getScaleFactor() * 16,
                         paddingVertical: getScaleFactor() * 8,
                         backgroundColor: '#FFFFFF',
@@ -730,14 +732,18 @@ const CreateRecipeScreen = () => {
                     <CustomButton
                         title="Lưu nháp"
                         bgVariant="ghost"
-                        className="flex-1"
                         textVariant="ghost"
+                        style={{
+                            width: '48%',
+                        }}
                     />
                     <CustomButton
                         title="Đăng tải"
                         bgVariant="primary"
-                        className="flex-1"
                         textVariant="primary"
+                        style={{
+                            width: '48%',
+                        }}
                     />
                 </View>
 
