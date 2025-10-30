@@ -3,6 +3,7 @@ import CustomButton from '@/components/Common/CustomButton';
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
+import { useSuccessStore } from '@/store/successStore';
 import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { Alert, Image, ScrollView, TouchableOpacity, View } from 'react-native';
@@ -12,6 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const OTPInputScreen = () => {
   const [otp, setOtp] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const setSuccess = useSuccessStore((state) => state.setSuccess);
 
   const onVerifyPress = useCallback(async () => {
     if (otp.length !== 4) {
@@ -20,11 +22,10 @@ const OTPInputScreen = () => {
     }
     
     setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      router.replace('/(auth)/register-success');
-    }, 2000);
-  }, [otp]);
+    // Lưu nội dung thành công
+    setSuccess('Đăng ký thành công!', 'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.', '/(auth)/sign-in');
+    router.replace('/(auth)/register-success');
+  }, [otp, setSuccess]);
 
   const onBackPress = useCallback(() => {
     router.back();
@@ -60,13 +61,13 @@ const OTPInputScreen = () => {
           {/* OTP Input Section */}
           <View
             style={{
-              width: getScaleFactor() * 320,
+              width: "100%",
             }}
           >
             {/* Instruction Text */}
             <View
               style={{
-                width: getScaleFactor() * 320,
+                width: "100%",
                 gap: getScaleFactor() * 8,
               }}
               className="flex flex-col justify-center items-center"
@@ -99,9 +100,6 @@ const OTPInputScreen = () => {
                   keyboardType: 'numeric',
                 }}
                  theme={{
-                   containerStyle: {
-                     gap: 100,
-                   },
                    pinCodeContainerStyle: {
                      width: getScaleFactor() * 64,
                      height: getScaleFactor() * 70,
