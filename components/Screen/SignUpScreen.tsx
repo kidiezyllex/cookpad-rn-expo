@@ -111,6 +111,7 @@ const SignUpScreen = () => {
                 placeholder="Nhập số điện thoại"
                 value={form.phone}
                 onChangeText={(value) => setForm({ ...form, phone: value })}
+                keyboardType="phone-pad"
               />
             </View>
 
