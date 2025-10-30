@@ -50,7 +50,7 @@ const OnboardingScreen = () => {
                 onChangeIndex={({ index }) => setActiveIndex(index)}
                 data={onboarding}
                 renderItem={({ item, index }) => (
-                    <View key={item.id} className='flex justify-center items-center' style={{ width: screenWidth - 32 }}>
+                    <View key={item.id} className='flex justify-center items-center' style={{ width: screenWidth, paddingHorizontal: getScaleFactor() * 16 }}>
                         <Image source={item.image}
                             style={{
                                 width: screenWidth,
@@ -85,7 +85,7 @@ const OnboardingScreen = () => {
                     onPress={() =>
                         isLastSlide
                             ? router.replace("/(auth)/sign-in")
-                            : swiperRef.current?.scrollToIndex({ index: activeIndex + 1 })
+                            : swiperRef.current?.scrollToIndex({ index: activeIndex + 1, animated: true })
                     }
                     className='w-full' />
                 <CustomButton
