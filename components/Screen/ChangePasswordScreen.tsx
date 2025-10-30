@@ -3,6 +3,7 @@ import CustomButton from '@/components/Common/CustomButton';
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
+import { useSuccessStore } from '@/store/successStore';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
@@ -16,14 +17,20 @@ const ChangePasswordScreen = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const setSuccess = useSuccessStore((state) => state.setSuccess);
 
-  const onSignUpPress = useCallback(async () => {
+  const handlePress = useCallback(async () => {
     if (form.password !== form.confirmPassword) {
       Alert.alert("Lỗi", "Mật khẩu xác nhận không khớp");
       return;
     }
-    router.push('/(auth)/otp');
-  }, [form.password, form.confirmPassword]);
+    setSuccess(
+      'Đổi mật khẩu thành công!',
+      'Bạn đã thay đổi mật khẩu thành công, vui lòng đăng nhập với mật khẩu mới của bạn.',
+      '/(auth)/sign-in'
+    );
+    router.replace('/(auth)/register-success');
+  }, [form.password, form.confirmPassword, setSuccess]);
 
   const onBackPress = useCallback(() => {
     router.back();
@@ -183,7 +190,7 @@ const ChangePasswordScreen = () => {
           {/* Confirm Button */}
           <CustomButton
             title="Xác nhận"
-            onPress={onSignUpPress}
+            onPress={handlePress}
           />
         </View>
       </ScrollView>

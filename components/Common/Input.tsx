@@ -39,6 +39,7 @@ const Input: React.FC<InputProps> = ({
             multiline={multiline}
             numberOfLines={numberOfLines}
             scrollEnabled={false}
+            keyboardType="phone-pad"
             {...props}
         />
     );

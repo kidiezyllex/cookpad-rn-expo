@@ -3,6 +3,7 @@ import CustomButton from '@/components/Common/CustomButton';
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
+import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
 import { useSuccessStore } from '@/store/successStore';
 import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
@@ -14,18 +15,22 @@ const OTPInputScreen = () => {
   const [otp, setOtp] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const setSuccess = useSuccessStore((state) => state.setSuccess);
+  const isForgotPassword = useForgotPasswordStore((state) => state.isForgotPassword);
 
-  const onVerifyPress = useCallback(async () => {
+  const handlePress = useCallback(async () => {
     if (otp.length !== 4) {
       Alert.alert("Lỗi", "Vui lòng nhập đầy đủ 4 số OTP");
       return;
     }
-    
+    if (isForgotPassword) {
+      router.replace('/(auth)/change-password'); // điều hướng sang màn ChangePasswordScreen
+      return;
+    }
+    // Đăng ký bình thường
     setIsLoading(true);
-    // Lưu nội dung thành công
     setSuccess('Đăng ký thành công!', 'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.', '/(auth)/sign-in');
     router.replace('/(auth)/register-success');
-  }, [otp, setSuccess]);
+  }, [otp, isForgotPassword, setSuccess]);
 
   const onBackPress = useCallback(() => {
     router.back();
@@ -158,7 +163,7 @@ const OTPInputScreen = () => {
           {/* Verify Button */}
           <CustomButton
             title="Xác nhận"
-            onPress={onVerifyPress}
+            onPress={handlePress}
           />
         </View>
       </ScrollView>

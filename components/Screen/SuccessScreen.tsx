@@ -23,7 +23,7 @@ const SuccessScreen = () => {
     useEffect(() => {
         timerRef.current = setTimeout(() => {
             handleRedirect();
-        }, 3000);
+        }, 4000);
         return () => {
             if (timerRef.current) clearTimeout(timerRef.current);
         };

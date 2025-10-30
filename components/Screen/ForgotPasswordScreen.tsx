@@ -2,17 +2,21 @@ import CustomButton from '@/components/Common/CustomButton';
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
+import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { Alert, Image, ScrollView, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, ScrollView, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import BackHeader from '../Common/BackHeader';
+import Input from '../Common/Input';
 
 const ForgotPasswordScreen = () => {
     const [form, setForm] = useState({
         phone: '',
     });
+
+    const setIsForgotPassword = useForgotPasswordStore((state) => state.setIsForgotPassword);
 
     const onSendOTPPress = useCallback(async () => {
         if (!form.phone.trim()) {
@@ -20,9 +24,9 @@ const ForgotPasswordScreen = () => {
             return;
         }
 
-        // Navigate to OTP screen
+        setIsForgotPassword(true);
         router.push('/(auth)/otp');
-    }, [form.phone]);
+    }, [form.phone, setIsForgotPassword]);
 
     const onBackPress = useCallback(() => {
         router.back();
@@ -31,9 +35,9 @@ const ForgotPasswordScreen = () => {
     return (
         <SafeAreaView className='flex-1 bg-backgroundV1'>
             <ScrollView className='flex-1 bg-backgroundV1'>
-                <BackHeader 
-                    headerTitle="Quên mật khẩu" 
-                    onPress={onBackPress} 
+                <BackHeader
+                    headerTitle="Quên mật khẩu"
+                    onPress={onBackPress}
                 />
 
                 {/* Main Content */}
@@ -83,21 +87,10 @@ const ForgotPasswordScreen = () => {
                             Số điện thoại
                         </TextScaled>
                         <View style={{ position: 'relative', width: '100%' }}>
-                            <TextInput
+                            <Input
                                 placeholder="Nhập số điện thoại"
                                 value={form.phone}
                                 onChangeText={(value) => setForm({ ...form, phone: value })}
-                                keyboardType="phone-pad"
-                                style={{
-                                    width: '100%',
-                                    padding: getScaleFactor() * 8,
-                                    paddingRight: getScaleFactor() * 40, // Make space for the icon
-                                    height: getScaleFactor() * 40,
-                                    backgroundColor: 'white',
-                                    borderRadius: 8,
-                                    fontSize: getScaleFactor() * 16,
-                                }}
-                                placeholderTextColor="#AAAAAA"
                             />
                             {form.phone.length > 0 && (
                                 <TouchableOpacity
