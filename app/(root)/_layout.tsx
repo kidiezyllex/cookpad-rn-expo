@@ -20,6 +20,7 @@ const Layout = () => {
         <Stack.Screen name="food-detail" options={{ headerShown: false }} />
         <Stack.Screen name="food-materials" options={{ headerShown: false }} />
         <Stack.Screen name="cooking-steps" options={{ headerShown: false }} />
+        <Stack.Screen name="success" options={{ headerShown: false }} />
       </Stack>
   );
 };

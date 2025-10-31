@@ -1,5 +1,6 @@
 import { icons } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
+import { useSuccessStore } from '@/store/successStore';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { Dimensions, FlatList, Image, Pressable, ScrollView, View } from 'react-native';
@@ -21,6 +22,16 @@ const cookingStepsData = [
 const { width: screenWidth } = Dimensions.get('window');
 
 const CreateRecipeScreen = () => {
+    const setSuccess = useSuccessStore((state) => state.setSuccess);
+
+    const handlePublish = () => {
+        setSuccess(
+            'Tạo công thức thành công!',
+            'Công thức của bạn đã được đăng tải và sẽ hiển thị cho mọi người.',
+            '/(root)/tabs/home'
+        );
+        router.replace('/(root)/success');
+    };
     const renderIngredientItem = ({ item }: { item: typeof ingredientsData[0] }) => (
         <View
             style={{
@@ -742,6 +753,7 @@ const CreateRecipeScreen = () => {
                         title="Đăng tải"
                         bgVariant="primary"
                         textVariant="primary"
+                        onPress={handlePublish}
                         style={{
                             width: '48%',
                         }}
