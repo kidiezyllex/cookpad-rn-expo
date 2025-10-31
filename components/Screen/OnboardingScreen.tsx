@@ -50,7 +50,7 @@ const OnboardingScreen = () => {
                 onChangeIndex={({ index }) => setActiveIndex(index)}
                 data={onboarding}
                 renderItem={({ item, index }) => (
-                    <View key={item.id} className='flex justify-center items-center' style={{ width: screenWidth, paddingHorizontal: getScaleFactor() * 16 }}>
+                    <View key={item.id} className='flex justify-center items-center' style={{ width: screenWidth - getScaleFactor() * 32, paddingHorizontal: getScaleFactor() * 16 }}>
                         <Image source={item.image}
                             style={{
                                 width: screenWidth,
