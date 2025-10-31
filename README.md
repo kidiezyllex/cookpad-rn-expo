@@ -2,6 +2,46 @@
 
 ---
 
+## 📑 Mục Lục
+
+### [A. 📁 Cấu Trúc Project](#a--cấu-trúc-project)
+- [A.1. Sơ Đồ Cấu Trúc Project](#a1-sơ-đồ-cấu-trúc-project)
+- [A.2. Thư Mục `app/` - Định Tuyến và Màn Hình](#a2-thư-mục-app---định-tuyến-và-màn-hình)
+- [A.3. Thư Mục `lib/` - Hàm Tiện Ích](#a3-thư-mục-lib---hàm-tiện-ích)
+- [A.4. Thư Mục `store/` - State Management](#a4-thư-mục-store---state-management)
+- [A.5. Các File Cấu Hình](#a5-các-file-cấu-hình)
+
+### [B. 📊 Models/Interfaces từ Mock Data](#b--modelsinterfaces-từ-mock-data)
+- [B.1. Message & Notification Models](#b1-message--notification-models)
+- [B.2. Recipe & Food Models](#b2-recipe--food-models)
+- [B.3. Search Models](#b3-search-models)
+
+### [C. 🎨 Hướng Dẫn Sử Dụng Components Common](#c--hướng-dẫn-sử-dụng-components-common)
+- [C.1. TextScaled](#c1-textscaled)
+- [C.2. CustomButton](#c2-custombutton)
+- [C.3. Input](#c3-input)
+- [C.4. BackHeader](#c4-backheader)
+- [C.5. FoodGrid](#c5-foodgrid)
+- [C.6. RecipeCarousel](#c6-recipecarousel)
+- [C.7. CustomTabTrigger](#c7-customtabtrigger)
+- [C.8. CustomFilter](#c8-customfilter)
+- [C.9. TextArea](#c9-textarea)
+- [C.10. TabBarWrapper](#c10-tabbarwrapper)
+
+### [D. 🔄 Hướng Dẫn Sử Dụng Store/State Management](#d--hướng-dẫn-sử-dụng-storestate-management)
+- [D.1. ForgotPasswordStore](#d1-forgotpasswordstore)
+- [D.2. SuccessStore](#d2-successstore)
+
+### [F. 📡 Hướng Dẫn Set-up Call API](#f--hướng-dẫn-set-up-call-api)
+- [F.1. Tổng Quan](#f1-tổng-quan)
+- [F.2. File Axios (lib/api/axios.ts)](#f2-file-axios-libapiaxiosts)
+- [F.3. Interface Request/Response](#f3-interface-requestresponse)
+- [F.4. Các File API](#f4-các-file-api)
+- [F.5. Hooks với React Query](#f5-hooks-với-react-query)
+- [F.6. Sử Dụng trong Component](#f6-sử-dụng-trong-component)
+
+---
+
 ## A. 📁 Cấu Trúc Project
 
 ### A.1. Sơ Đồ Cấu Trúc Project
@@ -10,7 +50,7 @@
 cookpad-rn-expo/
 │
 ├── app/                         # Expo Router - định tuyến route/path theo file
-│   ├── _layout.tsx              # Layout gốc (font, splash, stacks)
+│   ├── _layout.tsx              # Layout gốc của ứng dụng, cấu hình fonts, splash screen, các stack navigation
 │   ├── index.tsx                # Trang đầu vào của ứng dụng --> Trang index
 │   ├── +not-found.tsx           # Trang 404
 │   │
@@ -173,130 +213,12 @@ Thư mục này chứa các màn hình chính của ứng dụng sau khi đăng 
 #### `app/+not-found.tsx`
 - Màn hình hiển thị khi route không tồn tại
 
----
-
-### A.3. Thư Mục `assets/` - Tài Nguyên Tĩnh
-
-Chứa tất cả các file tài nguyên như hình ảnh, icon, font, video.
-
-#### `assets/fonts/`
-- Chứa các file font PlusJakartaSans với các variant: Regular, Bold, SemiBold, Medium, Light, ExtraLight, ExtraBold và các biến thể Italic
-
-#### `assets/icons/`
-- Chứa các icon PNG được sử dụng trong ứng dụng:
-  - Icon active/inactive cho các tab: `active-bell-icon.png`, `active-house-icon.png`, `bell-icon.png`, `house-icon.png`
-  - Icon chức năng: `back-arrow.png`, `camera-icon.png`, `check-icon.png`, `heart-icon.png`, `search-icon.png`
-  - Icon khác: `chef碎con.png`, `clock-icon.png`, `lock-icon.png`, `timer-icon.png`, v.v.
-
-#### `assets/images/`
-- Hình ảnh màn hình: `home-hero.png`, `search-hero.png`, `splash.png`, `onboarding1-3.png`
-- Hình ảnh mẫu: `sample-avatar.png`, `sample-food1-3.jpg`
-- Thư mục `FeaturedFood/`: Chứa 8 hình ảnh món ăn nổi bật (`featuredFood1-8.jpg`)
-- Hình ảnh khác: `logo.png`, `register-success.png`, `personal-chest-banner.png`, `table.png`, v.v.
-
-#### `assets/videos/`
-- Chứa video hướng dẫn: `tutorial.mp4`
-
----
-
-### A.4. Thư Mục `components/` - Các Component Tái Sử Dụng
-
-#### `components/Common/` - Component Dùng Chung
-Các component này được sử dụng xuyên suốt ứng dụng:
-
-- **`TextScaled.tsx`**: Component text tự động scale theo kích thước màn hình
-  - Sử dụng font sizes: `xs`, `sm`, `base`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl`, `6xl`
-  - Hỗ trợ `numberOfLines`, `ellipsizeMode`
-
-- **`CustomButton.tsx`**: Component button tùy chỉnh với nhiều variant
-  - `bgVariant`: `primary`, `secondary`, `danger`, `outline`, `success`, `transparent`, `ghost`
-  - `textVariant`: `primary`, `default`, `secondary`, `danger`, `success`, `transparent`, `outline`, `ghost`
-  - Hỗ trợ icon bên trái/phải
-
-- **`Input.tsx`**: Component input text cơ bản với scaling tự động
-  - Hỗ trợ multiline, numberOfLines
-  - Tự động scale padding và font size
-
-- **`BackHeader.tsx`**: Component header với nút back
-  - Props: `headerTitle`, `onPress`, `isDark` (để đổi màu text/icon)
-
-- **`FoodGrid.tsx`**: Component hiển thị lưới món ăn dạng Pinterest (2 cột, chiều cao khác nhau)
-  - Nhận `featuredRecipesData` (optional)
-  - Tự động layout 2 cột với chiều cao động
-
-- **`RecipeCarousel.tsx`**: Component carousel ngang hiển thị các công thức
-  - Sử dụng `SwiperFlatList`
-  - Có pagination dots
-  - Nhận `data` (optional, mặc định dùng `featuredRecipesData` từ constants)
-
-- **`CustomTabTrigger.tsx`**: Component trigger cho custom tabs
-  - Hiển thị icon active/inactive
-  - Dùng cho tab navigation tùy chỉnh
-
-- **`CustomFilter.tsx`**: Component filter chips có thể scroll ngang
-  - Hiển thị các filter dạng chip
-  - Có thể thêm icon filter
-  - Hỗ trợ custom render item
-
-- **`TextArea.tsx`**: Component textarea cho input nhiều dòng
-
-- **`TabBarWrapper.tsx`**: Wrapper cho custom tab bar
-
-#### `components/HomeScreen/` - Component Màn Hình Home
-- **`HeroSection.tsx`**: Section hero của màn hình home
-- **`InspirationTab/`**: Các component cho tab Inspiration
-- **`KitchenTab/`**: Các component cho tab Kitchen
-- **`mockData.ts`**: Mock data cho màn hình home
-
-#### `components/ProfileScreen/` - Component Màn Hình Profile
-- **`RecipeCard.tsx`**: Card hiển thị công thức
-- **`RecipeListItem.tsx`**: List item hiển thị công thức dạng danh sách
-- **`mockData.ts`**: Mock data cho profile screen
-
-#### `components/RecipeScreen/` - Component Màn Hình Công Thức
-- **`CookingStepMasterTab.tsx`**: Tab master cho các bước nấu ăn
-- **`CookingStepTab.tsx`**: Tab hiển thị từng bước nấu ăn
-- **`MaterialTab.tsx`**: Tab hiển thị nguyên liệu
-
-#### `components/BellScreen/` - Component Màn Hình Thông Báo
-- **`NotificationTab/`**: Tab thông báo
-- **`MessagesTab/index.tsx`**: Tab tin nhắn
-- **`mockData.ts`**: Mock data cho notification và messages
-
-#### `components/SearchScreen/` - Component Màn Hình Tìm Kiếm
-- Các component cho search screen
-- `SearchSuggestionItem.tsx`: Item gợi ý tìm kiếm
-- `SuggestedTopicsSection.tsx`: Section chủ đề đề xuất
-- `SearchHistorySection.tsx`: Section lịch sử tìm kiếm
-- `HeroSection.tsx`: Hero section của search
-
-#### `components/Screen/` - Các Screen Component
-Chứa các component screen lớn:
-- `SplashScreen.tsx`, `OnboardingScreen.tsx`, `LogInScreen.tsx`, `SignUpScreen.tsx`
-- `HomeScreen.tsx`, `ProfileScreen.tsx`, `SearchScreen.tsx`, `NotificationScreen.tsx`
-- `FoodDetailScreen.tsx`, `CreateRecipeScreen.tsx`, `SettingScreen.tsx`, v.v.
-
----
-
-### A.5. Thư Mục `constants/` - Hằng Số
-
-#### `constants/index.ts`
-File này export tất cả các constants được sử dụng trong app:
-
-- **`images`**: Object chứa tất cả hình ảnh (splash, logo, sample images, featured foods, v.v.)
-- **`icons`**: Object chứa tất cả icon
-- **`videos`**: Object chứa video
-- **`onboarding`**: Array chứa data cho onboarding screens
-- **`featuredRecipesData`**: Array chứa data món ăn nổi bật (được sử dụng ở nhiều nơi)
-
----
-
-### A.6. Thư Mục `lib/` - Hàm Tiện Ích
+### A.3. Thư Mục `lib/` - Hàm Tiện Ích
 
 Chứa các utility functions và helpers.
 
 #### `lib/scaling.ts`
-- **`getScaleFactor()`**: Tính toán scale factor dựa trên width của màn hình (base width: 375px)
+- **`getScaleFactor()`**: Tính toán scale factor dựa trên width của màn hình (base width: 375px, theo thiết kế Figma)
 - **`BASE_VIEWPORT`**: Viewport base (375x812 - kích thước thiết kế Figma)
 - **`getDeviceDimensions()`**: Lấy width và height của thiết bị
 
@@ -316,19 +238,9 @@ Các hàm tiện ích:
 - **`getVietnamTime()`**: Lấy thời gian Việt Nam (UTC+7) dạng ISO string
 - **`getVietnamTimeFormatted()`**: Lấy thời gian Việt Nam dạng formatted string
 - **`getVietnamTimeAsUTC()`**: Lấy thời gian Việt Nam dạng UTC ISO string
-
-#### `lib/fetch.ts`
-- **`fetchAPI(url, options)`**: Hàm wrapper cho fetch API với error handling
-- **`useFetch<T>(url, options)`**: React hook để fetch data với state loading, error, data và refetch
-
-#### `lib/auth.ts`
-- **`tokenCache`**: Object chứa các hàm để lưu/đọc token từ SecureStore
-  - `getToken(key)`: Lấy token từ SecureStore
-  - `saveToken(key, value)`: Lưu token vào SecureStore
-
 ---
 
-### A.7. Thư Mục `store/` - State Management
+### A.4. Thư Mục `store/` - State Management
 
 Sử dụng **Zustand** để quản lý state.
 
@@ -368,38 +280,7 @@ const { successTitle, successDesc, successRedirect, setSuccess, resetSuccess } =
 setSuccess('Đăng ký thành công!', 'Tài khoản của bạn đã được tạo thành công.', '/(root)/tabs');
 ```
 
----
-
-### A.8. Thư Mục `types/` - Type Definitions
-
-#### `types/type.d.ts`
-Định nghĩa các interface/type dùng chung:
-- **`ButtonProps`**: Props cho CustomButton component, extends `TouchableOpacityProps`
-  - `title: string`
-  - `bgVariant?: "primary" | "secondary" | "danger" | "outline" | "success" | "transparent" | "ghost"`
-  - `textVariant?: "primary" | "default" | "secondary" | "danger" | "success" | "transparent" | "outline" | "ghost"`
-  - `IconLeft?`, `IconRight?`
-  - `className?`
-
-#### `types/image.d.ts`
-Định nghĩa type cho hình ảnh (nếu có)
-
----
-
-### A.9. Các File Cấu Hình
-
-#### `package.json`
-- **Framework**: Expo 54.0.7, React Native 0.81.4, React 19.1.0
-- **Routing**: expo-router 6.0.5
-- **Styling**: NativeWind 4.1.23 (TailwindCSS cho React Native)
-- **State Management**: Zustand 5.0.8
-- **UI Libraries**: 
-  - @gorhom/bottom-sheet
-  - react-native-swiper-flatlist
-  - react-native-modal
-  - react-native-otp-entry
-- **Storage**: expo-secure-store (lưu token an toàn)
-
+### A.5. Các File Cấu Hình
 #### `app.json`
 - Cấu hình Expo app: name, slug, icon, splash screen, scheme
 - Cấu hình iOS, Android, Web
@@ -752,7 +633,7 @@ import FoodGrid from '@/components/Common/FoodGrid';
 interface FoodItem {
   id: string;
   name: string;
-  image: any; خطر Image source
+  image: any;  // Image source
   time: string;
   likes: number;
 }
@@ -927,12 +808,6 @@ Wrapper cho custom tab bar (cần xem implementation để biết chi tiết pro
 
 Project sử dụng **Zustand** - một state management library nhỏ gọn và dễ sử dụng.
 
-### D.0. Tổng Quan về Zustand
-
-Zustand cho phép tạo store với state và actions một cách đơn giản. Mỗi store là một hook có thể sử dụng trực tiếp trong component.
-
----
-
 ### D.1. ForgotPasswordStore
 
 Store này quản lý trạng thái của flow quên mật khẩu.
@@ -1067,131 +942,700 @@ setSuccessRedirect('/(root)/tabs');
 
 ---
 
-### D.3. Tạo Store Mới
+## F. 📡 Hướng Dẫn Set-up Call API
 
-Nếu cần tạo store mới, bạn có thể tham khảo cấu trúc của các store hiện có:
+Phần này hướng dẫn cách thiết lập và sử dụng API calls trong React Native với Axios và React Query (@tanstack/react-query).
 
-**Ví dụ: Tạo UserStore**
-```typescript
-// store/userStore.ts
-import { create } from 'zustand';
+### F.1. Tổng Quan
 
-interface UserState {
-  user: {
-    id: string;
-    name: string;
-    email: string;
-  } | null;
-  setUser: (user: UserState['user']) => void;
-  clearUser: () => void;
-}
+Cấu trúc thư mục cho API:
 
-export const useUserStore = create<UserState>((set) => ({
-  user: null,
-  setUser: (user) => set({ user }),
-  clearUser: () => set({ user: null }),
-}));
+```
+lib/
+├── api/
+│   ├── axios.ts          # Cấu hình Axios instance
+│   ├── recipe.ts         # API endpoints cho Recipe
+│   └── ...
+interface/
+├── request/
+│   ├── recipe.ts         # Request types
+│   └── ...
+└── response/
+    ├── recipe.ts         # Response types
+    └── ...
+hooks/
+└── api/
+    ├── useRecipe.ts      # React Query hooks
+    └── ...
 ```
 
-**Sử dụng**:
-```tsx
-import { useUserStore } from '@/store/userStore';
+**Dependencies cần cài đặt**:
+```bash
+npm install axios @tanstack/react-query
+# hoặc
+yarn add axios @tanstack/react-query
+```
 
-const MyComponent = () => {
-  const { user, setUser, clearUser } = useUserStore();
+---
 
-  // ...
+### F.2. File Axios (lib/api/axios.ts)
+
+File này cấu hình Axios instance với interceptors để tự động thêm token và xử lý lỗi.
+
+```typescript
+import axios, { type AxiosError, type AxiosRequestConfig, type AxiosResponse } from "axios";
+import { tokenCache } from "@/lib/auth";
+
+interface CustomAxiosRequestConfig extends AxiosRequestConfig {
+	shouldNotify?: boolean;
+}
+
+async function getLocalAccessToken(): Promise<string | null> {
+	try {
+		const accessToken = await tokenCache.getToken("accessToken");
+		return accessToken;
+	} catch (error) {
+		console.error("Error getting access token:", error);
+		return null;
+	}
+}
+
+const instance = axios.create({
+	timeout: 3 * 60 * 1000, // 3 minutes
+	baseURL: process.env.EXPO_PUBLIC_API_URL || "https://your-api-url.com/api",
+	headers: {
+		"Content-Type": "application/json",
+		Accept: "application/json",
+	},
+});
+
+// Request interceptor - tự động thêm token vào header
+instance.interceptors.request.use(
+	async (config) => {
+		const token = await getLocalAccessToken();
+		if (token) {
+			config.headers["Authorization"] = `Bearer ${token}`;
+		}
+		return config;
+	},
+	(error) => {
+		return Promise.reject(error);
+	},
+);
+
+// Response interceptor - xử lý lỗi 401 (Unauthorized)
+instance.interceptors.response.use(
+	(response) => response,
+	async (error: AxiosError) => {
+		const originalRequest = error.config as CustomAxiosRequestConfig;
+		
+		if (error.response?.status === 401) {
+			// Xóa token và redirect về màn hình login
+			await tokenCache.saveToken("accessToken", "");
+			
+			// Có thể thêm logic redirect ở đây nếu cần
+			// Ví dụ: router.replace('/(auth)/sign-in');
+		}
+		
+		return Promise.reject(error);
+	}
+);
+
+export function logout() {
+	tokenCache.saveToken("accessToken", "");
+}
+
+// Helper functions cho các HTTP methods
+export const sendGet = async (url: string, params?: any): Promise<any> => {
+	const response = await instance.get(url, { params });
+	return response?.data;
+};
+
+export const sendPost = (url: string, params?: any, queryParams?: any) => {
+	const config: AxiosRequestConfig = { params: queryParams };
+
+	if (params instanceof FormData) {
+		config.headers = {
+			"Content-Type": "multipart/form-data",
+		};
+	}
+
+	return instance.post(url, params, config)
+		.then((res) => res?.data)
+		.catch((error) => {
+			if (error.response?.data) {
+				throw error.response.data;
+			}
+			throw error;
+		});
+};
+
+export const sendPut = (url: string, params?: any) => 
+	instance.put(url, params)
+		.then((res) => res?.data)
+		.catch((error) => {
+			if (error.response?.data) {
+				throw error.response.data;
+			}
+			throw error;
+		});
+
+export const sendPatch = (url: string, params?: any) => 
+	instance.patch(url, params)
+		.then((res) => res?.data)
+		.catch((error) => {
+			if (error.response?.data) {
+				throw error.response.data;
+			}
+			throw error;
+		});
+
+export const sendDelete = (url: string, params?: any) =>
+	instance.delete(url, { data: params })
+		.then((res) => res?.data)
+		.catch((error) => {
+			if (error.response?.data) {
+				throw error.response.data;
+			}
+			throw error;
+		});
+
+// ApiClient class cho cách sử dụng advanced hơn
+class ApiClient {
+	get<T = any>(config: AxiosRequestConfig, options?: { shouldNotify: boolean }): Promise<T> {
+		return this.request({
+			...config,
+			method: "GET",
+			shouldNotify: options?.shouldNotify,
+		});
+	}
+
+	post<T = any>(config: AxiosRequestConfig, options?: { shouldNotify: boolean }): Promise<T> {
+		return this.request({
+			...config,
+			method: "POST",
+			shouldNotify: options?.shouldNotify,
+		});
+	}
+
+	put<T = any>(config: AxiosRequestConfig): Promise<T> {
+		return this.request({ ...config, method: "PUT" });
+	}
+
+	delete<T = any>(config: AxiosRequestConfig): Promise<T> {
+		return this.request({
+			...config,
+			method: "DELETE",
+		});
+	}
+
+	patch<T = any>(config: AxiosRequestConfig): Promise<T> {
+		return this.request({ ...config, method: "PATCH" });
+	}
+
+	private request<T = any>(config: CustomAxiosRequestConfig): Promise<T> {
+		return new Promise((resolve, reject) => {
+			instance
+				.request<any, AxiosResponse<any>>(config)
+				.then((res: AxiosResponse<any>) => {
+					resolve(res as unknown as Promise<T>);
+				})
+				.catch((e: Error | AxiosError) => {
+					reject(e);
+				});
+		});
+	}
+}
+
+const apiClient = new ApiClient();
+
+export default apiClient;
+```
+---
+
+### F.3. Interface Request/Response
+
+#### `interface/request/recipe.ts`
+
+```typescript
+// Request body cho tạo/cập nhật recipe
+export interface ICreateRecipeBody {
+	title: string;
+	description: string;
+	image?: string | FormData; // FormData nếu upload file
+	time: number; // Thời gian nấu (phút)
+	ingredients: string[];
+	steps: string[];
+	tags?: string[];
+}
+
+export interface IUpdateRecipeBody {
+	title?: string;
+	description?: string;
+	image?: string | FormData;
+	time?: number;
+	ingredients?: string[];
+	steps?: string[];
+	tags?: string[];
+}
+
+// Request body cho tìm kiếm/ filter
+export interface IGetRecipesQuery {
+	page?: number;
+	limit?: number;
+	search?: string;
+	tags?: string[];
+	sortBy?: 'latest' | 'popular' | 'time';
+}
+
+// Request body cho rate/like recipe
+export interface IRateRecipeBody {
+	recipeId: string;
+	rating: number; // 1-5
+}
+
+export interface ILikeRecipeBody {
+	recipeId: string;
+}
+```
+
+#### `interface/response/recipe.ts`
+
+```typescript
+// Response data types
+export interface IRecipe {
+	id: string;
+	title: string;
+	description: string;
+	image: string;
+	time: string; // Format: "3h 30m", "45m"
+	likes: number;
+	views: number;
+	rating?: number;
+	ingredients: string[];
+	steps: string[];
+	tags: string[];
+	user: {
+		id: string;
+		name: string;
+		avatar?: string;
+	};
+	createdAt: string;
+	updatedAt: string;
+}
+
+// Response từ API
+export interface IGetRecipesResponse {
+	success: boolean;
+	data: {
+		recipes: IRecipe[];
+		total: number;
+		page: number;
+		limit: number;
+	};
+	message?: string;
+}
+
+export interface IGetRecipeResponse {
+	success: boolean;
+	data: IRecipe;
+	message?: string;
+}
+
+export interface ICreateRecipeResponse {
+	success: boolean;
+	data: {
+		recipeId: string;
+		recipe: IRecipe;
+	};
+	message?: string;
+}
+
+export interface IUpdateRecipeResponse {
+	success: boolean;
+	data: IRecipe;
+	message?: string;
+}
+
+export interface IDeleteRecipeResponse {
+	success: boolean;
+	data: {
+		recipeId: string;
+	};
+	message?: string;
+}
+
+export interface IRateRecipeResponse {
+	success: boolean;
+	data: {
+		recipeId: string;
+		rating: number;
+		averageRating: number;
+	};
+	message?: string;
+}
+
+export interface ILikeRecipeResponse {
+	success: boolean;
+	data: {
+		recipeId: string;
+		likes: number;
+		isLiked: boolean;
+	};
+	message?: string;
+}
+```
+
+---
+
+### F.4. Các File API
+
+Tạo file API cho từng resource/module để tổ chức code tốt hơn.
+
+#### `lib/api/recipe.ts`
+
+```typescript
+import { sendGet, sendPost, sendPut, sendDelete, sendPatch } from "./axios";
+import {
+	IGetRecipesResponse,
+	IGetRecipeResponse,
+	ICreateRecipeResponse,
+	IUpdateRecipeResponse,
+	IDeleteRecipeResponse,
+	IRateRecipeResponse,
+	ILikeRecipeResponse,
+} from "@/interface/response/recipe";
+import {
+	ICreateRecipeBody,
+	IUpdateRecipeBody,
+	IGetRecipesQuery,
+	IRateRecipeBody,
+	ILikeRecipeBody,
+} from "@/interface/request/recipe";
+
+// Lấy danh sách recipes
+export const getRecipes = async (query?: IGetRecipesQuery): Promise<IGetRecipesResponse> => {
+	const res = await sendGet(`/recipes`, query);
+	return res;
+};
+
+// Lấy chi tiết 1 recipe
+export const getRecipe = async (id: string): Promise<IGetRecipeResponse> => {
+	const res = await sendGet(`/recipes/${id}`);
+	return res;
+};
+
+// Tạo recipe mới
+export const createRecipe = async (body: ICreateRecipeBody): Promise<ICreateRecipeResponse> => {
+	const res = await sendPost(`/recipes`, body);
+	return res;
+};
+
+// Cập nhật recipe
+export const updateRecipe = async (
+	id: string,
+	body: IUpdateRecipeBody
+): Promise<IUpdateRecipeResponse> => {
+	const res = await sendPut(`/recipes/${id}`, body);
+	return res;
+};
+
+// Xóa recipe
+export const deleteRecipe = async (id: string): Promise<IDeleteRecipeResponse> => {
+	const res = await sendDelete(`/recipes/${id}`);
+	return res;
+};
+
+// Rate recipe
+export const rateRecipe = async (body: IRateRecipeBody): Promise<IRateRecipeResponse> => {
+	const res = await sendPost(`/recipes/rate`, body);
+	return res;
+};
+
+// Like/Unlike recipe
+export const likeRecipe = async (body: ILikeRecipeBody): Promise<ILikeRecipeResponse> => {
+	const res = await sendPost(`/recipes/like`, body);
+	return res;
+};
+
+// Lấy recipes của user hiện tại
+export const getMyRecipes = async (query?: IGetRecipesQuery): Promise<IGetRecipesResponse> => {
+	const res = await sendGet(`/recipes/my-recipes`, query);
+	return res;
+};
+
+// Lấy recipes đã like
+export const getLikedRecipes = async (query?: IGetRecipesQuery): Promise<IGetRecipesResponse> => {
+	const res = await sendGet(`/recipes/liked`, query);
+	return res;
 };
 ```
 
 ---
 
-### Lưu Ý Khi Sử Dụng Zustand
+### F.5. Hooks với React Query
 
-1. **Không cần Provider**: Zustand không cần Provider như Redux, có thể dùng trực tiếp
-2. **Selective Re-render**: Chỉ component sử dụng state đã thay đổi mới re-render
-3. **Persistence**: Có thể thêm persistence với middleware nếu cần lưu state vào AsyncStorage
-4. **DevTools**: Có thể tích hợp Redux DevTools nếu cần
+Sử dụng React Query để quản lý server state, caching, và refetching tự động.
+
+**Lưu ý**: Cần wrap app với QueryClientProvider. Thêm vào `app/_layout.tsx`:
+
+```typescript
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			retry: 1,
+			refetchOnWindowFocus: false,
+		},
+	},
+});
+
+// Wrap RootLayout với QueryClientProvider
+```
+
+#### `hooks/api/useRecipe.ts`
+
+```typescript
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import {
+	getRecipes,
+	getRecipe,
+	createRecipe,
+	updateRecipe,
+	deleteRecipe,
+	rateRecipe,
+	likeRecipe,
+	getMyRecipes,
+	getLikedRecipes,
+} from '@/lib/api/recipe';
+import {
+	IGetRecipesResponse,
+	IGetRecipeResponse,
+	ICreateRecipeResponse,
+	IUpdateRecipeResponse,
+	IDeleteRecipeResponse,
+	IRateRecipeResponse,
+	ILikeRecipeResponse,
+} from '@/interface/response/recipe';
+import {
+	ICreateRecipeBody,
+	IUpdateRecipeBody,
+	IGetRecipesQuery,
+	IRateRecipeBody,
+	ILikeRecipeBody,
+} from '@/interface/request/recipe';
+
+// Query: Lấy danh sách recipes
+export const useGetRecipes = (query?: IGetRecipesQuery) => {
+	return useQuery<IGetRecipesResponse, Error>({
+		queryKey: ['recipes', 'list', query],
+		queryFn: () => getRecipes(query),
+	});
+};
+
+// Query: Lấy chi tiết 1 recipe
+export const useGetRecipe = (id: string) => {
+	return useQuery<IGetRecipeResponse, Error>({
+		queryKey: ['recipes', 'detail', id],
+		queryFn: () => getRecipe(id),
+		enabled: !!id, // Chỉ fetch khi có id
+	});
+};
+
+// Query: Lấy recipes của user
+export const useGetMyRecipes = (query?: IGetRecipesQuery) => {
+	return useQuery<IGetRecipesResponse, Error>({
+		queryKey: ['recipes', 'my-recipes', query],
+		queryFn: () => getMyRecipes(query),
+	});
+};
+
+// Query: Lấy recipes đã like
+export const useGetLikedRecipes = (query?: IGetRecipesQuery) => {
+	return useQuery<IGetRecipesResponse, Error>({
+		queryKey: ['recipes', 'liked', query],
+		queryFn: () => getLikedRecipes(query),
+	});
+};
+
+// Mutation: Tạo recipe mới
+export const useCreateRecipe = () => {
+	const queryClient = useQueryClient();
+
+	return useMutation<ICreateRecipeResponse, Error, ICreateRecipeBody>({
+		mutationFn: createRecipe,
+		onSuccess: () => {
+			// Invalidate và refetch danh sách recipes
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'list'] });
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'my-recipes'] });
+		},
+	});
+};
+
+// Mutation: Cập nhật recipe
+export const useUpdateRecipe = () => {
+	const queryClient = useQueryClient();
+
+	return useMutation<
+		IUpdateRecipeResponse,
+		Error,
+		{ id: string; body: IUpdateRecipeBody }
+	>({
+		mutationFn: ({ id, body }) => updateRecipe(id, body),
+		onSuccess: (data, variables) => {
+			// Invalidate chi tiết recipe đã update
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'detail', variables.id] });
+			// Invalidate danh sách
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'list'] });
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'my-recipes'] });
+		},
+	});
+};
+
+// Mutation: Xóa recipe
+export const useDeleteRecipe = () => {
+	const queryClient = useQueryClient();
+
+	return useMutation<IDeleteRecipeResponse, Error, string>({
+		mutationFn: deleteRecipe,
+		onSuccess: () => {
+			// Invalidate tất cả queries liên quan đến recipes
+			queryClient.invalidateQueries({ queryKey: ['recipes'] });
+		},
+	});
+};
+
+// Mutation: Rate recipe
+export const useRateRecipe = () => {
+	const queryClient = useQueryClient();
+
+	return useMutation<IRateRecipeResponse, Error, IRateRecipeBody>({
+		mutationFn: rateRecipe,
+		onSuccess: (data, variables) => {
+			// Invalidate chi tiết recipe để cập nhật rating
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'detail', variables.recipeId] });
+		},
+	});
+};
+
+// Mutation: Like/Unlike recipe
+export const useLikeRecipe = () => {
+	const queryClient = useQueryClient();
+
+	return useMutation<ILikeRecipeResponse, Error, ILikeRecipeBody>({
+		mutationFn: likeRecipe,
+		onSuccess: (data, variables) => {
+			// Invalidate chi tiết recipe để cập nhật like count
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'detail', variables.recipeId] });
+			// Invalidate danh sách recipes
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'list'] });
+			// Invalidate liked recipes nếu đang xem
+			queryClient.invalidateQueries({ queryKey: ['recipes', 'liked'] });
+		},
+	});
+};
+```
 
 ---
 
-## E. 📝 Lưu Ý Quan Trọng Khi Phát Triển
+### F.6. Sử Dụng trong Component
 
-Dựa trên file `note.txt`, đây là các quy tắc cần tuân thủ khi code:
+Ví dụ sử dụng hooks trong component:
 
-### E.1. Scaling
-- **Luôn sử dụng `getScaleFactor()`** cho các số đo TailwindCSS: `height`, `max-height`, `width`, `max-width`, `padding`, `gap`, `padding-x`, `padding-y`
-- Ví dụ: `h-10` → `height: getScaleFactor() * 40`
-
-### E.2. Text Component
-- **Luôn sử dụng `TextScaled`** thay vì `Text` thông thường
-- Ví dụ:
 ```tsx
-<TextScaled
-  size="xs"
-  className="justify-start text-black font-Jakarta"
->
-  Bạn chưa có tài khoản?
-</TextScaled>
+import { View, ScrollView, ActivityIndicator } from 'react-native';
+import { useGetRecipes, useCreateRecipe, useLikeRecipe } from '@/hooks/api/useRecipe';
+import { ICreateRecipeBody } from '@/interface/request/recipe';
+
+const RecipeListScreen = () => {
+	// Query: Fetch danh sách recipes
+	const { data, isLoading, error, refetch } = useGetRecipes({
+		page: 1,
+		limit: 20,
+		sortBy: 'latest',
+	});
+
+	// Mutation: Like recipe
+	const likeMutation = useLikeRecipe();
+
+	const handleLike = (recipeId: string) => {
+		likeMutation.mutate(
+			{ recipeId },
+			{
+				onSuccess: (response) => {
+					console.log('Recipe liked!', response);
+				},
+				onError: (error) => {
+					console.error('Error liking recipe:', error);
+				},
+			}
+		);
+	};
+
+	if (isLoading) {
+		return (
+			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+				<ActivityIndicator size="large" />
+			</View>
+		);
+	}
+
+	if (error) {
+		return (
+			<View>
+				<Text>Error: {error.message}</Text>
+			</View>
+		);
+	}
+
+	return (
+		<ScrollView>
+			{data?.data.recipes.map((recipe) => (
+				<RecipeCard
+					key={recipe.id}
+					recipe={recipe}
+					onLike={() => handleLike(recipe.id)}
+				/>
+			))}
+		</ScrollView>
+	);
+};
+
+// Ví dụ tạo recipe mới
+const CreateRecipeScreen = () => {
+	const createMutation = useCreateRecipe();
+	const router = useRouter();
+
+	const handleCreate = (formData: ICreateRecipeBody) => {
+		createMutation.mutate(formData, {
+			onSuccess: (response) => {
+				console.log('Recipe created!', response);
+				router.push(`/(root)/food-detail?id=${response.data.recipeId}`);
+			},
+			onError: (error) => {
+				console.error('Error creating recipe:', error);
+			},
+		});
+	};
+
+	return (
+		// Form UI...
+	);
+};
 ```
 
-### E.3. Button Component
-- **Luôn sử dụng `CustomButton`** thay vì button thông thường
-- Tham khảo file `CustomButton.tsx` để biết cách sử dụng
+**Các tính năng của React Query**:
+- **Caching**: Tự động cache data, không cần fetch lại nếu data chưa stale
+- **Refetching**: Tự động refetch khi component mount hoặc khi mất focus rồi focus lại
+- **Optimistic Updates**: Có thể update UI trước khi API response (với `onMutate`)
+- **Background Updates**: Update data ở background mà không làm gián đoạn UX
+- **Error Retry**: Tự động retry khi request fail
 
-### E.4. Image Component
-- Chuyển `<img>` thành `<Image>` từ React Native
-- Ví dụ:
-```tsx
-<Image
-  style={{
-    width: getScaleFactor() * 80,
-    height: getScaleFactor() * 80,
-  }}
-  source={images.logo}
-  resizeMode="contain"
-/>
-```
-
-### E.5. Constants
-- Định nghĩa hình ảnh/logo trong `constants/index.ts` với tên hợp lý
-
-### E.6. Positioning
-- Các `left-[apx]` nếu số quá lớn (>375/2) thì chuyển sang `right-[375-a]px`, sau đó nhân với `getScaleFactor()`
-- Ví dụ: `left-[332px]` → `right-[43px]` → `right: getScaleFactor() * 43`
-
-### E.7. View Component
-- Bỏ các `inline-flex` khi sử dụng `<View>`
-
-### E.8. Styling
-- `text-Neutral-900` → `text-black`
-- `bg-Tertiary-100` → `bg-backgroundV1`
-- `justifyContent: 'flex-start'` → `justifyContent: 'center'`
-- Bỏ `className font-family` (font được quản lý trong TextScaled)
-
-### E.9. Routing
-- Khi tạo Screen mới, nhớ thêm vào `_layout.tsx` trong `Stack.Screen`
-
-### E.10. Data & Rendering
-- Sử dụng mock-data và render thay vì hard-code
-- Sử dụng `FlatList` để render thay cho `.map()`
-
-### E.11. Code Structure
-- Viết trong 1 file khi chưa cần tách component
-- Hạn chế View chỉ có 1 View con bọc nhau (gộp lại cho gọn)
-
-### E.12. Icons
-- Các `div` có size `w-6 h-6` hoặc `w-4 h-4` thường là icon
-- Chuyển thành `<Image>` với `icons.xxxIcon` (sẽ cập nhật sau)
-
-### E.13. Width
-- `width: getScaleFactor() * 320` → `width: "100%"`
+**Best Practices**:
+- Sử dụng `queryKey` rõ ràng và consistent
+- `invalidateQueries` sau khi mutation để đảm bảo data luôn fresh
+- Sử dụng `enabled` option để control khi nào query nên chạy
+- Xử lý loading và error states trong UI
 
 ---
-
-## 🚀 Kết Luận
-
-Tài liệu này cung cấp cái nhìn tổng quan về cấu trúc project, các models, components, và cách sử dụng state management. Khi phát triển tính năng mới, hãy tham khảo các ví dụ và quy tắc trên để đảm bảo code nhất quán và dễ bảo trì.
-
-Nếu có thắc mắc hoặc cần làm rõ thêm, hãy xem implementation của các component/ store tương tự trong project để hiểu rõ hơn cách sử dụng.
-
