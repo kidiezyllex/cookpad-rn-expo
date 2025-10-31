@@ -1,7 +1,8 @@
 import { icons } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
+import { router } from 'expo-router';
 import { useState } from 'react';
-import { FlatList, Image, TextInput, View } from 'react-native';
+import { FlatList, Image, Pressable, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TextScaled from '../Common/TextScaled';
 import SearchSuggestionItem from '../SearchScreen/SearchSuggestionItem';
@@ -9,17 +10,17 @@ import { searchSuggestionsData } from '../SearchScreen/mockData';
 
 const SearchBarScreen = () => {
     const [searchText, setSearchText] = useState('');
-    
+
     const getFilteredData = () => {
         if (searchText.trim() === '') {
             return searchSuggestionsData.filter(item => item.searched === true);
         } else {
-            return searchSuggestionsData.filter(item => 
+            return searchSuggestionsData.filter(item =>
                 item.name.toLowerCase().includes(searchText.toLowerCase())
             );
         }
     };
-    
+
     const renderSearchSuggestion = ({ item }: { item: typeof searchSuggestionsData[0] }) => (
         <SearchSuggestionItem item={item} />
     );
@@ -46,14 +47,17 @@ const SearchBarScreen = () => {
                         gap: getScaleFactor() * 8,
                     }}
                 >
-                    <Image
-                        source={icons.caretLeftIcon}
-                        style={{
-                            width: getScaleFactor() * 24,
-                            height: getScaleFactor() * 24
-                        }}
-                        resizeMode="contain"
-                    />
+
+                    <Pressable onPress={() => router.back()}>
+                        <Image
+                            source={icons.caretLeftIcon}
+                            style={{
+                                width: getScaleFactor() * 24,
+                                height: getScaleFactor() * 24
+                            }}
+                            resizeMode="contain"
+                        />
+                    </Pressable>
                     <View
                         style={{
                             flex: 1,

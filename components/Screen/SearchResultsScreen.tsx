@@ -2,8 +2,9 @@ import CustomFilter from '@/components/Common/CustomFilter';
 import { icons } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
 import { useRoute } from '@react-navigation/native';
+import { router } from 'expo-router';
 import { useState } from 'react';
-import { Image, ScrollView, TextInput, View } from 'react-native';
+import { Image, Pressable, ScrollView, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import FoodGrid from '../Common/FoodGrid';
 
@@ -59,14 +60,16 @@ const SearchResultsScreen = () => {
                         marginBottom: getScaleFactor() * 8,
                     }}
                 >
-                    <Image
-                        source={icons.caretLeftIcon}
-                        style={{
-                            width: getScaleFactor() * 24,
-                            height: getScaleFactor() * 24
-                        }}
-                        resizeMode="contain"
-                    />
+                    <Pressable onPress={() => router.back()}>
+                        <Image
+                            source={icons.caretLeftIcon}
+                            style={{
+                                width: getScaleFactor() * 24,
+                                height: getScaleFactor() * 24
+                            }}
+                            resizeMode="contain"
+                        />
+                    </Pressable>
                     <View
                         style={{
                             flex: 1,
@@ -104,7 +107,6 @@ const SearchResultsScreen = () => {
                     isFilterSelected={isFilterSelected}
                     onToggleFilter={toggleFilterIcon}
                 />
-
                 <FoodGrid />
             </ScrollView>
         </SafeAreaView>

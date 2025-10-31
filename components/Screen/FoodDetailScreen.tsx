@@ -101,13 +101,13 @@ const FoodDetailScreen = () => {
                     }}
                 >
                     <View
-                        className="flex-row items-center justify-between"
+                        className="flex-row justify-between items-center"
                         style={{
                             height: getScaleFactor() * 44,
                             paddingHorizontal: getScaleFactor() * 16,
                         }}
                     >
-                        <Pressable>
+                        <Pressable onPress={() => router.back()}>
                             <Ionicons
                                 name="chevron-back"
                                 size={getScaleFactor() * 24}

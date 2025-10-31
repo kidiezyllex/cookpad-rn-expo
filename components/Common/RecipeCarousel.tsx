@@ -1,6 +1,7 @@
 import { featuredRecipesData } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
-import { View } from 'react-native';
+import { router } from 'expo-router';
+import { Pressable, View } from 'react-native';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 import RecipeCard from '../HomeScreen/InspirationTab/RecipeCard';
 
@@ -27,7 +28,8 @@ const RecipeCarousel = ({ data = featuredRecipesData }: RecipeCarouselProps) => 
             <SwiperFlatList
                 data={data}
                 renderItem={({ item }) => (
-                    <View
+                    <Pressable
+                        onPress={() => router.push('/(root)/food-detail')}
                         style={{
                             marginRight: getScaleFactor() * 8,
                         }}
@@ -39,7 +41,7 @@ const RecipeCarousel = ({ data = featuredRecipesData }: RecipeCarouselProps) => 
                             time={item.time}
                             likes={item.likes}
                         />
-                    </View>
+                    </Pressable>
                 )}
                 keyExtractor={(item) => item.id}
                 horizontal

@@ -92,12 +92,12 @@ const CreateRecipeScreen = () => {
                     gap: getScaleFactor() * 4,
                 }}
             >
-                 <TextScaled
-                        size="sm"
-                        className="font-medium text-black"
-                    >
-                        {item.step}
-                    </TextScaled>
+                <TextScaled
+                    size="sm"
+                    className="font-medium text-black"
+                >
+                    {item.step}
+                </TextScaled>
                 <View
                     style={{
                         width: '100%',
@@ -149,9 +149,9 @@ const CreateRecipeScreen = () => {
 
     return (
         <SafeAreaView className="flex-1" edges={['top', 'bottom', 'left', 'right']} style={{ backgroundColor: 'white' }}>
-            <BackHeader 
-                headerTitle="Công thức món ăn" 
-                onPress={() => router.back()} 
+            <BackHeader
+                headerTitle="Công thức món ăn"
+                onPress={() => router.back()}
             />
 
             <ScrollView
@@ -279,7 +279,7 @@ const CreateRecipeScreen = () => {
                         >
                             <TextScaled
                                 size="base"
-                                className="text-textNeutralV1 font-light"
+                                className="font-light text-textNeutralV1"
                             >
                                 Hãy chia sẻ với mọi người về món này của bạn nhé. Ai hay điều gì đã truyền cảm hứng cho bạn nấu nó? Tại sao nó đặc biệt? Bạn thích thưởng thức nó theo cách nào?
                             </TextScaled>
@@ -328,6 +328,7 @@ const CreateRecipeScreen = () => {
                                 }}
                             >
                                 <Pressable
+                                    onPress={() => router.back()}
                                     style={{
                                         width: getScaleFactor() * 24,
                                         height: getScaleFactor() * 24,
@@ -574,99 +575,99 @@ const CreateRecipeScreen = () => {
                     </View>
                     {/* Phần cách làm */}
                     <View
-                    style={{
-                        width: '100%',
-                        padding: getScaleFactor() * 16,
-                        backgroundColor: '#FFFFFF',
-                        borderRadius: getScaleFactor() * 8,
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'flex-start',
-                        gap: getScaleFactor() * 16,
-                    }}
-                >
-                    <TextScaled
-                        size="base"
-                        className="font-bold text-black"
-                    >
-                        Cách làm
-                    </TextScaled>
-
-                    {/* Video Upload */}
-                    <View
                         style={{
                             width: '100%',
-                            height: 200,
-                            position: 'relative',
-                            backgroundColor: '#EEEEEE',
+                            padding: getScaleFactor() * 16,
+                            backgroundColor: '#FFFFFF',
                             borderRadius: getScaleFactor() * 8,
-                            overflow: 'hidden',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <View
-                            style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: [{ translateX: -getScaleFactor() * 100 }, { translateY: -getScaleFactor() * 10 }], // 10 là heiht của View này, chính là 50% height
-                                flexDirection: 'row',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                gap: getScaleFactor() * 8,
-                            }}
-                        >
-                            <Image
-                                source={icons.videoIcon}
-                                style={{
-                                    width: getScaleFactor() * 24,
-                                    height: getScaleFactor() * 24
-                                }}
-                                resizeMode="contain"
-                            />
-                            <TextScaled
-                                size="sm"
-                                className="font-medium text-textNeutralV1"
-                            >
-                                Thêm video nấu món ăn
-                            </TextScaled>
-                        </View>
-                    </View>
-
-                    {/* Cooking Steps */}
-                    <View
-                        style={{
-                            alignSelf: 'stretch',
                             flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'flex-start',
-                            gap: getScaleFactor() * 8,
-                        }}
-                    >
-                        <FlatList
-                            data={cookingStepsData}
-                            renderItem={renderCookingStep}
-                            keyExtractor={(item) => item.id}
-                            scrollEnabled={false}
-                            style={{ width: '100%' }}
-                            contentContainerStyle={{
-                                gap: getScaleFactor() * 8,
-                            }}
-                        />
-                    </View>
-
-                    {/* Add Step Button */}
-                    <View
-                        style={{
-                            alignSelf: 'stretch',
-                            flexDirection: 'row',
                             justifyContent: 'center',
                             alignItems: 'flex-start',
                             gap: getScaleFactor() * 16,
                         }}
                     >
-                         <Pressable
+                        <TextScaled
+                            size="base"
+                            className="font-bold text-black"
+                        >
+                            Cách làm
+                        </TextScaled>
+
+                        {/* Video Upload */}
+                        <View
+                            style={{
+                                width: '100%',
+                                height: 200,
+                                position: 'relative',
+                                backgroundColor: '#EEEEEE',
+                                borderRadius: getScaleFactor() * 8,
+                                overflow: 'hidden',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <View
+                                style={{
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: [{ translateX: -getScaleFactor() * 100 }, { translateY: -getScaleFactor() * 10 }], // 10 là heiht của View này, chính là 50% height
+                                    flexDirection: 'row',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    gap: getScaleFactor() * 8,
+                                }}
+                            >
+                                <Image
+                                    source={icons.videoIcon}
+                                    style={{
+                                        width: getScaleFactor() * 24,
+                                        height: getScaleFactor() * 24
+                                    }}
+                                    resizeMode="contain"
+                                />
+                                <TextScaled
+                                    size="sm"
+                                    className="font-medium text-textNeutralV1"
+                                >
+                                    Thêm video nấu món ăn
+                                </TextScaled>
+                            </View>
+                        </View>
+
+                        {/* Cooking Steps */}
+                        <View
+                            style={{
+                                alignSelf: 'stretch',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'flex-start',
+                                gap: getScaleFactor() * 8,
+                            }}
+                        >
+                            <FlatList
+                                data={cookingStepsData}
+                                renderItem={renderCookingStep}
+                                keyExtractor={(item) => item.id}
+                                scrollEnabled={false}
+                                style={{ width: '100%' }}
+                                contentContainerStyle={{
+                                    gap: getScaleFactor() * 8,
+                                }}
+                            />
+                        </View>
+
+                        {/* Add Step Button */}
+                        <View
+                            style={{
+                                alignSelf: 'stretch',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'flex-start',
+                                gap: getScaleFactor() * 16,
+                            }}
+                        >
+                            <Pressable
                                 style={{
                                     width: "100%",
                                     flexDirection: 'row',
@@ -692,8 +693,8 @@ const CreateRecipeScreen = () => {
                                     Thêm bước
                                 </TextScaled>
                             </Pressable>
+                        </View>
                     </View>
-                </View>
                 </View>
             </ScrollView>
 
