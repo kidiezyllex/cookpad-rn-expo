@@ -1,9 +1,10 @@
-import { useVideoPlayer, VideoView } from 'expo-video';
-import { Image, ScrollView, View } from 'react-native';
-
 import TextScaled from '@/components/Common/TextScaled';
 import { icons, images, videos } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
+import { router } from 'expo-router';
+import * as ScreenOrientation from 'expo-screen-orientation';
+import { useVideoPlayer, VideoView } from 'expo-video';
+import { Image, Pressable, ScrollView, View } from 'react-native';
 
 const mockSteps = [
   {
@@ -96,20 +97,26 @@ const CookingStepMasterTab = ({ onBackPress }: CookingStepMasterTabProps) => {
           alignItems: 'center',
           position: 'relative'
         }}>
-          <View style={{
-            width: getScaleFactor() * 60,
-            height: getScaleFactor() * 60,
-            backgroundColor: '#F1EEE8',
-            borderRadius: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'absolute',
-            zIndex: 1,
-            top: '50%',
-            left: '50%',
-            marginTop: getScaleFactor() * -30,
-            marginLeft: getScaleFactor() * -30,
-          }}>
+          <Pressable
+            style={{
+              width: getScaleFactor() * 60,
+              height: getScaleFactor() * 60,
+              backgroundColor: '#F1EEE8',
+              borderRadius: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'absolute',
+              zIndex: 1,
+              top: '50%',
+              left: '50%',
+              marginTop: getScaleFactor() * -30,
+              marginLeft: getScaleFactor() * -30,
+            }}
+            onPress={async () => {
+              await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+              router.push('/view-video' as any);
+            }}
+          >
             <Image
               source={icons.playIcon}
               style={{ 
@@ -119,7 +126,7 @@ const CookingStepMasterTab = ({ onBackPress }: CookingStepMasterTabProps) => {
               }}
               resizeMode="contain"
             />
-          </View>
+          </Pressable>
           <VideoView
             style={{
               position: 'absolute',

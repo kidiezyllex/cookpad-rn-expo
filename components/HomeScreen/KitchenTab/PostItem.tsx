@@ -123,6 +123,7 @@ const PostItem = ({ item }: PostItemProps) => {
                 />
                 <View
                     style={{
+                        width: '100%',
                         flexDirection: 'column',
                         justifyContent: 'flex-start',
                         alignItems: 'flex-start',
@@ -136,6 +137,7 @@ const PostItem = ({ item }: PostItemProps) => {
                             justifyContent: 'space-between',
                             alignItems: 'flex-start',
                             width: '100%',
+                            marginTop: getScaleFactor() * 4,
                         }}
                     >
                         <View
