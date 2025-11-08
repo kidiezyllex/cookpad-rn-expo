@@ -2210,93 +2210,64 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 const HeroSection = (param)=>{
     let { activeTab, onTabChange } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative bg-[#E36137] h-[256px]",
+        className: " h-[256px] mx-16 mt-2 rounded-b-xl",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute left-0 bottom-0 w-[200px] h-[200px]",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].homeHero,
-                    alt: "home-hero",
-                    width: 200,
-                    height: 200
-                }, void 0, false, {
-                    fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                    lineNumber: 17,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
-                fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                lineNumber: 16,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute justify-center items-center right-[19px] top-[50px] w-[186px] h-[98px]",
+                className: "flex flex-row items-center",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].messageBubble,
-                            alt: "message-bubble",
-                            fill: true,
-                            className: "object-contain"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "".concat(activeTab === 'ban-bep' ? 'border-b-white bg-customPrimary' : 'bg-[#F1EEE8] border-b-transparent', " w-[50%] items-center justify-center rounded-t-xl border-b-2 min-h-[40px] h-[40px] "),
+                        onClick: ()=>onTabChange('ban-bep'),
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            size: "base",
+                            className: "font-medium ".concat(activeTab === 'ban-bep' ? 'text-white' : 'text-customPrimary'),
+                            children: "Bạn Bếp"
                         }, void 0, false, {
                             fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                            lineNumber: 24,
+                            lineNumber: 21,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                        lineNumber: 23,
+                        lineNumber: 17,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        size: "sm",
-                        className: "font-medium text-customSecondary max-w-[141px]",
-                        children: [
-                            "Chào ngày mới, ",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                size: "base",
-                                className: "font-bold text-blue-900",
-                                children: "Hòa"
-                            }, void 0, false, {
-                                fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                                lineNumber: 30,
-                                columnNumber: 36
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                        lineNumber: 26,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        className: "font-light text-customSecondary max-w-[141px]",
-                        size: "xs",
-                        children: "Cùng vào xem các công thức mới của Bạn Bếp nào!"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "".concat(activeTab === 'cam-hung' ? 'border-b-white bg-customPrimary' : 'bg-[#F1EEE8] border-b-transparent', " w-[50%] items-center justify-center rounded-t-xl border-b-2 min-h-[40px] h-[40px]"),
+                        onClick: ()=>onTabChange('cam-hung'),
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            size: "base",
+                            className: "font-medium ".concat(activeTab === 'cam-hung' ? 'text-white' : 'text-customPrimary'),
+                            children: "Cảm hứng"
+                        }, void 0, false, {
+                            fileName: "[project]/components/HomeScreen/HeroSection.tsx",
+                            lineNumber: 32,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                        lineNumber: 32,
+                        lineNumber: 28,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                lineNumber: 20,
+                lineNumber: 16,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex flex-row items-center",
+                className: "relative bg-customPrimary h-[216px] w-full rounded-b-xl ".concat(activeTab === 'cam-hung' ? 'rounded-tl-xl' : 'rounded-tr-xl'),
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "".concat(activeTab === 'ban-bep' ? 'border-b-white' : 'border-b-transparent', " w-[50%] items-center justify-center border-b-2 min-h-[38px] h-[38px]"),
-                        onClick: ()=>onTabChange('ban-bep'),
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            size: "base",
-                            className: "font-medium ".concat(activeTab === 'ban-bep' ? 'text-white' : 'text-white/50'),
-                            children: "Bạn Bếp"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute left-0 bottom-0 w-[200px] h-[200px]",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].homeHero,
+                            alt: "home-hero",
+                            width: 200,
+                            height: 200
                         }, void 0, false, {
                             fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                            lineNumber: 46,
+                            lineNumber: 43,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
@@ -2304,21 +2275,52 @@ const HeroSection = (param)=>{
                         lineNumber: 42,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "".concat(activeTab === 'cam-hung' ? 'border-b-white' : 'border-b-transparent', " w-[50%] items-center justify-center border-b-2 min-h-[38px] h-[38px]"),
-                        onClick: ()=>onTabChange('cam-hung'),
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            size: "base",
-                            className: "font-medium ".concat(activeTab === 'cam-hung' ? 'text-white' : 'text-white/50'),
-                            children: "Cảm hứng"
-                        }, void 0, false, {
-                            fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                            lineNumber: 57,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0))
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute flex flex-col justify-center items-center right-[19px] top-[50px] w-[186px] h-[98px]",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].messageBubble,
+                                alt: "message-bubble",
+                                fill: true,
+                                className: "object-contain z-0 absolute inset-0"
+                            }, void 0, false, {
+                                fileName: "[project]/components/HomeScreen/HeroSection.tsx",
+                                lineNumber: 48,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                size: "sm",
+                                className: "font-medium text-customSecondary max-w-[141px] z-10 relative",
+                                children: [
+                                    "Chào ngày mới, ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        size: "base",
+                                        className: "font-bold text-blue-900",
+                                        children: "Hòa"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/HomeScreen/HeroSection.tsx",
+                                        lineNumber: 53,
+                                        columnNumber: 40
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/HomeScreen/HeroSection.tsx",
+                                lineNumber: 49,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                className: "font-light text-customSecondary max-w-[141px] z-10 relative",
+                                size: "xs",
+                                children: "Cùng vào xem các công thức mới của Bạn Bếp nào!"
+                            }, void 0, false, {
+                                fileName: "[project]/components/HomeScreen/HeroSection.tsx",
+                                lineNumber: 55,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/components/HomeScreen/HeroSection.tsx",
-                        lineNumber: 53,
+                        lineNumber: 46,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
