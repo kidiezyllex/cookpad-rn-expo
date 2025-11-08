@@ -77,28 +77,27 @@ const PostItem = ({ item }: PostItemProps) => {
                         className='rounded-t-lg object-cover'
                     />
                 </div>
-                <div
-                    className="flex flex-col items-start justify-start w-full gap-2 px-3"
+                <div className="flex flex-col items-start justify-start w-full gap-2 px-3"
                 >
                     <div
-                        className="flex flex-row items-start justify-between mt-1 w-full"
+                        className="flex flex-row items-start justify-between mt-2 w-full"
                     >
                         <div className="flex flex-row items-start justify-start gap-3">
                             <div className="flex flex-row items-center justify-start gap-1">
-                                <Image src={icons.heartIcon} alt="likes" className="object-contain h-5 w-5" />
+                                <Image src={icons.heartIcon} alt="likes" className="object-contain h-5 w-auto" />
                                 <TextScaled size="sm" className="font-medium text-black">
                                     {item.content.likes}
                                 </TextScaled>
                             </div>
                             <div className="flex flex-row items-center justify-start gap-1">
-                                <Image src={icons.chatIcon} alt="comments" className="object-contain h-5 w-5" />
+                                <Image src={icons.chatIcon} alt="comments" className="object-contain h-5 w-auto" />
                                 <TextScaled size="sm" className="font-medium text-black">
                                     {item.content.comments}
                                 </TextScaled>
                             </div>
                         </div>
                         <div className="flex flex-row items-center justify-start gap-1">
-                            <Image src={icons.saveIcon} alt="save" className="object-contain h-5 w-5" />
+                            <Image src={icons.saveIcon} alt="save" className="object-contain h-5 w-auto" />
                         </div>
                     </div>
 

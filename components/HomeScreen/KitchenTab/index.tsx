@@ -42,10 +42,10 @@ interface KitchenTabProps {
 
 const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
     return (
-        <div className="items-center mt-2 bg-white px-16 mx-auto py-4"
+        <div className="items-center mt-2 bg-white py-4 space-y-8"
         >
             {/* Posts section */}
-            <div className="w-full relative">
+            <div className="w-full relative px-16 mx-auto">
                 <Swiper
                     modules={[Navigation, Pagination]}
                     slidesPerView={4}
@@ -70,14 +70,14 @@ const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
                 {/* Navigation buttons */}
                 <button 
                     type="button"
-                    className="swiper-button-prev-posts absolute -left-12 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
+                    className="swiper-button-prev-posts absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
                     aria-label="Previous slide"
                 >
                     <ArrowLeft2 size={20} color="#fff" variant="Outline" />
                 </button>
                 <button 
                     type="button"
-                    className="swiper-button-next-posts absolute -right-12 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
+                    className="swiper-button-next-posts absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
                     aria-label="Next slide"
                 >
                     <ArrowRight2 size={20} color="#fff" variant="Outline" />
@@ -87,7 +87,8 @@ const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
             </div>
 
             {/* Suggested friends section */}
-            <div className="flex w-full flex-col items-start justify-start bg-white pt-4 pb-8 gap-4">
+            <div className='py-2 bg-[#F1EEE8]'>
+            <div className="flex flex-col items-start justify-start bg-white pt-4 px-16 pb-8 gap-4">
                 <div className="flex w-full flex-row items-start justify-between">
                     <TextScaled
                         size="base"
@@ -107,15 +108,48 @@ const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
                     ))}
                 </div>
             </div>
+            </div>
 
             {/* Additional posts section */}
-            <div className="flex w-full flex-col items-center justify-center bg-white p-4"
-            >
-                <div className="w-full flex flex-col gap-2">
-                    {postsData.slice(2, 3).map((item) => (
-                        <PostItem key={item.id} item={item as any} />
+            <div className="w-full relative px-16 mx-auto">
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    slidesPerView={4}
+                    spaceBetween={16}
+                    grabCursor={true}
+                    navigation={{
+                        nextEl: '.swiper-button-next-posts',
+                        prevEl: '.swiper-button-prev-posts',
+                    }}
+                    pagination={{
+                        el: '.swiper-pagination-posts',
+                        clickable: true,
+                    }}
+                    className="posts-swiper"
+                >
+                    {postsData.map((item) => (
+                        <SwiperSlide key={item.id} className="h-full mb-1">
+                            <PostItem item={item as any} />
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
+                {/* Navigation buttons */}
+                <button 
+                    type="button"
+                    className="swiper-button-prev-posts absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
+                    aria-label="Previous slide"
+                >
+                    <ArrowLeft2 size={20} color="#fff" variant="Outline" />
+                </button>
+                <button 
+                    type="button"
+                    className="swiper-button-next-posts absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
+                    aria-label="Next slide"
+                >
+                    <ArrowRight2 size={20} color="#fff" variant="Outline" />
+                </button>
+                {/* Pagination */}
+                <div className="swiper-pagination-posts flex justify-center mt-4 gap-2"></div>
             </div>
         </div>
     );

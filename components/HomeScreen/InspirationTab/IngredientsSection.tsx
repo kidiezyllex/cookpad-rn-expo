@@ -26,7 +26,7 @@ const IngredientsSection = () => {
 
     return (
         <div
-            className="w-full mb-6 px-4 flex flex-col items-start justify-center"
+            className="w-full mb-6 px-16 flex flex-col items-start justify-center"
         >
             <TextScaled
                 className="font-bold text-black mb-4"
@@ -42,12 +42,13 @@ const IngredientsSection = () => {
                 isFilterSelected={isFilterSelected}
                 onToggleFilter={toggleFilterIcon}
             />
-            
-           <RecipeCarousel />
+
+            <RecipeCarousel />
 
             <CustomButton
                 title="Tìm kiếm theo nguyên liệu"
                 onPress={() => { }}
+                className='w-fit mx-auto'
                 IconLeft={<Image src={icons.searchIcon} alt="search" width={24} height={24} className="brightness-0 invert" />}
             />
         </div>

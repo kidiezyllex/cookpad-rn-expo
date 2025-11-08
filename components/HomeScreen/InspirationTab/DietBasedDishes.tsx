@@ -58,10 +58,10 @@ const DietBasedDishes = () => {
 
     return (
         <div
-            className="w-full flex flex-col justify-center items-start mb-6 bg-white px-4 pt-2 pb-6"
+            className="w-full flex flex-col justify-center items-start mb-6 bg-white px-16 pt-2 pb-6"
         >
             <div
-                className="flex-row justify-between items-center w-full mb-4"
+                className="flex justify-between items-center w-full mb-4"
             >
                 <TextScaled
                     size="base"
@@ -70,7 +70,7 @@ const DietBasedDishes = () => {
                     Món ăn theo chế độ ăn
                 </TextScaled>
                 <button
-                    className="font-light text-customPrimary text-sm cursor-pointer"
+                    className="text-customPrimary text-sm cursor-pointer"
                 >
                     Xem thêm
                 </button>

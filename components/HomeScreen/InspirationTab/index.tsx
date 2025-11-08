@@ -6,7 +6,7 @@ import PopularTopicsSection from './PopularTopicsSection';
 const InspirationTab = () => {
     return (
         <div
-            className="flex flex-col items-center mt-2 pt-4 pb-4"
+            className="flex flex-col items-center pt-4 pb-4"
         >
             <IngredientsSection />
             <DietBasedDishes />

@@ -79,7 +79,7 @@ const CustomButton = ({
     >
       <span className="flex w-full flex-row items-center justify-center gap-2">
         {IconLeft && (typeof IconLeft === 'function' ? <IconLeft /> : IconLeft)}
-        <TextScaled size="base" className="font-bold" style={{ color: getTextVariantStyle(textVariant) }}>
+        <TextScaled size="base" className="font-semibold" style={{ color: getTextVariantStyle(textVariant) }}>
           {title}
         </TextScaled>
         {IconRight && (typeof IconRight === 'function' ? <IconRight /> : IconRight)}

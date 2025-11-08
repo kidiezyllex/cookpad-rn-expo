@@ -2272,26 +2272,32 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Common/TextScaled.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/constants/index.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@15.5.6_@babel+core@7.2_4e84d3a8f250f9392ab0c89ffd1f0450/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@15.5.6_@babel+core@7.2_4e84d3a8f250f9392ab0c89ffd1f0450/node_modules/next/navigation.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
 ;
 const RecipeCard = (param)=>{
     let { id: _id, name, image, time, likes, showOverlay = true } = param;
+    _s();
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-col items-start bg-white w-[120px] rounded-lg border border-[#E5E7EB]",
+        onClick: ()=>router.push('/(root)/food-detail'),
+        className: "flex flex-col cursor-pointer items-start bg-white w-[120px] rounded-lg border border-[#E5E7EB]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative w-full h-[110px] rounded-t-lg overflow-hidden",
+                className: "relative w-full h-[110px] rounded-t-lg overflow-hidden bg-black",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         src: image,
                         alt: name,
                         fill: true,
-                        className: "object-cover"
+                        className: "object-cover opacity-80"
                     }, void 0, false, {
                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                        lineNumber: 30,
+                        lineNumber: 33,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     showOverlay && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2303,11 +2309,10 @@ const RecipeCard = (param)=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].clockIcon,
                                         alt: "time",
-                                        width: 10,
-                                        height: 10
+                                        className: "w-auto h-3 object-contain"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 39,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2316,13 +2321,13 @@ const RecipeCard = (param)=>{
                                         children: time
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                                        lineNumber: 37,
+                                        lineNumber: 40,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                                lineNumber: 35,
+                                lineNumber: 38,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2331,11 +2336,10 @@ const RecipeCard = (param)=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].save2Icon,
                                         alt: "likes",
-                                        width: 10,
-                                        height: 10
+                                        className: "w-auto h-3 object-contain"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 45,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2344,25 +2348,25 @@ const RecipeCard = (param)=>{
                                         children: likes
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                                        lineNumber: 43,
+                                        lineNumber: 46,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                                lineNumber: 41,
+                                lineNumber: 44,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                        lineNumber: 32,
+                        lineNumber: 35,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                lineNumber: 27,
+                lineNumber: 30,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2374,32 +2378,36 @@ const RecipeCard = (param)=>{
                         children: name
                     }, void 0, false, {
                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                        lineNumber: 53,
+                        lineNumber: 56,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].threeDotsIcon,
                         alt: "more",
-                        width: 16,
-                        height: 16
+                        className: "w-auto h-4 object-contain"
                     }, void 0, false, {
                         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                        lineNumber: 56,
+                        lineNumber: 59,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-                lineNumber: 50,
+                lineNumber: 53,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx",
-        lineNumber: 24,
+        lineNumber: 26,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
+_s(RecipeCard, "fN7XvhJ+p5oE6+Xlo0NJmXpxjC8=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
+    ];
+});
 _c = RecipeCard;
 const __TURBOPACK__default__export__ = RecipeCard;
 var _c;
@@ -2417,11 +2425,8 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@15.5.6_@babel+core@7.2_4e84d3a8f250f9392ab0c89ffd1f0450/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/constants/index.ts [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@15.5.6_@babel+core@7.2_4e84d3a8f250f9392ab0c89ffd1f0450/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/swiper@11.2.10/node_modules/swiper/swiper-react.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$InspirationTab$2f$RecipeCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/HomeScreen/InspirationTab/RecipeCard.tsx [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
@@ -2430,54 +2435,43 @@ var _s = __turbopack_context__.k.signature();
 ;
 const RecipeCarousel = (param)=>{
     let { data = __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["featuredRecipesData"] } = param;
-    _s();
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "h-[158px] mb-4",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Swiper"], {
-            slidesPerView: 2.2,
+            slidesPerView: "auto",
             spaceBetween: 8,
             children: data.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SwiperSlide"], {
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: ()=>router.push('/(root)/food-detail'),
-                        className: "mr-2",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$InspirationTab$2f$RecipeCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            id: item.id,
-                            name: item.name,
-                            image: item.image,
-                            time: item.time,
-                            likes: item.likes
-                        }, void 0, false, {
-                            fileName: "[project]/components/Common/RecipeCarousel.tsx",
-                            lineNumber: 38,
-                            columnNumber: 29
-                        }, ("TURBOPACK compile-time value", void 0))
+                    style: {
+                        width: 'auto'
+                    },
+                    className: "w-auto",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$InspirationTab$2f$RecipeCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        id: item.id,
+                        name: item.name,
+                        image: item.image,
+                        time: item.time,
+                        likes: item.likes
                     }, void 0, false, {
                         fileName: "[project]/components/Common/RecipeCarousel.tsx",
-                        lineNumber: 34,
+                        lineNumber: 33,
                         columnNumber: 25
                     }, ("TURBOPACK compile-time value", void 0))
                 }, item.id, false, {
                     fileName: "[project]/components/Common/RecipeCarousel.tsx",
-                    lineNumber: 33,
+                    lineNumber: 32,
                     columnNumber: 21
                 }, ("TURBOPACK compile-time value", void 0)))
         }, void 0, false, {
             fileName: "[project]/components/Common/RecipeCarousel.tsx",
-            lineNumber: 28,
+            lineNumber: 27,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Common/RecipeCarousel.tsx",
-        lineNumber: 25,
+        lineNumber: 24,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(RecipeCarousel, "fN7XvhJ+p5oE6+Xlo0NJmXpxjC8=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
-    ];
-});
 _c = RecipeCarousel;
 const __TURBOPACK__default__export__ = RecipeCarousel;
 var _c;
@@ -2600,10 +2594,10 @@ const DietBasedDishes = ()=>{
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0));
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full flex flex-col justify-center items-start mb-6 bg-white px-4 pt-2 pb-6",
+        className: "w-full flex flex-col justify-center items-start mb-6 bg-white px-16 pt-2 pb-6",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-row justify-between items-center w-full mb-4",
+                className: "flex justify-between items-center w-full mb-4",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         size: "base",
@@ -2615,7 +2609,7 @@ const DietBasedDishes = ()=>{
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "font-light text-customPrimary text-sm cursor-pointer",
+                        className: "text-customPrimary text-sm cursor-pointer",
                         children: "Xem thêm"
                     }, void 0, false, {
                         fileName: "[project]/components/HomeScreen/InspirationTab/DietBasedDishes.tsx",
@@ -2729,204 +2723,276 @@ const FoodGrid = (param)=>{
         {
             id: '1',
             name: 'Tôm hoàng đế ánh kim',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood1,
-            time: '3h 30m',
-            likes: 234
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood1
         },
         {
             id: '2',
             name: 'Tôm nướng sốt tiêu đen',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood2,
-            time: '2h 15m',
-            likes: 189
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood2
         },
         {
             id: '3',
             name: 'Lẩu hải sản với nước sốt tôm',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood3,
-            time: '1h 45m',
-            likes: 156
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood3
         },
         {
             id: '4',
             name: 'Sò huyết rau mùi',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood4,
-            time: '1h 20m',
-            likes: 98
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood4
         },
         {
             id: '5',
             name: 'Tôm sốt mắm ớt',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood5,
-            time: '45m',
-            likes: 267
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood5
         },
         {
             id: '6',
-            name: 'Tôm sốt mắm ớt',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood6,
-            time: '45m',
-            likes: 267
+            name: 'Cá nướng lá chuối',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood6
         },
         {
             id: '7',
-            name: 'Tôm sốt mắm ớt',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood7,
-            time: '45m',
-            likes: 267
+            name: 'Thịt bò xào rau củ',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood7
         },
         {
             id: '8',
-            name: 'Tôm sốt mắm ớt',
-            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood8,
-            time: '45m',
-            likes: 267
+            name: 'Trứng chiên thịt bằm',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood8
+        },
+        {
+            id: '9',
+            name: 'Phở bò truyền thống',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood1
+        },
+        {
+            id: '10',
+            name: 'Bún chả Hà Nội',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood2
+        },
+        {
+            id: '11',
+            name: 'Bánh mì thịt nướng',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood3
+        },
+        {
+            id: '12',
+            name: 'Gỏi cuốn tôm thịt',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood4
+        },
+        {
+            id: '13',
+            name: 'Cơm tấm sườn nướng',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood5
+        },
+        {
+            id: '14',
+            name: 'Bánh xèo miền Tây',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood6
+        },
+        {
+            id: '15',
+            name: 'Chả giò nem rán',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood7
+        },
+        {
+            id: '16',
+            name: 'Bún bò Huế',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood8
+        },
+        {
+            id: '17',
+            name: 'Mì Quảng tôm thịt',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood1
+        },
+        {
+            id: '18',
+            name: 'Cao lầu Hội An',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood2
+        },
+        {
+            id: '19',
+            name: 'Bún riêu cua',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood3
+        },
+        {
+            id: '20',
+            name: 'Cháo lòng tiết canh',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood4
+        },
+        {
+            id: '21',
+            name: 'Bánh canh cua',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood5
+        },
+        {
+            id: '22',
+            name: 'Hủ tiếu Nam Vang',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood6
+        },
+        {
+            id: '23',
+            name: 'Bánh cuốn Thanh Trì',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood7
+        },
+        {
+            id: '24',
+            name: 'Xôi xéo Hà Nội',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood8
+        },
+        {
+            id: '25',
+            name: 'Bánh đúc nóng',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood1
+        },
+        {
+            id: '26',
+            name: 'Chè trôi nước',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood2
+        },
+        {
+            id: '27',
+            name: 'Bánh tráng nướng Đà Lạt',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood3
+        },
+        {
+            id: '28',
+            name: 'Bánh mì xíu mại',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood4
+        },
+        {
+            id: '29',
+            name: 'Bánh ướt thịt nướng',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood5
+        },
+        {
+            id: '30',
+            name: 'Bánh bèo Huế',
+            image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].featuredFood6
         }
     ];
     const data = featuredRecipesData || searchedDishesData;
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-row items-start justify-center gap-2",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex flex-row items-start justify-center pb-[112px]",
+    // Mảng các chiều cao khác nhau cho images (đơn vị: rem)
+    const imageHeights = [
+        12,
+        16,
+        14,
+        18,
+        15,
+        13,
+        17,
+        12,
+        16,
+        14,
+        15,
+        13
+    ];
+    // Chia items thành 6 cột
+    const columns = [
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ];
+    data.forEach((item, index)=>{
+        columns[index % 6].push(item);
+    });
+    const renderItem = (item, index)=>{
+        const height = imageHeights[index % imageHeights.length];
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+            onClick: ()=>router.push('/food-detail'),
+            className: "group w-full bg-white rounded-lg gap-1 flex flex-col items-start justify-start shadow-md transition-all duration-300 ease-in-out hover:shadow-xl cursor-pointer",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex w-1/2 flex-col items-start justify-center gap-4 pr-1",
-                    children: data.slice(0, 4).map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>router.push('/food-detail'),
-                            style: {
-                                height: (index === 0 || index === 1 ? 240 : 160) * 0.25
-                            },
-                            className: "w-full bg-white rounded-lg gap-1 flex flex-col items-start justify-center shadow-md",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative h-full w-full overflow-hidden rounded-t-lg",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        src: item.image,
-                                        alt: item.name,
-                                        fill: true,
-                                        className: "object-cover"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/Common/FoodGrid.tsx",
-                                        lineNumber: 54,
-                                        columnNumber: 33
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                }, void 0, false, {
-                                    fileName: "[project]/components/Common/FoodGrid.tsx",
-                                    lineNumber: 53,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-full px-2 pb-2 rounded-lg gap-1 flex flex-row items-center justify-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            size: "xs",
-                                            className: "flex-1 font-semibold text-black",
-                                            children: item.name
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/Common/FoodGrid.tsx",
-                                            lineNumber: 64,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].threeDotsIcon,
-                                            alt: "more",
-                                            className: "w-4 h-4"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/Common/FoodGrid.tsx",
-                                            lineNumber: 70,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/components/Common/FoodGrid.tsx",
-                                    lineNumber: 61,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, item.id, true, {
-                            fileName: "[project]/components/Common/FoodGrid.tsx",
-                            lineNumber: 45,
-                            columnNumber: 25
-                        }, ("TURBOPACK compile-time value", void 0)))
+                    className: "relative w-full overflow-hidden rounded-t-lg",
+                    style: {
+                        height: "".concat(height, "rem")
+                    },
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        src: item.image,
+                        alt: item.name,
+                        fill: true,
+                        className: "object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    }, void 0, false, {
+                        fileName: "[project]/components/Common/FoodGrid.tsx",
+                        lineNumber: 74,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/components/Common/FoodGrid.tsx",
-                    lineNumber: 41,
+                    lineNumber: 70,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex w-1/2 flex-col items-start justify-center gap-4 pl-1",
-                    children: data.slice(4, 8).map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: ()=>router.push('/food-detail'),
-                            style: {
-                                height: (index === 0 ? 144 : index === 1 ? 224 : index === 2 ? 256 : 240) * 0.25
-                            },
-                            className: "w-full bg-white rounded-lg gap-1 flex flex-col items-start justify-center shadow-md",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative h-full w-full overflow-hidden rounded-t-lg",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        src: item.image,
-                                        alt: item.name,
-                                        fill: true,
-                                        className: "object-cover"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/Common/FoodGrid.tsx",
-                                        lineNumber: 90,
-                                        columnNumber: 33
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                }, void 0, false, {
-                                    fileName: "[project]/components/Common/FoodGrid.tsx",
-                                    lineNumber: 89,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-full px-2 pb-2 rounded-lg gap-1 flex flex-row items-center justify-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            size: "xs",
-                                            className: "flex-1 font-semibold text-black",
-                                            children: item.name
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/Common/FoodGrid.tsx",
-                                            lineNumber: 100,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].threeDotsIcon,
-                                            alt: "more",
-                                            className: "w-4 h-4"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/Common/FoodGrid.tsx",
-                                            lineNumber: 106,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/components/Common/FoodGrid.tsx",
-                                    lineNumber: 97,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, item.id, true, {
+                    className: "w-full p-2 pt-1 rounded-lg gap-1 flex flex-row items-center justify-between",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            size: "sm",
+                            className: "flex-1 font-semibold text-black text-start line-clamp-1 transition-colors duration-300 group-hover:text-orange-500",
+                            children: item.name
+                        }, void 0, false, {
                             fileName: "[project]/components/Common/FoodGrid.tsx",
-                            lineNumber: 81,
-                            columnNumber: 25
-                        }, ("TURBOPACK compile-time value", void 0)))
-                }, void 0, false, {
+                            lineNumber: 84,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].threeDotsIcon,
+                            alt: "more",
+                            className: "w-5 h-5 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
+                        }, void 0, false, {
+                            fileName: "[project]/components/Common/FoodGrid.tsx",
+                            lineNumber: 90,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/components/Common/FoodGrid.tsx",
-                    lineNumber: 77,
+                    lineNumber: 81,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/components/Common/FoodGrid.tsx",
-            lineNumber: 37,
+            lineNumber: 66,
             columnNumber: 13
-        }, ("TURBOPACK compile-time value", void 0))
+        }, ("TURBOPACK compile-time value", void 0));
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "pb-[112px] w-full flex",
+        style: {
+            gap: '16px'
+        },
+        children: columns.map((column, colIndex)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex-1 flex flex-col",
+                style: {
+                    width: '0'
+                },
+                children: column.map((item, itemIndex)=>{
+                    // Tính index thực tế của item trong data gốc
+                    const originalIndex = colIndex + itemIndex * 6;
+                    const isLastItem = itemIndex === column.length - 1;
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        style: {
+                            marginBottom: isLastItem ? '0' : '16px'
+                        },
+                        children: renderItem(item, originalIndex)
+                    }, item.id, false, {
+                        fileName: "[project]/components/Common/FoodGrid.tsx",
+                        lineNumber: 116,
+                        columnNumber: 33
+                    }, ("TURBOPACK compile-time value", void 0));
+                })
+            }, colIndex, false, {
+                fileName: "[project]/components/Common/FoodGrid.tsx",
+                lineNumber: 106,
+                columnNumber: 21
+            }, ("TURBOPACK compile-time value", void 0)))
     }, void 0, false, {
         fileName: "[project]/components/Common/FoodGrid.tsx",
-        lineNumber: 34,
-        columnNumber: 9
+        lineNumber: 101,
+        columnNumber: 13
     }, ("TURBOPACK compile-time value", void 0));
 };
 _s(FoodGrid, "fN7XvhJ+p5oE6+Xlo0NJmXpxjC8=", false, function() {
@@ -2957,7 +3023,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$Text
 ;
 const FeaturedRecipesSection = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full px-4 flex flex-col items-start justify-center",
+        className: "w-full px-16 flex flex-col items-start justify-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 className: "font-bold text-black mb-2",
@@ -3063,7 +3129,7 @@ const CustomButton = (param)=>{
                 }, ("TURBOPACK compile-time value", void 0)) : IconLeft),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     size: "base",
-                    className: "font-bold",
+                    className: "font-semibold",
                     style: {
                         color: getTextVariantStyle(textVariant)
                     },
@@ -3761,7 +3827,7 @@ const IngredientsSection = ()=>{
         setIsFilterSelected((prev)=>!prev);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full mb-6 px-4 flex flex-col items-start justify-center",
+        className: "w-full mb-6 px-16 flex flex-col items-start justify-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 className: "font-bold text-black mb-4",
@@ -3787,11 +3853,12 @@ const IngredientsSection = ()=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$RecipeCarousel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/HomeScreen/InspirationTab/IngredientsSection.tsx",
                 lineNumber: 46,
-                columnNumber: 12
+                columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$CustomButton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 title: "Tìm kiếm theo nguyên liệu",
                 onPress: ()=>{},
+                className: "w-fit mx-auto",
                 IconLeft: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].searchIcon,
                     alt: "search",
@@ -3800,7 +3867,7 @@ const IngredientsSection = ()=>{
                     className: "brightness-0 invert"
                 }, void 0, false, {
                     fileName: "[project]/components/HomeScreen/InspirationTab/IngredientsSection.tsx",
-                    lineNumber: 51,
+                    lineNumber: 52,
                     columnNumber: 27
                 }, void 0)
             }, void 0, false, {
@@ -3842,32 +3909,98 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 const popularTopicsData = [
     {
         id: '1',
-        name: 'Salad giảm cân'
+        name: 'Salad giảm cân',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood1
     },
     {
         id: '2',
-        name: 'Món làm từ trứng'
+        name: 'Món làm từ trứng',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood2
     },
     {
         id: '3',
-        name: 'Đùi gà'
+        name: 'Đùi gà',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood3
     },
     {
         id: '4',
-        name: 'Nước ép từ xoài'
+        name: 'Nước ép từ xoài',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood1
     },
     {
         id: '5',
-        name: 'Món từ bí ngô'
+        name: 'Món từ bí ngô',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood2
     },
     {
         id: '6',
-        name: 'Món từ thịt bò'
+        name: 'Món từ thịt bò',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood3
+    },
+    {
+        id: '7',
+        name: 'Món canh',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood1
+    },
+    {
+        id: '8',
+        name: 'Món chay',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood2
+    },
+    {
+        id: '9',
+        name: 'Bánh mì',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood3
+    },
+    {
+        id: '10',
+        name: 'Phở',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood1
+    },
+    {
+        id: '11',
+        name: 'Cơm chiên',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood2
+    },
+    {
+        id: '12',
+        name: 'Pizza',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood3
+    },
+    {
+        id: '13',
+        name: 'Bánh ngọt',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood1
+    },
+    {
+        id: '14',
+        name: 'Súp',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood2
+    },
+    {
+        id: '15',
+        name: 'Món nướng',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood3
+    },
+    {
+        id: '16',
+        name: 'Sinh tố',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood1
+    },
+    {
+        id: '17',
+        name: 'Tráng miệng',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood2
+    },
+    {
+        id: '18',
+        name: 'Món xào',
+        image: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood3
     }
 ];
 const PopularTopicsSection = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full mb-6 px-4 flex flex-col items-start justify-center",
+        className: "w-full mb-6 px-16 flex flex-col items-start justify-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 className: "font-bold text-black mb-2",
@@ -3875,55 +4008,55 @@ const PopularTopicsSection = ()=>{
                 children: "Chủ đề phổ biến hôm nay"
             }, void 0, false, {
                 fileName: "[project]/components/HomeScreen/InspirationTab/PopularTopicsSection.tsx",
-                lineNumber: 18,
+                lineNumber: 30,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-full gap-1 flex flex-row flex-wrap",
+                className: "w-full gap-4 grid grid-cols-6",
                 children: popularTopicsData.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-[49%] h-20 rounded-lg overflow-hidden relative flex items-center justify-center",
+                        className: "h-20 cursor-pointer rounded-lg overflow-hidden relative flex items-center justify-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].sampleFood1,
+                                src: item.image,
                                 alt: item.name,
                                 fill: true,
                                 className: "object-cover rounded-lg"
                             }, void 0, false, {
                                 fileName: "[project]/components/HomeScreen/InspirationTab/PopularTopicsSection.tsx",
-                                lineNumber: 33,
+                                lineNumber: 45,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-black/40 rounded-lg"
                             }, void 0, false, {
                                 fileName: "[project]/components/HomeScreen/InspirationTab/PopularTopicsSection.tsx",
-                                lineNumber: 40,
+                                lineNumber: 52,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 size: "base",
-                                className: "text-center font-bold text-white",
+                                className: "text-center text-nowrap font-bold text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2",
                                 children: item.name
                             }, void 0, false, {
                                 fileName: "[project]/components/HomeScreen/InspirationTab/PopularTopicsSection.tsx",
-                                lineNumber: 43,
+                                lineNumber: 55,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, item.id, true, {
                         fileName: "[project]/components/HomeScreen/InspirationTab/PopularTopicsSection.tsx",
-                        lineNumber: 29,
+                        lineNumber: 41,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/components/HomeScreen/InspirationTab/PopularTopicsSection.tsx",
-                lineNumber: 25,
+                lineNumber: 37,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/HomeScreen/InspirationTab/PopularTopicsSection.tsx",
-        lineNumber: 15,
+        lineNumber: 27,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3954,7 +4087,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$
 ;
 const InspirationTab = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-col items-center mt-2 pt-4 pb-4",
+        className: "flex flex-col items-center pt-4 pb-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$InspirationTab$2f$IngredientsSection$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/HomeScreen/InspirationTab/index.tsx",
@@ -4098,7 +4231,7 @@ const PostItem = (param)=>{
                         className: "flex flex-col items-start justify-start w-full gap-2 px-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-row items-start justify-between mt-1 w-full",
+                                className: "flex flex-row items-start justify-between mt-2 w-full",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex flex-row items-start justify-start gap-3",
@@ -4109,10 +4242,10 @@ const PostItem = (param)=>{
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                         src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].heartIcon,
                                                         alt: "likes",
-                                                        className: "object-contain h-5 w-5"
+                                                        className: "object-contain h-5 w-auto"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                        lineNumber: 88,
+                                                        lineNumber: 87,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4121,13 +4254,13 @@ const PostItem = (param)=>{
                                                         children: item.content.likes
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                        lineNumber: 89,
+                                                        lineNumber: 88,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 86,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4136,10 +4269,10 @@ const PostItem = (param)=>{
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                         src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].chatIcon,
                                                         alt: "comments",
-                                                        className: "object-contain h-5 w-5"
+                                                        className: "object-contain h-5 w-auto"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                        lineNumber: 94,
+                                                        lineNumber: 93,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4148,19 +4281,19 @@ const PostItem = (param)=>{
                                                         children: item.content.comments
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                        lineNumber: 95,
+                                                        lineNumber: 94,
                                                         columnNumber: 33
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                lineNumber: 93,
+                                                lineNumber: 92,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 85,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4168,21 +4301,21 @@ const PostItem = (param)=>{
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].saveIcon,
                                             alt: "save",
-                                            className: "object-contain h-5 w-5"
+                                            className: "object-contain h-5 w-auto"
                                         }, void 0, false, {
                                             fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 100,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 99,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                lineNumber: 83,
+                                lineNumber: 82,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4194,7 +4327,7 @@ const PostItem = (param)=>{
                                         children: item.content.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 107,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4206,7 +4339,7 @@ const PostItem = (param)=>{
                                                 children: item.content.description
                                             }, void 0, false, {
                                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 116,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4220,7 +4353,7 @@ const PostItem = (param)=>{
                                                                 children: "#"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                                lineNumber: 131,
+                                                                lineNumber: 130,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4229,30 +4362,30 @@ const PostItem = (param)=>{
                                                                 children: tag
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                                lineNumber: 137,
+                                                                lineNumber: 136,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, index, true, {
                                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 126,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 122,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 113,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                lineNumber: 105,
+                                lineNumber: 104,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4267,7 +4400,7 @@ const PostItem = (param)=>{
                                                         children: comment.user
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                        lineNumber: 157,
+                                                        lineNumber: 156,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4275,18 +4408,18 @@ const PostItem = (param)=>{
                                                         children: comment.text
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 161,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                                lineNumber: 154,
+                                                lineNumber: 153,
                                                 columnNumber: 33
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 151,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4296,18 +4429,18 @@ const PostItem = (param)=>{
                                             children: "Xem thêm bình luận"
                                         }, void 0, false, {
                                             fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                            lineNumber: 173,
+                                            lineNumber: 172,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 169,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HomeScreen/KitchenTab/PostItem.tsx",
-                                lineNumber: 149,
+                                lineNumber: 148,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -4526,10 +4659,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ic
 const KitchenTab = (param)=>{
     let { postsData, suggestedFriendsData } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "items-center mt-2 bg-white px-16 mx-auto py-4",
+        className: "items-center mt-2 bg-white py-4 space-y-8",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-full relative",
+                className: "w-full relative px-16 mx-auto",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Swiper"], {
                         modules: [
@@ -4569,7 +4702,7 @@ const KitchenTab = (param)=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "button",
-                        className: "swiper-button-prev-posts absolute -left-12 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors",
+                        className: "swiper-button-prev-posts absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors",
                         "aria-label": "Previous slide",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$iconsax$2d$reactjs$40$0$2e$0$2e$8_react$40$19$2e$1$2e$0$2f$node_modules$2f$iconsax$2d$reactjs$2f$dist$2f$esm$2f$ArrowLeft2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft2$3e$__["ArrowLeft2"], {
                             size: 20,
@@ -4587,7 +4720,7 @@ const KitchenTab = (param)=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "button",
-                        className: "swiper-button-next-posts absolute -right-12 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors",
+                        className: "swiper-button-next-posts absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors",
                         "aria-label": "Next slide",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$iconsax$2d$reactjs$40$0$2e$0$2e$8_react$40$19$2e$1$2e$0$2f$node_modules$2f$iconsax$2d$reactjs$2f$dist$2f$esm$2f$ArrowRight2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight2$3e$__["ArrowRight2"], {
                             size: 20,
@@ -4617,73 +4750,147 @@ const KitchenTab = (param)=>{
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex w-full flex-col items-start justify-start bg-white pt-4 pb-8 gap-4",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex w-full flex-row items-start justify-between",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                size: "base",
-                                className: "font-bold text-black",
-                                children: "Gợi ý Bạn Bếp"
-                            }, void 0, false, {
-                                fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                                lineNumber: 92,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "text-orange-500 text-sm cursor-pointer",
-                                children: "Xem thêm"
-                            }, void 0, false, {
-                                fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                                lineNumber: 98,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                        lineNumber: 91,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-full grid grid-cols-4 gap-4",
-                        children: suggestedFriendsData.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$SuggestedFriendItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                item: item
-                            }, item.id, false, {
-                                fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                                lineNumber: 106,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0)))
-                    }, void 0, false, {
-                        fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                        lineNumber: 104,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
+                className: "py-2 bg-[#F1EEE8]",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col items-start justify-start bg-white pt-4 px-16 pb-8 gap-4",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex w-full flex-row items-start justify-between",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Common$2f$TextScaled$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    size: "base",
+                                    className: "font-bold text-black",
+                                    children: "Gợi ý Bạn Bếp"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                                    lineNumber: 93,
+                                    columnNumber: 21
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    className: "text-orange-500 text-sm cursor-pointer",
+                                    children: "Xem thêm"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                                    lineNumber: 99,
+                                    columnNumber: 21
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                            lineNumber: 92,
+                            columnNumber: 17
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "w-full grid grid-cols-4 gap-4",
+                            children: suggestedFriendsData.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$SuggestedFriendItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    item: item
+                                }, item.id, false, {
+                                    fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                                    lineNumber: 107,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)))
+                        }, void 0, false, {
+                            fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                            lineNumber: 105,
+                            columnNumber: 17
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                    lineNumber: 91,
+                    columnNumber: 13
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
                 fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
                 lineNumber: 90,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex w-full flex-col items-center justify-center bg-white p-4",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-full flex flex-col gap-2",
-                    children: postsData.slice(2, 3).map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$PostItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            item: item
-                        }, item.id, false, {
+                className: "w-full relative px-16 mx-auto",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Swiper"], {
+                        modules: [
+                            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$modules$2f$navigation$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Navigation$3e$__["Navigation"],
+                            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$modules$2f$pagination$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Pagination$3e$__["Pagination"]
+                        ],
+                        slidesPerView: 4,
+                        spaceBetween: 16,
+                        grabCursor: true,
+                        navigation: {
+                            nextEl: '.swiper-button-next-posts',
+                            prevEl: '.swiper-button-prev-posts'
+                        },
+                        pagination: {
+                            el: '.swiper-pagination-posts',
+                            clickable: true
+                        },
+                        className: "posts-swiper",
+                        children: postsData.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SwiperSlide"], {
+                                className: "h-full mb-1",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$PostItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    item: item
+                                }, void 0, false, {
+                                    fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                                    lineNumber: 132,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, item.id, false, {
+                                fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                                lineNumber: 131,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                        lineNumber: 115,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        type: "button",
+                        className: "swiper-button-prev-posts absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors",
+                        "aria-label": "Previous slide",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$iconsax$2d$reactjs$40$0$2e$0$2e$8_react$40$19$2e$1$2e$0$2f$node_modules$2f$iconsax$2d$reactjs$2f$dist$2f$esm$2f$ArrowLeft2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft2$3e$__["ArrowLeft2"], {
+                            size: 20,
+                            color: "#fff",
+                            variant: "Outline"
+                        }, void 0, false, {
                             fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                            lineNumber: 116,
-                            columnNumber: 25
-                        }, ("TURBOPACK compile-time value", void 0)))
-                }, void 0, false, {
-                    fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                    lineNumber: 114,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
+                            lineNumber: 142,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                        lineNumber: 137,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        type: "button",
+                        className: "swiper-button-next-posts absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors",
+                        "aria-label": "Next slide",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$iconsax$2d$reactjs$40$0$2e$0$2e$8_react$40$19$2e$1$2e$0$2f$node_modules$2f$iconsax$2d$reactjs$2f$dist$2f$esm$2f$ArrowRight2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight2$3e$__["ArrowRight2"], {
+                            size: 20,
+                            color: "#fff",
+                            variant: "Outline"
+                        }, void 0, false, {
+                            fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                            lineNumber: 149,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                        lineNumber: 144,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "swiper-pagination-posts flex justify-center mt-4 gap-2"
+                    }, void 0, false, {
+                        fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
+                        lineNumber: 152,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
                 fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",
-                lineNumber: 112,
+                lineNumber: 114,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
