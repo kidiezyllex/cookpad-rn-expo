@@ -16,20 +16,44 @@ html, body {
 }
 
 /* Swiper pagination styles for KitchenTab */
-.swiper-pagination-posts .swiper-pagination-bullet {
-	width: 8px;
-	height: 8px;
-	background: #d1d5db;
-	opacity: 1;
-	margin: 0 4px;
-	transition: all 0.3s;
-	border-radius: 50%;
+[class*="swiper-pagination-posts"] {
+	position: relative !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 100% !important;
+	height: auto !important;
+	margin-top: 20px !important;
+	z-index: 10 !important;
+	gap: 8px !important;
 }
 
-.swiper-pagination-posts .swiper-pagination-bullet-active {
-	background: #f97316;
-	width: 24px;
-	border-radius: 4px;
+[class*="swiper-pagination-posts"] .swiper-pagination-bullet {
+	width: 10px !important;
+	height: 10px !important;
+	background: rgba(227, 97, 55, 0.2) !important;
+	opacity: 1 !important;
+	margin: 0 !important;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+	border-radius: 50% !important;
+	cursor: pointer !important;
+	display: inline-block !important;
+	border: 2px solid transparent !important;
+	position: relative !important;
+}
+
+[class*="swiper-pagination-posts"] .swiper-pagination-bullet:hover {
+	background: rgba(227, 97, 55, 0.4) !important;
+	transform: scale(1.15) !important;
+}
+
+[class*="swiper-pagination-posts"] .swiper-pagination-bullet-active {
+	background: #E36137 !important;
+	width: 32px !important;
+	height: 10px !important;
+	border-radius: 5px !important;
+	box-shadow: 0 2px 8px rgba(227, 97, 55, 0.4) !important;
+	transform: scale(1) !important;
 }
 
 /* Swiper grab cursor */
@@ -50,6 +74,93 @@ html, body {
 .posts-swiper .swiper-wrapper {
 	display: flex;
 	align-items: stretch;
+}
+
+/* Swiper pagination styles for Banner */
+.swiper-pagination-banner {
+	bottom: 32px !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	width: auto !important;
+	z-index: 50 !important;
+	position: absolute !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	pointer-events: auto !important;
+}
+
+.swiper-pagination-banner .swiper-pagination-bullet {
+	width: 10px !important;
+	height: 10px !important;
+	background: rgba(255, 255, 255, 0.9) !important;
+	opacity: 1 !important;
+	margin: 0 6px !important;
+	transition: all 0.3s ease !important;
+	border-radius: 50% !important;
+	cursor: pointer !important;
+	display: inline-block !important;
+}
+
+.swiper-pagination-banner .swiper-pagination-bullet:hover {
+	background: rgba(255, 255, 255, 0.9);
+	transform: scale(1.2);
+}
+
+.swiper-pagination-banner .swiper-pagination-bullet-active {
+	background: #E36137 !important;
+	width: 32px;
+	border-radius: 5px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Banner Swiper grab cursor */
+.banner-swiper {
+	cursor: grab;
+}
+
+.banner-swiper:active {
+	cursor: grabbing;
+}
+
+.banner-swiper .swiper-wrapper {
+	cursor: grab;
+}
+
+.banner-swiper .swiper-wrapper:active {
+	cursor: grabbing;
+}
+
+/* Banner Image Animations */
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 0.95;
+	}
+}
+
+@keyframes shake {
+	0%, 100% {
+		transform: translateX(0) translateY(0);
+	}
+	10%, 30%, 50%, 70%, 90% {
+		transform: translateX(-2px) translateY(-1px);
+	}
+	20%, 40%, 60%, 80% {
+		transform: translateX(2px) translateY(1px);
+	}
+}
+
+.banner-image-animated {
+	animation: pulse 3s ease-in-out infinite, shake 4s ease-in-out infinite;
+}
+
+.onboarding-image-pulse {
+	animation: pulse 2s ease-in-out infinite;
 }
 
 

@@ -1664,6 +1664,24 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$splash2$
 var __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$splash3$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$assets$2f$images$2f$splash3$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/assets/images/splash3.png.mjs { IMAGE => "[project]/assets/images/splash3.png (static in ecmascript)" } [app-client] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$splash4$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$assets$2f$images$2f$splash4$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/assets/images/splash4.png.mjs { IMAGE => "[project]/assets/images/splash4.png (static in ecmascript)" } [app-client] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$table$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$assets$2f$images$2f$table$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/assets/images/table.png.mjs { IMAGE => "[project]/assets/images/table.png (static in ecmascript)" } [app-client] (structured image object with data url, ecmascript)');
+(()=>{
+    const e = new Error("Cannot find module '@/assets/images/banner1.jpg'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module '@/assets/images/banner2.jpg'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module '@/assets/images/banner3.jpg'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+;
+;
+;
 ;
 ;
 ;
@@ -1731,6 +1749,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$table$2e
 ;
 ;
 const images = {
+    banner1,
+    banner2,
+    banner3,
     splash1: __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$splash1$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$assets$2f$images$2f$splash1$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
     splash2: __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$splash2$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$assets$2f$images$2f$splash2$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
     splash3: __TURBOPACK__imported__module__$5b$project$5d2f$assets$2f$images$2f$splash3$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$assets$2f$images$2f$splash3$2e$png__$28$static__in__ecmascript$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
@@ -1982,7 +2003,7 @@ function Header() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-xl font-bold text-gray-600",
+                            className: "text-2xl font-bold text-gray-600",
                             children: [
                                 "Cook",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1991,7 +2012,7 @@ function Header() {
                                 }, void 0, false, {
                                     fileName: "[project]/components/Common/Header.tsx",
                                     lineNumber: 87,
-                                    columnNumber: 62
+                                    columnNumber: 63
                                 }, this)
                             ]
                         }, void 0, true, {
@@ -4921,9 +4942,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$InspirationTab$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/HomeScreen/InspirationTab/index.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/HomeScreen/KitchenTab/index.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$mockData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/HomeScreen/mockData.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/constants/index.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@15.5.6_@babel+core@7.2_4e84d3a8f250f9392ab0c89ffd1f0450/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
+;
+;
 ;
 ;
 ;
@@ -4937,12 +4962,29 @@ const HomeScreen = ()=>{
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "bg-backgroundV1",
             children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "w-full min-h-[90vh] relative",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["images"].banner1,
+                        alt: "banner",
+                        fill: true,
+                        className: "object-cover"
+                    }, void 0, false, {
+                        fileName: "[project]/components/Screen/HomeScreen.tsx",
+                        lineNumber: 19,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                }, void 0, false, {
+                    fileName: "[project]/components/Screen/HomeScreen.tsx",
+                    lineNumber: 18,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$HeroSection$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     activeTab: activeTab,
                     onTabChange: setActiveTab
                 }, void 0, false, {
                     fileName: "[project]/components/Screen/HomeScreen.tsx",
-                    lineNumber: 16,
+                    lineNumber: 22,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 activeTab === 'ban-bep' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -4950,23 +4992,23 @@ const HomeScreen = ()=>{
                     suggestedFriendsData: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$mockData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["suggestedFriendsData"]
                 }, void 0, false, {
                     fileName: "[project]/components/Screen/HomeScreen.tsx",
-                    lineNumber: 23,
+                    lineNumber: 29,
                     columnNumber: 21
                 }, ("TURBOPACK compile-time value", void 0)),
                 activeTab === 'cam-hung' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$InspirationTab$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/components/Screen/HomeScreen.tsx",
-                    lineNumber: 30,
+                    lineNumber: 36,
                     columnNumber: 46
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/components/Screen/HomeScreen.tsx",
-            lineNumber: 14,
+            lineNumber: 16,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/Screen/HomeScreen.tsx",
-        lineNumber: 13,
+        lineNumber: 15,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

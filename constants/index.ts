@@ -64,7 +64,13 @@ import splash2 from "@/assets/images/splash2.png";
 import splash3 from "@/assets/images/splash3.png";
 import splash4 from "@/assets/images/splash4.png";
 import table from "@/assets/images/table.png";
+import banner1 from "@/assets/images/banner1.jpeg";
+import banner2 from "@/assets/images/banner2.jpeg";
+import banner3 from "@/assets/images/banner3.jpeg";
 export const images = {
+    banner1,
+    banner2,
+    banner3,
     splash1,
     splash2,
     splash3,

@@ -84,7 +84,7 @@ export default function Header() {
             quality={100}
             draggable={false}
           />
-          <p className="text-xl font-bold text-gray-600">Cook<span className='text-customPrimary'>Pad</span></p>
+          <p className="text-2xl font-bold text-gray-600">Cook<span className='text-customPrimary'>Pad</span></p>
         </div>
 
         {/* Navigation menu bên phải */}
