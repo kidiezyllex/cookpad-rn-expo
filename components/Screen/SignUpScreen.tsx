@@ -1,169 +1,201 @@
 'use client';
 
 import BackHeader from '@/components/Common/BackHeader';
-import CustomButton from '@/components/Common/CustomButton';
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
-import Link from 'next/link';
-import { useCallback, useState } from 'react';
+import { CloseCircle, Eye, EyeSlash } from 'iconsax-reactjs';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Input from '../Common/Input';
+import { useCallback, useState } from 'react';
 
 const SignUpScreen = () => {
-  const [form, setForm] = useState({
-    email: '',
-    phone: '',
-    password: '',
-    confirmPassword: '',
-  });
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const router = useRouter();
 
   const onSignUpPress = useCallback(() => {
-    if (!form.email || !form.phone || !form.password || !form.confirmPassword) {
+    if (!email || !phone || !password || !confirmPassword) {
       window.alert('Vui lòng điền đầy đủ thông tin');
       return;
     }
-    if (form.password !== form.confirmPassword) {
+    if (password !== confirmPassword) {
       window.alert('Mật khẩu xác nhận không khớp');
       return;
     }
-    router.push('/(auth)/otp');
-  }, [form.email, form.phone, form.password, form.confirmPassword, router]);
+    router.push('/auth/otp');
+  }, [email, phone, password, confirmPassword, router]);
 
   const onBackPress = useCallback(() => {
     router.back();
   }, [router]);
 
-  return (
-    <div className="flex-1 bg-backgroundV1 min-h-dvh">
-      <div className="flex-1 bg-backgroundV1">
-        <BackHeader headerTitle="Đăng ký" onPress={onBackPress} />
+  const backgroundImageUrl = typeof images.personalChestBg === 'string'
+    ? images.personalChestBg
+    : (images.personalChestBg as any)?.src || images.personalChestBg;
 
-        {/* Main Content */}
-        <div
-          className="flex flex-col items-center px-4 pt-8 pb-8 gap-8"
-        >
+  return (
+    <div
+    className="h-screen flex items-center justify-center w-full"
+    style={{
+      backgroundImage: `url(${backgroundImageUrl})`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: 'auto 200vh',
+      backgroundPosition: '0 0',
+    }}
+  >
+        <div className="mx-auto max-w-[400px] w-[400px] p-4 shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+          <BackHeader headerTitle="Đăng ký" onPress={onBackPress} />
+
           {/* Logo */}
-          <Image
-            className="w-20 h-20"
-            src={images.logo}
-            alt="logo"
-          />
+          <div className="mb-8 flex justify-center">
+            <Image alt="CookPad" src={images.logo} width={80} height={80} />
+          </div>
 
           {/* Form */}
-          <div
-            className="flex w-full flex-col items-end gap-4"
-          >
+          <div className="space-y-6">
             {/* Email/Phone Input */}
-            <div
-              className="flex w-full flex-col items-start gap-1"
-            >
-              <TextScaled size="base" className="font-bold text-Neutral-900">
-                Tài khoản
-              </TextScaled>
-              <Input
-                placeholder="Email hoặc số điện thoại"
-                value={form.email}
-                onChangeText={(value) => setForm({ ...form, email: value })}
-              />
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-gray-900">Tài khoản</label>
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Email hoặc số điện thoại"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-gray-300"
+                />
+                {email.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setEmail('')}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-50"
+                    aria-label="Xóa"
+                  >
+                    <CloseCircle
+                      size="20"
+                      color="#D9D9DB"
+                      variant="Bold"
+                    />
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Phone Number Input */}
-            <div
-              className="flex w-full flex-col items-start gap-1"
-            >
-              <TextScaled size="base" className="font-bold text-Neutral-900">
-                Số điện thoại
-              </TextScaled>
-              <Input
-                placeholder="Nhập số điện thoại"
-                value={form.phone}
-                onChangeText={(value) => setForm({ ...form, phone: value })}
-                inputMode="tel"
-              />
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-gray-900">Số điện thoại</label>
+              <div className="relative">
+                <input
+                  type="number"
+                  placeholder="Nhập số điện thoại"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-gray-300"
+                />
+                {phone.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setPhone('')}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-50"
+                    aria-label="Xóa"
+                  >
+                    <CloseCircle
+                      size="20"
+                      color="#D9D9DB"
+                      variant="Bold"
+                    />
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Password Input */}
-            <div
-              className="flex w-full flex-col items-start gap-1"
-            >
-              <div
-                className="items-center gap-1"
-              >
-                <TextScaled size="base" className="font-bold">
-                  Mật khẩu
-                </TextScaled>
-              </div>
-              <div className="relative w-full">
-                <Input
-                  placeholder="Mật khẩu"
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-gray-900">Mật khẩu</label>
+              <div className="relative">
+                <input
                   type={showPassword ? 'text' : 'password'}
-                  value={form.password}
-                  onChangeText={(value) => setForm({ ...form, password: value })}
-                  className="pr-12"
+                  placeholder="Mật khẩu"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 pr-10 text-sm outline-none ring-0 focus:border-gray-300"
                 />
                 <button
                   type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="px-2 text-xs text-gray-500 right-2 top-2 h-6 absolute"
+                  onClick={() => setShowPassword((v) => !v)}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-50"
+                  aria-label={showPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
                 >
-                  {showPassword ? 'Ẩn' : 'Hiện'}
+                  {showPassword ? (
+                    <Eye
+                      size="20"
+                      color="#5B5B5C"
+                    />
+                  ) : (
+                    <EyeSlash
+                      size="20"
+                      color="#5B5B5C"
+                    />
+                  )}
                 </button>
               </div>
             </div>
 
             {/* Confirm Password Input */}
-            <div
-              className="flex w-full flex-col items-start gap-1"
-            >
-              <div
-                className="items-center gap-1"
-              >
-                <TextScaled size="base" className="font-bold">
-                  Nhập lại mật khẩu
-                </TextScaled>
-              </div>
-              <div className="relative w-full">
-                <Input
-                  placeholder="Nhập lại mật khẩu"
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-gray-900">Nhập lại mật khẩu</label>
+              <div className="relative">
+                <input
                   type={showConfirmPassword ? 'text' : 'password'}
-                  value={form.confirmPassword}
-                  onChangeText={(value) => setForm({ ...form, confirmPassword: value })}
-                  className="pr-12"
+                  placeholder="Nhập lại mật khẩu"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 pr-10 text-sm outline-none ring-0 focus:border-gray-300"
                 />
                 <button
                   type="button"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="px-2 text-xs text-gray-500 right-2 top-2 h-6 absolute"
+                  onClick={() => setShowConfirmPassword((v) => !v)}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-50"
+                  aria-label={showConfirmPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
                 >
-                  {showConfirmPassword ? 'Ẩn' : 'Hiện'}
+                  {showConfirmPassword ? (
+                    <Eye
+                      size="20"
+                      color="#5B5B5C"
+                    />
+                  ) : (
+                    <EyeSlash
+                      size="20"
+                      color="#5B5B5C"
+                    />
+                  )}
                 </button>
               </div>
             </div>
-          </div>
 
-          {/* Confirm Button */}
-          <CustomButton title="Xác nhận" onPress={onSignUpPress} />
+            {/* Confirm Button */}
+            <button
+              type="button"
+              onClick={onSignUpPress}
+              className="w-full rounded-lg bg-customPrimary px-6 py-2 text-center text-base font-bold text-white shadow-neutral-400/70 hover:opacity-90"
+            >
+              Xác nhận
+            </button>
 
-          {/* Sign In Link */}
-          <div
-            className="flex flex-row items-start justify-start gap-1"
-          >
-            <TextScaled size="sm" className="text-black">
-              Đã có tài khoản?
-            </TextScaled>
-            <Link href="/(auth)/sign-in">
-              <TextScaled size="sm" className="font-semibold text-black">
+            {/* Sign In Link */}
+            <div className="flex items-center gap-2 text-sm justify-center w-full">
+              <span>Đã có tài khoản?</span>
+              <Link href="/auth/sign-in" className="font-semibold text-gray-900">
                 Đăng nhập
-              </TextScaled>
-            </Link>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

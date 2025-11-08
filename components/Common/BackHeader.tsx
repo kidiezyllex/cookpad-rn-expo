@@ -12,11 +12,11 @@ interface BackHeaderProps {
 const BackHeader: React.FC<BackHeaderProps> = ({ headerTitle, onPress, isDark = false }) => {
   return (
     <div
-      className="relative flex w-full items-center justify-center h-11 min-h-11"
+      className="relative flex w-full items-center justify-center h-10"
     >
       <button
         onClick={onPress}
-        className="absolute left-4 w-6 h-6 flex items-center justify-center"
+        className="absolute left-0 w-6 h-6 flex items-center justify-center"
         aria-label="Quay lại"
       >
         <Image

@@ -2021,8 +2021,8 @@ function Header() {
             id: 'profile',
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].userIcon,
             activeIcon: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["icons"].activeUserIcon,
-            route: '/(root)/tabs/profile',
-            label: 'Hồ sơ'
+            route: '/auth/sign-in',
+            label: 'Đăng nhập'
         }
     ];
     const getActiveTab = ()=>{
@@ -2210,7 +2210,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 const HeroSection = (param)=>{
     let { activeTab, onTabChange } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: " h-[256px] mx-16 mt-2 rounded-b-xl",
+        className: " h-[256px] mx-16 my-4 rounded-b-xl",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-row items-center",
@@ -4451,7 +4451,7 @@ const PostItem = (param)=>{
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-full pb-4 border-t border-[#E5E7EB] gap-1 rounded-lg flex flex-col items-center justify-start bg-white shadow-md flex-1",
+                className: "w-full pb-4 border-t gap-1 rounded-lg flex flex-col items-center justify-start bg-white shadow-md flex-1 border-[1px] border-gray-300",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "relative w-full h-[200px]",
@@ -4765,7 +4765,7 @@ const PostsSwiper = ()=>{
                 },
                 className: "posts-swiper",
                 children: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$mockData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["postsData"].map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$swiper$40$11$2e$2$2e$10$2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SwiperSlide"], {
-                        className: "h-full",
+                        className: "h-full pb-1",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$PostItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             item: item
                         }, void 0, false, {
@@ -4885,7 +4885,7 @@ const KitchenTab = (param)=>{
         postsData
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "items-center mt-2 bg-white py-4 space-y-8",
+        className: "items-center bg-white py-4 space-y-8",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$6_$40$babel$2b$core$40$7$2e$2_4e84d3a8f250f9392ab0c89ffd1f0450$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$HomeScreen$2f$KitchenTab$2f$PostsSwiper$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/HomeScreen/KitchenTab/index.tsx",

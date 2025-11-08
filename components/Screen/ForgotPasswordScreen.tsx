@@ -1,89 +1,113 @@
 'use client';
 
-import CustomButton from '@/components/Common/CustomButton';
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
-import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
+import { CloseCircle } from 'iconsax-reactjs';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
+import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
 import BackHeader from '../Common/BackHeader';
-import Input from '../Common/Input';
 
 const ForgotPasswordScreen = () => {
-	const [form, setForm] = useState({
-		phone: '',
-	});
+	const [phone, setPhone] = useState('');
 
 	const setIsForgotPassword = useForgotPasswordStore((state) => state.setIsForgotPassword);
 	const router = useRouter();
 
 	const onSendOTPPress = useCallback(() => {
-		if (!form.phone.trim()) {
+		if (!phone.trim()) {
 			window.alert('Vui lòng nhập số điện thoại');
 			return;
 		}
 
 		setIsForgotPassword(true);
-		router.push('/(auth)/otp');
-	}, [form.phone, setIsForgotPassword, router]);
+		router.push('/auth/otp');
+	}, [phone, setIsForgotPassword, router]);
+
+	const backgroundImageUrl = typeof images.personalChestBg === 'string'
+		? images.personalChestBg
+		: (images.personalChestBg as any)?.src || images.personalChestBg;
 
 	const onBackPress = useCallback(() => {
 		router.back();
 	}, [router]);
-
 	return (
-		<div className='flex-1 bg-backgroundV1 min-h-dvh'>
-			<BackHeader headerTitle="Quên mật khẩu" onPress={onBackPress} />
+		<div
+			className="h-screen flex items-center justify-center w-full"
+			style={{
+				backgroundImage: `url(${backgroundImageUrl})`,
+				backgroundRepeat: 'repeat',
+				backgroundSize: 'auto 200vh',
+				backgroundPosition: '0 0',
+			}}
+		>
+			<div className="mx-auto max-w-[400px] w-[400px] p-4 pb-8 shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+				{/* Header */}
+				<BackHeader headerTitle="Quên mật khẩu" onPress={onBackPress} />
 
-			{/* Main Content */}
-			<div
-				className="flex flex-col items-center justify-center px-4 pt-8 pb-8 gap-8"
-			>
 				{/* Logo */}
-				<Image
-					className="w-20 h-20"
-					src={images.logo}
-					alt="logo"
-				/>
-				{/* Instruction Text */}
-				<div className="flex flex-col items-center justify-center">
-					<TextScaled
-						size="base"
-						className="text-center text-textNeutralV1 px-4"
-					>
-						Mã OTP lấy lại mật khẩu sẽ được gửi tới số điện thoại của bạn. Vui lòng nhập đúng số điện thoại bạn đã dùng để đăng ký.
-					</TextScaled>
+				<div className="mb-8 flex justify-center">
+					<Image alt="CookPad" src={images.logo} width={80} height={80} />
 				</div>
 
-				{/* Phone Number Input */}
-				<div
-					className="flex w-full flex-col items-start justify-start gap-1"
-				>
-					<TextScaled size="base" className="font-bold text-Neutral-900">
-						Số điện thoại
-					</TextScaled>
-					<div className="relative w-full">
-						<Input
-							placeholder="Nhập số điện thoại"
-							value={form.phone}
-							onChangeText={(value) => setForm({ ...form, phone: value })}
-							inputMode="tel"
-						/>
-						{form.phone.length > 0 && (
-							<button
-								type="button"
-								onClick={() => setForm({ ...form, phone: '' })}
-								className="px-2 text-xs text-gray-400 absolute right-2 top-2 h-6"
-							>
-								X
-							</button>
-						)}
+				{/* Form */}
+				<div className="space-y-6">
+					{/* Instruction Text */}
+					<div className="mb-4">
+						<p className="text-sm text-center text-gray-600 px-4">
+							Mã OTP lấy lại mật khẩu sẽ được gửi tới số điện thoại của bạn. Vui lòng nhập đúng số điện thoại bạn đã dùng để đăng ký.
+						</p>
+					</div>
+
+					{/* Phone Number Input */}
+					<div className="space-y-2">
+						<label className="block text-sm font-bold text-gray-900">Số điện thoại</label>
+						<div className="relative">
+							<input
+								type="tel"
+								placeholder="Nhập số điện thoại"
+								value={phone}
+								onChange={(e) => setPhone(e.target.value)}
+								className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none ring-0 focus:border-gray-300"
+							/>
+							{phone.length > 0 && (
+								<button
+									type="button"
+									onClick={() => setPhone('')}
+									className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-50"
+									aria-label="Xóa"
+								>
+									<CloseCircle
+										size="20"
+										color="#D9D9DB"
+										variant="Bold"
+									/>
+								</button>
+							)}
+						</div>
+					</div>
+
+					{/* Send OTP Button */}
+					<button
+						type="button"
+						onClick={onSendOTPPress}
+						className="w-full rounded-lg bg-customPrimary px-6 py-2 text-center text-base font-bold text-white shadow-neutral-400/70 hover:opacity-90"
+					>
+						Gửi mã OTP
+					</button>
+
+					{/* Back to Login */}
+					<div className="flex items-center gap-2 text-sm justify-center w-full">
+						<span>Nhớ mật khẩu?</span>
+						<button
+							type="button"
+							onClick={() => router.back()}
+							className="font-semibold text-gray-900 hover:underline"
+						>
+							Đăng nhập
+						</button>
 					</div>
 				</div>
-
-				{/* Send OTP Button */}
-				<CustomButton title="Gửi mã OTP" onPress={onSendOTPPress} />
 			</div>
 		</div>
 	);

@@ -10,7 +10,7 @@ interface HeroSectionProps {
 const HeroSection = ({ activeTab, onTabChange }: HeroSectionProps) => {
     return (
         <div
-            className=" h-[256px] mx-16 mt-2 rounded-b-xl"
+            className=" h-[256px] mx-16 my-4 rounded-b-xl"
         >
             {/* Tab Navigator section */}
             <div className='flex flex-row items-center'>

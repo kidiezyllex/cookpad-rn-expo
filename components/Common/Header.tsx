@@ -41,8 +41,8 @@ export default function Header() {
       id: 'profile',
       icon: icons.userIcon,
       activeIcon: icons.activeUserIcon,
-      route: '/(root)/tabs/profile',
-      label: 'Hồ sơ',
+      route: '/auth/sign-in',
+      label: 'Đăng nhập',
     }
   ];
   

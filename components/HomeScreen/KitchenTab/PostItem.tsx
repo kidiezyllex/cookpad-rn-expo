@@ -66,7 +66,7 @@ const PostItem = ({ item }: PostItemProps) => {
             </div>
 
             <div
-                className="w-full pb-4 border-t border-[#E5E7EB] gap-1 rounded-lg flex flex-col items-center justify-start bg-white shadow-md flex-1"
+                className="w-full pb-4 border-t gap-1 rounded-lg flex flex-col items-center justify-start bg-white shadow-md flex-1 border-[1px] border-gray-300"
             >
                 {/* Phần Food Image  */}
                 <div className="relative w-full h-[200px]">

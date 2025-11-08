@@ -1,14 +1,12 @@
 'use client';
 
 import BackHeader from '@/components/Common/BackHeader';
-import CustomButton from '@/components/Common/CustomButton';
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
-import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
-import { useSuccessStore } from '@/store/successStore';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
+import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
+import { useSuccessStore } from '@/store/successStore';
 
 const OTPInputScreen = () => {
   const [otp, setOtp] = useState('');
@@ -28,7 +26,7 @@ const OTPInputScreen = () => {
     setSuccess(
       'Đăng ký thành công!',
       'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.',
-      '/(auth)/sign-in'
+      '/auth/sign-in'
     );
     router.replace('/(auth)/register-success');
   }, [otp, isForgotPassword, setSuccess, router]);
@@ -37,70 +35,76 @@ const OTPInputScreen = () => {
     router.back();
   }, [router]);
 
+  const backgroundImageUrl = typeof images.personalChestBg === 'string'
+    ? images.personalChestBg
+    : (images.personalChestBg as any)?.src || images.personalChestBg;
+
   return (
-    <div className='flex-1 bg-backgroundV1 min-h-dvh'>
-      <BackHeader 
-        headerTitle="Nhập OTP" 
-        onPress={onBackPress} 
-      /> 
+    <div
+      className="h-screen flex items-center justify-center w-full"
+      style={{
+        backgroundImage: `url(${backgroundImageUrl})`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: 'auto 200vh',
+        backgroundPosition: '0 0',
+      }}
+    >
+      <div className="mx-auto max-w-[400px] w-[400px] p-4 pb-8 shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+        <BackHeader 
+          headerTitle="Nhập OTP" 
+          onPress={onBackPress} 
+        /> 
 
-      {/* Main Content */}
-      <div
-        className="flex flex-col items-center justify-center px-4 pt-8 pb-8 gap-8"
-      >
         {/* Logo */}
-        <Image
-          className="w-20 h-20"
-          src={images.logo}
-          alt="logo"
-        />
+        <div className="mb-8 flex justify-center">
+          <Image alt="CookPad" src={images.logo} width={80} height={80} />
+        </div>
 
-        {/* OTP Input Section */}
-        <div className="w-full">
+        {/* Form */}
+        <div className="space-y-6">
           {/* Instruction Text */}
-          <div
-            className="flex flex-col items-center justify-center gap-2 w-full"
-          >
-            <TextScaled size="base" className="text-center text-textNeutralV1">
+          <div className="space-y-2">
+            <p className="text-center text-sm text-gray-700">
               Nhập mã OTP vừa được gửi tới số điện thoại 0123456789
-            </TextScaled>
+            </p>
           </div>
 
-          {/* OTP Input - single input */}
-          <div className="mt-8 flex w-full justify-center">
-            <input
-              inputMode="numeric"
-              maxLength={4}
-              value={otp}
-              onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
-              className="h-16 w-40 rounded-md border-b-2 border-zinc-800 bg-transparent text-center text-4xl font-bold text-black outline-none"
-              placeholder="••••"
-            />
+          {/* OTP Input */}
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-900">Mã OTP</label>
+            <div className="flex justify-center">
+              <input
+                inputMode="numeric"
+                maxLength={4}
+                value={otp}
+                onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
+                className="h-16 w-40 rounded-md border border-gray-200 bg-white text-center text-4xl font-bold text-black outline-none ring-0 focus:border-gray-300"
+                placeholder="••••"
+              />
+            </div>
           </div>
 
           {/* Resend OTP Link */}
-          <div
-            className="flex flex-row justify-center gap-1 mt-8"
-          >   
-            <TextScaled size="sm" className="text-black">
-              Bạn không nhận được mã?
-            </TextScaled>
+          <div className="flex flex-row justify-center gap-1 text-sm">
+            <span className="text-gray-700">Bạn không nhận được mã?</span>
             <button
               type="button"
               onClick={() => window.alert('Mã OTP mới đã được gửi')}
+              className="font-semibold text-gray-900 hover:underline"
             >
-              <TextScaled size="sm" className="font-semibold text-black">
-                Gửi lại mã xác thực
-              </TextScaled>
+              Gửi lại mã xác thực
             </button>
           </div>
-        </div>
 
-        {/* Verify Button */}
-        <CustomButton
-          title="Xác nhận"
-          onPress={handlePress}
-        />
+          {/* Verify Button */}
+          <button
+            type="button"
+            onClick={handlePress}
+            className="w-full rounded-lg bg-customPrimary px-6 py-2 text-center text-base font-bold text-white shadow-neutral-400/70 hover:opacity-90"
+          >
+            Xác nhận
+          </button>
+        </div>
       </div>
     </div>
   );

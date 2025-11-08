@@ -264,7 +264,7 @@ Store quản lý thông tin màn hình success:
 - **State**:
   - `successTitle: string` - Tiêu đề màn hình success
   - `successDesc: string` - Mô tả màn hình success
-  - `successRedirect: string` - Route redirect sau khi success (mặc định: `'/(auth)/sign-in'`)
+  - `successRedirect: string` - Route redirect sau khi success (mặc định: `'/auth/sign-in'`)
 - **Actions**:
   - `setSuccess(title, desc, redirect?)`: Set thông tin success
   - `setSuccessRedirect(redirect)`: Chỉ set redirect route
@@ -883,7 +883,7 @@ const SignUpScreen = () => {
     setSuccess(
       'Đăng ký thành công!',
       'Tài khoản của bạn đã được tạo thành công. Vui lòng đăng nhập.',
-      '/(auth)/sign-in'  // Redirect về màn hình đăng nhập
+      '/auth/sign-in'  // Redirect về màn hình đăng nhập
     );
 
     // Navigate đến màn hình success
@@ -1034,7 +1034,7 @@ instance.interceptors.response.use(
 			await tokenCache.saveToken("accessToken", "");
 			
 			// Có thể thêm logic redirect ở đây nếu cần
-			// Ví dụ: router.replace('/(auth)/sign-in');
+			// Ví dụ: router.replace('/auth/sign-in');
 		}
 		
 		return Promise.reject(error);

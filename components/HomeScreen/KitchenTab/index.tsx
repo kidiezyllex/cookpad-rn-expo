@@ -57,7 +57,7 @@ const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
     }, [postsData]);
 
     return (
-        <div className="items-center mt-2 bg-white py-4 space-y-8"
+        <div className="items-center bg-white py-4 space-y-8"
         >
             {/* Posts section */}
             <PostsSwiper />

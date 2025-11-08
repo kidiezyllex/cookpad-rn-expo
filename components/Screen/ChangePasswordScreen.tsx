@@ -27,7 +27,7 @@ const ChangePasswordScreen = () => {
     setSuccess(
       'Đổi mật khẩu thành công!',
       'Bạn đã thay đổi mật khẩu thành công, vui lòng đăng nhập với mật khẩu mới của bạn.',
-      '/(auth)/sign-in'
+      '/auth/sign-in'
     );
     router.replace('/(auth)/register-success');
   }, [form.password, form.confirmPassword, setSuccess, router]);
