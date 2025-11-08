@@ -1,6 +1,6 @@
 import { images } from "@/constants";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const splashImages = [images.splash1, images.splash2, images.splash3, images.splash4];
 const DURATION = 1100; // ms per splash (nhanh hơn)
@@ -12,12 +12,16 @@ interface SplashScreenProps {
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
   const [index, setIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const fadeTimeoutRef = useRef<number | undefined>(undefined);
   const nextTimeoutRef = useRef<number | undefined>(undefined);
 
-  useEffect(() => {
+  // Sử dụng useLayoutEffect để set isVisible khi index thay đổi (chạy đồng bộ trước paint)
+  useLayoutEffect(() => {
     setIsVisible(true);
+  }, [index]);
+
+  useEffect(() => {
     if (fadeTimeoutRef.current) window.clearTimeout(fadeTimeoutRef.current);
     if (nextTimeoutRef.current) window.clearTimeout(nextTimeoutRef.current);
 

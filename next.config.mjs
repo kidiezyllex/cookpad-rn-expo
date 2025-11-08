@@ -12,7 +12,6 @@ const nextConfig = {
 		optimizePackageImports: ['swiper', 'iconsax-reactjs'],
 	},
 	// Tắt một số tính năng có thể gây lock file
-	swcMinify: true,
 	webpack: (config, { dev, isServer }) => {
 		config.infrastructureLogging = {
 			level: "error",

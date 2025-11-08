@@ -1,5 +1,6 @@
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
+import nextPlugin from 'eslint-config-next';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -61,4 +62,5 @@ export default [
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
+  ...nextPlugin,
 ];
