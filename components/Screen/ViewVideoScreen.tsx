@@ -1,9 +1,7 @@
 'use client';
 
 import { icons, images, videos } from '@/constants';
-import { getScaleFactor } from '@/lib/scaling';
 import Image from 'next/image';
-import { useMemo } from 'react';
 
 const mockSteps = [
   {
@@ -45,7 +43,6 @@ const mockSteps = [
 ];
 
 const ViewVideoScreen = () => {
-  const scaleFactor = useMemo(() => getScaleFactor(), []);
 
   const renderStepItem = ({ item, index }: { item: typeof mockSteps[0]; index: number }) => {
     return (

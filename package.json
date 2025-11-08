@@ -5,8 +5,9 @@
   "scripts": {
     "clean": "node scripts/clean-next.js",
     "clean:force": "node scripts/clean-next.js",
-    "dev": "next dev",
-    "dev:fresh": "npm run clean && next dev",
+    "dev": "next dev --turbo",
+    "dev:standard": "next dev",
+    "dev:fresh": "npm run clean && next dev --turbo",
     "dev:turbo": "next dev --turbo",
     "build": "next build",
     "build:clean": "npm run clean && next build",

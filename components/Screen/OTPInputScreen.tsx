@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
 import { useSuccessStore } from '@/store/successStore';
+import { StaticImageData } from 'next/image';
 
 const OTPInputScreen = () => {
   const [otp, setOtp] = useState('');
@@ -37,7 +38,7 @@ const OTPInputScreen = () => {
 
   const backgroundImageUrl = typeof images.personalChestBg === 'string'
     ? images.personalChestBg
-    : (images.personalChestBg as any)?.src || images.personalChestBg;
+    : (images.personalChestBg as StaticImageData)?.src || images.personalChestBg;
 
   return (
     <div

@@ -1,35 +1,6 @@
 import TextScaled from '@/components/Common/TextScaled';
-import PostItem from './PostItem';
 import SuggestedFriendItem from './SuggestedFriendItem';
 import PostsSwiper from './PostsSwiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import { ArrowLeft2, ArrowRight2 } from 'iconsax-reactjs';
-import { useRef, useEffect } from 'react';
-import type { Swiper as SwiperType } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-interface PostData {
-    id: string;
-    user: {
-        name: string;
-        timeAgo: string;
-    };
-    content: {
-        title: string;
-        description: string;
-        hashtags: string[];
-        likes: number;
-        comments: number;
-        image: unknown;
-    };
-    comments: Array<{
-        user: string;
-        text: string;
-    }>;
-}
 
 interface SuggestedFriendData {
     id: string;
@@ -39,22 +10,10 @@ interface SuggestedFriendData {
 }
 
 interface KitchenTabProps {
-    postsData: PostData[];
     suggestedFriendsData: SuggestedFriendData[];
 }
 
-const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
-    const paginationRef1 = useRef<HTMLDivElement>(null);
-    const swiperRef1 = useRef<SwiperType | null>(null);
-
-    useEffect(() => {
-        if (swiperRef1.current && paginationRef1.current) {
-            swiperRef1.current.pagination.el = paginationRef1.current;
-            swiperRef1.current.pagination.init();
-            swiperRef1.current.pagination.render();
-            swiperRef1.current.pagination.update();
-        }
-    }, [postsData]);
+const KitchenTab = ({ suggestedFriendsData }: KitchenTabProps) => {
 
     return (
         <div className="items-center bg-white py-4 space-y-8"

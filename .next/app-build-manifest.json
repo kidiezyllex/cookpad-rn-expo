@@ -20,7 +20,7 @@
       "static/chunks/75332741-c1c7ae4095301f9b.js",
       "static/chunks/888-e31578d077b94372.js",
       "static/chunks/main-app-3d8522a8b74187eb.js",
-      "static/css/00acdcfc5c7825a7.css",
+      "static/css/6890ba4a57b7066e.css",
       "static/chunks/app/layout-3872d14c28956a03.js"
     ],
     "/page": [
@@ -32,7 +32,7 @@
       "static/chunks/852-b6412ba4220c957e.js",
       "static/chunks/250-e6c5faf68f147f5f.js",
       "static/chunks/869-d4d929b36b3752af.js",
-      "static/chunks/app/page-3a5a6d54dcb503f0.js"
+      "static/chunks/app/page-889a510a0a0a1bd6.js"
     ],
     "/auth/layout": [
       "static/chunks/webpack-1cd372204a42a245.js",
@@ -40,6 +40,15 @@
       "static/chunks/888-e31578d077b94372.js",
       "static/chunks/main-app-3d8522a8b74187eb.js",
       "static/chunks/app/auth/layout-56e55d410f7e2a67.js"
+    ],
+    "/auth/change-password/page": [
+      "static/chunks/webpack-1cd372204a42a245.js",
+      "static/chunks/75332741-c1c7ae4095301f9b.js",
+      "static/chunks/888-e31578d077b94372.js",
+      "static/chunks/main-app-3d8522a8b74187eb.js",
+      "static/chunks/852-b6412ba4220c957e.js",
+      "static/chunks/869-d4d929b36b3752af.js",
+      "static/chunks/app/auth/change-password/page-84824e6a9739b953.js"
     ],
     "/auth/forgot-password/page": [
       "static/chunks/webpack-1cd372204a42a245.js",
@@ -58,15 +67,6 @@
       "static/chunks/852-b6412ba4220c957e.js",
       "static/chunks/869-d4d929b36b3752af.js",
       "static/chunks/app/auth/otp/page-f58c5cd94f7302b6.js"
-    ],
-    "/auth/change-password/page": [
-      "static/chunks/webpack-1cd372204a42a245.js",
-      "static/chunks/75332741-c1c7ae4095301f9b.js",
-      "static/chunks/888-e31578d077b94372.js",
-      "static/chunks/main-app-3d8522a8b74187eb.js",
-      "static/chunks/852-b6412ba4220c957e.js",
-      "static/chunks/869-d4d929b36b3752af.js",
-      "static/chunks/app/auth/change-password/page-84824e6a9739b953.js"
     ],
     "/auth/sign-in/page": [
       "static/chunks/webpack-1cd372204a42a245.js",

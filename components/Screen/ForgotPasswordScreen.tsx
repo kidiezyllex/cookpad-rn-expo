@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
 import BackHeader from '../Common/BackHeader';
+import { StaticImageData } from 'next/image';
 
 const ForgotPasswordScreen = () => {
 	const [phone, setPhone] = useState('');
@@ -26,7 +27,7 @@ const ForgotPasswordScreen = () => {
 
 	const backgroundImageUrl = typeof images.personalChestBg === 'string'
 		? images.personalChestBg
-		: (images.personalChestBg as any)?.src || images.personalChestBg;
+		: (images.personalChestBg as StaticImageData)?.src || images.personalChestBg;
 
 	const onBackPress = useCallback(() => {
 		router.back();

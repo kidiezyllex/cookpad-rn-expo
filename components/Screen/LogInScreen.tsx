@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import TextScaled from '../Common/TextScaled';
+import { StaticImageData } from 'next/image';
 
 const LogInScreen = () => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const LogInScreen = () => {
 
   const backgroundImageUrl = typeof images.personalChestBg === 'string'
     ? images.personalChestBg
-    : (images.personalChestBg as any)?.src || images.personalChestBg;
+    : (images.personalChestBg as StaticImageData)?.src || images.personalChestBg;
 
   return (
     <div

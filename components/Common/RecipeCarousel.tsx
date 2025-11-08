@@ -1,7 +1,6 @@
 "use client";
 
 import { featuredRecipesData } from '@/constants';
-import { useRouter } from 'next/navigation';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import RecipeCard from '../HomeScreen/InspirationTab/RecipeCard';

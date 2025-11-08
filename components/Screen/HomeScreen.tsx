@@ -4,7 +4,7 @@ import { useState } from 'react';
 import HeroSection from '../HomeScreen/HeroSection';
 import InspirationTab from '../HomeScreen/InspirationTab';
 import KitchenTab from '../HomeScreen/KitchenTab';
-import { postsData, suggestedFriendsData } from '../HomeScreen/mockData';
+import { suggestedFriendsData } from '../HomeScreen/mockData';
 import { images, onboarding } from '@/constants';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -77,7 +77,6 @@ const HomeScreen = () => {
                 {/* Bàn bếp tab content */}
                 {activeTab === 'ban-bep' && (
                     <KitchenTab
-                        postsData={postsData}
                         suggestedFriendsData={suggestedFriendsData}
                     />
                 )}

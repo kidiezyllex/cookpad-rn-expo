@@ -1,10 +1,11 @@
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import Image from 'next/image';
+import { StaticImageData } from 'next/image';
 
 interface NotificationItemProps {
     id: string;
-    avatarUrl: string;
+    avatarUrl: string | StaticImageData;
     userName: string;
     content: string;
     timestamp: string;

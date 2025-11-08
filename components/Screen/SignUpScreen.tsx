@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
+import { StaticImageData } from 'next/image';
 
 const SignUpScreen = () => {
   const [email, setEmail] = useState('');
@@ -35,7 +36,7 @@ const SignUpScreen = () => {
 
   const backgroundImageUrl = typeof images.personalChestBg === 'string'
     ? images.personalChestBg
-    : (images.personalChestBg as any)?.src || images.personalChestBg;
+    : (images.personalChestBg as StaticImageData)?.src || images.personalChestBg;
 
   return (
     <div

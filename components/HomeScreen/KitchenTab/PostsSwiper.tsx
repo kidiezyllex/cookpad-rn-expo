@@ -31,7 +31,7 @@ const PostsSwiper = () => {
             >
                 {postsData.map((item) => (
                     <SwiperSlide key={item.id} className="h-full pb-1">
-                        <PostItem item={item as any} />
+                        <PostItem item={item} />
                     </SwiperSlide>
                 ))}
             </Swiper>

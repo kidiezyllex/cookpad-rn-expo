@@ -16,7 +16,7 @@ const NotificationTab = () => {
                         </TextScaled>
                         {item.notifications.map((notification, index) => (
                             <div key={notification.id}>
-                                <NotificationItem item={notification as any} />
+                                <NotificationItem item={notification} />
                                 {index < item.notifications.length - 1 && (
                                     <div
                                         className="ml-[68px] h-px bg-[#F3F4F6]"

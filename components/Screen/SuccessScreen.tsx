@@ -5,7 +5,7 @@ import { images } from '@/constants';
 import { useSuccessStore } from '@/store/successStore';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 const SuccessScreen = () => {
     const { successTitle, successDesc, resetSuccess, successRedirect } = useSuccessStore();
@@ -13,13 +13,13 @@ const SuccessScreen = () => {
     const timerRef = useRef<number | null>(null);
     const router = useRouter();
 
-    const handleRedirect = () => {
+    const handleRedirect = useCallback(() => {
         if (!hasRedirectedRef.current) {
             hasRedirectedRef.current = true;
             resetSuccess();
             router.replace(successRedirect);
         }
-    };
+    }, [resetSuccess, router, successRedirect]);
 
     useEffect(() => {
         timerRef.current = window.setTimeout(() => {
@@ -28,7 +28,7 @@ const SuccessScreen = () => {
         return () => {
             if (timerRef.current) window.clearTimeout(timerRef.current);
         };
-    }, [successRedirect]);
+    }, [successRedirect, handleRedirect]);
 
     return (
         <button onClick={handleRedirect} className="min-h-dvh w-full bg-backgroundV1 flex-1">
