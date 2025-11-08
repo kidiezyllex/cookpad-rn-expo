@@ -1,0 +1,157 @@
+'use client';
+
+import CustomButton from "@/components/Common/CustomButton";
+import TextScaled from "@/components/Common/TextScaled";
+import RecipeCard from "@/components/ProfileScreen/RecipeCard";
+import RecipeListItem from "@/components/ProfileScreen/RecipeListItem";
+import { icons, images } from "@/constants";
+import { useRouter } from "next/navigation";
+import React from "react";
+import Image from "next/image";
+import FoodGrid from "../Common/FoodGrid";
+import { mockRecipeList, mockRecipes } from "../ProfileScreen/mockData";
+
+const ProfileScreen = () => {
+  const router = useRouter();
+  const [activeTab, setActiveTab] = React.useState('Bảng');
+
+  const tabs = ['Bảng', 'Yêu thích', 'Công thức'];
+
+  return (
+    <div className="flex min-h-screen flex-col bg-backgroundV1">
+      <div
+        className="flex-1 overflow-y-auto pb-[120px]"
+      >
+        {/* Avatar and Name, Chỉnh sửa cài đặt*/}
+        <div
+          className="flex flex-col items-center justify-center mt-10"
+        >
+          <div className="flex flex-col items-center justify-center gap-2">
+            <Image
+              src={images.sampleAvatar}
+              alt="avatar"
+              width={80}
+              height={80}
+              className="rounded-full"
+            />
+            <TextScaled size="xl" className="font-bold text-black">
+              Hòa Simp
+            </TextScaled>
+          </div>
+          <div
+            className="flex flex-row items-center gap-2 mb-6"
+          >
+            <TextScaled size="xs" className="text-textNeutralV1">
+              12 Bạn bếp
+            </TextScaled>
+            <TextScaled size="sm" className="font-bold text-black">
+              .
+            </TextScaled>
+            <TextScaled size="xs" className="text-textNeutralV1">
+              22 Công thức
+            </TextScaled>
+          </div>
+          <CustomButton
+            title="Chỉnh sửa cài đặt"
+            onPress={() => router.push('/setting')}
+            className="w-auto h-10 mb-6 px-6 py-2"
+          />
+        </div>
+
+        {/* Tabs and Search */}
+        <div
+          className="flex flex-col items-center justify-center gap-4"
+        >
+          {/* Tab Navigation */}
+          <div className="flex flex-row">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 pb-2 ${
+                  activeTab === tab ? 'border-b-2 border-black' : 'border-b-2 border-transparent'
+                }`}
+              >
+                <TextScaled
+                  size="base"
+                  className={`font-bold ${activeTab === tab ? 'text-black' : 'text-textNeutralV1'
+                    }`}
+                >
+                  {tab}
+                </TextScaled>
+              </button>
+            ))}
+          </div>
+
+          {/* Search and Filter */}
+          <div
+            className="flex w-full flex-row items-center gap-1 px-4 mb-4"
+          >
+            <div
+              className="flex flex-1 flex-row items-center rounded-lg bg-white h-8 px-2 gap-4"
+            >
+              <Image
+                src={icons.searchIcon}
+                alt="search"
+                width={24}
+                height={24}
+              />
+              <TextScaled size="sm" className="font-medium text-textNeutralV1">
+                Tìm kiếm
+              </TextScaled>
+            </div>
+            <button>
+              <Image
+                src={icons.downUpIcon}
+                alt="filter"
+                width={32}
+                height={32}
+              />
+            </button>
+            <button>
+              <Image
+                src={icons.smallPlusIcon}
+                alt="add"
+                width={32}
+                height={32}
+              />
+            </button>
+          </div>
+        </div>
+
+        {/* Tab Content */}
+        {activeTab === 'Bảng' && (
+          <div
+            className="flex flex-col items-center justify-center gap-6"
+          >
+            <div
+              className="grid grid-cols-2 gap-4 w-full px-4 pb-1"
+            >
+              {mockRecipes.map((item) => (
+                <RecipeCard key={item.id} item={item} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'Yêu thích' && (
+          <div className="px-4">
+            <FoodGrid />
+          </div>
+        )}
+
+        {activeTab === 'Công thức' && (
+          <div
+            className="flex flex-col gap-2 px-4 pb-4"
+          >
+            {mockRecipeList.map((item) => (
+              <RecipeListItem key={item.id} item={item} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ProfileScreen;
