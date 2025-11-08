@@ -28,7 +28,7 @@ interface PostItemProps {
 const PostItem = ({ item }: PostItemProps) => {
     return (
         <div
-            className="flex flex-col items-center justify-center w-full rounded-lg gap-1"
+            className="flex flex-col items-start justify-start w-full h-full rounded-lg gap-1 min-w-[290px]"
         >
             <div
                 className="flex flex-row items-center justify-between w-full"
@@ -46,7 +46,7 @@ const PostItem = ({ item }: PostItemProps) => {
                     >
                         <TextScaled
                             size="sm"
-                            className="font-medium text-black"
+                            className="font-medium text-black text-nowrap"
                         >
                             {item.user.name}
                         </TextScaled>
@@ -66,12 +66,12 @@ const PostItem = ({ item }: PostItemProps) => {
             </div>
 
             <div
-                className="w-full pb-4 border-t border-[#E5E7EB] gap-1 rounded-lg flex flex-col items-center justify-center bg-white"
+                className="w-full pb-4 border-t border-[#E5E7EB] gap-1 rounded-lg flex flex-col items-center justify-start bg-white shadow-md flex-1"
             >
                 {/* Phần Food Image  */}
                 <div className="relative w-full h-[200px]">
                     <Image
-                        src={images.sampleFood1}
+                        src={item.content.image}
                         alt={item.content.title}
                         fill
                         className='rounded-t-lg object-cover'
@@ -85,20 +85,20 @@ const PostItem = ({ item }: PostItemProps) => {
                     >
                         <div className="flex flex-row items-start justify-start gap-3">
                             <div className="flex flex-row items-center justify-start gap-1">
-                                <Image src={icons.heartIcon} alt="likes" width={20} height={20} className="object-contain" />
+                                <Image src={icons.heartIcon} alt="likes" className="object-contain h-5 w-5" />
                                 <TextScaled size="sm" className="font-medium text-black">
                                     {item.content.likes}
                                 </TextScaled>
                             </div>
                             <div className="flex flex-row items-center justify-start gap-1">
-                                <Image src={icons.chatIcon} alt="comments" width={20} height={20} className="object-contain" />
+                                <Image src={icons.chatIcon} alt="comments" className="object-contain h-5 w-5" />
                                 <TextScaled size="sm" className="font-medium text-black">
                                     {item.content.comments}
                                 </TextScaled>
                             </div>
                         </div>
                         <div className="flex flex-row items-center justify-start gap-1">
-                            <Image src={icons.saveIcon} alt="save" width={20} height={20} className="object-contain" />
+                            <Image src={icons.saveIcon} alt="save" className="object-contain h-5 w-5" />
                         </div>
                     </div>
 
@@ -115,7 +115,7 @@ const PostItem = ({ item }: PostItemProps) => {
                             className="flex flex-col items-start justify-center gap-1"
                         >
                             <TextScaled
-                                size="xs"
+                                size="sm"
                                 className="text-black"
                             >
                                 {item.content.description}
@@ -147,38 +147,34 @@ const PostItem = ({ item }: PostItemProps) => {
                     </div>
 
                     <div
-                        className="flex flex-col items-start justify-start gap-1"
+                        className="flex flex-col items-start justify-start gap-1 flex-1"
                     >
                         <div className="flex flex-col items-start justify-start">
                             {item.comments.slice(0, 2).map((comment, index: number) => (
-                                <div
+                                <p
                                     key={index}
-                                    className="flex flex-row items-center justify-start gap-2"
                                 >
-                                    <TextScaled
-                                        size="xs"
-                                        className="font-semibold text-black"
+                                    <span
+                                        className="font-semibold text-sm text-black text-nowrap"
                                     >
                                         {comment.user}
-                                    </TextScaled>
-                                    <TextScaled
-                                        size="xs"
-                                        className="text-black"
+                                    </span>
+                                    <span
+                                        className="text-black text-sm ml-1"
                                     >
                                         {comment.text}
-                                    </TextScaled>
-                                </div>
+                                    </span>
+                                </p>
                             ))}
                         </div>
                         <div
                             className="flex flex-row items-center justify-start gap-2"
                         >
-                            <TextScaled
-                                size="xs"
-                                className="text-textNeutralV1"
+                            <button
+                                className="text-textNeutralV1 text-xs cursor-pointer"
                             >
                                 Xem thêm bình luận
-                            </TextScaled>
+                            </button>
                         </div>
                     </div>
                 </div>

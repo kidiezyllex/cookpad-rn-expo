@@ -1,6 +1,12 @@
 import TextScaled from '@/components/Common/TextScaled';
 import PostItem from './PostItem';
 import SuggestedFriendItem from './SuggestedFriendItem';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import { ArrowLeft2, ArrowRight2 } from 'iconsax-reactjs';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface PostData {
     id: string;
@@ -36,18 +42,52 @@ interface KitchenTabProps {
 
 const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
     return (
-        <div className="items-center mt-2"
+        <div className="items-center mt-2 bg-white px-16 mx-auto py-4"
         >
             {/* Posts section */}
-            <div className="w-full grid grid-cols-4 gap-4"
-            >
+            <div className="w-full relative">
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    slidesPerView={4}
+                    spaceBetween={16}
+                    grabCursor={true}
+                    navigation={{
+                        nextEl: '.swiper-button-next-posts',
+                        prevEl: '.swiper-button-prev-posts',
+                    }}
+                    pagination={{
+                        el: '.swiper-pagination-posts',
+                        clickable: true,
+                    }}
+                    className="posts-swiper"
+                >
                     {postsData.map((item) => (
-                        <PostItem key={item.id} item={item as any} />
+                        <SwiperSlide key={item.id} className="h-full mb-1">
+                            <PostItem item={item as any} />
+                        </SwiperSlide>
                     ))}
+                </Swiper>
+                {/* Navigation buttons */}
+                <button 
+                    type="button"
+                    className="swiper-button-prev-posts absolute -left-12 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
+                    aria-label="Previous slide"
+                >
+                    <ArrowLeft2 size={20} color="#fff" variant="Outline" />
+                </button>
+                <button 
+                    type="button"
+                    className="swiper-button-next-posts absolute -right-12 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-customPrimary rounded-full shadow-md flex items-center justify-center hover:bg-customPrimary/80 transition-colors"
+                    aria-label="Next slide"
+                >
+                    <ArrowRight2 size={20} color="#fff" variant="Outline" />
+                </button>
+                {/* Pagination */}
+                <div className="swiper-pagination-posts flex justify-center mt-4 gap-2"></div>
             </div>
 
             {/* Suggested friends section */}
-            <div className="flex w-full flex-col items-start justify-start bg-white p-4 pb-8 gap-4">
+            <div className="flex w-full flex-col items-start justify-start bg-white pt-4 pb-8 gap-4">
                 <div className="flex w-full flex-row items-start justify-between">
                     <TextScaled
                         size="base"
@@ -55,14 +95,13 @@ const KitchenTab = ({ postsData, suggestedFriendsData }: KitchenTabProps) => {
                     >
                         Gợi ý Bạn Bếp
                     </TextScaled>
-                    <TextScaled
-                        size="sm"
-                        className="text-orange-500"
+                    <button
+                        className="text-orange-500 text-sm cursor-pointer"
                     >
                         Xem thêm
-                    </TextScaled>
+                    </button>
                 </div>
-                <div className="w-full flex flex-col gap-3">
+                <div className="w-full grid grid-cols-4 gap-4">
                     {suggestedFriendsData.map((item) => (
                         <SuggestedFriendItem key={item.id} item={item} />
                     ))}

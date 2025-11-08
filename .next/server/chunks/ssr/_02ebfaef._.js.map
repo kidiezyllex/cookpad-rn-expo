@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///E:/cookpad-rn-expo/app/layout.tsx"],"sourcesContent":["import type { Metadata } from 'next';\r\nimport './globals.css';\r\n\r\nexport const metadata: Metadata = {\r\n\ttitle: 'CookPad Web',\r\n\tdescription: 'Migrated to Next.js + TailwindCSS',\r\n};\r\n\r\nexport default function RootLayout({\r\n\tchildren,\r\n}: {\r\n\tchildren: React.ReactNode;\r\n}) {\r\n\treturn (\r\n\t\t<html lang=\"vi\">\r\n\t\t\t<body className=\"min-h-dvh bg-white text-gray-900 antialiased\">{children}</body>\r\n\t\t</html>\r\n\t);\r\n}\r\n\r\n\r\n"],"names":[],"mappings":";;;;;;;;;AAGO,MAAM,WAAqB;IACjC,OAAO;IACP,aAAa;AACd;AAEe,SAAS,WAAW,EAClC,QAAQ,EAGR;IACA,qBACC,6VAAC;QAAK,MAAK;kBACV,cAAA,6VAAC;YAAK,WAAU;sBAAgD;;;;;;;;;;;AAGnE","debugId":null}},
+    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":["file:///E:/cookpad-rn-expo/node_modules/.pnpm/next%4015.5.6_%40babel%2Bcore%407.2_4e84d3a8f250f9392ab0c89ffd1f0450/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4MACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0],"debugId":null}}]
+}

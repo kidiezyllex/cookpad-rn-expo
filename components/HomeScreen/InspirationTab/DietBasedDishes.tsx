@@ -69,12 +69,11 @@ const DietBasedDishes = () => {
                 >
                     Món ăn theo chế độ ăn
                 </TextScaled>
-                <TextScaled
-                    size="sm"
-                    className="font-light text-customPrimary"
+                <button
+                    className="font-light text-customPrimary text-sm cursor-pointer"
                 >
                     Xem thêm
-                </TextScaled>
+                </button>
             </div>
             <div
                 className="h-10 mb-2 w-full"

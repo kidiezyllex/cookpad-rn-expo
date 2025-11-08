@@ -24,7 +24,7 @@ const SuggestedFriendItem = ({ item }: SuggestedFriendItemProps) => {
                 className="rounded-full object-contain"
             />
             <div
-                className="flex flex-1 flex-col items-start justify-start gap-1"
+                className="flex flex-1 flex-col items-start self-start justify-start gap-1"
             >
                 <div className="flex flex-col items-start justify-start">
                     <TextScaled
@@ -33,45 +33,19 @@ const SuggestedFriendItem = ({ item }: SuggestedFriendItemProps) => {
                     >
                         {item.name}
                     </TextScaled>
-                    <div
-                        className="flex flex-row items-start justify-start gap-2"
-                    >
-                        <div className="flex flex-row items-center justify-start gap-1">
-                            <TextScaled
-                                size="xs"
-                                className="font-semibold text-black"
-                            >
-                                {item.commonFriends}
-                            </TextScaled>
-                            <TextScaled
-                                size="xs"
-                                className="font-light text-black"
-                            >
-                                Bạn bếp chung
-                            </TextScaled>
-                        </div>
-                        <div className="flex flex-row items-center justify-start gap-1">
-                            <TextScaled
-                                size="xs"
-                                className="font-semibold text-textNeutralV1"
-                            >
-                                15
-                            </TextScaled>
-                            <TextScaled
-                                size="xs"
-                                className="text-blue-400"
-                            >
-                                #{item.hashtag}
-                            </TextScaled>
-                        </div>
-                    </div>
+                        <p className='space-x-1'>
+                            <span className="font-semibold text-black test-base">{item.commonFriends}</span>
+                            <span className="font-light text-black text-nowrap text-sm">Bạn bếp chung</span>
+                            <span className="font-semibold text-textNeutralV1 text-sm leading-none">15</span>
+                            <span className="text-blue-400 text-nowrap text-sm"> #{item.hashtag}</span>
+                        </p>
                 </div>
                 <div
                     className="flex w-full flex-row justify-start gap-2"
                 >
                     <button
                         onClick={() => { }}
-                        className="flex flex-1 items-center justify-center py-1 px-4 h-8 bg-[#E36137] rounded-md shrink"
+                        className="flex flex-1 items-center justify-center py-1 px-4 h-8 bg-customPrimary hover:bg-customPrimary/80 transition-colors rounded-md shrink"
                     >
                         <TextScaled
                             size="sm"

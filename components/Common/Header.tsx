@@ -76,12 +76,15 @@ export default function Header() {
         className="mx-auto flex w-full items-center justify-between px-4 h-16"
       >
         {/* Logo bên trái */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
           <Image
             src={images.logo}
             alt="CookPad Logo"
             className="object-contain h-10 w-10"
+            quality={100}
+            draggable={false}
           />
+          <p className="text-xl font-bold text-gray-600">Cook<span className='text-customPrimary'>Pad</span></p>
         </div>
 
         {/* Navigation menu bên phải */}

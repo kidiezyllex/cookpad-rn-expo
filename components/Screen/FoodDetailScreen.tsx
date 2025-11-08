@@ -159,9 +159,9 @@ const FoodDetailScreen = () => {
                             <TextScaled size="base" className="font-bold text-black">
                                 Bình luận
                             </TextScaled>
-                            <TextScaled size="sm" className="text-customPrimary">
+                            <button className="text-customPrimary text-sm cursor-pointer">
                                 Xem thêm
-                            </TextScaled>
+                            </button>
                         </div>
 
                         <div className="flex flex-col gap-2">
@@ -200,9 +200,9 @@ const FoodDetailScreen = () => {
                                         </div>
                                         <div className="flex flex-row gap-1 items-center">
                                             <div className="w-4 h-px bg-[#9CA3AF]" />
-                                            <TextScaled size="xs" className="text-textNeutralV1">
+                                            <button className="text-textNeutralV1 text-xs cursor-pointer">
                                                 Xem thêm {comment.replies} phản hồi
-                                            </TextScaled>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -215,9 +215,9 @@ const FoodDetailScreen = () => {
                             <TextScaled size="base" className="font-bold text-black">
                                 Món ăn kèm nổi bật
                             </TextScaled>
-                            <TextScaled size="sm" className="text-customPrimary">
+                            <button className="text-customPrimary text-sm cursor-pointer">
                                 Xem thêm
-                            </TextScaled>
+                            </button>
                         </div>
 
                         <RecipeCarousel />

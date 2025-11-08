@@ -15,4 +15,41 @@ html, body {
 	box-sizing: border-box;
 }
 
+/* Swiper pagination styles for KitchenTab */
+.swiper-pagination-posts .swiper-pagination-bullet {
+	width: 8px;
+	height: 8px;
+	background: #d1d5db;
+	opacity: 1;
+	margin: 0 4px;
+	transition: all 0.3s;
+	border-radius: 50%;
+}
+
+.swiper-pagination-posts .swiper-pagination-bullet-active {
+	background: #f97316;
+	width: 24px;
+	border-radius: 4px;
+}
+
+/* Swiper grab cursor */
+.posts-swiper {
+	cursor: grab;
+}
+
+.posts-swiper:active {
+	cursor: grabbing;
+}
+
+/* Đảm bảo các SwiperSlide có cùng chiều cao */
+.posts-swiper .swiper-slide {
+	height: auto;
+	display: flex;
+}
+
+.posts-swiper .swiper-wrapper {
+	display: flex;
+	align-items: stretch;
+}
+
 

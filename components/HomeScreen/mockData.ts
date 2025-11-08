@@ -32,11 +32,11 @@ export const postsData = [
             hashtags: ['Sò điệp', 'Tôm', 'Bánh mì gạo lứt', 'Hải sản'],
             likes: 16,
             comments: 34,
-            image: images.sampleFood1
+            image: images.sampleFood2
         },
         comments: [
-            { user: 'Otaku Lê', text: 'Nsfdggdgdgdgergsgrsg' },
-            { user: 'Bruh Lmao', text: 'njbhfbhfvdhvvbhbhfnnnjnnnnnbhbbbh' }
+            { user: 'Otaku Lê', text: 'Chịu đựng được không mày?' },
+            { user: 'Bruh Lmao', text: 'Chịu đựng được không mày?' }
         ]
     },
     {
@@ -51,11 +51,182 @@ export const postsData = [
             hashtags: ['Món chay', 'Trứng', 'Bơ'],
             likes: 134,
             comments: 233,
-            image: images.sampleFood1
+            image: images.sampleFood3
         },
         comments: [
             { user: 'Mun Ngáo', text: 'Trứng dở vcl đéo thèm ăn, công thức như ' },
             { user: 'Nobita', text: 'Nói tiếng người đi má' }
+        ]
+    },
+    {
+        id: '4',
+        user: {
+            name: 'Mun Ngáo',
+            timeAgo: '3 ngày'
+        },
+        content: {
+            title: 'Salad cá nướng',
+            description: 'Ai muốn làm rau sạch trên đĩa của tao tối nay nào',
+            hashtags: ['Món chay', 'Trứng', 'Bơ'],
+            likes: 134,
+            comments: 233,
+            image: images.sampleFood1
+        },
+        comments: [
+            { user: 'Otaku Lê', text: 'Ngon nha shop' },
+            { user: 'Bruh Lmao', text: 'Ngon quá ạ, công thức như thế nào vậy shop?' }
+        ]
+    },
+    {
+        id: '5',
+        user: {
+            name: 'Bruh Lmao',
+            timeAgo: '4 ngày'
+        },
+        content: {
+            title: 'Phở bò tái chín',
+            description: 'Sáng nay làm phở cho cả nhà, nước dùng ngọt thanh đúng chuẩn Hà Nội',
+            hashtags: ['Phở', 'Thịt bò', 'Bánh phở', 'Món Việt'],
+            likes: 89,
+            comments: 45,
+            image: images.sampleFood2
+        },
+        comments: [
+            { user: 'Wibu Chúa', text: 'Nhìn ngon quá, cho xin công thức đi' },
+            { user: 'Nobita', text: 'Nước dùng làm sao mà trong thế?' }
+        ]
+    },
+    {
+        id: '6',
+        user: {
+            name: 'Dũng Lại Lập Trình',
+            timeAgo: '5 ngày'
+        },
+        content: {
+            title: 'Bánh mì thịt nướng',
+            description: 'Bánh mì giòn rụm với thịt nướng thơm lừng, pate béo ngậy',
+            hashtags: ['Bánh mì', 'Thịt nướng', 'Pate', 'Đồ ăn nhanh'],
+            likes: 156,
+            comments: 78,
+            image: images.sampleFood3
+        },
+        comments: [
+            { user: 'Otaku Lê', text: 'Bánh mì ở đâu vậy bạn?' },
+            { user: 'Mun Ngáo', text: 'Nhìn đã quá, đói bụng rồi' }
+        ]
+    },
+    {
+        id: '7',
+        user: {
+            name: 'Chó Kem',
+            timeAgo: '1 tuần'
+        },
+        content: {
+            title: 'Bún chả Hà Nội',
+            description: 'Làm bún chả theo công thức của bà ngoại, thịt nướng thơm phức',
+            hashtags: ['Bún chả', 'Thịt nướng', 'Món Việt', 'Hà Nội'],
+            likes: 203,
+            comments: 112,
+            image: images.featuredFood1
+        },
+        comments: [
+            { user: 'Wibu Chúa', text: 'Nhớ quê quá, lâu rồi không ăn bún chả' },
+            { user: 'Nobita', text: 'Nước chấm làm sao vậy bạn?' }
+        ]
+    },
+    {
+        id: '8',
+        user: {
+            name: 'Lilikama',
+            timeAgo: '1 tuần'
+        },
+        content: {
+            title: 'Cơm tấm sườn bì chả',
+            description: 'Bữa trưa đầy đủ với cơm tấm, sườn nướng, bì và chả trứng',
+            hashtags: ['Cơm tấm', 'Sườn nướng', 'Bì', 'Món miền Nam'],
+            likes: 178,
+            comments: 95,
+            image: images.featuredFood2
+        },
+        comments: [
+            { user: 'Otaku Lê', text: 'Cơm tấm này ở đâu vậy?' },
+            { user: 'Bruh Lmao', text: 'Nhìn ngon quá, giá bao nhiêu vậy?' }
+        ]
+    },
+    {
+        id: '9',
+        user: {
+            name: 'Wibu Chúa',
+            timeAgo: '2 tuần'
+        },
+        content: {
+            title: 'Bánh xèo miền Tây',
+            description: 'Bánh xèo giòn tan với tôm thịt đầy đủ, ăn kèm rau sống',
+            hashtags: ['Bánh xèo', 'Tôm', 'Thịt', 'Miền Tây'],
+            likes: 267,
+            comments: 145,
+            image: images.featuredFood3
+        },
+        comments: [
+            { user: 'Mun Ngáo', text: 'Bánh xèo này làm sao giòn thế?' },
+            { user: 'Dũng Lại Lập Trình', text: 'Cho xin công thức đi bạn' }
+        ]
+    },
+    {
+        id: '10',
+        user: {
+            name: 'Nobita',
+            timeAgo: '2 tuần'
+        },
+        content: {
+            title: 'Nem nướng Nha Trang',
+            description: 'Nem nướng thơm lừng với bánh tráng và rau sống, đúng vị Nha Trang',
+            hashtags: ['Nem nướng', 'Nha Trang', 'Bánh tráng', 'Đồ nướng'],
+            likes: 189,
+            comments: 102,
+            image: images.featuredFood4
+        },
+        comments: [
+            { user: 'Chó Kem', text: 'Nhớ Nha Trang quá, nem nướng ở đây ngon nhất' },
+            { user: 'Lilikama', text: 'Nhìn đã quá, đói bụng rồi' }
+        ]
+    },
+    {
+        id: '11',
+        user: {
+            name: 'Otaku Lê',
+            timeAgo: '3 tuần'
+        },
+        content: {
+            title: 'Bánh cuốn nóng',
+            description: 'Bánh cuốn mềm mịn với nhân thịt băm, ăn kèm chả lụa và nước mắm',
+            hashtags: ['Bánh cuốn', 'Thịt băm', 'Chả lụa', 'Món sáng'],
+            likes: 145,
+            comments: 67,
+            image: images.featuredFood5
+        },
+        comments: [
+            { user: 'Wibu Chúa', text: 'Bánh cuốn này ở đâu vậy bạn?' },
+            { user: 'Bruh Lmao', text: 'Nhìn ngon quá, sáng mai đi ăn thử' }
+        ]
+    },
+    {
+        id: '12',
+        user: {
+            name: 'Mun Ngáo',
+            timeAgo: '3 tuần'
+        },
+        content: {
+            title: 'Chả cá Lã Vọng',
+            description: 'Chả cá thơm lừng với nghệ và thì là, ăn kèm bún và rau thơm',
+            hashtags: ['Chả cá', 'Lã Vọng', 'Cá', 'Món Hà Nội'],
+            likes: 234,
+            comments: 156,
+            image: images.featuredFood6
+        },
+        comments: [
+            { user: 'Dũng Lại Lập Trình', text: 'Chả cá này làm sao thơm thế?' },
+            { user: 'Nobita', text: 'Nhớ quê quá, lâu rồi không ăn chả cá' }
         ]
     }
 ];

@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3000",
+    "clean": "node scripts/clean-next.js",
+    "clean:force": "node scripts/clean-next.js",
+    "dev": "next dev",
+    "dev:fresh": "npm run clean && next dev",
+    "dev:turbo": "next dev --turbo",
     "build": "next build",
-    "start": "next start -p 3000",
-    "lint": "eslint .",
-    "reset-project": "node ./scripts/reset-project.js"
+    "build:clean": "npm run clean && next build",
+    "start": "next start",
+    "lint": "eslint ."
   },
   "dependencies": {
+    "iconsax-reactjs": "^0.0.8",
     "next": "^15.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
