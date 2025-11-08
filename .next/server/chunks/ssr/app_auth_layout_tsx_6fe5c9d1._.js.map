@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///E:/cookpad-rn-expo/app/auth/layout.tsx"],"sourcesContent":["export default function AuthLayout({ children }: { children: React.ReactNode }) {\r\n  return (\r\n    <section className=\"min-h-dvh bg-white\">\r\n      {children}\r\n    </section>\r\n  );\r\n}\r\n\r\n\r\n"],"names":[],"mappings":";;;;;;AAAe,SAAS,WAAW,EAAE,QAAQ,EAAiC;IAC5E,qBACE,6VAAC;QAAQ,WAAU;kBAChB;;;;;;AAGP","debugId":null}}]
-}
