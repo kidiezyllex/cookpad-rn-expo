@@ -99,7 +99,7 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
     
     return (
             <div
-                className="pb-[112px] w-full flex"
+                className="w-full flex"
                 style={{ gap: '16px' }}
             >
                 {columns.map((column, colIndex) => (

@@ -15,7 +15,7 @@ const SearchSuggestionItem = ({ item }: SearchSuggestionItemProps) => {
     const router = useRouter();
 
     const handlePress = () => {
-        router.push(`/search-results?searchQuery=${encodeURIComponent(item.name)}`);
+        router.push(`/search/result?query=${encodeURIComponent(item.name)}`);
     };
 
     return (
@@ -31,7 +31,7 @@ const SearchSuggestionItem = ({ item }: SearchSuggestionItemProps) => {
             />
             <TextScaled
                 size="sm"
-                className="text-textNeutralV1 flex-1 py-2"
+                className="text-textNeutralV1 flex-1 py-2 text-start"
             >
                 {item.name}
             </TextScaled>

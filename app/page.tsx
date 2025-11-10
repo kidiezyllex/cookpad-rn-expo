@@ -6,7 +6,7 @@ export default function HomePage() {
 		<>
 			<Header />
 			<main 
-				className="w-full pt-16 min-h-screen"
+				className="w-full py-16 min-h-screen bg-backgroundV1"
 			>
 				<HomeScreen />
 			</main>

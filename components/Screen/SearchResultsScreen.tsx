@@ -21,7 +21,7 @@ const dietaryFilterData = [
 const SearchResultsScreen = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const searchQuery = searchParams?.get('searchQuery') || 'Thịt Heo';
+    const searchQuery = searchParams?.get('query') || 'Thịt Heo';
     const [searchText, setSearchText] = useState(searchQuery);
     const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
     const [isFilterSelected, setIsFilterSelected] = useState(true);
@@ -39,9 +39,8 @@ const SearchResultsScreen = () => {
     };
 
     return (
-        <div className="flex min-h-screen flex-col bg-[#F1EEE8]">
             <div
-                className="flex-1 overflow-y-auto px-4 pt-4"
+                className="flex-1 overflow-y-auto px-16 pt-4"
             >
                 {/* Status Bar and Search Input */}
                 <div
@@ -79,7 +78,6 @@ const SearchResultsScreen = () => {
                 />
                 <FoodGrid />
             </div>
-        </div>
     );
 };
 

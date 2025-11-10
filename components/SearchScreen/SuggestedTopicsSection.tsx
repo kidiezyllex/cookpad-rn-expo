@@ -3,22 +3,22 @@ import Image from 'next/image';
 import TextScaled from '../Common/TextScaled';
 
 const popularTopicsData = [
-    { id: '1', name: 'Salad giảm cân' },
-    { id: '2', name: 'Món làm từ trứng' },
-    { id: '3', name: 'Đùi gà' },
-    { id: '4', name: 'Nước ép từ xoài' },
-    { id: '5', name: 'Món từ bí ngô' },
-    { id: '6', name: 'Món từ thịt bò' },
-    { id: '7', name: 'Món từ bí ngô' },
-    { id: '8', name: 'Món từ thịt bò' },
-    { id: '9', name: 'Món từ thịt bò' },
-    { id: '10', name: 'Món từ thịt bò' },
+    { id: '1', name: 'Salad giảm cân', image: images.sampleFood1 },
+    { id: '2', name: 'Món làm từ trứng', image: images.sampleFood2 },
+    { id: '3', name: 'Đùi gà', image: images.sampleFood3 },
+    { id: '4', name: 'Nước ép từ xoài', image: images.sampleFood1 },
+    { id: '5', name: 'Món từ bí ngô', image: images.sampleFood2 },
+    { id: '6', name: 'Món từ thịt bò', image: images.sampleFood3 },
+    { id: '7', name: 'Món từ bí ngô', image: images.sampleFood1 },
+    { id: '8', name: 'Món từ thịt bò', image: images.sampleFood2 },
+    { id: '9', name: 'Món từ thịt bò', image: images.sampleFood3 },
+    { id: '10', name: 'Món từ thịt bò', image: images.sampleFood1 },
 ];
 
 const SuggestedTopicsSection = () => {
     return (
         <div
-            className="w-full mb-12 px-4 flex flex-col items-start justify-center"
+            className="w-full flex flex-col items-start justify-center"
         >
             <TextScaled
                 className="mb-2 font-bold text-black"
@@ -28,15 +28,15 @@ const SuggestedTopicsSection = () => {
             </TextScaled>
 
             <div
-                className="w-full gap-1 flex flex-row flex-wrap"
+                className="w-full gap-4 grid grid-cols-6"
             >
                 {popularTopicsData.map((item) => (
                     <div
                         key={item.id}
-                        className="w-[49%] h-20 rounded-lg flex items-center justify-center relative overflow-hidden"
+                        className="h-20 cursor-pointer rounded-lg overflow-hidden relative flex items-center justify-center"
                     >
                         <Image
-                            src={images.sampleFood1}
+                            src={item.image}
                             alt={item.name}
                             fill
                             className="object-cover rounded-lg"
@@ -47,7 +47,7 @@ const SuggestedTopicsSection = () => {
                         />
                         <TextScaled
                             size="base"
-                            className="font-bold text-center text-white"
+                            className="text-center text-nowrap font-bold text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
                         >
                             {item.name}
                         </TextScaled>

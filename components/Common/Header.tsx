@@ -20,7 +20,7 @@ export default function Header() {
       id: 'search',
       icon: icons.searchIcon,
       activeIcon: icons.activeSearchIcon,
-      route: '/(root)/tabs/search',
+      route: '/search',
       label: 'Tìm kiếm',
     },
     {
@@ -49,7 +49,7 @@ export default function Header() {
   const getActiveTab = () => {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
     if (normalizedPath === '/' || normalizedPath === '/(root)/tabs/home' || normalizedPath === '/(root)/tabs') return 'home';
-    if (normalizedPath === '/(root)/tabs/search') return 'search';
+    if (normalizedPath === '/search') return 'search';
     if (normalizedPath === '/(root)/tabs/plus') return 'plus';
     if (normalizedPath === '/(root)/tabs/bell') return 'bell';
     if (normalizedPath === '/(root)/tabs/profile') return 'profile';

@@ -6,7 +6,7 @@ import TextScaled from '../Common/TextScaled';
 const SearchHistorySection = () => {
     return (
         <div 
-            className='flex flex-col px-4 pt-4'
+            className='flex flex-col'
         >
             <TextScaled
                 size="base"
@@ -26,8 +26,9 @@ const SearchHistorySection = () => {
                 <Image
                     src={icons.forwardArrow}
                     alt="forward"
-                    width={20}
-                    height={20}
+                    width={24}
+                    height={24}
+                    className='cursor-pointer'
                 />
             </div>
             <RecipeCarousel />
