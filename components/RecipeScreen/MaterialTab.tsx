@@ -30,7 +30,7 @@ const mockMaterials = [
 const MaterialTab = () => {
   return (
     <div
-      className='bg-backgroundV1 px-4 pb-[120px]'
+      className='bg-backgroundV1 px-16'
     >
       <div className="flex flex-col pt-4 gap-4">
         {mockMaterials.map((material) => (

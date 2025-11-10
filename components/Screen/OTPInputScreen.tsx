@@ -96,7 +96,7 @@ const OTPInputScreen = () => {
               value={otp}
               onChange={setOtp}
               render={({ slots }) => (
-                <div className="flex gap-6">
+                <div className="flex gap-4">
                   {slots.map((slot, idx) => (
                     <OTPSlot key={idx} {...slot} />
                   ))}

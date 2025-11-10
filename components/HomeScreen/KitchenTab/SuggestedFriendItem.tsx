@@ -14,7 +14,7 @@ interface SuggestedFriendItemProps {
 const SuggestedFriendItem = ({ item }: SuggestedFriendItemProps) => {
     return (
         <div
-            className="flex flex-row items-center justify-start gap-6 w-full"
+            className="flex flex-row items-center justify-start gap-4 w-full"
         >
             <Image
                 src={images.sampleAvatar2}

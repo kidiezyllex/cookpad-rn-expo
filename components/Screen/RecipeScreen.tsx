@@ -12,38 +12,20 @@ const RecipeScreen = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<'materials' | 'cooking'>('materials');
   const [showMasterChef, setShowMasterChef] = useState(false);
-
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <div className="w-full bg-white">
+      <div className="w-full pl-16">
         <BackHeader
           headerTitle="Công thức món ăn"
           onPress={() => router.back()}
         />
       </div>
-
-      {/* Content */}
-      <div className="flex-1 bg-backgroundV1">
-        {activeTab === 'materials' ? (
-          <MaterialTab />
-        ) : showMasterChef ? (
-          <CookingStepMasterTab onBackPress={() => setShowMasterChef(false)} />
-        ) : (
-          <CookingStepTab onMasterChefPress={() => setShowMasterChef(true)} />
-        )}
-      </div>
-
-      {/* Bottom Tabs */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl bg-white py-2 px-4"
-      >
-        <div
-          className="flex flex-row rounded-lg bg-[#F3F4F6] p-1 gap-2"
+          className="flex flex-row gap-2 px-16 bg-transparent"
         >
           <div
-            className={`flex-1 rounded-md py-1 ${
-              activeTab === 'materials' ? 'bg-white' : 'bg-transparent'
-            }`}
+            className={`flex-1 ${activeTab === 'materials' ? 'bg-white border-b-customPrimary border-b-2' : 'bg-transparent'
+              }`}
           >
             <button
               className="flex w-full items-center justify-center"
@@ -55,9 +37,8 @@ const RecipeScreen = () => {
             </button>
           </div>
           <div
-            className={`flex-1 rounded-md py-1 ${
-              activeTab === 'cooking' ? 'bg-white' : 'bg-transparent'
-            }`}
+            className={`flex-1 py-1 ${activeTab === 'cooking' ? 'bg-white border-b-customPrimary border-b-2' : 'bg-transparent'
+              }`}
           >
             <button
               className="flex w-full items-center justify-center"
@@ -69,6 +50,16 @@ const RecipeScreen = () => {
             </button>
           </div>
         </div>
+      {/* Content */}
+      <div className="flex-1 bg-backgroundV1">
+        {activeTab === 'materials' ? (
+          <MaterialTab />
+        ) : showMasterChef ? (
+          <CookingStepMasterTab onBackPress={() => setShowMasterChef(false)} />
+        ) : (
+          <CookingStepTab onMasterChefPress={() => setShowMasterChef(true)} />
+        )}
+      
       </div>
     </div>
   );

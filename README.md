@@ -1602,7 +1602,7 @@ const CreateRecipeScreen = () => {
 		createMutation.mutate(formData, {
 			onSuccess: (response) => {
 				console.log('Recipe created!', response);
-				router.push(`/(root)/food-detail?id=${response.data.recipeId}`);
+				router.push(`/food-detail?id=${response.data.recipeId}`);
 			},
 			onError: (error) => {
 				console.error('Error creating recipe:', error);

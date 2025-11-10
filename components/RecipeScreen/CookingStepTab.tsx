@@ -45,8 +45,8 @@ interface CookingStepTabProps {
 
 const CookingStepTab = ({ onMasterChefPress }: CookingStepTabProps) => {
   return (
-    <div className="px-4 pb-[120px]">
-      <div className="flex flex-col pt-4 gap-6">
+    <div className="px-16">
+      <div className="flex flex-col pt-4 gap-4">
         {/* Master Chef Banner */}
         <div
           className="bg-white rounded-lg p-4 gap-2 relative"
@@ -66,7 +66,7 @@ const CookingStepTab = ({ onMasterChefPress }: CookingStepTabProps) => {
               onPress={onMasterChefPress || (() => {})}
               bgVariant="primary"
               textVariant="primary"
-              className="h-10"
+              className='!w-fit !mx-auto'
             />
           </div>
           <button

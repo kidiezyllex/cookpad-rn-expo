@@ -48,10 +48,9 @@ const mockComments = [
 
 const FoodDetailScreen = () => {
     const router = useRouter();
-
     return (
-        <div className="flex-1 bg-white min-h-dvh relative">
-            <div className="overflow-y-auto pb-[120px]">
+        <div className="flex-1 min-h-dvh relative">
+            <div className="overflow-y-auto">
                 <div className="relative w-full h-[375px]">
                     <Image src={mockFoodDetail.image} alt={mockFoodDetail.title} fill className="object-cover" priority />
                     <div
@@ -68,8 +67,7 @@ const FoodDetailScreen = () => {
                         </button>
                     </div>
                 </div>
-
-                <div className="bg-backgroundV1 p-4 flex flex-col gap-6">
+                <div className="bg-backgroundV1 p-4 px-16 grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-4 pb-4 border-b border-[#979797]">
                         <TextScaled size="2xl" className="font-medium text-black">
                             {mockFoodDetail.title}
@@ -136,20 +134,20 @@ const FoodDetailScreen = () => {
                         <div className="flex flex-row justify-between items-center">
                             <div className="flex flex-row gap-3">
                                 <div className="flex flex-row gap-1 items-center">
-                                    <Image src={icons.heartIcon} alt="likes" width={20} height={20} />
+                                    <Image src={icons.heartIcon} alt="likes" width={50} height={50} quality={100} className='h-4 w-auto object-contain' />
                                     <TextScaled size="sm" className="font-medium text-black">
                                         {mockFoodDetail.comments}
                                     </TextScaled>
                                 </div>
                                 <div className="flex flex-row gap-1 items-center">
-                                    <Image src={icons.chatIcon} alt="comments" width={20} height={20} />
+                                    <Image src={icons.chatIcon} alt="comments" width={50} height={50} quality={100} className='h-4 w-auto object-contain' />
                                     <TextScaled size="sm" className="font-medium text-black">
                                         {mockFoodDetail.saves}
                                     </TextScaled>
                                 </div>
                             </div>
                             <button type="button" className="flex items-center justify-center">
-                                <Image src={icons.saveIcon} alt="save" width={20} height={20} />
+                                <Image src={icons.saveIcon} alt="save" width={50} height={50} quality={100} className='h-4 w-auto object-contain' />
                             </button>
                         </div>
                     </div>
@@ -170,9 +168,11 @@ const FoodDetailScreen = () => {
                                     <Image
                                         src={comment.avatar}
                                         alt={comment.user}
-                                        width={32}
-                                        height={32}
-                                        className="rounded-full object-cover"
+                                        width={100}
+                                        height={100}
+                                        quality={100}
+                                        draggable={false}
+                                        className="rounded-full object-cover w-8 h-8 flex-shrink-0"
                                     />
                                     <div className="flex-1 flex flex-col gap-1.5">
                                         <div
@@ -192,7 +192,7 @@ const FoodDetailScreen = () => {
                                                 </TextScaled>
                                             </div>
                                             <div className="flex items-center justify-center gap-1">
-                                                <Image src={icons.heartIcon} alt="like" width={16} height={16} />
+                                                <Image src={icons.heartIcon} alt="like" width={50} height={50} quality={100} className='h-4 w-auto object-contain' />
                                                 <TextScaled size="xs" className="text-black">
                                                     {comment.likes}
                                                 </TextScaled>
@@ -209,8 +209,8 @@ const FoodDetailScreen = () => {
                             ))}
                         </div>
                     </div>
-
-                    <div className="flex flex-col gap-2">
+                </div>
+                <div className="flex flex-col gap-2 px-16">
                         <div className="flex flex-row justify-between items-center">
                             <TextScaled size="base" className="font-bold text-black">
                                 Món ăn kèm nổi bật
@@ -222,19 +222,16 @@ const FoodDetailScreen = () => {
 
                         <RecipeCarousel />
                     </div>
+                <div className='w-full flex justify-center'>
+                    <CustomButton
+                        title="Xem công thức"
+                        onPress={() => router.push('/food-detail/materials')}
+                        bgVariant="primary"
+                        textVariant="primary"
+                        className='!w-fit !mx-auto'
+                        IconLeft={<Image src={icons.eyeIcon} alt="view" width={24} height={24} />}
+                    />
                 </div>
-            </div>
-
-            <div
-                className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl px-4 py-2 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]"
-            >
-                <CustomButton
-                    title="Xem công thức"
-                    onPress={() => router.push('/food-materials')}
-                    bgVariant="primary"
-                    textVariant="primary"
-                    IconLeft={<Image src={icons.eyeIcon} alt="view" width={24} height={24} />}
-                />
             </div>
         </div>
     );

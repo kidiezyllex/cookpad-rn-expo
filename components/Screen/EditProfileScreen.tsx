@@ -5,11 +5,24 @@ import Input from "@/components/Common/Input";
 import TextArea from "@/components/Common/TextArea";
 import TextScaled from "@/components/Common/TextScaled";
 import { icons, images } from "@/constants";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import Image from 'next/image';
 
-const EditProfileScreen = () => {
+type EditProfileScreenProps = {
+  showHeader?: boolean;
+  onBack?: () => void;
+  className?: string;
+  contentClassName?: string;
+};
+
+const EditProfileScreen = ({
+  showHeader = true,
+  onBack,
+  className,
+  contentClassName,
+}: EditProfileScreenProps) => {
   const [form, setForm] = useState({
     name: 'Hòa Simp',
     bio: '',
@@ -17,15 +30,28 @@ const EditProfileScreen = () => {
   });
 
   const router = useRouter();
-  return (
-    <div className="flex-1 bg-backgroundV1">
-      <BackHeader
-        headerTitle="Chỉnh sửa hồ sơ"
-        onPress={() => router.back()}
-      />
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+      return;
+    }
+    router.back();
+  };
 
+  return (
+    <div
+      className={cn(
+        "flex flex-1 flex-col bg-backgroundV1 h-full",
+        !showHeader && "rounded-xl border border-[#E7E7E7] bg-white p-6 shadow-sm",
+        className,
+      )}
+    >
       <div
-        className="flex-1 pb-[120px] px-4 flex flex-col items-center gap-9"
+        className={cn(
+          "flex flex-1 flex-col items-center gap-9 px-4 pb-[120px]",
+          !showHeader && "px-0 pb-0",
+          contentClassName,
+        )}
       >
         {/* Avatar Section */}
         <div
@@ -46,6 +72,7 @@ const EditProfileScreen = () => {
               alt="camera"
               width={24}
               height={24}
+              style={{ filter: 'invert(41%) sepia(63%) saturate(1216%) hue-rotate(345deg) brightness(96%) contrast(92%)' }}
             />
           </button>
         </div>

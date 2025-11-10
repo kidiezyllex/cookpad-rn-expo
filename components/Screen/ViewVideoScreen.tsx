@@ -46,7 +46,7 @@ const ViewVideoScreen = () => {
   const renderStepItem = ({ item, index }: { item: typeof mockSteps[0]; index: number }) => {
     return (
       <div 
-        className={`flex flex-row gap-6 px-3 ${index === 0 ? 'pt-6' : ''} ${index === mockSteps.length - 1 ? 'pb-4' : ''}`}
+        className={`flex flex-row gap-4 px-3 ${index === 0 ? 'pt-6' : ''} ${index === mockSteps.length - 1 ? 'pb-4' : ''}`}
       >
         {/* Step Number with Line */}
         <div className="flex items-center gap-1 flex-col">

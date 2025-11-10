@@ -55,17 +55,16 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
   const router = useRouter();
 
   return (
-    <div className="h-full overflow-y-auto pb-32">
+    <div className="h-full overflow-y-auto">
       {/* Xem video hướng dẫn */}
-      <div className="px-4 pt-2 bg-gray-800 pb-4 mt-4">
+      <div className="pt-2 bg-gray-800 pb-4 mt-4 px-16">
         <div className="flex items-center gap-2 mb-2">
           <Image src={icons.chefIcon} alt="chef" width={24} height={24} className="w-6 h-6" />
           <TextScaled size="base" className="font-bold text-orange-500">
             Xem video hướng dẫn
           </TextScaled>
         </div>
-
-        <div className="relative w-full h-48 bg-black/40 rounded-lg flex items-center justify-center">
+        <div className="relative w-full h-80 bg-black/40 rounded-lg flex items-center justify-center">
           <button
             type="button"
             className="absolute z-10 top-1/2 left-1/2 -mt-7 -ml-7 w-14 h-14 rounded-full bg-[#F1EEE8] flex items-center justify-center shadow"
@@ -73,7 +72,6 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
           >
             <Image src={icons.playIcon} alt="play" width={40} height={40} className="w-10 h-10" />
           </button>
-
           <video
             className="absolute inset-0 w-full h-full rounded-lg object-cover"
             src={videos.videoTutorial as unknown as string}
@@ -85,8 +83,7 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
           />
         </div>
       </div>
-
-      <div className="pt-4 px-4 space-y-4">
+      <div className="pt-4 px-16 space-y-4">
         {/* Cooking Steps */}
         <div className="space-y-2">
           {mockSteps.map((step, index) => (
@@ -94,12 +91,11 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
               {/* Step Number with Line */}
               <div className="flex flex-col items-center pb-1 gap-1">
                 <div
-                  className={`w-6 h-6 rounded-full flex items-center justify-center ${
-                    step.isCompleted ? 'bg-orange-500' : 'bg-gray-300'
-                  }`}
+                  className={`w-6 h-6 rounded-full flex items-center justify-center ${step.isCompleted ? 'bg-orange-500' : 'bg-gray-300'
+                    }`}
                 >
                   {step.isCompleted ? (
-                    <Image src={icons.check2Icon} alt="done" width={16} height={16} className="w-4 h-4" />
+                    <Image src={icons.check2Icon} alt="done" width={16} height={16} className="w-4 h-4" style={{ filter: 'brightness(0) saturate(100%) invert(100%)' }} />
                   ) : (
                     <TextScaled size="sm" className="text-white">
                       {step.stepNumber}
@@ -110,7 +106,6 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
                   <div className={`w-0.5 flex-1 ${step.isCompleted ? 'bg-orange-500' : 'bg-gray-200'}`} />
                 )}
               </div>
-
               {/* Step Content */}
               <div className="flex-1 space-y-2 pb-4">
                 <div className="space-y-1">
@@ -121,7 +116,6 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
                     {step.description}
                   </TextScaled>
                 </div>
-
                 {/* Images Content */}
                 {step.images && step.images.length > 0 && (
                   <div className="flex flex-row gap-2">

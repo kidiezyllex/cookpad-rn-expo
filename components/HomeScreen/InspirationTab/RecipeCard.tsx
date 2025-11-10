@@ -24,7 +24,7 @@ const RecipeCard = ({
     const router = useRouter();
     return (
         <div
-            onClick={() => router.push('/(root)/food-detail')}
+            onClick={() => router.push('/food-detail')}
             className="flex flex-col cursor-pointer items-start bg-white w-[120px] rounded-lg border border-[#E5E7EB]"
         >
             <div

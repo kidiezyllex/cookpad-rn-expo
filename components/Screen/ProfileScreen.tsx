@@ -122,7 +122,7 @@ const ProfileScreen = () => {
         {/* Tab Content */}
         {activeTab === 'Bảng' && (
           <div
-            className="flex flex-col items-center justify-center gap-6"
+            className="flex flex-col items-center justify-center gap-4"
           >
             <div
               className="grid grid-cols-6 gap-4 w-full pb-1"

@@ -2,9 +2,10 @@
 
 import TextScaled from "@/components/Common/TextScaled";
 import { icons } from "@/constants";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import Image from "next/image";
 import BackHeader from "../Common/BackHeader";
 
 const securityOptions = [
@@ -13,14 +14,14 @@ const securityOptions = [
     title: "Đổi mật khẩu",
     icon: icons.lockIcon,
     hasToggle: false,
-    onPress: () => {},
+    onPress: () => { },
   },
   {
     id: 2,
     title: "Đồng bộ Face /Touch ID",
     icon: icons.faceIcon,
     hasToggle: true,
-    onPress: () => {},
+    onPress: () => { },
   },
 ];
 
@@ -31,31 +32,31 @@ const SecurityOption = ({ option }: { option: typeof securityOptions[0] }) => {
   return (
     <button
       onClick={option.hasToggle ? undefined : () => router.push('/auth/change-password')}
-      className="flex min-h-[40px] flex-row items-center justify-between gap-2 py-2"
+      className="flex min-h-[40px] flex-row items-center justify-between gap-2 py-2 w-full"
     >
-      <Image
-        src={option.icon}
-        alt={option.title}
-        width={24}
-        height={24}
-      />
-      <TextScaled size="base" className="flex-1 font-bold text-black">
-        {option.title}
-      </TextScaled>
+      <div className="flex gap-2">
+        <Image
+          src={option.icon}
+          alt={option.title}
+          width={24}
+          height={24}
+        />
+        <span className="flex-1 font-bold text-black text-base">
+          {option.title}
+        </span>
+      </div>
       {option.hasToggle ? (
         <button
           onClick={(e) => {
             e.stopPropagation();
             setIsEnabled(!isEnabled);
           }}
-          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-            isEnabled ? 'bg-[#E36137]' : 'bg-[#E5E5E5]'
-          }`}
+          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${isEnabled ? 'bg-[#E36137]' : 'bg-[#E5E5E5]'
+            }`}
         >
           <span
-            className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
-              isEnabled ? 'translate-x-6' : 'translate-x-1'
-            }`}
+            className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${isEnabled ? 'translate-x-6' : 'translate-x-1'
+              }`}
           />
         </button>
       ) : (
@@ -79,18 +80,33 @@ const SecurityOption = ({ option }: { option: typeof securityOptions[0] }) => {
   );
 };
 
-const SecurityScreen = () => {
-  const router = useRouter();
+type SecurityScreenProps = {
+  showHeader?: boolean;
+  onBack?: () => void;
+  className?: string;
+  contentClassName?: string;
+};
 
+const SecurityScreen = ({
+  showHeader = true,
+  onBack,
+  className,
+  contentClassName,
+}: SecurityScreenProps) => {
   return (
-    <div className="flex min-h-screen flex-col bg-backgroundV1">
-      <BackHeader
-        headerTitle="Bảo mật"
-        onPress={() => router.back()}
-      />
-
+    <div
+      className={cn(
+        "flex flex-1 flex-col bg-backgroundV1 h-full",
+        showHeader ? "min-h-screen" : "rounded-xl border border-[#E7E7E7] bg-white p-6 shadow-sm",
+        className,
+      )}
+    >
       <div
-        className="flex-1 overflow-y-auto pb-[120px] px-4 pt-8"
+        className={cn(
+          "flex-1 overflow-y-auto px-4 pb-[120px] pt-8",
+          !showHeader && "overflow-visible px-0 pb-0 pt-0",
+          contentClassName,
+        )}
       >
         <div className="w-full">
           {securityOptions.map((option) => (
