@@ -1,5 +1,4 @@
 import React from 'react';
-import TextScaled from '@/components/Common/TextScaled';
 import { icons, images, videos } from '@/constants';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -60,9 +59,9 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
       <div className="pt-2 bg-gray-800 pb-4 mt-4 px-16">
         <div className="flex items-center gap-2 mb-2">
           <Image src={icons.chefIcon} alt="chef" width={24} height={24} className="w-6 h-6" />
-          <TextScaled size="base" className="font-bold text-orange-500">
+          <p className="font-bold text-orange-500 text-base">
             Xem video hướng dẫn
-          </TextScaled>
+          </p>
         </div>
         <div className="relative w-full h-80 bg-black/40 rounded-lg flex items-center justify-center">
           <button
@@ -97,9 +96,9 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
                   {step.isCompleted ? (
                     <Image src={icons.check2Icon} alt="done" width={16} height={16} className="w-4 h-4" style={{ filter: 'brightness(0) saturate(100%) invert(100%)' }} />
                   ) : (
-                    <TextScaled size="sm" className="text-white">
+                    <span className="text-white text-sm">
                       {step.stepNumber}
-                    </TextScaled>
+                    </span>
                   )}
                 </div>
                 {step.showLine && index < mockSteps.length - 1 && (
@@ -109,12 +108,12 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
               {/* Step Content */}
               <div className="flex-1 space-y-2 pb-4">
                 <div className="space-y-1">
-                  <TextScaled size="base" className={`font-bold ${step.isCompleted ? 'text-orange-500' : 'text-black'}`}>
+                  <p className={`font-bold text-base ${step.isCompleted ? 'text-orange-500' : 'text-black'}`}>
                     {step.title}
-                  </TextScaled>
-                  <TextScaled size="base" className={`${step.isCompleted ? 'text-black' : 'text-gray-600'}`}>
+                  </p>
+                  <p className={`${step.isCompleted ? 'text-black' : 'text-gray-600'} text-base`}>
                     {step.description}
-                  </TextScaled>
+                  </p>
                 </div>
                 {/* Images Content */}
                 {step.images && step.images.length > 0 && (

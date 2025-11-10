@@ -1,6 +1,5 @@
 'use client';
 
-import TextScaled from '@/components/Common/TextScaled';
 import { useSuccessStore } from '@/store/successStore';
 import { useRouter } from 'next/navigation';
 import { useRef, useState } from 'react';
@@ -91,11 +90,11 @@ const FavoriteTopicScreen = () => {
           {slides.map((item, index) => (
             <SwiperSlide key={index}>
                 <div className={`w-[${screenWidth - 34}px]`}>
-                  <TextScaled
+                  <p
                   className="font-bold text-start text-black min-h-[60px] mb-8 text-[22px]"
                 >
                   {item.title}
-                </TextScaled>
+                </p>
 
                 <div
                   className="flex flex-col gap-2 w-full"
@@ -108,14 +107,13 @@ const FavoriteTopicScreen = () => {
                       }`}
                       onClick={() => handleSelectOption(index, option)}
                     >
-                      <TextScaled
-                        size="base"
+                      <p
                         className={`font-bold text-start ${
                           selections[index] === option ? 'text-white' : 'text-customPrimary'
-                        }`}
+                        } text-base`}
                       >
                         {option}
-                      </TextScaled>
+                      </p>
                     </button>
                   ))}
                 </div>
@@ -127,22 +125,20 @@ const FavoriteTopicScreen = () => {
 
       {/* Bottom helper */}
       <div className="w-full mb-4">
-        <TextScaled
-          className="mb-2 text-center font-light text-black"
-          size="sm"
+        <p
+          className="mb-2 text-center font-light text-black text-sm"
         >
           * Chọn đáp án về chủ đề món ăn bạn ưa thích để nhận được các đề xuất phù hợp với bạn.
-        </TextScaled>
+        </p>
         <button
           className="min-h-[48px] flex items-center justify-center w-full"
           onClick={handleSkip}
         >
-          <TextScaled
-            size="base"
-            className="text-center font-bold text-black"
+          <p
+            className="text-center font-bold text-black text-base"
           >
             Bỏ qua
-          </TextScaled>
+          </p>
         </button>
       </div>
     </div>

@@ -3,7 +3,6 @@
 import { icons } from '@/constants';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import TextScaled from '../Common/TextScaled';
 import SearchSuggestionItem from './SearchSuggestionItem';
 import { searchSuggestionsData } from './mockData';
 
@@ -64,12 +63,11 @@ const SearchDropdown = ({ searchText, isOpen, onClose }: SearchDropdownProps) =>
                 }}
                 className="w-full text-center py-2 px-4"
             >
-                <TextScaled
-                    size="sm"
-                    className="text-customPrimary cursor-pointer"
+                <p
+                    className="text-customPrimary cursor-pointer text-sm"
                 >
                     Xem tất cả
-                </TextScaled>
+                </p>
             </button>
         </div>
     );

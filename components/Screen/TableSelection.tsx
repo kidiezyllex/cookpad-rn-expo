@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import BackHeader from '../Common/BackHeader';
 import FoodGrid from '../Common/FoodGrid';
-import TextScaled from '../Common/TextScaled';
 
 const TableSelection = () => {
     const router = useRouter();
@@ -22,18 +21,16 @@ const TableSelection = () => {
             <div className="px-16 flex flex-col items-start justify-start">
                 <div
                     className="flex w-full flex-col items-center justify-between mt-8 mb-8">
-                    <TextScaled
-                        size="3xl"
-                        className="font-bold text-black text-center"
+                    <p
+                        className="font-bold text-black text-center text-3xl"
                     >
                         {boardName}
-                    </TextScaled>
-                    <TextScaled
-                        size="base"
-                        className="font-light text-black text-center"
+                    </p>
+                    <p
+                        className="font-light text-black text-center text-base"
                     >
                         14 Ghim
-                    </TextScaled>
+                    </p>
                 </div>
                 {/* Search and Filter */}
                 <div

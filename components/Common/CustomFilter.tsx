@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { icons } from '@/constants';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -38,12 +37,11 @@ const CustomFilter = ({
                 selectedItems.indexOf(item.id) !== -1 ? 'bg-[#E36137]' : 'bg-[#FFEFE9]'
             }`}
         >
-            <TextScaled
-                size="sm"
-                className={`font-bold ${(selectedItems.indexOf(item.id) !== -1) ? 'text-white' : 'text-customPrimary'}`}
+            <p
+                className={`font-bold ${(selectedItems.indexOf(item.id) !== -1) ? 'text-white' : 'text-customPrimary'} text-sm`}
             >
                 {item.name}
-            </TextScaled>
+            </p>
         </button>
     );
 

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
-import TextScaled from '../Common/TextScaled';
 import { StaticImageData } from 'next/image';
 
 const LogInScreen = () => {
@@ -42,12 +41,11 @@ const LogInScreen = () => {
         <div
           className="relative flex w-full items-center justify-center h-10"
         >
-          <TextScaled
-            size="base"
-            className="justify-start text-center font-bold text-black"
+          <p
+            className="justify-start text-center font-bold text-black text-base"
           >
             Đăng nhập
-          </TextScaled>
+          </p>
         </div>
 
         {/* Logo */}

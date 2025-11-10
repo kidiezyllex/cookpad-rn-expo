@@ -2,7 +2,6 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import TextScaled from '@/components/Common/TextScaled';
 import BackHeader from '../Common/BackHeader';
 import CookingStepMasterTab from '../RecipeScreen/CookingStepMasterTab';
 import CookingStepTab from '../RecipeScreen/CookingStepTab';
@@ -31,9 +30,9 @@ const RecipeScreen = () => {
               className="flex w-full items-center justify-center"
               onClick={() => setActiveTab('materials')}
             >
-              <TextScaled size="base" className={`font-semibold ${activeTab === 'materials' ? 'text-customPrimary' : 'text-textNeutralV1'}`}>
+              <p className={`font-semibold text-base ${activeTab === 'materials' ? 'text-customPrimary' : 'text-textNeutralV1'}`}>
                 Nguyên liệu
-              </TextScaled>
+              </p>
             </button>
           </div>
           <div
@@ -44,9 +43,9 @@ const RecipeScreen = () => {
               className="flex w-full items-center justify-center"
               onClick={() => setActiveTab('cooking')}
             >
-              <TextScaled size="base" className={`font-semibold ${activeTab === 'cooking' ? 'text-customPrimary' : 'text-textNeutralV1'}`}>
+              <p className={`font-semibold text-base ${activeTab === 'cooking' ? 'text-customPrimary' : 'text-textNeutralV1'}`}>
                 Cách làm
-              </TextScaled>
+              </p>
             </button>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -81,12 +80,11 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                 <div
                     className="w-full p-2 pt-1 rounded-lg gap-1 flex flex-row items-center justify-between"
                 >
-                    <TextScaled
-                        size="sm"
-                        className="flex-1 font-semibold text-black text-start line-clamp-1 transition-colors duration-300 group-hover:text-orange-500"
+                    <p
+                        className="flex-1 font-semibold text-black text-start line-clamp-1 transition-colors duration-300 group-hover:text-orange-500 text-sm"
                     >
                         {item.name}
-                    </TextScaled>
+                    </p>
                     <Image 
                         src={icons.threeDotsIcon} 
                         alt="more" 

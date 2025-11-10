@@ -1,6 +1,5 @@
 'use client';
 
-import TextScaled from "@/components/Common/TextScaled";
 import EditProfileScreen from "@/components/Screen/EditProfileScreen";
 import PremiumScreen from "@/components/Screen/PremiumScreen";
 import SecurityScreen from "@/components/Screen/SecurityScreen";
@@ -151,16 +150,15 @@ const SettingItem = ({
         variant="Linear"
         color={isLogout ? "#E36137" : isActive ? "#E36137" : "#7A7A7A"}
       />
-      <TextScaled
-        size="base"
+      <p
         className={cn(
-          "flex-1 font-semibold text-black transition-colors",
+          "flex-1 font-semibold text-black transition-colors text-base",
           isLogout && "text-[#E36137]",
           isActive && !isLogout && "text-customPrimary",
         )}
       >
         {item.title}
-      </TextScaled>
+      </p>
       {!isLogout && (
         <ArrowRight2
           size={18}
@@ -182,9 +180,9 @@ const SettingsSection = ({
   onItemPress: (item: SettingItemData) => void;
 }) => (
   <div className="flex w-full flex-col gap-3">
-    <TextScaled size="sm" className="font-semibold text-textNeutralV1">
+    <p className="font-semibold text-textNeutralV1 text-sm">
       {section.mainTitle}
-    </TextScaled>
+    </p>
     <div className="w-full space-y-1">
       {section.items.map((item) => (
         <SettingItem
@@ -206,12 +204,12 @@ const PlaceholderCard = ({
   description: string;
 }) => (
   <div className="flex h-full min-h-[320px] flex-col items-center justify-center rounded-xl border border-dashed border-[#E5E5E5] bg-white px-6 py-12 text-center">
-    <TextScaled size="lg" className="font-bold text-black">
+    <p className="font-bold text-black text-lg">
       {title}
-    </TextScaled>
-    <TextScaled size="sm" className="mt-3 text-textNeutralV1">
+    </p>
+    <p className="mt-3 text-textNeutralV1 text-sm">
       {description}
-    </TextScaled>
+    </p>
   </div>
 );
 

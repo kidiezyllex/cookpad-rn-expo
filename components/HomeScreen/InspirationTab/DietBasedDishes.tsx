@@ -1,5 +1,4 @@
 import RecipeCarousel from '@/components/Common/RecipeCarousel';
-import TextScaled from '@/components/Common/TextScaled';
 import { icons } from '@/constants';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -47,12 +46,11 @@ const DietBasedDishes = () => {
                 selectedIngredients.indexOf(item.id) !== -1 ? 'bg-[#E36137]' : 'bg-[#FFEFE9]'
             }`}
         >
-            <TextScaled
-                size="sm"
-                className={`font-bold ${selectedIngredients.indexOf(item.id) !== -1 ? 'text-white' : 'text-customPrimary'}`}
+            <p
+                className={`font-bold ${selectedIngredients.indexOf(item.id) !== -1 ? 'text-white' : 'text-customPrimary'} text-sm`}
             >
                 {item.name}
-            </TextScaled>
+            </p>
         </button>
     );
 
@@ -63,12 +61,11 @@ const DietBasedDishes = () => {
             <div
                 className="flex justify-between items-center w-full mb-4"
             >
-                <TextScaled
-                    size="base"
-                    className="font-bold text-black"
+                <p
+                    className="font-bold text-black text-base"
                 >
                     Món ăn theo chế độ ăn
-                </TextScaled>
+                </p>
                 <button
                     className="text-customPrimary text-sm cursor-pointer"
                 >

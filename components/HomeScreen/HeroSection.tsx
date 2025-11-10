@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import Image from 'next/image';
 
@@ -18,23 +17,21 @@ const HeroSection = ({ activeTab, onTabChange }: HeroSectionProps) => {
                     className={`${activeTab === 'ban-bep' ? 'border-b-white bg-customPrimary' : 'bg-[#F1EEE8] border-b-transparent'} w-[50%] items-center justify-center rounded-t-xl border-b-2 min-h-[40px] h-[40px] `}
                     onClick={() => onTabChange('ban-bep')}
                 >
-                    <TextScaled
-                        size="base"
-                        className={`font-medium ${activeTab === 'ban-bep' ? 'text-white' : 'text-customPrimary'}`}
+                    <p
+                        className={`font-medium ${activeTab === 'ban-bep' ? 'text-white' : 'text-customPrimary'} text-base`}
                     >
                         Bạn Bếp
-                    </TextScaled>
+                    </p>
                 </button>
                 <button
                     className={`${activeTab === 'cam-hung' ? 'border-b-white bg-customPrimary' : 'bg-[#F1EEE8] border-b-transparent'} w-[50%] items-center justify-center rounded-t-xl border-b-2 min-h-[40px] h-[40px]`}
                     onClick={() => onTabChange('cam-hung')}
                 >
-                    <TextScaled
-                        size="base"
-                        className={`font-medium ${activeTab === 'cam-hung' ? 'text-white' : 'text-customPrimary'}`}
+                    <p
+                        className={`font-medium ${activeTab === 'cam-hung' ? 'text-white' : 'text-customPrimary'} text-base`}
                     >
                         Cảm hứng
-                    </TextScaled>
+                    </p>
                 </button>
             </div>
             {/* Hero section */}
@@ -46,18 +43,16 @@ const HeroSection = ({ activeTab, onTabChange }: HeroSectionProps) => {
                 <div className='absolute flex flex-col justify-center items-center right-[19px] top-[50px] w-[186px] h-[98px]'
                 >
                         <Image src={images.messageBubble} alt="message-bubble" fill className="object-contain z-0 absolute inset-0" />
-                    <TextScaled
-                        size="sm"
-                        className="font-medium text-customSecondary max-w-[141px] z-10 relative"
+                    <p
+                        className="font-medium text-customSecondary max-w-[141px] z-10 relative text-sm"
                     >
-                        Chào ngày mới, <TextScaled size="base" className="font-bold text-blue-900">Hòa</TextScaled>
-                    </TextScaled>
-                    <TextScaled
-                        className="font-light text-customSecondary max-w-[141px] z-10 relative"
-                        size="xs"
+                        Chào ngày mới, <span className="font-bold text-blue-900 text-base">Hòa</span>
+                    </p>
+                    <p
+                        className="font-light text-customSecondary max-w-[141px] z-10 relative text-xs"
                     >
                         Cùng vào xem các công thức mới của Bạn Bếp nào!
-                    </TextScaled>
+                    </p>
                 </div>
 
             </div>

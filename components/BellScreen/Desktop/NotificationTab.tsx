@@ -1,8 +1,6 @@
-import TextScaled from '@/components/Common/TextScaled';
+import { notificationsData } from '../mockData';
+import Image, { StaticImageData } from 'next/image';
 import { images } from '@/constants';
-import { SpanStatus } from 'next/dist/trace';
-import Image from 'next/image';
-import { StaticImageData } from 'next/image';
 
 interface NotificationItemProps {
     id: string;
@@ -11,7 +9,6 @@ interface NotificationItemProps {
     content: string;
     timestamp: string;
 }
-
 const NotificationItem = ({ item }: { item: NotificationItemProps }) => {
     return (
         <button
@@ -37,15 +34,42 @@ const NotificationItem = ({ item }: { item: NotificationItemProps }) => {
                     </span>
                 </p>
 
-                <TextScaled
-                    size="xs"
+                <span
                     className="text-textNeutralV1 text-xs line-height-4"
                 >
                     {item.timestamp}
-                </TextScaled>
+                </span>
             </div>
         </button>
     );
 };
+const NotificationTab = () => {
+    return (
+        <div className="flex-1 bg-[#F1EEE8]">
+            {notificationsData.map((item) => (
+                <div
+                    key={item.id}
+                    className="mt-2 bg-white"
+                >
+                    <div className="px-4 pt-2 pb-2 pr-6">
+                        <p className="font-bold text-black text-base">
+                            {item.title}
+                        </p>
+                        {item.notifications.map((notification, index) => (
+                            <div key={notification.id}>
+                                <NotificationItem item={notification} />
+                                {index < item.notifications.length - 1 && (
+                                    <div
+                                        className="ml-[68px] h-px bg-[#F3F4F6]"
+                                    />
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+};
 
-export default NotificationItem;
+export default NotificationTab;

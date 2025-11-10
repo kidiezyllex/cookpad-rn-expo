@@ -1,6 +1,5 @@
 'use client';
 
-import TextScaled from "@/components/Common/TextScaled";
 import { icons } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";

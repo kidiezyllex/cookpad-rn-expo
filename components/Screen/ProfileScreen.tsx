@@ -1,7 +1,6 @@
 'use client';
 
 import CustomButton from "@/components/Common/CustomButton";
-import TextScaled from "@/components/Common/TextScaled";
 import RecipeCard from "@/components/ProfileScreen/RecipeCard";
 import RecipeListItem from "@/components/ProfileScreen/RecipeListItem";
 import { icons, images } from "@/constants";
@@ -34,22 +33,22 @@ const ProfileScreen = () => {
               height={80}
               className="rounded-full"
             />
-            <TextScaled size="xl" className="font-bold text-black">
+            <p className="font-bold text-black text-xl">
               Hòa Simp
-            </TextScaled>
+            </p>
           </div>
           <div
             className="flex flex-row items-center gap-2 mb-6"
           >
-            <TextScaled size="xs" className="text-textNeutralV1">
+            <span className="text-textNeutralV1 text-xs">
               12 Bạn bếp
-            </TextScaled>
-            <TextScaled size="sm" className="font-bold text-black">
+            </span>
+            <span className="font-bold text-black text-sm">
               .
-            </TextScaled>
-            <TextScaled size="xs" className="text-textNeutralV1">
+            </span>
+            <span className="text-textNeutralV1 text-xs">
               22 Công thức
-            </TextScaled>
+            </span>
           </div>
           <CustomButton
             title="Chỉnh sửa cài đặt"
@@ -71,13 +70,12 @@ const ProfileScreen = () => {
                 className={`px-4 pb-2 ${activeTab === tab ? 'border-b-2 border-black' : 'border-b-2 border-transparent'
                   }`}
               >
-                <TextScaled
-                  size="base"
-                  className={`font-bold ${activeTab === tab ? 'text-black' : 'text-textNeutralV1'
+                <p
+                  className={`font-bold text-base ${activeTab === tab ? 'text-black' : 'text-textNeutralV1'
                     }`}
                 >
                   {tab}
-                </TextScaled>
+                </p>
               </button>
             ))}
           </div>

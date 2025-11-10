@@ -1,28 +1,25 @@
 import { icons } from '@/constants';
 import Image from 'next/image';
 import RecipeCarousel from '../Common/RecipeCarousel';
-import TextScaled from '../Common/TextScaled';
 
 const SearchHistorySection = () => {
     return (
         <div 
             className='flex flex-col'
         >
-            <TextScaled
-                size="base"
-                className="font-bold text-black mb-2"
+            <p
+                className="font-bold text-black mb-2 text-base"
             >
                 Lịch sử tìm kiếm
-            </TextScaled>
+            </p>
             <div 
                 className='flex w-full flex-row items-center justify-between mb-2'
             >
-                <TextScaled
-                    size="sm"
-                    className="font-light text-textNeutralV1"
+                <p
+                    className="font-light text-textNeutralV1 text-sm"
                 >
                     Món bạn đã xem gần đây
-                </TextScaled>
+                </p>
                 <Image
                     src={icons.forwardArrow}
                     alt="forward"

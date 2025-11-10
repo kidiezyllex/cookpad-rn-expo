@@ -1,5 +1,4 @@
 import CustomButton from '@/components/Common/CustomButton';
-import TextScaled from '@/components/Common/TextScaled';
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 
@@ -55,12 +54,12 @@ const CookingStepTab = ({ onMasterChefPress }: CookingStepTabProps) => {
             <Image src={images.onboarding1} alt="onboarding" fill className="object-contain" />
           </div>
           <div className="flex flex-col gap-2">
-            <TextScaled size="sm" className="text-black">
+            <p className="text-black text-sm">
               Xem công thức món ăn cùng ảnh và video hướng dẫn chi tiết với tính năng của{' '}
-              <TextScaled size="sm" className="text-customPrimary">
+              <span className="text-customPrimary text-sm">
                 Master Chef
-              </TextScaled>
-            </TextScaled>
+              </span>
+            </p>
             <CustomButton
               title="Đăng ký Master Chef"
               onPress={onMasterChefPress || (() => {})}
@@ -101,9 +100,9 @@ const CookingStepTab = ({ onMasterChefPress }: CookingStepTabProps) => {
                       className="brightness-0 invert"
                     />
                   ) : (
-                    <TextScaled size="sm" className="text-white">
+                    <span className="text-white text-sm">
                       {step.stepNumber}
-                    </TextScaled>
+                    </span>
                   )}
                 </div>
                 {step.showLine && index < mockSteps.length - 1 && (
@@ -118,12 +117,12 @@ const CookingStepTab = ({ onMasterChefPress }: CookingStepTabProps) => {
               {/* Step Content */}
               <div className="flex-1 flex flex-col gap-2 pb-4">
                 <div className="flex flex-col gap-1">
-                  <TextScaled size="base" className={step.isCompleted ? 'font-bold text-customPrimary' : 'font-bold text-black'}>
+                  <p className={step.isCompleted ? 'font-bold text-customPrimary text-base' : 'font-bold text-black text-base'}>
                     {step.title}
-                  </TextScaled>
-                  <TextScaled size="base" className={step.isCompleted ? 'text-black' : 'text-[#666666]'}>
+                  </p>
+                  <p className={step.isCompleted ? 'text-black text-base' : 'text-[#666666] text-base'}>
                     {step.description}
-                  </TextScaled>
+                  </p>
                 </div>
               </div>
             </div>

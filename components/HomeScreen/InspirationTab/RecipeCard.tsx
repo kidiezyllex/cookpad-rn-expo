@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { icons } from '@/constants';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
@@ -37,15 +36,15 @@ const RecipeCard = ({
                     >
                         <div className="flex flex-row items-center gap-0.5">
                             <Image src={icons.clockIcon} alt="time" className='w-auto h-3 object-contain' />
-                            <TextScaled size="xs" className="text-white">
+                            <span className="text-white text-xs">
                                 {time}
-                            </TextScaled>
+                            </span>
                         </div>
                         <div className="flex flex-row items-center gap-0.5">
                             <Image src={icons.save2Icon} alt="likes" className='w-auto h-3 object-contain' />
-                            <TextScaled size="xs" className="text-white">
+                            <span className="text-white text-xs">
                                 {likes}
-                            </TextScaled>
+                            </span>
                         </div>
                     </div>
                 )}
@@ -53,9 +52,9 @@ const RecipeCard = ({
             <div
                 className="w-full px-2 py-1.5 gap-1 flex flex-row items-center justify-center"
             >
-                <TextScaled size="xs" className="flex-1 font-semibold text-black">
+                <p className="flex-1 font-semibold text-black text-xs">
                     {name}
-                </TextScaled>
+                </p>
                 <Image src={icons.threeDotsIcon} alt="more" className='w-auto h-4 object-contain' />
             </div>
         </div>

@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import BackHeader from '../Common/BackHeader';
 import CustomButton from '../Common/CustomButton';
-import TextScaled from '../Common/TextScaled';
 
 const ingredientsData = [
     { id: '1', name: 'Thành phần 1', amount: '250g bột' },
@@ -212,12 +211,11 @@ const CreateRecipeScreen = () => {
                 <div
                     className="flex w-full flex-col items-start gap-1"
                 >
-                    <TextScaled
-                        size="sm"
-                        className="font-medium text-black"
+                    <p
+                        className="font-medium text-black text-sm"
                     >
                         {item.step}
-                    </TextScaled>
+                    </p>
                     <input
                         type="text"
                         defaultValue={item.description}
@@ -281,12 +279,11 @@ const CreateRecipeScreen = () => {
                         <div
                             className="flex w-full flex-col items-start justify-start gap-1 h-full"
                         >
-                            <TextScaled
-                                size="base"
-                                className="font-bold text-black"
+                            <p
+                                className="font-bold text-black text-base"
                             >
                                 Ảnh món ăn
-                            </TextScaled>
+                            </p>
                             {/* Image Upload */}
                             <div
                                 className="relative flex flex-1 h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white border border-[#E5E5E5] cursor-pointer"
@@ -323,12 +320,11 @@ const CreateRecipeScreen = () => {
                                             width={24}
                                             height={24}
                                         />
-                                        <TextScaled
-                                            size="sm"
-                                            className="font-medium text-textNeutralV1 cursor-pointer"
+                                        <p
+                                            className="font-medium text-textNeutralV1 cursor-pointer text-sm"
                                         >
                                             Đăng hình đại diện món ăn
-                                        </TextScaled>
+                                        </p>
                                     </div>
                                 )}
                             </div>
@@ -338,12 +334,11 @@ const CreateRecipeScreen = () => {
                             <div
                                 className="flex w-full flex-col items-start justify-center gap-1"
                             >
-                                <TextScaled
-                                    size="base"
-                                    className="font-bold text-black"
+                                <p
+                                    className="font-bold text-black text-base"
                                 >
                                     Tên món ăn
-                                </TextScaled>
+                                </p>
                                 <input
                                     type="text"
                                     placeholder="Tên món ngon nhất nhà mình"
@@ -354,12 +349,11 @@ const CreateRecipeScreen = () => {
                             <div
                                 className="flex w-full flex-col items-start justify-center gap-1"
                             >
-                                <TextScaled
-                                    size="base"
-                                    className="font-bold text-black"
+                                <p
+                                    className="font-bold text-black text-base"
                                 >
                                     Giới thiệu món ăn
-                                </TextScaled>
+                                </p>
                                 <textarea
                                     rows={4}
                                     placeholder="Hãy chia sẻ với mọi người về món này của bạn nhé. Ai hay điều gì đã truyền cảm hứng cho bạn nấu nó? Tại sao nó đặc biệt? Bạn thích thưởng thức nó theo cách nào?"
@@ -374,12 +368,11 @@ const CreateRecipeScreen = () => {
                                 <div
                                     className="flex flex-1 flex-col items-start justify-center gap-1"
                                 >
-                                    <TextScaled
-                                        size="base"
-                                        className="font-bold text-black"
+                                    <p
+                                        className="font-bold text-black text-base"
                                     >
                                         Khẩu phần
-                                    </TextScaled>
+                                    </p>
                                     <div
                                         className="flex w-full flex-row items-center justify-between rounded-lg border border-[#E5E5E5] bg-white h-10 min-h-10 px-2 gap-2"
                                     >
@@ -389,12 +382,11 @@ const CreateRecipeScreen = () => {
                                         >
                                             <IoChevronBack size={16} color="#000000" />
                                         </button>
-                                        <TextScaled
-                                            size="base"
-                                            className="text-center text-textNeutralV1"
+                                        <p
+                                            className="text-center text-textNeutralV1 text-base"
                                         >
                                             {portion}
-                                        </TextScaled>
+                                        </p>
                                         <button
                                             onClick={handleIncreasePortion}
                                             className="flex items-center justify-center rounded bg-[#F5F5F5] w-6 h-6"
@@ -411,12 +403,11 @@ const CreateRecipeScreen = () => {
                                 <div
                                     className="flex flex-1 flex-col items-start justify-center gap-1"
                                 >
-                                    <TextScaled
-                                        size="base"
-                                        className="font-bold text-black"
+                                    <p
+                                        className="font-bold text-black text-base"
                                     >
                                         Thời gian
-                                    </TextScaled>
+                                    </p>
                                     <input
                                     type="text"
                                     placeholder="Giờ/Phút"
@@ -436,24 +427,22 @@ const CreateRecipeScreen = () => {
                     <div
                         className="flex w-full flex-col items-start justify-center rounded-lg bg-white px-2 py-4 gap-4"
                     >
-                        <TextScaled
-                            size="base"
-                            className="font-bold text-black"
+                        <p
+                            className="font-bold text-black text-base"
                         >
                             Nguyên liệu
-                        </TextScaled>
+                        </p>
                         <div
                             className="flex w-full flex-col items-start justify-center gap-2"
                         >
                             <div
                                 className="flex w-full flex-col items-start justify-center gap-1"
                             >
-                                <TextScaled
-                                    size="sm"
-                                    className="font-medium text-black"
+                                <p
+                                    className="font-medium text-black text-sm"
                                 >
                                     Thành phần 1
-                                </TextScaled>
+                                </p>
                                 <input
                                     type="text"
                                     defaultValue="Thành phần 1"
@@ -504,12 +493,11 @@ const CreateRecipeScreen = () => {
                     <div
                         className="flex w-full flex-col items-start justify-center rounded-lg bg-white p-4 gap-4"
                     >
-                        <TextScaled
-                            size="base"
-                            className="font-bold text-black"
+                        <p
+                            className="font-bold text-black text-base"
                         >
                             Cách làm
-                        </TextScaled>
+                        </p>
 
                         {/* Video Upload */}
                         <div
@@ -547,12 +535,11 @@ const CreateRecipeScreen = () => {
                                         width={24}
                                         height={24}
                                     />
-                                    <TextScaled
-                                        size="sm"
-                                        className="font-medium text-textNeutralV1 cursor-pointer"
+                                    <p
+                                        className="font-medium text-textNeutralV1 cursor-pointer text-sm"
                                     >
                                         Thêm video nấu món ăn
-                                    </TextScaled>
+                                    </p>
                                 </div>
                             )}
                         </div>
@@ -582,12 +569,11 @@ const CreateRecipeScreen = () => {
                                     height={24}
                                     className="opacity-70"
                                 />
-                                <TextScaled
-                                    size="sm"
-                                    className="font-bold text-black"
+                                <p
+                                    className="font-bold text-black text-sm"
                                 >
                                     Thêm bước
-                                </TextScaled>
+                                </p>
                             </button>
                         </div>
                     </div>

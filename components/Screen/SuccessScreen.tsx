@@ -1,6 +1,5 @@
 'use client';
 
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import { useSuccessStore } from '@/store/successStore';
 import Image from 'next/image';
@@ -44,18 +43,16 @@ const SuccessScreen = () => {
                 <div
                     className="flex flex-col items-center justify-start gap-2"
                 >
-                    <TextScaled
-                        size="xl"
-                        className="text-center font-medium leading-loose text-black"
+                    <p
+                        className="text-center font-medium leading-loose text-black text-xl"
                     >
                         {successTitle || 'Đăng ký thành công!'}
-                    </TextScaled>
-                    <TextScaled
-                        className="text-center leading-normal text-textNeutralV1 px-4"
-                        size="base"
+                    </p>
+                    <p
+                        className="text-center leading-normal text-textNeutralV1 px-4 text-base"
                     >
                         {successDesc || 'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.'}
-                    </TextScaled>
+                    </p>
                 </div>
             </div>
         </button>

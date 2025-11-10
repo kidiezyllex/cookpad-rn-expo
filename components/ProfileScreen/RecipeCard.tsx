@@ -1,4 +1,3 @@
-import TextScaled from "@/components/Common/TextScaled";
 import { icons } from "@/constants";
 import { useRouter } from "next/navigation";
 import Image from 'next/image';
@@ -63,9 +62,9 @@ const RecipeCard = ({ item }: RecipeCardProps) => {
               {item.views}
             </span>
           </div>
-          <TextScaled size="xs" className="text-textNeutralV1">
+          <span className="text-textNeutralV1 text-xs">
             {item.time}
-          </TextScaled>
+          </span>
         </div>
       </div>
     </button>

@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
@@ -44,18 +43,16 @@ const PostItem = ({ item }: PostItemProps) => {
                     <div
                         className="flex flex-col items-start justify-start"
                     >
-                        <TextScaled
-                            size="sm"
-                            className="font-medium text-black text-nowrap"
+                        <p
+                            className="font-medium text-black text-nowrap text-sm"
                         >
                             {item.user.name}
-                        </TextScaled>
-                        <TextScaled
-                            size="xs"
-                            className="text-textNeutralV1"
+                        </p>
+                        <p
+                            className="text-textNeutralV1 text-xs"
                         >
                             {item.user.timeAgo}
-                        </TextScaled>
+                        </p>
                     </div>
                 </div>
                 <Image
@@ -85,15 +82,15 @@ const PostItem = ({ item }: PostItemProps) => {
                         <div className="flex flex-row items-start justify-start gap-3">
                             <div className="flex flex-row items-center justify-start gap-1">
                                 <Image src={icons.heartIcon} alt="likes" className="object-contain h-5 w-auto" />
-                                <TextScaled size="sm" className="font-medium text-black">
+                                <span className="font-medium text-black text-sm">
                                     {item.content.likes}
-                                </TextScaled>
+                                </span>
                             </div>
                             <div className="flex flex-row items-center justify-start gap-1">
                                 <Image src={icons.chatIcon} alt="comments" className="object-contain h-5 w-auto" />
-                                <TextScaled size="sm" className="font-medium text-black">
+                                <span className="font-medium text-black text-sm">
                                     {item.content.comments}
-                                </TextScaled>
+                                </span>
                             </div>
                         </div>
                         <div className="flex flex-row items-center justify-start gap-1">
@@ -104,21 +101,19 @@ const PostItem = ({ item }: PostItemProps) => {
                     <div
                         className="flex flex-col items-start justify-start pb-2 border-b border-[#6B7280]"
                     >
-                        <TextScaled
-                            size="base"
-                            className="font-bold text-black"
+                        <p
+                            className="font-bold text-black text-base"
                         >
                             {item.content.title}
-                        </TextScaled>
+                        </p>
                         <div
                             className="flex flex-col items-start justify-center gap-1"
                         >
-                            <TextScaled
-                                size="sm"
-                                className="text-black"
+                            <p
+                                className="text-black text-sm"
                             >
                                 {item.content.description}
-                            </TextScaled>
+                            </p>
                             <div
                                 className="flex flex-row items-center justify-start gap-2"
                             >
@@ -127,18 +122,16 @@ const PostItem = ({ item }: PostItemProps) => {
                                         key={index}
                                         className="flex flex-row items-start justify-start"
                                     >
-                                        <TextScaled
-                                            size="xs"
-                                            className="text-blue-400"
+                                        <span
+                                            className="text-blue-400 text-xs"
                                         >
                                             #
-                                        </TextScaled>
-                                        <TextScaled
-                                            size="xs"
-                                            className="text-blue-400"
+                                        </span>
+                                        <span
+                                            className="text-blue-400 text-xs"
                                         >
                                             {tag}
-                                        </TextScaled>
+                                        </span>
                                     </div>
                                 ))}
                             </div>

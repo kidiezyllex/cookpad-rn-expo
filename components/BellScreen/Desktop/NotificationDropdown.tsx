@@ -1,9 +1,8 @@
 'use client';
 
-import MessagesTab from '@/components/BellScreen/MessagesTab';
-import NotificationTab from '@/components/BellScreen/NotificationTab';
-import TextScaled from '@/components/Common/TextScaled';
 import { useState } from 'react';
+import MessagesTab from './MessagesTab';
+import NotificationTab from './NotificationTab';
 
 const NotificationDropdown = () => {
     const [activeTab, setActiveTab] = useState<'thong-bao' | 'tin-nhan'>('thong-bao');
@@ -23,14 +22,13 @@ const NotificationDropdown = () => {
                         }`}
                         onClick={() => handleTabChange('thong-bao')}
                     >
-                        <TextScaled
-                            size="base"
-                            className={`font-medium ${
+                        <p
+                            className={`font-medium text-base ${
                                 activeTab === 'thong-bao' ? 'text-[#E36137]' : 'text-[#979797]'
                             }`}
                         >
                             Thông báo
-                        </TextScaled>
+                        </p>
                     </button>
                     <button
                         className={`w-1/2 items-center justify-center min-h-[40px] h-[40px] border-b-2 ${
@@ -38,14 +36,13 @@ const NotificationDropdown = () => {
                         }`}
                         onClick={() => handleTabChange('tin-nhan')}
                     >
-                        <TextScaled
-                            size="base"
-                            className={`font-medium ${
+                        <p
+                            className={`font-medium text-base ${
                                 activeTab === 'tin-nhan' ? 'text-[#E36137]' : 'text-[#979797]'
                             }`}
                         >
                             Tin nhắn
-                        </TextScaled>
+                        </p>
                     </button>
                 </div>
 

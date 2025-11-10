@@ -1,7 +1,6 @@
 import CustomButton from '@/components/Common/CustomButton';
 import CustomFilter from '@/components/Common/CustomFilter';
 import RecipeCarousel from '@/components/Common/RecipeCarousel';
-import TextScaled from '@/components/Common/TextScaled';
 import { icons } from '@/constants';
 import { useState } from 'react';
 import { ingredientsData } from '../mockData';
@@ -28,12 +27,11 @@ const IngredientsSection = () => {
         <div
             className="w-full mb-6 px-16 flex flex-col items-start justify-center"
         >
-            <TextScaled
-                className="font-bold text-black mb-4"
-                size="xl"
+            <p
+                className="font-bold text-black mb-4 text-xl"
             >
                 Trong tủ lạnh nhà bạn có gì?
-            </TextScaled>
+            </p>
             <CustomFilter
                 data={ingredientsData}
                 selectedItems={selectedIngredients}

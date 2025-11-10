@@ -1,7 +1,6 @@
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { useState } from 'react';
-import TextScaled from '../Common/TextScaled';
 import SearchDropdown from './SearchDropdown';
 
 const HeroSection = () => {
@@ -41,12 +40,11 @@ const HeroSection = () => {
                                 width={16}
                                 height={16}
                             />
-                            <TextScaled
-                                size="sm"
-                                className="font-medium text-red-500"
+                            <span
+                                className="font-medium text-red-500 text-sm"
                             >
                                 Hot
-                            </TextScaled>
+                            </span>
                         </div>
                         <input
                             placeholder="Mì tôm thanh long"

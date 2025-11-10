@@ -1,7 +1,6 @@
 'use client';
 
 import CustomButton from '@/components/Common/CustomButton';
-import TextScaled from '@/components/Common/TextScaled';
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -59,9 +58,9 @@ const FoodDetailScreen = () => {
                         <button type="button" onClick={() => router.back()} className="flex items-center justify-center">
                             <Image src={icons.backArrow} alt="back" width={24} height={24} />
                         </button>
-                        <TextScaled size="base" className="font-bold text-white">
+                        <p className="font-bold text-white text-base">
                             Món ăn
-                        </TextScaled>
+                        </p>
                         <button type="button" className="flex items-center justify-center">
                             <Image src={icons.threeDotsIcon} alt="menu" width={24} height={24} />
                         </button>
@@ -69,9 +68,9 @@ const FoodDetailScreen = () => {
                 </div>
                 <div className="bg-backgroundV1 p-4 px-16 grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-4 pb-4 border-b border-[#979797]">
-                        <TextScaled size="2xl" className="font-medium text-black">
+                        <p className="font-medium text-black text-2xl">
                             {mockFoodDetail.title}
-                        </TextScaled>
+                        </p>
 
                         <div className="flex flex-col gap-2">
                             <div className="flex flex-row gap-2 items-center">
@@ -83,25 +82,25 @@ const FoodDetailScreen = () => {
                                     className="rounded-full border border-[#E36137] object-cover"
                                 />
                                 <div className="flex-1 flex flex-col gap-1">
-                                    <TextScaled size="sm" className="font-medium text-black">
+                                    <p className="font-medium text-black text-sm">
                                         {mockFoodDetail.author.name}
-                                    </TextScaled>
+                                    </p>
                                     <div className="flex flex-row gap-2">
                                         <div className="flex flex-row gap-1 items-center">
-                                            <TextScaled size="xs" className="font-medium text-black">
+                                            <span className="font-medium text-black text-xs">
                                                 {mockFoodDetail.author.kitchenFriends}
-                                            </TextScaled>
-                                            <TextScaled size="xs" className="text-textNeutralV1">
+                                            </span>
+                                            <span className="text-textNeutralV1 text-xs">
                                                 Bạn bếp chung
-                                            </TextScaled>
+                                            </span>
                                         </div>
                                         <div className="flex flex-row gap-1 items-center">
-                                            <TextScaled size="xs" className="font-medium text-textNeutralV1">
+                                            <span className="font-medium text-textNeutralV1 text-xs">
                                                 {mockFoodDetail.author.hashtagCount}
-                                            </TextScaled>
-                                            <TextScaled size="xs" className="text-[#00ACED]">
+                                            </span>
+                                            <span className="text-[#00ACED] text-xs">
                                                 #{mockFoodDetail.author.hashtag}
-                                            </TextScaled>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -110,22 +109,22 @@ const FoodDetailScreen = () => {
                                     className="bg-[#FFEFE9] px-3.5 py-1 rounded-lg flex flex-row items-center gap-2"
                                 >
                                     <Image src={icons.check2Icon} alt="friend" width={20} height={20} />
-                                    <TextScaled size="xs" className="font-semibold text-customPrimary">
+                                    <span className="font-semibold text-customPrimary text-xs">
                                         Bạn bếp
-                                    </TextScaled>
+                                    </span>
                                 </button>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-1">
-                            <TextScaled size="base" className="text-black">
+                            <p className="text-black text-base">
                                 {mockFoodDetail.description}
-                            </TextScaled>
+                            </p>
                             <div className="flex flex-row gap-2 flex-wrap">
                                 {mockFoodDetail.hashtags.map((tag) => (
                                     <div key={tag} className="flex flex-row items-center">
-                                        <TextScaled size="sm" className="text-[#00ACED]">#</TextScaled>
-                                        <TextScaled size="sm" className="text-[#00ACED]">{tag}</TextScaled>
+                                        <span className="text-[#00ACED] text-sm">#</span>
+                                        <span className="text-[#00ACED] text-sm">{tag}</span>
                                     </div>
                                 ))}
                             </div>
@@ -135,15 +134,15 @@ const FoodDetailScreen = () => {
                             <div className="flex flex-row gap-3">
                                 <div className="flex flex-row gap-1 items-center">
                                     <Image src={icons.heartIcon} alt="likes" width={50} height={50} quality={100} className='h-4 w-auto object-contain' />
-                                    <TextScaled size="sm" className="font-medium text-black">
+                                    <span className="font-medium text-black text-sm">
                                         {mockFoodDetail.comments}
-                                    </TextScaled>
+                                    </span>
                                 </div>
                                 <div className="flex flex-row gap-1 items-center">
                                     <Image src={icons.chatIcon} alt="comments" width={50} height={50} quality={100} className='h-4 w-auto object-contain' />
-                                    <TextScaled size="sm" className="font-medium text-black">
+                                    <span className="font-medium text-black text-sm">
                                         {mockFoodDetail.saves}
-                                    </TextScaled>
+                                    </span>
                                 </div>
                             </div>
                             <button type="button" className="flex items-center justify-center">
@@ -154,9 +153,9 @@ const FoodDetailScreen = () => {
 
                     <div className="flex flex-col gap-4">
                         <div className="flex flex-row justify-between items-center">
-                            <TextScaled size="base" className="font-bold text-black">
+                            <p className="font-bold text-black text-base">
                                 Bình luận
-                            </TextScaled>
+                            </p>
                             <button className="text-customPrimary text-sm cursor-pointer">
                                 Xem thêm
                             </button>
@@ -180,22 +179,22 @@ const FoodDetailScreen = () => {
                                         >
                                             <div className="flex-1 flex flex-col gap-1">
                                                 <div className="flex flex-row gap-2 items-center">
-                                                    <TextScaled size="sm" className="font-semibold text-black">
+                                                    <span className="font-semibold text-black text-sm">
                                                         {comment.user}
-                                                    </TextScaled>
-                                                    <TextScaled size="xs" className="text-textNeutralV1">
+                                                    </span>
+                                                    <span className="text-textNeutralV1 text-xs">
                                                         {comment.date}
-                                                    </TextScaled>
+                                                    </span>
                                                 </div>
-                                                <TextScaled size="sm" className="text-black">
+                                                <p className="text-black text-sm">
                                                     {comment.content}
-                                                </TextScaled>
+                                                </p>
                                             </div>
                                             <div className="flex items-center justify-center gap-1">
                                                 <Image src={icons.heartIcon} alt="like" width={50} height={50} quality={100} className='h-4 w-auto object-contain' />
-                                                <TextScaled size="xs" className="text-black">
+                                                <span className="text-black text-xs">
                                                     {comment.likes}
-                                                </TextScaled>
+                                                </span>
                                             </div>
                                         </div>
                                         <div className="flex flex-row gap-1 items-center">
@@ -212,9 +211,9 @@ const FoodDetailScreen = () => {
                 </div>
                 <div className="flex flex-col gap-2 px-16">
                         <div className="flex flex-row justify-between items-center">
-                            <TextScaled size="base" className="font-bold text-black">
+                            <p className="font-bold text-black text-base">
                                 Món ăn kèm nổi bật
-                            </TextScaled>
+                            </p>
                             <button className="text-customPrimary text-sm cursor-pointer">
                                 Xem thêm
                             </button>

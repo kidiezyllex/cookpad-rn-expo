@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { messagesData } from '../mockData';
@@ -29,12 +28,12 @@ const MessageRow = ({ item }: { item: MessageItem }) => {
       </div>
       <div className="flex flex-1 items-center justify-between">
         <div className="flex flex-1 flex-col gap-1">
-          <TextScaled size="sm" className="font-medium text-black">
+          <p className="font-medium text-black text-sm">
             {item.userName}
-          </TextScaled>
-          <TextScaled size="xs" className="truncate text-gray-600">
+          </p>
+          <p className="truncate text-gray-600 text-xs">
             {item.message}
-          </TextScaled>
+          </p>
         </div>
         {item.unreadCount ? (
           <div className="min-w-5 h-5 flex justify-center items-center rounded-full bg-[#E36137] text-white text-semibold text-xs px-2 text-center">
@@ -51,9 +50,9 @@ const MessageRow = ({ item }: { item: MessageItem }) => {
 const MessagesTab = () => {
   const renderMessageSection = (section: MessageSection) => (
     <div key={section.id} className="mt-2 bg-white px-4 py-4 pr-6">
-      <TextScaled size="base" className="font-bold text-black">
+      <p className="font-bold text-black text-base">
         {section.title}
-      </TextScaled>
+      </p>
       <div className="mt-2">
         {section.messages.map((messageItem, index) => (
           <div key={messageItem.id} className="flex flex-col items-center justify-center gap-2">

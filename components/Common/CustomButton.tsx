@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import TextScaled from './TextScaled';
 interface WebButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   bgVariant?: "primary" | "secondary" | "danger" | "outline" | "success" | "transparent" | "ghost";
@@ -79,9 +78,9 @@ const CustomButton = ({
     >
       <span className="flex w-full flex-row items-center justify-center gap-2">
         {IconLeft && (typeof IconLeft === 'function' ? <IconLeft /> : IconLeft)}
-        <TextScaled size="base" className="font-semibold" style={{ color: getTextVariantStyle(textVariant) }}>
+        <p className="font-semibold text-base" style={{ color: getTextVariantStyle(textVariant) }}>
           {title}
-        </TextScaled>
+        </p>
         {IconRight && (typeof IconRight === 'function' ? <IconRight /> : IconRight)}
       </span>
     </button>

@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import Image from 'next/image';
 const popularTopicsData = [
@@ -27,12 +26,11 @@ const PopularTopicsSection = () => {
         <div
             className="w-full mb-6 px-16 flex flex-col items-start justify-center"
         >
-            <TextScaled
-                className="font-bold text-black mb-2"
-                size="base"
+            <p
+                className="font-bold text-black mb-2 text-base"
             >
                 Chủ đề phổ biến hôm nay
-            </TextScaled>
+            </p>
 
             <div
                 className="w-full gap-4 grid grid-cols-6"
@@ -52,12 +50,11 @@ const PopularTopicsSection = () => {
                         <div
                             className="absolute inset-0 bg-black/40 rounded-lg"
                         />
-                        <TextScaled
-                            size="base"
-                            className="text-center text-nowrap font-bold text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+                        <p
+                            className="text-center text-nowrap font-bold text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-base"
                         >
                             {item.name}
-                        </TextScaled>
+                        </p>
                     </div>
                 ))}
             </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { images } from '@/constants';
-import TextScaled from '../Common/TextScaled';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -42,12 +41,11 @@ const PersonalChestScreen = () => {
                     />
                 </div>
             </div>
-            <TextScaled
-                size="sm"
-                className="font-bold text-black"
+            <p
+                className="font-bold text-black text-sm"
             >
                 {item.title}
-            </TextScaled>
+            </p>
         </div>
     );
     const backgroundImageUrl = typeof images.personalChestBg === 'string'
@@ -76,18 +74,16 @@ const PersonalChestScreen = () => {
                     <div
                         className="flex flex-col items-center justify-start px-4 w-full"
                     >
-                        <TextScaled
-                            className="font-medium text-center text-black mb-2"
-                            size="xl"
+                        <p
+                            className="font-medium text-center text-black mb-2 text-xl"
                         >
                             Rương cá nhân
-                        </TextScaled>
-                        <TextScaled
-                            className="font-light text-center text-textNeutralV1 mb-6 px-2"
-                            size="base"
+                        </p>
+                        <p
+                            className="font-light text-center text-textNeutralV1 mb-6 px-2 text-base"
                         >
                             Bắt đầu lưu giữ tất cả công thức của bạn với tính năng đăng công thức cá nhân và tạo bảng để lưu trữ các công thức bạn yêu thích
-                        </TextScaled>
+                        </p>
                         {/* Action Cards */}
                         <div
                             className="flex flex-row items-center justify-center gap-4 overflow-x-auto"

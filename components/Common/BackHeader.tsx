@@ -1,7 +1,6 @@
 import { icons } from '@/constants';
 import Image from 'next/image';
 import React from 'react';
-import TextScaled from './TextScaled';
 
 interface BackHeaderProps {
   headerTitle: string;
@@ -25,12 +24,11 @@ const BackHeader: React.FC<BackHeaderProps> = ({ headerTitle, onPress, isDark = 
           className={`w-6 h-6 ${isDark ? 'invert' : ''}`}
         />
       </button>
-      <TextScaled
-        size="base"
-        className={`justify-start text-center font-bold ${isDark ? 'text-white' : 'text-black'}`}
+      <p
+        className={`justify-start text-center font-bold ${isDark ? 'text-white' : 'text-black'} text-base`}
       >
         {headerTitle}
-      </TextScaled>
+      </p>
     </div>
   );
 };

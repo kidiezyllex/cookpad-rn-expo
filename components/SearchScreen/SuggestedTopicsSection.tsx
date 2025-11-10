@@ -1,6 +1,5 @@
 import { images } from '@/constants';
 import Image from 'next/image';
-import TextScaled from '../Common/TextScaled';
 
 const popularTopicsData = [
     { id: '1', name: 'Salad giảm cân', image: images.sampleFood1 },
@@ -20,12 +19,9 @@ const SuggestedTopicsSection = () => {
         <div
             className="w-full flex flex-col items-start justify-center"
         >
-            <TextScaled
-                className="mb-2 font-bold text-black"
-                size="base"
-            >
+            <p className="mb-2 font-bold text-black text-base">
                 Chủ đề được đề xuất với bạn
-            </TextScaled>
+            </p>
 
             <div
                 className="w-full gap-4 grid grid-cols-6"
@@ -45,12 +41,11 @@ const SuggestedTopicsSection = () => {
                         <div
                             className="absolute inset-0 bg-black/40 rounded-lg"
                         />
-                        <TextScaled
-                            size="base"
-                            className="text-center text-nowrap font-bold text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+                        <p
+                            className="text-center text-nowrap font-bold text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-base"
                         >
                             {item.name}
-                        </TextScaled>
+                        </p>
                     </div>
                 ))}
             </div>

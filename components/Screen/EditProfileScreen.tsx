@@ -3,7 +3,6 @@
 import BackHeader from "@/components/Common/BackHeader";
 import Input from "@/components/Common/Input";
 import TextArea from "@/components/Common/TextArea";
-import TextScaled from "@/components/Common/TextScaled";
 import { icons, images } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -85,9 +84,9 @@ const EditProfileScreen = ({
           <div
             className="w-full flex flex-col items-start justify-start gap-1"
           >
-            <TextScaled size="base" className="font-bold text-black">
+            <p className="font-bold text-black text-base">
               Tên
-            </TextScaled>
+            </p>
             <Input
               value={form.name}
               onChangeText={(value) => setForm({ ...form, name: value })}
@@ -99,9 +98,9 @@ const EditProfileScreen = ({
           <div
             className="w-full flex flex-col items-start justify-start gap-1"
           >
-            <TextScaled size="base" className="font-bold text-black">
+            <p className="font-bold text-black text-base">
               Giới thiệu
-            </TextScaled>
+            </p>
             <TextArea
               value={form.bio}
               onChangeText={(value) => setForm({ ...form, bio: value })}
@@ -113,9 +112,9 @@ const EditProfileScreen = ({
           <div
             className="w-full flex flex-col items-start justify-start gap-1"
           >
-            <TextScaled size="base" className="font-bold text-black">
+            <p className="font-bold text-black text-base">
               Email
-            </TextScaled>
+            </p>
             <Input
               placeholder="Email"
               value={form.email}

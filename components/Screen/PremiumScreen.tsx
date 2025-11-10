@@ -1,7 +1,6 @@
 'use client';
 
 import CustomButton from "@/components/Common/CustomButton";
-import TextScaled from "@/components/Common/TextScaled";
 import { icons, images } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -49,15 +48,15 @@ const PremiumScreen = ({
         <div
           className="flex w-full flex-col items-start justify-start"
         >
-          <TextScaled size="xl" className="font-bold text-white">
+          <p className="font-bold text-white text-xl">
             Chuyển đổi sang gói Premium để trở thành{" "}
-            <TextScaled size="xl" className="font-bold text-customPrimary">
+            <span className="font-bold text-customPrimary text-xl">
               Vua Đầu Bếp
-            </TextScaled>
-          </TextScaled>
-          <TextScaled size="sm" className="text-white">
+            </span>
+          </p>
+          <p className="text-white text-sm">
             Hoàn thiện các công thức nấu ăn của bạn bằng công cụ phân tích gu ăn uống, hiển thị công thức hoàn chỉnh và video các bước thực hành món.
-          </TextScaled>
+          </p>
         </div>
 
         {/* Avatar Section */}

@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { icons } from '@/constants';
 import Image from 'next/image';
 
@@ -43,9 +42,9 @@ const MaterialTab = () => {
               className="flex flex-row items-center justify-between py-2 border-b border-black"
             >
               <div className="flex flex-row items-center gap-0.5">
-                <TextScaled size="sm" className="text-textNeutralV1">
+                <span className="text-textNeutralV1 text-sm">
                   {material.title}
-                </TextScaled>
+                </span>
               </div>
               <Image
                 src={icons.forwardArrow}
@@ -60,12 +59,12 @@ const MaterialTab = () => {
             <div className="flex flex-col gap-1 pt-2">
               {material.items.map((item, index) => (
                 <div key={index} className="flex flex-row items-center gap-1">
-                  <TextScaled size="base" className="font-bold text-black">
+                  <p className="font-bold text-black text-base">
                     {item.quantity}
-                  </TextScaled>
-                  <TextScaled size="base" className="text-black">
+                  </p>
+                  <p className="text-black text-base">
                     {item.name}
-                  </TextScaled>
+                  </p>
                 </div>
               ))}
             </div>

@@ -1,4 +1,3 @@
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
 import Image from 'next/image';
 
@@ -27,12 +26,11 @@ const SuggestedFriendItem = ({ item }: SuggestedFriendItemProps) => {
                 className="flex flex-1 flex-col items-start self-start justify-start gap-1"
             >
                 <div className="flex flex-col items-start justify-start">
-                    <TextScaled
-                        size="base"
-                        className="font-bold text-black"
+                    <p
+                        className="font-bold text-black text-base"
                     >
                         {item.name}
-                    </TextScaled>
+                    </p>
                         <p className='space-x-1'>
                             <span className="font-semibold text-black test-base">{item.commonFriends}</span>
                             <span className="font-light text-black text-nowrap text-sm">Bạn bếp chung</span>
@@ -47,23 +45,21 @@ const SuggestedFriendItem = ({ item }: SuggestedFriendItemProps) => {
                         onClick={() => { }}
                         className="flex flex-1 items-center justify-center py-1 px-4 h-8 bg-customPrimary hover:bg-customPrimary/80 transition-colors rounded-md shrink"
                     >
-                        <TextScaled
-                            size="sm"
-                            className="font-semibold text-white"
+                        <p
+                            className="font-semibold text-white text-sm"
                         >
                             Thêm Bạn bếp
-                        </TextScaled>
+                        </p>
                     </button>
                     <button
                         onClick={() => { }}
                         className="flex items-center justify-center py-1 px-4 h-8 max-w-[52px] bg-[#FFEFE9] rounded-md"
                     >
-                        <TextScaled
-                            size="sm"
-                            className="font-semibold text-customPrimary"
+                        <p
+                            className="font-semibold text-customPrimary text-sm"
                         >
                             Gỡ
-                        </TextScaled>
+                        </p>
                     </button>
                 </div>
             </div>

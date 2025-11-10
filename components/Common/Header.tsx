@@ -3,14 +3,13 @@
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import TextScaled from './TextScaled';
 import Link from 'next/link';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from '@/components/ui/dropdown-menu';
-import NotificationDropdown from '@/components/BellScreen/NotificationDropdown';
+import NotificationDropdown from '../BellScreen/Desktop/NotificationDropdown';
 
 export default function Header() {
   const pathname = usePathname();
@@ -97,12 +96,11 @@ export default function Header() {
                   width={16}
                   height={16}
                 />
-                <TextScaled
-                  size="sm"
-                  className="font-medium text-red-500"
+                <span
+                  className="font-medium text-red-500 text-sm"
                 >
                   Hot
-                </TextScaled>
+                </span>
               </div>
               <input
                 placeholder="Tìm kiếm..."
