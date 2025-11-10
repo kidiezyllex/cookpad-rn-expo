@@ -85,38 +85,39 @@ const ProfileScreen = () => {
 
           {/* Search and Filter */}
           <div
-            className="flex w-full flex-row items-center gap-1 mb-4"
-          >
-            <div
-              className="flex flex-1 flex-row items-center rounded-lg bg-white h-8 px-2 gap-4"
-            >
-              <Image
-                src={icons.searchIcon}
-                alt="search"
-                width={24}
-                height={24}
-              />
-              <TextScaled size="sm" className="font-medium text-textNeutralV1">
-                Tìm kiếm
-              </TextScaled>
-            </div>
-            <button>
-              <Image
-                src={icons.downUpIcon}
-                alt="filter"
-                width={32}
-                height={32}
-              />
-            </button>
-            <button>
-              <Image
-                src={icons.smallPlusIcon}
-                alt="add"
-                width={32}
-                height={32}
-              />
-            </button>
-          </div>
+                    className="flex w-full flex-row items-center gap-1 mb-4"
+                >
+                    <div
+                        className="flex flex-1 flex-row items-center rounded-lg bg-white h-9 px-2 gap-4"
+                    >
+                        <Image
+                            src={icons.searchIcon}
+                            alt="search"
+                            width={24}
+                            height={24}
+                        />
+                        <input
+                            placeholder="Tìm kiếm"
+                            className="flex-1 bg-transparent outline-none text-sm font-medium text-textNeutralV1"
+                        />
+                    </div>
+                    <button className="flex items-center justify-center">
+                        <Image
+                            src={icons.downUpIcon}
+                            alt="sort"
+                            width={32}
+                            height={32}
+                        />
+                    </button>
+                    <button className="flex items-center justify-center">
+                        <Image
+                            src={icons.smallPlusIcon}
+                            alt="add"
+                            width={32}
+                            height={32}
+                        />
+                    </button>
+                </div>
         </div>
 
         {/* Tab Content */}

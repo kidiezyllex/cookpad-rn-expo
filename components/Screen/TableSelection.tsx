@@ -12,15 +12,14 @@ const TableSelection = () => {
     const params = useSearchParams();
     const boardName = params?.get('name') ?? 'Hải sản';
     return (
-        <div className="flex-1 bg-[#F1EEE8]">
-            <BackHeader
-                headerTitle="Bảng"
-                onPress={() => router.back()}
-            />
-            <div
-                className="px-4 flex flex-col items-start justify-start"
-            >
-
+        <div className="flex-1 bg-backgroundV1">
+            <div className='w-full bg-white pl-16'>
+                <BackHeader
+                    headerTitle="Bảng món ăn"
+                    onPress={() => router.back()}
+                />
+            </div>
+            <div className="px-16 flex flex-col items-start justify-start">
                 <div
                     className="flex w-full flex-col items-center justify-between mt-8 mb-8">
                     <TextScaled
@@ -41,7 +40,7 @@ const TableSelection = () => {
                     className="flex w-full flex-row items-center gap-1 mb-4"
                 >
                     <div
-                        className="flex flex-1 flex-row items-center rounded-lg bg-white h-8 px-2 gap-4"
+                        className="flex flex-1 flex-row items-center rounded-lg bg-white h-9 px-2 gap-4"
                     >
                         <Image
                             src={icons.searchIcon}
@@ -49,9 +48,10 @@ const TableSelection = () => {
                             width={24}
                             height={24}
                         />
-                        <TextScaled size="sm" className="font-medium text-textNeutralV1">
-                            Tìm kiếm
-                        </TextScaled>
+                        <input
+                            placeholder="Tìm kiếm"
+                            className="flex-1 bg-transparent outline-none text-sm font-medium text-textNeutralV1"
+                        />
                     </div>
                     <button className="flex items-center justify-center">
                         <Image

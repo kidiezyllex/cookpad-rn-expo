@@ -266,10 +266,12 @@ const CreateRecipeScreen = () => {
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
-            <BackHeader
-                headerTitle="Công thức món ăn"
-                onPress={() => router.back()}
-            />
+             <div className="w-full pl-16">
+        <BackHeader
+          headerTitle="Công thức món ăn"
+          onPress={() => router.back()}
+        />
+      </div>
             <div
                 className="flex-1 overflow-y-auto bg-backgroundV1 pt-4 px-16"
             >
