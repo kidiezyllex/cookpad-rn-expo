@@ -19,7 +19,7 @@ const LogInScreen = () => {
     if (email === 'H' && password === '1') {
       router.replace('/(root)/tabs/home');
     } else {
-      router.replace('/(auth)/favorite-topic');
+      router.replace('/auth/favorite-topic');
     }
   }, [email, password, router]);
 
@@ -37,7 +37,7 @@ const LogInScreen = () => {
         backgroundPosition: '0 0',
       }}
     >
-      <div className="mx-auto w-[400px] max-w-[400px] p-4 pb-8 shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+      <div className="mx-auto w-[400px] max-w-[400px] p-4 min-h-[90vh] shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
         {/* Header */}
         <div
           className="relative flex w-full items-center justify-center h-10"
@@ -56,7 +56,7 @@ const LogInScreen = () => {
         </div>
 
         {/* Form */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           <div className="space-y-2">
             <label className="block text-sm font-bold text-gray-900">Tài khoản</label>
             <div className="relative">

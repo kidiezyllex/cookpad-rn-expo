@@ -8,6 +8,25 @@ import { useCallback, useState } from 'react';
 import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
 import { useSuccessStore } from '@/store/successStore';
 import { StaticImageData } from 'next/image';
+import { OTPInput, SlotProps } from 'input-otp';
+
+// OTP Slot Component
+const OTPSlot = (props: SlotProps) => {
+  return (
+    <div
+      className="relative h-16 w-16 border-0 border-b-2 border-b-[#333333] bg-transparent text-center text-4xl font-bold text-black outline-none ring-0 transition-all duration-200"
+    >
+      <div className="flex h-full w-full items-center justify-center">
+        {props.char ?? props.placeholderChar ?? '•'}
+      </div>
+      {props.hasFakeCaret && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-0.5 h-8 bg-gray-400 animate-pulse" />
+        </div>
+      )}
+    </div>
+  );
+};
 
 const OTPInputScreen = () => {
   const [otp, setOtp] = useState('');
@@ -21,7 +40,7 @@ const OTPInputScreen = () => {
       return;
     }
     if (isForgotPassword) {
-      router.replace('/(auth)/change-password');
+      router.replace('/auth/change-password');
       return;
     }
     setSuccess(
@@ -29,7 +48,7 @@ const OTPInputScreen = () => {
       'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.',
       '/auth/sign-in'
     );
-    router.replace('/(auth)/register-success');
+    router.replace('/auth/register-success');
   }, [otp, isForgotPassword, setSuccess, router]);
 
   const onBackPress = useCallback(() => {
@@ -50,11 +69,11 @@ const OTPInputScreen = () => {
         backgroundPosition: '0 0',
       }}
     >
-      <div className="mx-auto max-w-[400px] w-[400px] p-4 pb-8 shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
-        <BackHeader 
-          headerTitle="Nhập OTP" 
-          onPress={onBackPress} 
-        /> 
+      <div className="mx-auto max-w-[400px] w-[400px] p-4 min-h-[90vh] shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+        <BackHeader
+          headerTitle="Nhập OTP"
+          onPress={onBackPress}
+        />
 
         {/* Logo */}
         <div className="mb-8 flex justify-center">
@@ -62,7 +81,7 @@ const OTPInputScreen = () => {
         </div>
 
         {/* Form */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Instruction Text */}
           <div className="space-y-2">
             <p className="text-center text-sm text-gray-700">
@@ -71,18 +90,19 @@ const OTPInputScreen = () => {
           </div>
 
           {/* OTP Input */}
-          <div className="space-y-2">
-            <label className="block text-sm font-bold text-gray-900">Mã OTP</label>
-            <div className="flex justify-center">
-              <input
-                inputMode="numeric"
-                maxLength={4}
-                value={otp}
-                onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
-                className="h-16 w-40 rounded-md border border-gray-200 bg-white text-center text-4xl font-bold text-black outline-none ring-0 focus:border-gray-300"
-                placeholder="••••"
-              />
-            </div>
+          <div className="flex justify-center">
+            <OTPInput
+              maxLength={4}
+              value={otp}
+              onChange={setOtp}
+              render={({ slots }) => (
+                <div className="flex gap-6">
+                  {slots.map((slot, idx) => (
+                    <OTPSlot key={idx} {...slot} />
+                  ))}
+                </div>
+              )}
+            />
           </div>
 
           {/* Resend OTP Link */}

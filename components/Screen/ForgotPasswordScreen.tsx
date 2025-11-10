@@ -42,7 +42,7 @@ const ForgotPasswordScreen = () => {
 				backgroundPosition: '0 0',
 			}}
 		>
-			<div className="mx-auto max-w-[400px] w-[400px] p-4 pb-8 shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+			<div className="mx-auto max-w-[400px] w-[400px] p-4 min-h-[90vh] shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
 				{/* Header */}
 				<BackHeader headerTitle="Quên mật khẩu" onPress={onBackPress} />
 
@@ -52,7 +52,7 @@ const ForgotPasswordScreen = () => {
 				</div>
 
 				{/* Form */}
-				<div className="space-y-6">
+				<div className="space-y-4">
 					{/* Instruction Text */}
 					<div className="mb-4">
 						<p className="text-sm text-center text-gray-600 px-4">
@@ -65,7 +65,7 @@ const ForgotPasswordScreen = () => {
 						<label className="block text-sm font-bold text-gray-900">Số điện thoại</label>
 						<div className="relative">
 							<input
-								type="tel"
+								type="number"
 								placeholder="Nhập số điện thoại"
 								value={phone}
 								onChange={(e) => setPhone(e.target.value)}

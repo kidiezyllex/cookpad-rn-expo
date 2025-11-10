@@ -175,7 +175,7 @@ Thư mục này chứa tất cả các màn hình (screens) của ứng dụng, 
 #### `app/index.tsx`
 - **Chức năng**: Màn hình entry point của ứng dụng, xử lý routing ban đầu
 
-#### `app/(auth)/` - Nhóm Màn Hình Xác Thực
+#### `app/auth/` - Nhóm Màn Hình Xác Thực
 Thư mục này chứa tất cả các màn hình liên quan đến đăng nhập, đăng ký, và xác thực:
 
 - **`_layout.tsx`**: Layout riêng cho các màn hình auth
@@ -887,7 +887,7 @@ const SignUpScreen = () => {
     );
 
     // Navigate đến màn hình success
-    router.push('/(auth)/register-success');
+    router.push('/auth/register-success');
   };
 
   return (

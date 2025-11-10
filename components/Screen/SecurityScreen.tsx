@@ -30,7 +30,7 @@ const SecurityOption = ({ option }: { option: typeof securityOptions[0] }) => {
 
   return (
     <button
-      onClick={option.hasToggle ? undefined : () => router.push('/(auth)/change-password')}
+      onClick={option.hasToggle ? undefined : () => router.push('/auth/change-password')}
       className="flex min-h-[40px] flex-row items-center justify-between gap-2 py-2"
     >
       <Image

@@ -48,7 +48,7 @@ const SignUpScreen = () => {
       backgroundPosition: '0 0',
     }}
   >
-        <div className="mx-auto max-w-[400px] w-[400px] p-4 shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+        <div className="mx-auto max-w-[400px] w-[400px] p-4 min-h-[90vh] shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
           <BackHeader headerTitle="Đăng ký" onPress={onBackPress} />
 
           {/* Logo */}
@@ -57,7 +57,7 @@ const SignUpScreen = () => {
           </div>
 
           {/* Form */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Email/Phone Input */}
             <div className="space-y-2">
               <label className="block text-sm font-bold text-gray-900">Tài khoản</label>

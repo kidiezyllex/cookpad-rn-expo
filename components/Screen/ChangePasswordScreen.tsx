@@ -1,13 +1,13 @@
 'use client';
 
 import BackHeader from '@/components/Common/BackHeader';
-import CustomButton from '@/components/Common/CustomButton';
-import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
-import { useSuccessStore } from '@/store/successStore';
+import { Eye, EyeSlash } from 'iconsax-reactjs';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
+import { StaticImageData } from 'next/image';
+import { useSuccessStore } from '@/store/successStore';
 
 const ChangePasswordScreen = () => {
   const [form, setForm] = useState({
@@ -29,99 +29,113 @@ const ChangePasswordScreen = () => {
       'Bạn đã thay đổi mật khẩu thành công, vui lòng đăng nhập với mật khẩu mới của bạn.',
       '/auth/sign-in'
     );
-    router.replace('/(auth)/register-success');
+    router.replace('/auth/register-success');
   }, [form.password, form.confirmPassword, setSuccess, router]);
 
   const onBackPress = useCallback(() => {
     router.back();
   }, [router]);
 
-  return (
-    <div className='flex-1 bg-backgroundV1 min-h-dvh'>
-      <BackHeader 
-        headerTitle="Đổi mật khẩu" 
-        onPress={onBackPress} 
-      />
+  const backgroundImageUrl = typeof images.personalChestBg === 'string'
+    ? images.personalChestBg
+    : (images.personalChestBg as StaticImageData)?.src || images.personalChestBg;
 
-      {/* Main Content */}
-      <div
-        className="flex flex-col items-center justify-start px-4 pt-8 pb-8 gap-8"
-      >
-        {/* Logo */}
-        <Image
-          className="w-20 h-20"
-          src={images.logo}
-          alt="logo"
+  return (
+    <div
+      className="h-screen flex items-center justify-center w-full"
+      style={{
+        backgroundImage: `url(${backgroundImageUrl})`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: 'auto 200vh',
+        backgroundPosition: '0 0',
+      }}
+    >
+      <div className="mx-auto max-w-[400px] w-[400px] p-4 min-h-[90vh] shadow-md rounded-lg bg-white/90 overflow-hidden backdrop-blur-sm">
+        <BackHeader 
+          headerTitle="Đổi mật khẩu" 
+          onPress={onBackPress} 
         />
 
+        {/* Logo */}
+        <div className="mb-8 flex justify-center">
+          <Image alt="CookPad" src={images.logo} width={80} height={80} />
+        </div>
+
         {/* Form */}
-        <div
-          className="flex w-full flex-col items-end justify-start gap-4"
-        >
+        <div className="space-y-4">
           {/* Password Input */}
-          <div
-            className="flex w-full flex-col items-start justify-start gap-1"
-          >
-            <div
-              className="items-center justify-start gap-1"
-            >
-              <TextScaled size="base" className="font-bold">
-                Mật khẩu mới
-              </TextScaled>
-            </div>
-            <div className="relative w-full">
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-900">Mật khẩu mới</label>
+            <div className="relative">
               <input
-                placeholder="Mật khẩu"
                 type={showPassword ? 'text' : 'password'}
+                placeholder="Mật khẩu"
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
-                className="h-10 w-full rounded-md bg-white px-3 pr-12 text-gray-900 outline-none ring-1 ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-customPrimary"
+                className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 pr-10 text-sm outline-none ring-0 focus:border-gray-300"
               />
               <button
                 type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="px-2 text-xs text-gray-500 absolute right-2 top-2 h-6"
+                onClick={() => setShowPassword((v) => !v)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-50"
+                aria-label={showPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
               >
-                {showPassword ? 'Ẩn' : 'Hiện'}
+                {showPassword ? (
+                  <Eye
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                ) : (
+                  <EyeSlash
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                )}
               </button>
             </div>
           </div>
 
           {/* Confirm Password Input */}
-          <div
-            className="flex w-full flex-col items-start justify-start gap-1"
-          >
-            <div
-              className="items-center justify-start gap-1"
-            >
-              <TextScaled size="base" className="font-bold">
-                Nhập lại mật khẩu mới
-              </TextScaled>
-            </div>
-            <div className="relative w-full">
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-900">Nhập lại mật khẩu mới</label>
+            <div className="relative">
               <input
-                placeholder="Nhập lại mật khẩu"
                 type={showConfirmPassword ? 'text' : 'password'}
+                placeholder="Nhập lại mật khẩu"
                 value={form.confirmPassword}
                 onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
-                className="h-10 w-full rounded-md bg-white px-3 pr-12 text-gray-900 outline-none ring-1 ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-customPrimary"
+                className="w-full rounded-md border border-gray-200 bg-white px-3 py-2 pr-10 text-sm outline-none ring-0 focus:border-gray-300"
               />
               <button
                 type="button"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="px-2 text-xs text-gray-500 absolute right-2 top-2 h-6"
+                onClick={() => setShowConfirmPassword((v) => !v)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-50"
+                aria-label={showConfirmPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'}
               >
-                {showConfirmPassword ? 'Ẩn' : 'Hiện'}
+                {showConfirmPassword ? (
+                  <Eye
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                ) : (
+                  <EyeSlash
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                )}
               </button>
             </div>
           </div>
-        </div>
 
-        {/* Confirm Button */}
-        <CustomButton
-          title="Xác nhận"
-          onPress={handlePress}
-        />
+          {/* Confirm Button */}
+          <button
+            type="button"
+            onClick={handlePress}
+            className="w-full rounded-lg bg-customPrimary px-6 py-2 text-center text-base font-bold text-white shadow-neutral-400/70 hover:opacity-90"
+          >
+            Xác nhận
+          </button>
+        </div>
       </div>
     </div>
   );

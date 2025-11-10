@@ -56,7 +56,7 @@ const FavoriteTopicScreen = () => {
         'Tuyệt vời! Lựa chọn của bạn đã được ghi nhận. Chúng tôi sẽ cá nhân hoá gợi ý món ăn phù hợp nhất với khẩu vị của bạn.',
         '/(root)/tabs/home'
       );
-      router.replace('/(auth)/register-success');
+      router.replace('/auth/register-success');
     } else {
       const nextIndex = slideIndex + 1;
 
