@@ -1,5 +1,6 @@
 import TextScaled from '@/components/Common/TextScaled';
 import { images } from '@/constants';
+import { SpanStatus } from 'next/dist/trace';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
 
@@ -27,16 +28,14 @@ const NotificationItem = ({ item }: { item: NotificationItemProps }) => {
             <div
                 className="flex flex-1 flex-col items-start justify-start ml-3"
             >
-                <div
-                    className="flex w-full flex-row flex-wrap items-start mb-1"
-                >
-                    <TextScaled size="sm" className="font-semibold text-black">
+                <p className="w-full mb-1 text-start text-sm">
+                    <span className="font-semibold text-black text-sm">
                         {item.userName}{' '}
-                    </TextScaled>
-                    <TextScaled size="sm" className="text-textNeutralV1">
+                    </span>
+                    <span className="text-textNeutralV1 text-sm ml-1">
                         {item.content}
-                    </TextScaled>
-                </div>
+                    </span>
+                </p>
 
                 <TextScaled
                     size="xs"

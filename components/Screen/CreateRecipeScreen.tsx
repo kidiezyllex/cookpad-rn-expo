@@ -30,6 +30,9 @@ const CreateRecipeScreen = () => {
     const [stepImages, setStepImages] = useState<Record<string, string>>({});
     const [stepImageFiles, setStepImageFiles] = useState<Record<string, File>>({});
     const stepFileInputRefs = useRef<Record<string, HTMLInputElement | null>>({});
+    const [recipeVideo, setRecipeVideo] = useState<string | null>(null);
+    const [recipeVideoFile, setRecipeVideoFile] = useState<File | null>(null);
+    const videoInputRef = useRef<HTMLInputElement>(null);
 
     const handleDecreasePortion = () => {
         if (portion > 1) {
@@ -118,22 +121,58 @@ const CreateRecipeScreen = () => {
         }
     };
 
+    const handleVideoSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            if (!file.type.startsWith('video/')) {
+                alert('Vui lòng chọn file video hợp lệ');
+                return;
+            }
+            if (file.size > 100 * 1024 * 1024) {
+                alert('Kích thước video không được vượt quá 100MB');
+                return;
+            }
+            setRecipeVideoFile(file);
+            const videoUrl = URL.createObjectURL(file);
+            setRecipeVideo(videoUrl);
+        }
+    };
+
+    const handleVideoClick = () => {
+        videoInputRef.current?.click();
+    };
+
+    const handleRemoveVideo = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (recipeVideo) {
+            URL.revokeObjectURL(recipeVideo);
+        }
+        setRecipeVideo(null);
+        setRecipeVideoFile(null);
+        if (videoInputRef.current) {
+            videoInputRef.current.value = '';
+        }
+    };
+
     useEffect(() => {
         return () => {
             if (recipeImage) {
                 URL.revokeObjectURL(recipeImage);
             }
+            if (recipeVideo) {
+                URL.revokeObjectURL(recipeVideo);
+            }
             Object.values(stepImages).forEach(url => {
                 URL.revokeObjectURL(url);
             });
         };
-    }, [recipeImage, stepImages]);
+    }, [recipeImage, recipeVideo, stepImages]);
 
     const handlePublish = () => {
         setSuccess(
             'Tạo công thức thành công!',
             'Công thức của bạn đã được đăng tải và sẽ hiển thị cho mọi người.',
-            '/(root)/tabs/home'
+            '/'
         );
         router.replace('/(root)/success');
     };
@@ -429,41 +468,33 @@ const CreateRecipeScreen = () => {
                         </div>
                         {/* Action Buttons */}
                         <div
-                            className="flex w-full flex-row items-start justify-center gap-4"
+                            className="w-full grid grid-cols-2 gap-4"
                         >
                             <button
-                                className="flex w-[50%] flex-row items-center justify-center gap-2 p-1"
+                                className="flex flex-row text-black hover:bg-orange-50 hover:text-customPrimary items-center justify-center gap-2 p-1 rounded-lg transition-all duration-100"
                             >
                                 <Image
                                     src={icons.plusIcon}
                                     alt="plus"
                                     width={24}
                                     height={24}
-                                    className="opacity-70"
                                 />
-                                <TextScaled
-                                    size="sm"
-                                    className="font-bold text-black"
-                                >
+                                <span className="font-bold text-sm">
                                     Nguyên liệu
-                                </TextScaled>
+                                </span>
                             </button>
                             <button
-                                className="flex w-[50%] flex-row items-center justify-center gap-2 p-1"
+                                className="flex flex-row items-center text-black hover:bg-orange-50 hover:text-customPrimary justify-center gap-2 p-1"
                             >
                                 <Image
                                     src={icons.plusIcon}
                                     alt="plus"
                                     width={24}
                                     height={24}
-                                    className="opacity-70"
                                 />
-                                <TextScaled
-                                    size="sm"
-                                    className="font-bold text-black"
-                                >
+                                <span className="font-bold text-sm">
                                     Phần
-                                </TextScaled>
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -480,24 +511,48 @@ const CreateRecipeScreen = () => {
 
                         {/* Video Upload */}
                         <div
-                            className="relative flex h-[200px] w-full items-center justify-center overflow-hidden rounded-lg bg-[#EEEEEE]"
+                            className="relative flex h-[200px] w-full items-center justify-center overflow-hidden rounded-lg bg-[#EEEEEE] cursor-pointer"
+                            onClick={handleVideoClick}
                         >
-                            <div
-                                className="absolute flex flex-row items-center justify-center top-1/2 left-1/2 -translate-x-[100px] -translate-y-[10px] gap-2"
-                            >
-                                <Image
-                                    src={icons.videoIcon}
-                                    alt="video"
-                                    width={24}
-                                    height={24}
-                                />
-                                <TextScaled
-                                    size="sm"
-                                    className="font-medium text-textNeutralV1"
+                            <input
+                                ref={videoInputRef}
+                                type="file"
+                                accept="video/*"
+                                onChange={handleVideoSelect}
+                                className="hidden"
+                            />
+                            {recipeVideo ? (
+                                <>
+                                    <video
+                                        src={recipeVideo}
+                                        className="w-full h-full object-cover"
+                                        controls
+                                    />
+                                    <button
+                                        onClick={handleRemoveVideo}
+                                        className="absolute top-2 right-2 flex items-center justify-center w-8 h-8 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-opacity z-10"
+                                    >
+                                        <span className="text-white text-xl font-bold">×</span>
+                                    </button>
+                                </>
+                            ) : (
+                                <div
+                                    className="absolute flex flex-row items-center justify-center top-1/2 left-1/2 -translate-x-[100px] -translate-y-[10px] gap-2"
                                 >
-                                    Thêm video nấu món ăn
-                                </TextScaled>
-                            </div>
+                                    <Image
+                                        src={icons.videoIcon}
+                                        alt="video"
+                                        width={24}
+                                        height={24}
+                                    />
+                                    <TextScaled
+                                        size="sm"
+                                        className="font-medium text-textNeutralV1 cursor-pointer"
+                                    >
+                                        Thêm video nấu món ăn
+                                    </TextScaled>
+                                </div>
+                            )}
                         </div>
 
                         {/* Cooking Steps */}

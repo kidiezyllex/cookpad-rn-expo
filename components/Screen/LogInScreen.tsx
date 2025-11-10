@@ -17,7 +17,7 @@ const LogInScreen = () => {
 
   const onSignInPress = useCallback(() => {
     if (email === 'H' && password === '1') {
-      router.replace('/(root)/tabs/home');
+      router.replace('/');
     } else {
       router.replace('/auth/favorite-topic');
     }

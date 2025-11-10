@@ -3,38 +3,31 @@
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
+import TextScaled from './TextScaled';
+import Link from 'next/link';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+} from '@/components/ui/dropdown-menu';
+import NotificationDropdown from '@/components/BellScreen/NotificationDropdown';
 
 export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
-  
+
   const navigationTabs = [
-    {
-      id: 'home',
-      icon: icons.homeIcon,
-      activeIcon: icons.activeHomeIcon,
-      route: '/',
-      label: 'Trang chủ',
-    },
-    {
-      id: 'search',
-      icon: icons.searchIcon,
-      activeIcon: icons.activeSearchIcon,
-      route: '/search',
-      label: 'Tìm kiếm',
-    },
     {
       id: 'plus',
       icon: icons.plusIcon,
       activeIcon: icons.activePlusIcon,
       route: '/create',
-      label: 'Thêm',
+      label: 'Tạo công thức',
     },
     {
       id: 'bell',
       icon: icons.bellIcon,
       activeIcon: icons.activeBellIcon,
-      route: '/(root)/tabs/bell',
       label: 'Thông báo',
     },
     {
@@ -45,11 +38,9 @@ export default function Header() {
       label: 'Đăng nhập',
     }
   ];
-  
+
   const getActiveTab = () => {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
-    if (normalizedPath === '/' || normalizedPath === '/(root)/tabs/home' || normalizedPath === '/(root)/tabs') return 'home';
-    if (normalizedPath === '/search') return 'search';
     if (normalizedPath === '/create') return 'plus';
     if (normalizedPath === '/(root)/tabs/bell') return 'bell';
     if (normalizedPath === '/(root)/tabs/profile') return 'profile';
@@ -58,12 +49,12 @@ export default function Header() {
     if (normalizedPath.includes('/plus')) return 'plus';
     if (normalizedPath.includes('/bell')) return 'bell';
     if (normalizedPath.includes('/profile')) return 'profile';
-    
+
     return 'home';
   };
 
   const activeTab = getActiveTab();
-  
+
   const handleTabPress = (route: string) => {
     router.push(route);
   };
@@ -76,7 +67,7 @@ export default function Header() {
         className="mx-auto flex w-full items-center justify-between px-4 h-16"
       >
         {/* Logo bên trái */}
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image
             src={images.logo}
             alt="CookPad Logo"
@@ -85,19 +76,50 @@ export default function Header() {
             draggable={false}
           />
           <p className="text-2xl cursor-pointer font-bold text-gray-600">Cook<span className='text-customPrimary'>Pad</span></p>
-        </div>
-
+        </Link>
+        {/* Search Field */}
+        <Link href="/search" className="relative flex flex-col items-start justify-start">
+            <div
+              className="flex border w-96 border-gray-300 flex-row items-center justify-start rounded-lg bg-gray-50 h-10 px-2 gap-4 relative z-10"
+            >
+              <Image
+                src={icons.searchIcon}
+                alt="search"
+                width={24}
+                height={24}
+              />
+              <div
+                className="flex flex-row items-center justify-start rounded bg-[rgba(239,68,68,0.2)] px-1 py-0.5 gap-0.5"
+              >
+                <Image
+                  src={icons.fireIcon}
+                  alt="hot"
+                  width={16}
+                  height={16}
+                />
+                <TextScaled
+                  size="sm"
+                  className="font-medium text-red-500"
+                >
+                  Hot
+                </TextScaled>
+              </div>
+              <input
+                placeholder="Tìm kiếm..."
+                className="text-sm font-medium text-black border-none outline-none flex-1 bg-transparent"
+              />
+            </div>
+        </Link>
         {/* Navigation menu bên phải */}
-        <nav className="flex items-center gap-2">
+        {/* <nav className="flex items-center gap-2">
           {navigationTabs.map((tab) => {
             const isTabActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => handleTabPress(tab.route)}
-                className={`flex items-center justify-center gap-1 px-2 py-1 rounded-md transition-colors ${
-                  isTabActive ? 'bg-orange-50' : 'hover:bg-gray-50'
-                }`}
+                className={`flex items-center justify-center gap-1 px-2 py-1 rounded-md transition-colors ${isTabActive ? 'bg-orange-50' : 'hover:bg-gray-50'
+                  }`}
                 aria-label={tab.label}
               >
                 <Image
@@ -106,13 +128,55 @@ export default function Header() {
                   className="w-6 h-6"
                 />
                 <span
-                  className={`font-medium text-base ${
-                    isTabActive ? 'text-orange-600' : 'text-gray-600'
-                  }`}
+                  className={`font-medium text-base ${isTabActive ? 'text-orange-600' : 'text-gray-600'
+                    }`}
                 >
                   {tab.label}
                 </span>
               </button>
+            );
+          })}
+        </nav> */}
+
+        {/* Navigation menu bên phải sau khi đăng nhập */}
+        <nav className="flex items-center gap-2">
+          {navigationTabs.map((tab) => {
+            const isTabActive = activeTab === tab.id;
+            return (
+              tab.id === 'bell' ? (
+                <DropdownMenu key={tab.id}>
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      className={`flex items-center h-8 w-8 justify-center rounded-md transition-colors bg-orange-50`}
+                      aria-label={tab.label}
+                    >
+                      <Image
+                        src={isTabActive ? tab.activeIcon : tab.icon}
+                        alt={tab.label}
+                        className="w-5 h-5 filter"
+                        style={{ filter: 'invert(41%) sepia(63%) saturate(1216%) hue-rotate(345deg) brightness(96%) contrast(92%)' }}
+                      />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-[400px] p-0 overflow-y-auto">
+                    <NotificationDropdown />
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabPress(tab.route || '')}
+                  className={`flex items-center h-8 w-8 justify-center rounded-md transition-colors bg-orange-50`}
+                  aria-label={tab.label}
+                >
+                  <Image
+                    src={isTabActive ? tab.activeIcon : tab.icon}
+                    alt={tab.label}
+                    className="w-5 h-5 filter"
+                    style={{ filter: 'invert(41%) sepia(63%) saturate(1216%) hue-rotate(345deg) brightness(96%) contrast(92%)' }}
+                  />
+                </button>
+              )
             );
           })}
         </nav>

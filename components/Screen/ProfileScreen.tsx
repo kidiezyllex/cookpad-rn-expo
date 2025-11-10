@@ -20,7 +20,7 @@ const ProfileScreen = () => {
   return (
     <div className="flex min-h-screen flex-col bg-backgroundV1">
       <div
-        className="flex-1 overflow-y-auto pb-[120px]"
+        className="flex-1 overflow-y-auto px-16"
       >
         {/* Avatar and Name, Chỉnh sửa cài đặt*/}
         <div
@@ -54,7 +54,7 @@ const ProfileScreen = () => {
           <CustomButton
             title="Chỉnh sửa cài đặt"
             onPress={() => router.push('/setting')}
-            className="w-auto h-10 mb-6 px-6 py-2"
+            className="!w-fit h-10 mb-6 px-6 py-2"
           />
         </div>
 
@@ -85,7 +85,7 @@ const ProfileScreen = () => {
 
           {/* Search and Filter */}
           <div
-            className="flex w-full flex-row items-center gap-1 px-4 mb-4"
+            className="flex w-full flex-row items-center gap-1 mb-4"
           >
             <div
               className="flex flex-1 flex-row items-center rounded-lg bg-white h-8 px-2 gap-4"
@@ -125,7 +125,7 @@ const ProfileScreen = () => {
             className="flex flex-col items-center justify-center gap-6"
           >
             <div
-              className="grid grid-cols-2 gap-4 w-full px-4 pb-1"
+              className="grid grid-cols-6 gap-4 w-full pb-1"
             >
               {mockRecipes.map((item) => (
                 <RecipeCard key={item.id} item={item} />
@@ -135,14 +135,12 @@ const ProfileScreen = () => {
         )}
 
         {activeTab === 'Yêu thích' && (
-          <div className="px-4">
             <FoodGrid />
-          </div>
         )}
 
         {activeTab === 'Công thức' && (
           <div
-            className="flex flex-col gap-2 px-4 pb-4"
+            className="grid grid-cols-4 gap-4 pb-4"
           >
             {mockRecipeList.map((item) => (
               <RecipeListItem key={item.id} item={item} />

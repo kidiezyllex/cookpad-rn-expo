@@ -21,7 +21,7 @@ interface RecipeCarouselProps {
 const RecipeCarousel = ({ data = featuredRecipesData }: RecipeCarouselProps) => {
     return (
         <div
-            className="h-[158px] mb-4"
+            className="mb-4 pb-1"
         >
             <Swiper
                 slidesPerView="auto"

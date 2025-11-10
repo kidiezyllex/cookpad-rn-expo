@@ -10,7 +10,7 @@ const NotificationTab = () => {
                     key={item.id}
                     className="mt-2 bg-white"
                 >
-                    <div className="px-4 pt-2 pb-2">
+                    <div className="px-4 pt-2 pb-2 pr-6">
                         <TextScaled size="base" className="font-bold text-black">
                             {item.title}
                         </TextScaled>

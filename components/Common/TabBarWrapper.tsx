@@ -7,7 +7,7 @@ const navigationTabs = [
     id: "home",
     icon: icons.homeIcon,
     activeIcon: icons.activeHomeIcon,
-    route: "/(root)/tabs/home",
+    route: "/",
   },
   {
     id: "search",
@@ -40,7 +40,7 @@ export default function TabBarWrapper() {
   const router = useRouter();
   const getActiveTab = () => {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
-    if (normalizedPath === "/(root)/tabs/home" || normalizedPath === "/(root)/tabs" || normalizedPath === "/") return "home";
+    if (normalizedPath === "/" || normalizedPath === "/(root)/tabs" || normalizedPath === "/") return "home";
     if (normalizedPath === "/search") return "search";
     if (normalizedPath === "/create") return "plus";
     if (normalizedPath === "/(root)/tabs/bell") return "bell";

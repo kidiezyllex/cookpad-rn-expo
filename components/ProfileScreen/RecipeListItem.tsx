@@ -1,9 +1,7 @@
-import TextScaled from "@/components/Common/TextScaled";
 import { icons } from "@/constants";
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
 
-// Type definition for recipe list item
 export interface RecipeListItem {
   id: number;
   title: string;
@@ -20,7 +18,7 @@ interface RecipeListItemProps {
 
 const RecipeListItem = ({ item }: RecipeListItemProps) => (
   <div
-    className="flex flex-row rounded-lg bg-white mb-2"
+    className="flex flex-row rounded-lg bg-white mb-2 cursor-pointer"
   >
     <Image
       src={item.image}
@@ -33,15 +31,14 @@ const RecipeListItem = ({ item }: RecipeListItemProps) => (
       className="px-3 py-2 gap-2 flex-1 flex flex-col"
     >
       <div>
-        <TextScaled size="sm" className="font-semibold text-black">
+        <span className="font-semibold text-sm text-black">
           {item.title}
-        </TextScaled>
-        <TextScaled
-          size="xs"
-          className="text-black line-clamp-3 leading-5"
+        </span>
+        <span
+          className="text-black line-clamp-3 leading-5 text-xs"
         >
           {item.description}
-        </TextScaled>
+        </span>
       </div>
       <div
         className="flex flex-row gap-2"
@@ -50,34 +47,40 @@ const RecipeListItem = ({ item }: RecipeListItemProps) => (
           <Image
             src={icons.heartIcon}
             alt="heart"
-            width={20}
-            height={20}
+            width={50}
+            height={50}
+            quality={100}
+            className="h-4 w-auto object-contain"
           />
-          <TextScaled size="sm" className="font-medium text-black">
+          <span className="font-medium text-black text-sm">
             {item.comments}
-          </TextScaled>
+          </span>
         </div>
         <div className="flex flex-row items-center gap-1">
           <Image
             src={icons.chatIcon}
             alt="chat"
-            width={20}
-            height={20}
+            width={50}
+            height={50}
+            quality={100}
+            className="h-4 w-auto object-contain"
           />
-          <TextScaled size="sm" className="font-medium text-black">
+          <span className="font-medium text-black text-sm">
             {item.saves}
-          </TextScaled>
+          </span>
         </div>
         <div className="flex flex-row items-center gap-1">
           <Image
             src={icons.saveIcon}
             alt="save"
-            width={20}
-            height={20}
+            width={50}
+            height={50}
+            quality={100}
+            className="h-4 w-auto object-contain"
           />
-          <TextScaled size="sm" className="font-medium text-black">
+          <span className="font-medium text-black text-sm">
             {item.views}
-          </TextScaled>
+          </span>
         </div>
       </div>
     </div>

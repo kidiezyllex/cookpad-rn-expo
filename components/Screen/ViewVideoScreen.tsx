@@ -43,7 +43,6 @@ const mockSteps = [
 ];
 
 const ViewVideoScreen = () => {
-
   const renderStepItem = ({ item, index }: { item: typeof mockSteps[0]; index: number }) => {
     return (
       <div 

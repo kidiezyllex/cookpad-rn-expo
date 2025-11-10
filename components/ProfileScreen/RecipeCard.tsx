@@ -31,29 +31,25 @@ const RecipeCard = ({ item }: RecipeCardProps) => {
           alt={item.title}
           width={112}
           height={112}
-          className="rounded-tl-lg border-r border-white object-cover"
+          className="rounded-tl-lg border-r border-white object-cover h-[110px] w-[67%]"
         />
-        <div>
+        <div className="h-[110px] w-[33%] rounded-tr-lg ">
           <Image
             src={item.images[1]}
             alt={item.title}
-            width={56}
-            height={56}
-            className="rounded-tr-lg object-cover"
+            className="rounded-tr-lg object-cover h-[50%]"
           />
           <Image
             src={item.images[2]}
             alt={item.title}
-            width={56}
-            height={56}
-            className="object-cover"
+            className="object-cover h-[50%]"
           />
         </div>
       </div>
-      <div className="px-2 py-2">
-        <TextScaled size="sm" className="font-medium text-black mb-1">
+      <div className="px-2 py-2 w-full">
+        <p className="w-full font-medium text-start text-black mb-1 justify-start text-sm">
           {item.title}
-        </TextScaled>
+        </p>
         <div className="flex flex-row items-center gap-2">
           <div className="flex flex-row items-center gap-1">
             <Image
@@ -61,10 +57,11 @@ const RecipeCard = ({ item }: RecipeCardProps) => {
               alt="save"
               width={16}
               height={16}
+              className="h-4 w-4 object-contain"
             />
-            <TextScaled size="xs" className="text-textNeutralV1">
+            <span className="text-textNeutralV1 text-start text-xs">
               {item.views}
-            </TextScaled>
+            </span>
           </div>
           <TextScaled size="xs" className="text-textNeutralV1">
             {item.time}

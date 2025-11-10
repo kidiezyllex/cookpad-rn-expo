@@ -19,8 +19,8 @@ interface MessageSection {
 
 const MessageRow = ({ item }: { item: MessageItem }) => {
   return (
-    <button className="flex min-h-10 w-full items-center justify-center gap-3 text-left">
-      <div className="mr-3 h-10 w-10">
+    <button className="flex min-h-10 w-full items-center justify-center gap-2 text-left">
+      <div className="h-10 w-10">
         <Image
           src={images.sampleAvatar}
           alt="avatar"
@@ -37,10 +37,8 @@ const MessageRow = ({ item }: { item: MessageItem }) => {
           </TextScaled>
         </div>
         {item.unreadCount ? (
-          <div className="min-w-5 h-5 rounded-full bg-[#E36137] px-2 text-center">
-            <TextScaled size="xs" className="font-semibold text-white">
-              {item.unreadCount > 99 ? '99+' : item.unreadCount}
-            </TextScaled>
+          <div className="min-w-5 h-5 flex justify-center items-center rounded-full bg-[#E36137] text-white text-semibold text-xs px-2 text-center">
+            {item.unreadCount > 99 ? '99+' : item.unreadCount}
           </div>
         ) : item.hasNotificationDot ? (
           <div className="h-3 w-3 rounded-full bg-[#E36137]" />
@@ -52,11 +50,11 @@ const MessageRow = ({ item }: { item: MessageItem }) => {
 
 const MessagesTab = () => {
   const renderMessageSection = (section: MessageSection) => (
-    <div key={section.id} className="mt-2 bg-white px-4 py-4">
+    <div key={section.id} className="mt-2 bg-white px-4 py-4 pr-6">
       <TextScaled size="base" className="font-bold text-black">
         {section.title}
       </TextScaled>
-      <div className="mt-3">
+      <div className="mt-2">
         {section.messages.map((messageItem, index) => (
           <div key={messageItem.id} className="flex flex-col items-center justify-center gap-2">
             <MessageRow item={messageItem} />
@@ -72,8 +70,8 @@ const MessagesTab = () => {
   return (
     <div className="flex min-h-dvh flex-col bg-white">
       <div className="bg-white px-4 py-2">
-        <div className="flex h-10 items-center gap-3 rounded-md bg-gray-100 px-3">
-          <Image src={icons.searchIcon} alt="search" className="h-5 w-5 opacity-60" />
+        <div className="flex h-10 items-center gap-4 rounded-md bg-gray-100 px-2">
+          <Image src={icons.searchIcon} alt="search" className="h-6 w-6 opacity-60" />
           <input
             placeholder="Tìm kiếm"
             className="h-full w-full bg-transparent text-sm text-gray-800 outline-none placeholder:text-gray-500"
