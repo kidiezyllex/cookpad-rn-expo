@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useRef, useEffect } from 'react';
 import { icons } from '@/constants';
 import { useSuccessStore } from '@/store/successStore';
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
@@ -7,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import BackHeader from '../Common/BackHeader';
 import CustomButton from '../Common/CustomButton';
-import Input from '../Common/Input';
 import TextScaled from '../Common/TextScaled';
 
 const ingredientsData = [
@@ -23,6 +23,111 @@ const cookingStepsData = [
 const CreateRecipeScreen = () => {
     const router = useRouter();
     const setSuccess = useSuccessStore((state) => state.setSuccess);
+    const [portion, setPortion] = useState(2);
+    const [recipeImage, setRecipeImage] = useState<string | null>(null);
+    const [recipeImageFile, setRecipeImageFile] = useState<File | null>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
+    const [stepImages, setStepImages] = useState<Record<string, string>>({});
+    const [stepImageFiles, setStepImageFiles] = useState<Record<string, File>>({});
+    const stepFileInputRefs = useRef<Record<string, HTMLInputElement | null>>({});
+
+    const handleDecreasePortion = () => {
+        if (portion > 1) {
+            setPortion(portion - 1);
+        }
+    };
+
+    const handleIncreasePortion = () => {
+        setPortion(portion + 1);
+    };
+
+    const handleImageSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            if (!file.type.startsWith('image/')) {
+                alert('Vui lòng chọn file ảnh hợp lệ');
+                return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Kích thước ảnh không được vượt quá 5MB');
+                return;
+            }
+            setRecipeImageFile(file);
+            const imageUrl = URL.createObjectURL(file);
+            setRecipeImage(imageUrl);
+        }
+    };
+
+    const handleImageClick = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleRemoveImage = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (recipeImage) {
+            URL.revokeObjectURL(recipeImage);
+        }
+        setRecipeImage(null);
+        setRecipeImageFile(null);
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
+    };
+
+    const handleStepImageSelect = (stepId: string, event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            if (!file.type.startsWith('image/')) {
+                alert('Vui lòng chọn file ảnh hợp lệ');
+                return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Kích thước ảnh không được vượt quá 5MB');
+                return;
+            }
+            if (stepImages[stepId]) {
+                URL.revokeObjectURL(stepImages[stepId]);
+            }
+            setStepImageFiles(prev => ({ ...prev, [stepId]: file }));
+            const imageUrl = URL.createObjectURL(file);
+            setStepImages(prev => ({ ...prev, [stepId]: imageUrl }));
+        }
+    };
+
+    const handleStepImageClick = (stepId: string) => {
+        stepFileInputRefs.current[stepId]?.click();
+    };
+
+    const handleRemoveStepImage = (stepId: string, e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (stepImages[stepId]) {
+            URL.revokeObjectURL(stepImages[stepId]);
+        }
+        setStepImages(prev => {
+            const newState = { ...prev };
+            delete newState[stepId];
+            return newState;
+        });
+        setStepImageFiles(prev => {
+            const newState = { ...prev };
+            delete newState[stepId];
+            return newState;
+        });
+        if (stepFileInputRefs.current[stepId]) {
+            stepFileInputRefs.current[stepId]!.value = '';
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            if (recipeImage) {
+                URL.revokeObjectURL(recipeImage);
+            }
+            Object.values(stepImages).forEach(url => {
+                URL.revokeObjectURL(url);
+            });
+        };
+    }, [recipeImage, stepImages]);
 
     const handlePublish = () => {
         setSuccess(
@@ -44,16 +149,11 @@ const CreateRecipeScreen = () => {
                 height={24}
                 className="brightness-[0.2]"
             />
-            <div
-                className="flex flex-1 items-center justify-center rounded-lg bg-[#F5F5F5] px-4 py-2 gap-2.5"
-            >
-                <TextScaled
-                    size="base"
-                    className="text-textNeutralV1"
-                >
-                    {item.amount}
-                </TextScaled>
-            </div>
+            <input
+                type="text"
+                defaultValue={item.amount}
+                className="flex-1 rounded-lg bg-[#F5F5F5] px-4 py-2 text-base text-textNeutralV1 outline-none"
+            />
             <Image
                 src={icons.threeDotsIcon}
                 alt="more"
@@ -64,42 +164,66 @@ const CreateRecipeScreen = () => {
         </div>
     );
 
-    const renderCookingStep = (item: typeof cookingStepsData[0]) => (
-        <div
-            className="flex w-full flex-col items-start gap-2"
-        >
+    const renderCookingStep = (item: typeof cookingStepsData[0]) => {
+        const stepImage = stepImages[item.id];
+        return (
             <div
-                className="flex w-full flex-col items-start gap-1"
+                className="flex w-full flex-col items-start gap-2"
             >
-                <TextScaled
-                    size="sm"
-                    className="font-medium text-black"
-                >
-                    {item.step}
-                </TextScaled>
                 <div
-                    className="flex w-full items-center rounded-lg border border-[#E5E5E5] bg-[#F5F5F5] h-10 p-2 gap-2"
+                    className="flex w-full flex-col items-start gap-1"
                 >
                     <TextScaled
-                        size="base"
-                        className="text-textNeutralV1"
+                        size="sm"
+                        className="font-medium text-black"
                     >
-                        {item.description}
+                        {item.step}
                     </TextScaled>
+                    <input
+                        type="text"
+                        defaultValue={item.description}
+                        className="w-full rounded-lg border border-[#E5E5E5] bg-[#F5F5F5] h-10 p-2 text-base text-textNeutralV1 outline-none"
+                    />
+                </div>
+                <div
+                    className="relative flex items-center justify-center rounded-lg bg-[#F5F5F5] w-20 h-20 overflow-hidden cursor-pointer border border-[#E5E5E5]"
+                    onClick={() => handleStepImageClick(item.id)}
+                >
+                    <input
+                        ref={(el) => {
+                            stepFileInputRefs.current[item.id] = el;
+                        }}
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => handleStepImageSelect(item.id, e)}
+                        className="hidden"
+                    />
+                    {stepImage ? (
+                        <>
+                            <img
+                                src={stepImage}
+                                alt={`Step ${item.id} preview`}
+                                className="w-full h-full object-cover"
+                            />
+                            <button
+                                onClick={(e) => handleRemoveStepImage(item.id, e)}
+                                className="absolute top-1 right-1 flex items-center justify-center w-6 h-6 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-opacity z-10"
+                            >
+                                <span className="text-white text-xs font-bold">×</span>
+                            </button>
+                        </>
+                    ) : (
+                        <Image
+                            src={icons.cameraIcon}
+                            alt="camera"
+                            width={24}
+                            height={24}
+                        />
+                    )}
                 </div>
             </div>
-            <div
-                className="relative flex items-center justify-center rounded-lg bg-[#F5F5F5] w-20 h-20"
-            >
-                <Image
-                    src={icons.cameraIcon}
-                    alt="camera"
-                    width={24}
-                    height={24}
-                />
-            </div>
-        </div>
-    );
+        );
+    };
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
@@ -107,145 +231,165 @@ const CreateRecipeScreen = () => {
                 headerTitle="Công thức món ăn"
                 onPress={() => router.back()}
             />
-
             <div
-                className="flex-1 overflow-y-auto bg-[#F1EEE8] pt-2 pb-[100px]"
+                className="flex-1 overflow-y-auto bg-backgroundV1 pt-4 px-16"
             >
                 {/* Main Form */}
-                <div
-                    className="flex w-full flex-col items-start justify-center p-4 gap-4"
-                >
-                    {/* Image Upload */}
-                    <div
-                        className="relative flex h-[200px] w-full items-center justify-center overflow-hidden rounded-lg bg-white"
-                    >
+                <div className="flex w-full flex-col items-start justify-center gap-4">
+                    <div className='grid grid-cols-2 gap-4 w-full items-stretch pb-4'>
                         <div
-                            className="absolute flex flex-row items-center justify-center top-1/2 left-1/2 -translate-x-[100px] -translate-y-[10px] gap-2"
-                        >
-                            <Image
-                                src={icons.cameraIcon}
-                                alt="camera"
-                                width={24}
-                                height={24}
-                            />
-                            <TextScaled
-                                size="sm"
-                                className="font-medium text-textNeutralV1"
-                            >
-                                Đăng hình đại diện món ăn
-                            </TextScaled>
-                        </div>
-                    </div>
-
-                    {/* Recipe Name */}
-                    <div
-                        className="flex w-full flex-col items-start justify-center gap-1"
-                    >
-                        <TextScaled
-                            size="base"
-                            className="font-bold text-black"
-                        >
-                            Tên món ăn
-                        </TextScaled>
-                        <Input
-                            placeholder="Tên món ngon nhất nhà mình"
-                            value=""
-                            onChangeText={(_text) => {
-                            }}
-                        />
-                    </div>
-
-                    {/* Recipe Description */}
-                    <div
-                        className="flex w-full flex-col items-start justify-center h-[160px] gap-1"
-                    >
-                        <TextScaled
-                            size="base"
-                            className="font-bold text-black"
-                        >
-                            Giới thiệu món ăn
-                        </TextScaled>
-                        <div
-                            className="flex flex-1 flex-row items-start justify-center rounded-lg bg-white w-full p-2 pb-7 gap-2"
-                        >
-                            <TextScaled
-                                size="base"
-                                className="font-light text-textNeutralV1"
-                            >
-                                Hãy chia sẻ với mọi người về món này của bạn nhé. Ai hay điều gì đã truyền cảm hứng cho bạn nấu nó? Tại sao nó đặc biệt? Bạn thích thưởng thức nó theo cách nào?
-                            </TextScaled>
-                        </div>
-                    </div>
-
-                    {/* Portion and Time */}
-                    <div
-                        className="flex w-full flex-row items-start justify-center gap-3.5"
-                    >
-                        {/* Portion */}
-                        <div
-                            className="flex flex-1 flex-col items-start justify-center gap-1"
+                            className="flex w-full flex-col items-start justify-start gap-1 h-full"
                         >
                             <TextScaled
                                 size="base"
                                 className="font-bold text-black"
                             >
-                                Khẩu phần
+                                Ảnh món ăn
                             </TextScaled>
+                            {/* Image Upload */}
                             <div
-                                className="flex w-full flex-row items-center justify-between rounded-lg border border-[#E5E5E5] bg-white h-10 px-2 gap-2"
+                                className="relative flex flex-1 h-full w-full items-center justify-center overflow-hidden rounded-lg bg-white border border-[#E5E5E5] cursor-pointer"
+                                onClick={handleImageClick}
                             >
-                                <button
-                                    onClick={() => router.back()}
-                                    className="flex items-center justify-center rounded bg-[#F5F5F5] w-6 h-6"
-                                >
-                                    <IoChevronBack size={16} color="#000000" />
-                                </button>
-                                <TextScaled
-                                    size="base"
-                                    className="text-center text-textNeutralV1"
-                                >
-                                    2
-                                </TextScaled>
-                                <button
-                                    className="flex items-center justify-center rounded bg-[#F5F5F5] w-6 h-6"
-                                >
-                                    <IoChevronForward size={16} color="#000000" />
-                                </button>
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleImageSelect}
+                                    className="hidden"
+                                />
+                                {recipeImage ? (
+                                    <>
+                                        <img
+                                            src={recipeImage}
+                                            alt="Recipe preview"
+                                            className="w-full h-full object-cover"
+                                        />
+                                        <button
+                                            onClick={handleRemoveImage}
+                                            className="absolute top-2 right-2 flex items-center justify-center w-8 h-8 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-opacity z-10"
+                                        >
+                                            <span className="text-white text-xl font-bold">×</span>
+                                        </button>
+                                    </>
+                                ) : (
+                                    <div
+                                        className="absolute flex flex-row items-center justify-center top-1/2 left-1/2 -translate-x-[100px] -translate-y-[10px] gap-2"
+                                    >
+                                        <Image
+                                            src={icons.cameraIcon}
+                                            alt="camera"
+                                            width={24}
+                                            height={24}
+                                        />
+                                        <TextScaled
+                                            size="sm"
+                                            className="font-medium text-textNeutralV1 cursor-pointer"
+                                        >
+                                            Đăng hình đại diện món ăn
+                                        </TextScaled>
+                                    </div>
+                                )}
                             </div>
                         </div>
-
-                        {/* Divider */}
-                        <div
-                            className="relative w-px h-4"
-                        />
-
-                        {/* Time */}
-                        <div
-                            className="flex flex-1 flex-col items-start justify-center gap-1"
-                        >
-                            <TextScaled
-                                size="base"
-                                className="font-bold text-black"
-                            >
-                                Thời gian
-                            </TextScaled>
+                        <div className='flex flex-col gap-4 h-full'>
+                            {/* Recipe Name */}
                             <div
-                                className="flex w-full flex-row items-center justify-start rounded-lg border border-[#E5E5E5] bg-white h-10 p-2 gap-2"
+                                className="flex w-full flex-col items-start justify-center gap-1"
                             >
                                 <TextScaled
                                     size="base"
-                                    className="text-textNeutralV1"
+                                    className="font-bold text-black"
                                 >
-                                    Giờ/Phút
+                                    Tên món ăn
                                 </TextScaled>
+                                <input
+                                    type="text"
+                                    placeholder="Tên món ngon nhất nhà mình"
+                                    className="w-full focus:ring-2 focus:ring-customPrimary flex-1 rounded-lg border-none text-base text-[#979797] bg-white h-10 min-h-10 outline-none font-light p-2"
+                                />
+                            </div>
+                            {/* Recipe Description */}
+                            <div
+                                className="flex w-full flex-col items-start justify-center gap-1"
+                            >
+                                <TextScaled
+                                    size="base"
+                                    className="font-bold text-black"
+                                >
+                                    Giới thiệu món ăn
+                                </TextScaled>
+                                <textarea
+                                    rows={4}
+                                    placeholder="Hãy chia sẻ với mọi người về món này của bạn nhé. Ai hay điều gì đã truyền cảm hứng cho bạn nấu nó? Tại sao nó đặc biệt? Bạn thích thưởng thức nó theo cách nào?"
+                                    className="w-full focus:ring-2 focus:ring-customPrimary flex-1 rounded-lg border-none text-base text-[#979797] bg-white outline-none font-light p-2 resize-none"
+                                />
+                            </div>
+                            {/* Portion and Time */}
+                            <div
+                                className="flex w-full flex-row items-start justify-center gap-3.5"
+                            >
+                                {/* Portion */}
+                                <div
+                                    className="flex flex-1 flex-col items-start justify-center gap-1"
+                                >
+                                    <TextScaled
+                                        size="base"
+                                        className="font-bold text-black"
+                                    >
+                                        Khẩu phần
+                                    </TextScaled>
+                                    <div
+                                        className="flex w-full flex-row items-center justify-between rounded-lg border border-[#E5E5E5] bg-white h-10 min-h-10 px-2 gap-2"
+                                    >
+                                        <button
+                                            onClick={handleDecreasePortion}
+                                            className="flex items-center justify-center rounded bg-[#F5F5F5] w-6 h-6"
+                                        >
+                                            <IoChevronBack size={16} color="#000000" />
+                                        </button>
+                                        <TextScaled
+                                            size="base"
+                                            className="text-center text-textNeutralV1"
+                                        >
+                                            {portion}
+                                        </TextScaled>
+                                        <button
+                                            onClick={handleIncreasePortion}
+                                            className="flex items-center justify-center rounded bg-[#F5F5F5] w-6 h-6"
+                                        >
+                                            <IoChevronForward size={16} color="#000000" />
+                                        </button>
+                                    </div>
+                                </div>
+                                {/* Divider */}
+                                <div
+                                    className="relative w-px h-4"
+                                />
+                                {/* Time */}
+                                <div
+                                    className="flex flex-1 flex-col items-start justify-center gap-1"
+                                >
+                                    <TextScaled
+                                        size="base"
+                                        className="font-bold text-black"
+                                    >
+                                        Thời gian
+                                    </TextScaled>
+                                    <input
+                                    type="text"
+                                    placeholder="Giờ/Phút"
+                                    className="w-full focus:ring-2 focus:ring-customPrimary flex-1 rounded-lg border-none text-base text-[#979797] bg-white h-10 min-h-10 outline-none font-light p-2"
+                                />
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-
                 {/* Ingredients Section */}
                 <div
-                    className="flex w-full flex-col p-2 gap-2"
+                    className="flex w-full flex-col gap-2"
                 >
                     {/* Phần Nguyên liệu */}
                     <div
@@ -257,7 +401,6 @@ const CreateRecipeScreen = () => {
                         >
                             Nguyên liệu
                         </TextScaled>
-
                         <div
                             className="flex w-full flex-col items-start justify-center gap-2"
                         >
@@ -270,18 +413,12 @@ const CreateRecipeScreen = () => {
                                 >
                                     Thành phần 1
                                 </TextScaled>
-                                <div
-                                    className="flex w-full flex-row items-center justify-start rounded-lg border border-[#E5E5E5] bg-[#F5F5F5] h-10 p-2 gap-2"
-                                >
-                                    <TextScaled
-                                        size="base"
-                                        className="text-textNeutralV1"
-                                    >
-                                        Thành phần 1
-                                    </TextScaled>
-                                </div>
+                                <input
+                                    type="text"
+                                    defaultValue="Thành phần 1"
+                                    className="w-full rounded-lg border border-[#E5E5E5] bg-[#F5F5F5] h-10 p-2 text-base text-textNeutralV1 outline-none"
+                                />
                             </div>
-
                             <div className="flex w-full flex-col gap-2">
                                 {ingredientsData.map((item) => (
                                     <div key={item.id}>
@@ -290,7 +427,6 @@ const CreateRecipeScreen = () => {
                                 ))}
                             </div>
                         </div>
-
                         {/* Action Buttons */}
                         <div
                             className="flex w-full flex-row items-start justify-center gap-4"
@@ -331,7 +467,6 @@ const CreateRecipeScreen = () => {
                             </button>
                         </div>
                     </div>
-
                     {/* Phần cách làm */}
                     <div
                         className="flex w-full flex-col items-start justify-center rounded-lg bg-white p-4 gap-4"
@@ -367,7 +502,7 @@ const CreateRecipeScreen = () => {
 
                         {/* Cooking Steps */}
                         <div
-                            className="flex w-full flex-col items-start justify-center gap-2"
+                            className="grid grid-cols-3 w-full items-start justify-center gap-2"
                         >
                             {cookingStepsData.map((item) => (
                                 <div key={item.id}>
@@ -400,14 +535,8 @@ const CreateRecipeScreen = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* Bottom Action Bar */}
-            <div
-                className="fixed bottom-0 left-0 right-0 z-50 flex flex-col items-start shadow-lg"
-            >
                 <div
-                    className="flex w-full flex-row items-start justify-center rounded-t-lg bg-white px-4 py-2 gap-2"
+                    className="w-full grid grid-cols-2 bg-white p-4 rounded-lg gap-4 mt-4"
                 >
                     <CustomButton
                         title="Lưu nháp"
@@ -421,15 +550,6 @@ const CreateRecipeScreen = () => {
                         textVariant="primary"
                         onPress={handlePublish}
                         className="w-[48%]"
-                    />
-                </div>
-
-                {/* Home Indicator */}
-                <div
-                    className="relative w-full bg-white h-8"
-                >
-                    <div
-                        className="absolute rounded-full bg-black w-[128px] h-[5px] left-[121px] top-[21px]"
                     />
                 </div>
             </div>

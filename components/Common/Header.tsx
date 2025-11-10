@@ -27,7 +27,7 @@ export default function Header() {
       id: 'plus',
       icon: icons.plusIcon,
       activeIcon: icons.activePlusIcon,
-      route: '/(root)/tabs/plus',
+      route: '/create',
       label: 'Thêm',
     },
     {
@@ -50,7 +50,7 @@ export default function Header() {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
     if (normalizedPath === '/' || normalizedPath === '/(root)/tabs/home' || normalizedPath === '/(root)/tabs') return 'home';
     if (normalizedPath === '/search') return 'search';
-    if (normalizedPath === '/(root)/tabs/plus') return 'plus';
+    if (normalizedPath === '/create') return 'plus';
     if (normalizedPath === '/(root)/tabs/bell') return 'bell';
     if (normalizedPath === '/(root)/tabs/profile') return 'profile';
     if (normalizedPath.includes('/home')) return 'home';
@@ -80,11 +80,11 @@ export default function Header() {
           <Image
             src={images.logo}
             alt="CookPad Logo"
-            className="object-contain h-10 w-10"
+            className="object-contain h-10 w-10 cursor-pointer"
             quality={100}
             draggable={false}
           />
-          <p className="text-2xl font-bold text-gray-600">Cook<span className='text-customPrimary'>Pad</span></p>
+          <p className="text-2xl cursor-pointer font-bold text-gray-600">Cook<span className='text-customPrimary'>Pad</span></p>
         </div>
 
         {/* Navigation menu bên phải */}

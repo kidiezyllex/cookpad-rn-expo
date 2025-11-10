@@ -74,7 +74,7 @@ const CustomButton = ({
       onMouseDown={() => setIsPressed(true)}
       onMouseUp={() => setIsPressed(false)}
       onMouseLeave={() => setIsPressed(false)}
-      className={`w-full rounded-lg shadow-md shadow-neutral-400/70 ${getBgVariantStyle(bgVariant)} ${className} h-10 min-h-10 px-6 py-2 ${isPressed ? 'opacity-90' : 'opacity-100'}`}
+      className={`w-full rounded-lg shadow-neutral-400/70 ${getBgVariantStyle(bgVariant)} ${className} h-10 min-h-10 px-6 py-2 ${isPressed ? 'opacity-90' : 'opacity-100'}`}
       {...props}
     >
       <span className="flex w-full flex-row items-center justify-center gap-2">

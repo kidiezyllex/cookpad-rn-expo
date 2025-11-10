@@ -19,7 +19,7 @@ const navigationTabs = [
     id: "plus",
     icon: icons.plusIcon,
     activeIcon: icons.activePlusIcon,
-    route: "/(root)/tabs/plus",
+    route: "/create",
   },
   {
     id: "bell",
@@ -42,7 +42,7 @@ export default function TabBarWrapper() {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
     if (normalizedPath === "/(root)/tabs/home" || normalizedPath === "/(root)/tabs" || normalizedPath === "/") return "home";
     if (normalizedPath === "/search") return "search";
-    if (normalizedPath === "/(root)/tabs/plus") return "plus";
+    if (normalizedPath === "/create") return "plus";
     if (normalizedPath === "/(root)/tabs/bell") return "bell";
     if (normalizedPath === "/(root)/tabs/profile") return "profile";
     if (normalizedPath.includes('/home')) return "home";
