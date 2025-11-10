@@ -68,9 +68,8 @@ const ProfileScreen = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 pb-2 ${
-                  activeTab === tab ? 'border-b-2 border-black' : 'border-b-2 border-transparent'
-                }`}
+                className={`px-4 pb-2 ${activeTab === tab ? 'border-b-2 border-black' : 'border-b-2 border-transparent'
+                  }`}
               >
                 <TextScaled
                   size="base"
@@ -85,39 +84,39 @@ const ProfileScreen = () => {
 
           {/* Search and Filter */}
           <div
-                    className="flex w-full flex-row items-center gap-1 mb-4"
-                >
-                    <div
-                        className="flex flex-1 flex-row items-center rounded-lg bg-white h-9 px-2 gap-4"
-                    >
-                        <Image
-                            src={icons.searchIcon}
-                            alt="search"
-                            width={24}
-                            height={24}
-                        />
-                        <input
-                            placeholder="Tìm kiếm"
-                            className="flex-1 bg-transparent outline-none text-sm font-medium text-textNeutralV1"
-                        />
-                    </div>
-                    <button className="flex items-center justify-center">
-                        <Image
-                            src={icons.downUpIcon}
-                            alt="sort"
-                            width={32}
-                            height={32}
-                        />
-                    </button>
-                    <button className="flex items-center justify-center">
-                        <Image
-                            src={icons.smallPlusIcon}
-                            alt="add"
-                            width={32}
-                            height={32}
-                        />
-                    </button>
-                </div>
+            className="flex w-full flex-row items-center gap-1 mb-4"
+          >
+            <div
+              className="flex flex-1 flex-row items-center rounded-lg bg-white h-9 px-2 gap-4"
+            >
+              <Image
+                src={icons.searchIcon}
+                alt="search"
+                width={24}
+                height={24}
+              />
+              <input
+                placeholder="Tìm kiếm"
+                className="flex-1 bg-transparent outline-none text-sm font-medium text-textNeutralV1"
+              />
+            </div>
+            <button className="flex items-center justify-center">
+              <Image
+                src={icons.downUpIcon}
+                alt="sort"
+                width={32}
+                height={32}
+              />
+            </button>
+            <button className="flex items-center justify-center">
+              <Image
+                src={icons.smallPlusIcon}
+                alt="add"
+                width={32}
+                height={32}
+              />
+            </button>
+          </div>
         </div>
 
         {/* Tab Content */}
@@ -136,7 +135,7 @@ const ProfileScreen = () => {
         )}
 
         {activeTab === 'Yêu thích' && (
-            <FoodGrid />
+          <FoodGrid />
         )}
 
         {activeTab === 'Công thức' && (
