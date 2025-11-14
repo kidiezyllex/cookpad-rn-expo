@@ -1,4 +1,4 @@
-import RecipeScreen from '@/components/Screen/RecipeScreen';
+import RecipeScreen from '@/components/Screen/Desktop/RecipeScreen';
 import Header from "@/components/Common/Header";
 
 export default function FoodMaterialsPage() {

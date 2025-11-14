@@ -1,8 +1,8 @@
 'use client';
 
-import EditProfileScreen from "@/components/Screen/EditProfileScreen";
-import PremiumScreen from "@/components/Screen/PremiumScreen";
-import SecurityScreen from "@/components/Screen/SecurityScreen";
+import EditProfileScreen from "@/components/Screen/Desktop/EditProfileScreen";
+import PremiumScreen from "@/components/Screen/Desktop/PremiumScreen";
+import SecurityScreen from "@/components/Screen/Desktop/SecurityScreen";
 import { cn } from "@/lib/utils";
 import type { Icon } from "iconsax-reactjs";
 import {
@@ -288,7 +288,7 @@ const SettingScreen = () => {
           </div>
         </aside>
         <main className="flex-1">
-        {activeContent}
+          {activeContent}
         </main>
       </div>
     </div>

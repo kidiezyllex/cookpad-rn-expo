@@ -1,3 +1,3 @@
-import ForgotPasswordScreen from '@/components/Screen/ForgotPasswordScreen';
+import ForgotPasswordScreen from '@/components/Screen/Desktop/ForgotPasswordScreen';
 
 export default ForgotPasswordScreen;

@@ -1,16 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import HeroSection from '../HomeScreen/HeroSection';
-import InspirationTab from '../HomeScreen/InspirationTab';
-import KitchenTab from '../HomeScreen/KitchenTab';
-import { suggestedFriendsData } from '../HomeScreen/mockData';
+import InspirationTab from '../../HomeScreen/Desktop/InspirationTab';
+import KitchenTab from '../../HomeScreen/Desktop/KitchenTab';
+import { suggestedFriendsData } from '../../HomeScreen/mockData';
 import { images, onboarding } from '@/constants';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import HeroSection from '../../HomeScreen/Desktop/HeroSection';
 
 const HomeScreen = () => {
     const [activeTab, setActiveTab] = useState<'ban-bep' | 'cam-hung'>('ban-bep');

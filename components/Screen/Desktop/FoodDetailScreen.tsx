@@ -4,7 +4,7 @@ import CustomButton from '@/components/Common/CustomButton';
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import RecipeCarousel from '../Common/RecipeCarousel';
+import RecipeCarousel from '../../Common/RecipeCarousel';
 
 const mockFoodDetail = {
     id: 1,
@@ -210,17 +210,17 @@ const FoodDetailScreen = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 px-16">
-                        <div className="flex flex-row justify-between items-center">
-                            <p className="font-bold text-black text-base">
-                                Món ăn kèm nổi bật
-                            </p>
-                            <button className="text-customPrimary text-sm cursor-pointer">
-                                Xem thêm
-                            </button>
-                        </div>
-
-                        <RecipeCarousel />
+                    <div className="flex flex-row justify-between items-center">
+                        <p className="font-bold text-black text-base">
+                            Món ăn kèm nổi bật
+                        </p>
+                        <button className="text-customPrimary text-sm cursor-pointer">
+                            Xem thêm
+                        </button>
                     </div>
+
+                    <RecipeCarousel />
+                </div>
                 <div className='w-full flex justify-center'>
                     <CustomButton
                         title="Xem công thức"

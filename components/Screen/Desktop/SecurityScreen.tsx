@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import BackHeader from "../Common/BackHeader";
+import BackHeader from "../../Common/BackHeader";
 
 const securityOptions = [
   {

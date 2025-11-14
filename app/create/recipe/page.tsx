@@ -1,5 +1,5 @@
 import Header from "@/components/Common/Header"
-import CreateRecipeScreen from '@/components/Screen/CreateRecipeScreen';
+import CreateRecipeScreen from '@/components/Screen/Desktop/CreateRecipeScreen';
 
 export default function SearchPage() {
     return (

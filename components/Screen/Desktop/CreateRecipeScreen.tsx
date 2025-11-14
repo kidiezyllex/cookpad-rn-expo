@@ -6,8 +6,8 @@ import { useSuccessStore } from '@/store/successStore';
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import BackHeader from '../Common/BackHeader';
-import CustomButton from '../Common/CustomButton';
+import BackHeader from '../../Common/BackHeader';
+import CustomButton from '../../Common/CustomButton';
 
 const ingredientsData = [
     { id: '1', name: 'Thành phần 1', amount: '250g bột' },
@@ -264,12 +264,12 @@ const CreateRecipeScreen = () => {
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
-             <div className="w-full pl-16">
-        <BackHeader
-          headerTitle="Công thức món ăn"
-          onPress={() => router.back()}
-        />
-      </div>
+            <div className="w-full pl-16">
+                <BackHeader
+                    headerTitle="Công thức món ăn"
+                    onPress={() => router.back()}
+                />
+            </div>
             <div
                 className="flex-1 overflow-y-auto bg-backgroundV1 pt-4 px-16"
             >
@@ -409,10 +409,10 @@ const CreateRecipeScreen = () => {
                                         Thời gian
                                     </p>
                                     <input
-                                    type="text"
-                                    placeholder="Giờ/Phút"
-                                    className="w-full focus:ring-2 focus:ring-customPrimary flex-1 rounded-lg border-none text-base text-[#979797] bg-white h-10 min-h-10 outline-none font-light p-2"
-                                />
+                                        type="text"
+                                        placeholder="Giờ/Phút"
+                                        className="w-full focus:ring-2 focus:ring-customPrimary flex-1 rounded-lg border-none text-base text-[#979797] bg-white h-10 min-h-10 outline-none font-light p-2"
+                                    />
                                 </div>
                             </div>
                         </div>

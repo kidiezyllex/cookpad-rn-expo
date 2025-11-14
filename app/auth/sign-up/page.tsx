@@ -1,3 +1,3 @@
-import SignUpScreen from '@/components/Screen/SignUpScreen';
+import SignUpScreen from '@/components/Screen/Desktop/SignUpScreen';
 
 export default SignUpScreen;

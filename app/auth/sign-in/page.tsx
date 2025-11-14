@@ -1,3 +1,3 @@
-import LogInScreen from '@/components/Screen/LogInScreen';
+import LogInScreen from '@/components/Screen/Desktop/LogInScreen';
 
 export default LogInScreen;

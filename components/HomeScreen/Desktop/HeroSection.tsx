@@ -42,7 +42,7 @@ const HeroSection = ({ activeTab, onTabChange }: HeroSectionProps) => {
 
                 <div className='absolute flex flex-col justify-center items-center right-[19px] top-[50px] w-[186px] h-[98px]'
                 >
-                        <Image src={images.messageBubble} alt="message-bubble" fill className="object-contain z-0 absolute inset-0" />
+                    <Image src={images.messageBubble} alt="message-bubble" fill className="object-contain z-0 absolute inset-0" />
                     <p
                         className="font-medium text-customSecondary max-w-[141px] z-10 relative text-sm"
                     >

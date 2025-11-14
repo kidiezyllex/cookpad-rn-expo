@@ -1,9 +1,11 @@
 "use client";
 
 import { featuredRecipesData } from '@/constants';
-import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import RecipeCard from '../HomeScreen/InspirationTab/RecipeCard';
+import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import RecipeCard from '../HomeScreen/Desktop/InspirationTab/RecipeCard';
 import { StaticImageData } from 'next/image';
 
 interface RecipeItem {
@@ -18,17 +20,57 @@ interface RecipeCarouselProps {
     data?: RecipeItem[];
 }
 
-const RecipeCarousel = ({ data = featuredRecipesData }: RecipeCarouselProps) => {
+const RecipeCarousel = ({ data }: RecipeCarouselProps) => {
+    const recipes = Array.isArray(data) && data.length > 0 ? data : featuredRecipesData;
+
+    if (!recipes.length) {
+        return null;
+    }
+
     return (
-        <div
-            className="mb-4 pb-1"
-        >
+        <div className="mb-4 pb-1">
             <Swiper
-                slidesPerView="auto"
-                spaceBetween={8}
+                slidesPerView={1.2}
+                spaceBetween={16}
+                grabCursor={true}
+                freeMode={true}
+                loop={true}
+                observer={true}
+                observeParents={true}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                breakpoints={{
+                    480: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 16,
+                    },
+                    640: {
+                        slidesPerView: 1.8,
+                        spaceBetween: 18,
+                    },
+                    768: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3.2,
+                        spaceBetween: 24,
+                    },
+                    1440: {
+                        slidesPerView: 4.2,
+                        spaceBetween: 28,
+                    },
+                }}
+                modules={[FreeMode, Pagination, Autoplay]}
+                className="mySwiper !px-1"
             >
-                {data.map((item) => (
-                    <SwiperSlide key={item.id} style={{ width: 'auto' }} className="w-auto">
+                {recipes.map((item) => (
+                    <SwiperSlide key={item.id} className="!w-auto !h-auto">
                         <RecipeCard
                             id={item.id}
                             name={item.name}

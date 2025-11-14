@@ -1,5 +1,5 @@
 import Header from "@/components/Common/Header";
-import FoodDetailScreen from "@/components/Screen/FoodDetailScreen";
+import FoodDetailScreen from "@/components/Screen/Desktop/FoodDetailScreen";
 
 export default function FoodDetailPage() {
     return (

@@ -1,5 +1,5 @@
 import Header from "@/components/Common/Header"
-import SearchResultsScreen from '@/components/Screen/SearchResultsScreen';
+import SearchResultsScreen from '@/components/Screen/Desktop/SearchResultsScreen';
 import { Suspense } from 'react';
 
 export default function SearchResultsPage() {

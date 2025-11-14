@@ -5,7 +5,7 @@ import { icons, images } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import BackHeader from "../Common/BackHeader";
+import BackHeader from "../../Common/BackHeader";
 
 type PremiumScreenProps = {
   showHeader?: boolean;

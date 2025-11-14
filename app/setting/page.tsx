@@ -1,5 +1,5 @@
 import Header from "@/components/Common/Header";
-import SettingScreen from "@/components/Screen/SettingScreen";
+import SettingScreen from "@/components/Screen/Desktop/SettingScreen";
 
 export default function SettingPage() {
     return (

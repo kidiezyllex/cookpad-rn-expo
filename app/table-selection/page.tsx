@@ -1,4 +1,4 @@
-import TableSelection from '@/components/Screen/TableSelection';
+import TableSelection from '@/components/Screen/Desktop/TableSelection';
 import Header from "@/components/Common/Header";
 import { Suspense } from 'react';
 

@@ -7,8 +7,8 @@ import { icons, images } from "@/constants";
 import { useRouter } from "next/navigation";
 import React from "react";
 import Image from "next/image";
-import FoodGrid from "../Common/FoodGrid";
-import { mockRecipeList, mockRecipes } from "../ProfileScreen/mockData";
+import FoodGrid from "../../Common/FoodGrid";
+import { mockRecipeList, mockRecipes } from "../../ProfileScreen/mockData";
 
 const ProfileScreen = () => {
   const router = useRouter();

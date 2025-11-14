@@ -6,7 +6,7 @@ import { useId } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { postsData } from '../mockData';
+import { postsData } from '../../mockData';
 
 const PostsSwiper = () => {
     const uniqueId = useId().replace(/:/g, '-');
@@ -36,14 +36,14 @@ const PostsSwiper = () => {
                 ))}
             </Swiper>
             {/* Navigation buttons */}
-            <button 
+            <button
                 type="button"
                 className={`swiper-button-prev-posts-${uniqueId} absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-customPrimary rounded-full shadow-lg flex items-center justify-center hover:bg-[#E36137]/90 transition-all duration-300 hover:shadow-xl`}
                 aria-label="Previous slide"
             >
                 <ArrowLeft2 size={20} color="#fff" variant="Outline" />
             </button>
-            <button 
+            <button
                 type="button"
                 className={`swiper-button-next-posts-${uniqueId} absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-customPrimary rounded-full shadow-lg flex items-center justify-center hover:bg-[#E36137]/90 transition-all duration-300 hover:shadow-xl`}
                 aria-label="Next slide"

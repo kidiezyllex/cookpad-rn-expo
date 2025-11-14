@@ -1,8 +1,8 @@
 'use client';
 
-import HeroSection from '../SearchScreen/HeroSection';
-import SearchHistorySection from '../SearchScreen/SearchHistorySection';
-import SuggestedTopicsSection from '../SearchScreen/SuggestedTopicsSection';
+import HeroSection from '../../SearchScreen/HeroSection';
+import SearchHistorySection from '../../SearchScreen/SearchHistorySection';
+import SuggestedTopicsSection from '../../SearchScreen/SuggestedTopicsSection';
 
 const SearchScreen = () => {
     return (

@@ -1,3 +1,3 @@
-import OTPInputScreen from '@/components/Screen/OTPInputScreen';
+import OTPInputScreen from '@/components/Screen/Desktop/OTPInputScreen';
 
 export default OTPInputScreen;

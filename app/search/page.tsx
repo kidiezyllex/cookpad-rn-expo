@@ -1,5 +1,5 @@
 import Header from "@/components/Common/Header"
-import SearchScreen from "@/components/Screen/SearchScreen"
+import SearchScreen from "@/components/Screen/Desktop/SearchScreen"
 
 export default function SearchPage() {
     return (

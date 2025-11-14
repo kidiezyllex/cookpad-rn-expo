@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { useForgotPasswordStore } from '@/store/forgotPasswordStore';
-import BackHeader from '../Common/BackHeader';
+import BackHeader from '../../Common/BackHeader';
 import { StaticImageData } from 'next/image';
 
 const ForgotPasswordScreen = () => {

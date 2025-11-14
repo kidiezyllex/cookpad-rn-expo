@@ -1,6 +1,6 @@
 
 import Header from "@/components/Common/Header"
-import PersonalChestScreen from "@/components/Screen/PersonalChestScreen";
+import PersonalChestScreen from "@/components/Screen/Desktop/PersonalChestScreen";
 
 export default function CreateRecipePage() {
     return (
