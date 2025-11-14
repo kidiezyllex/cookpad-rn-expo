@@ -4,7 +4,7 @@ import { icons } from '@/constants';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import SearchSuggestionItem from './SearchSuggestionItem';
-import { searchSuggestionsData } from './mockData';
+import { searchSuggestionsData } from '../mockData';
 
 interface SearchDropdownProps {
     searchText: string;

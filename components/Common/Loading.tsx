@@ -4,12 +4,9 @@ import Image from 'next/image';
 export default function Loading() {
     return (
         <div
-            className="w-full min-h-screen flex items-center justify-center"
+            className="w-full min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
             style={{
-                backgroundImage: `url(${images.personalChestBg.src})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
+                backgroundImage: `url(${images.personalChestBg.src})`
             }}
         >
             <div className="flex flex-col items-center space-y-4">

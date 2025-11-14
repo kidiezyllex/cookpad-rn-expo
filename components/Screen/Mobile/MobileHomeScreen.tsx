@@ -3,30 +3,24 @@ import { postsData, suggestedFriendsData } from '@/components/HomeScreen/mockDat
 import KitchenTab from '@/components/HomeScreen/Mobile/KitchenTab';
 import HeroSection from '@/components/HomeScreen/Mobile/HeroSection';
 import InspirationTab from '@/components/HomeScreen/Mobile/InspirationTab';
+import BottomNavigator from '@/components/Common/BottomNavigator';
 
 const MobileHomeScreen = () => {
     const [activeTab, setActiveTab] = useState<'ban-bep' | 'cam-hung'>('ban-bep');
-
     return (
-        <div
-            className='bg-backgroundV1 w-full max-w-screen overflow-hidden'
-        >
-            {/* Hero and Tab Navigator*/}
+        <div className='bg-backgroundV1 w-full max-w-screen overflow-hidden pb-14'>
             <HeroSection
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />
-
-            {/* Bàn bếp tab content */}
             {activeTab === 'ban-bep' && (
                 <KitchenTab
                     postsData={postsData}
                     suggestedFriendsData={suggestedFriendsData}
                 />
             )}
-
-            {/* Cảm hứng tab content */}
             {activeTab === 'cam-hung' && <InspirationTab />}
+            <BottomNavigator />
         </div>
     );
 };

@@ -31,7 +31,7 @@ const PopularTopicsSection = () => {
                         />
                         {/* Layer background */}
                         <div className="absolute top-0 left-0 w-full h-full bg-black/40 rounded-lg" />
-                        <span className="font-bold text-center text-white text-base relative z-10">
+                        <span className="font-bold text-center text-white text-base relative z-20">
                             {item.name}
                         </span>
                     </div>

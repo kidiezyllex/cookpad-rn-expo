@@ -64,8 +64,8 @@ const RecipeCarousel = ({ data }: RecipeCarouselProps) => {
                 modules={[FreeMode, Pagination, Autoplay]}
                 className="mySwiper !px-1"
             >
-                {recipes.map((item) => (
-                    <SwiperSlide key={item.id} className="!w-auto !h-auto">
+                {recipes.map((item, index) => (
+                    <SwiperSlide key={`${item.id}-${index}`} className="!w-auto !h-auto">
                         <RecipeCard
                             id={item.id}
                             name={item.name}

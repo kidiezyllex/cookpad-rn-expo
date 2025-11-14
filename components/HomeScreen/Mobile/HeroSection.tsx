@@ -40,7 +40,7 @@ const HeroSection = ({ activeTab, onTabChange }: HeroSectionProps) => {
             </div>
 
             {/* Tab Navigator section */}
-            <div className="flex flex-row items-center absolute top-0 left-0 right-0">
+            <div className="flex flex-row items-center fixed top-0 left-0 right-0 z-50 bg-[#E36137]">
                 <button
                     className={`border-b-2 min-h-[38px] h-[38px] ${activeTab === 'ban-bep' ? 'border-b-white' : 'border-b-transparent'
                         } w-[50%] flex justify-center items-center`}

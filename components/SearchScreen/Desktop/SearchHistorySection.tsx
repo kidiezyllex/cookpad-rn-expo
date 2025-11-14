@@ -1,10 +1,10 @@
 import { icons } from '@/constants';
 import Image from 'next/image';
-import RecipeCarousel from '../Common/RecipeCarousel';
+import RecipeCarousel from '../../Common/RecipeCarousel';
 
 const SearchHistorySection = () => {
     return (
-        <div 
+        <div
             className='flex flex-col'
         >
             <p
@@ -12,7 +12,7 @@ const SearchHistorySection = () => {
             >
                 Lịch sử tìm kiếm
             </p>
-            <div 
+            <div
                 className='flex w-full flex-row items-center justify-between mb-2'
             >
                 <p

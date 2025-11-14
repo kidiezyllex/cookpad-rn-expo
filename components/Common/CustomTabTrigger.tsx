@@ -26,10 +26,11 @@ export default function CustomTabTrigger({
         <Image
           src={isActive ? activeIcon : icon}
           alt="tab"
-          style={{
-            width: iconSize,
-            height: iconSize,
-          }}
+          width={100}
+          height={100}
+          quality={100}
+          draggable={false}
+          className="object-contain h-6 w-auto"
         />
       </span>
     </button>

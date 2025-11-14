@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
+import LoadingProvider from '@/components/Common/LoadingProvider';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'CookPad Web',
-	description: 'Migrated to Next.js + TailwindCSS',
+	title: 'Your App Name',
+	description: 'Your app description',
 };
 
 export default function RootLayout({
@@ -12,10 +16,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="vi">
-			<body className="min-h-dvh bg-white text-gray-900 antialiased">{children}</body>
+		<html lang="en">
+			<body className={inter.className}>
+				<LoadingProvider>
+					{children}
+				</LoadingProvider>
+			</body>
 		</html>
 	);
 }
-
-
