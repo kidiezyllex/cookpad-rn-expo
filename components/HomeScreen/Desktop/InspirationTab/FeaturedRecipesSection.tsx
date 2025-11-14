@@ -1,4 +1,4 @@
-import FoodGrid from '@/components/Common/FoodGrid';
+import FoodGrid from '@/components/Common/Desktop/FoodGrid';
 
 const FeaturedRecipesSection = () => {
     return (

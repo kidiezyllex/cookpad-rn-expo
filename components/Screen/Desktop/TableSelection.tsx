@@ -4,7 +4,7 @@ import { icons } from '@/constants';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import BackHeader from '../../Common/BackHeader';
-import FoodGrid from '../../Common/FoodGrid';
+import FoodGrid from '../../Common/Desktop/FoodGrid';
 
 const TableSelection = () => {
     const router = useRouter();

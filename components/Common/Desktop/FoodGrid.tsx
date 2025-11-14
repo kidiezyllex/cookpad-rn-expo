@@ -2,7 +2,6 @@ import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { StaticImageData } from 'next/image';
-
 interface FoodItem {
     id: string;
     name: string;
@@ -49,16 +48,12 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
     ];
 
     const data = featuredRecipesData || searchedDishesData;
-    
-    // Mảng các chiều cao khác nhau cho images (đơn vị: rem)
     const imageHeights = [12, 16, 14, 18, 15, 13, 17, 12, 16, 14, 15, 13];
-    
-    // Chia items thành 6 cột
     const columns: (typeof data)[] = [[], [], [], [], [], []];
     data.forEach((item, index) => {
         columns[index % 6].push(item);
     });
-    
+
     const renderItem = (item: FoodItem, index: number) => {
         const height = imageHeights[index % imageHeights.length];
         return (
@@ -66,7 +61,7 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                 onClick={() => router.push('/food-detail')}
                 className="group w-full bg-white rounded-lg gap-1 flex flex-col items-start justify-start shadow-md transition-all duration-300 ease-in-out hover:shadow-xl cursor-pointer"
             >
-                <div 
+                <div
                     className="relative w-full overflow-hidden rounded-t-lg"
                     style={{ height: `${height}rem` }}
                 >
@@ -85,43 +80,42 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                     >
                         {item.name}
                     </p>
-                    <Image 
-                        src={icons.threeDotsIcon} 
-                        alt="more" 
-                        className="w-5 h-5 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80" 
+                    <Image
+                        src={icons.threeDotsIcon}
+                        alt="more"
+                        className="w-5 h-5 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
                     />
                 </div>
             </button>
         );
     };
-    
+
     return (
-            <div
-                className="w-full flex"
-                style={{ gap: '16px' }}
-            >
-                {columns.map((column, colIndex) => (
-                    <div
-                        key={colIndex}
-                        className="flex-1 flex flex-col"
-                        style={{ width: '0' }}
-                    >
-                        {column.map((item, itemIndex) => {
-                            // Tính index thực tế của item trong data gốc
-                            const originalIndex = colIndex + itemIndex * 6;
-                            const isLastItem = itemIndex === column.length - 1;
-                            return (
-                                <div
-                                    key={item.id}
-                                    style={{ marginBottom: isLastItem ? '0' : '16px' }}
-                                >
-                                    {renderItem(item, originalIndex)}
-                                </div>
-                            );
-                        })}
-                    </div>
-                ))}
-            </div>
+        <div
+            className="w-full flex"
+            style={{ gap: '16px' }}
+        >
+            {columns.map((column, colIndex) => (
+                <div
+                    key={colIndex}
+                    className="flex-1 flex flex-col"
+                    style={{ width: '0' }}
+                >
+                    {column.map((item, itemIndex) => {
+                        const originalIndex = colIndex + itemIndex * 6;
+                        const isLastItem = itemIndex === column.length - 1;
+                        return (
+                            <div
+                                key={item.id}
+                                style={{ marginBottom: isLastItem ? '0' : '16px' }}
+                            >
+                                {renderItem(item, originalIndex)}
+                            </div>
+                        );
+                    })}
+                </div>
+            ))}
+        </div>
     );
 };
 

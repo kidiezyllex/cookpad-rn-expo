@@ -1,4 +1,4 @@
-import FoodGrid from '@/components/Common/FoodGrid';
+import MobileFoodGrid from '@/components/Common/Mobile/FoodGrid';
 
 const FeaturedRecipesSection = () => {
     return (
@@ -6,7 +6,7 @@ const FeaturedRecipesSection = () => {
             <span className="mb-2 font-bold text-black text-base">
                 Những món ăn nổi bật
             </span>
-            <FoodGrid />
+            <MobileFoodGrid />
         </div>
     );
 };

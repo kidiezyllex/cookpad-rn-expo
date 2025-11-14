@@ -21,11 +21,13 @@ interface RecipeCarouselProps {
 }
 
 const RecipeCarousel = ({ data }: RecipeCarouselProps) => {
-    const recipes = Array.isArray(data) && data.length > 0 ? data : featuredRecipesData;
+    const baseRecipes = Array.isArray(data) && data.length > 0 ? data : featuredRecipesData;
 
-    if (!recipes.length) {
+    if (!baseRecipes.length) {
         return null;
     }
+
+    const recipes = [...baseRecipes, ...baseRecipes, ...baseRecipes];
 
     return (
         <div className="mb-4 pb-1">
@@ -37,33 +39,26 @@ const RecipeCarousel = ({ data }: RecipeCarouselProps) => {
                 loop={true}
                 observer={true}
                 observeParents={true}
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
                 breakpoints={{
                     480: {
                         slidesPerView: 1.5,
-                        spaceBetween: 16,
+                        spaceBetween: 8,
                     },
                     640: {
                         slidesPerView: 1.8,
-                        spaceBetween: 18,
+                        spaceBetween: 16,
                     },
                     768: {
                         slidesPerView: 2.2,
-                        spaceBetween: 20,
+                        spaceBetween: 16,
                     },
                     1024: {
                         slidesPerView: 3.2,
-                        spaceBetween: 24,
+                        spaceBetween: 16,
                     },
                     1440: {
                         slidesPerView: 4.2,
-                        spaceBetween: 28,
+                        spaceBetween: 16,
                     },
                 }}
                 modules={[FreeMode, Pagination, Autoplay]}

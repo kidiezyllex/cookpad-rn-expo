@@ -5,7 +5,7 @@ import { icons } from '@/constants';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
-import FoodGrid from '../../Common/FoodGrid';
+import FoodGrid from '../../Common/Desktop/FoodGrid';
 
 const dietaryFilterData = [
     { id: '1', name: 'Ăn chay', isSelected: false },
