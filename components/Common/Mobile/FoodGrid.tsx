@@ -37,7 +37,7 @@ const MobileFoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
 
     return (
         <div
-            className="masonry-grid pb-28"
+            className="masonry-grid pb-10"
             style={{
                 columnCount: 2,
                 columnGap: '8px',

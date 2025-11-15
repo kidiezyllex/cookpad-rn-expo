@@ -22,7 +22,7 @@ const MobileForgotPasswordScreen = () => {
         }
 
         setIsForgotPassword(true);
-        router.push('/(auth)/otp');
+        router.push('/auth/otp');
     }, [form.phone, setIsForgotPassword, router]);
 
     const onBackPress = useCallback(() => {

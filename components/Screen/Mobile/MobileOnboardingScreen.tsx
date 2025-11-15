@@ -68,7 +68,7 @@ const OnboardingScreen = () => {
                     title={isLastSlide ? "Đăng nhập" : "Tiếp tục"}
                     onPress={() =>
                         isLastSlide
-                            ? router.push("/(auth)/sign-in")
+                            ? router.push("/auth/sign-in")
                             : swiperRef.current?.slideNext()
                     }
                     className='w-full' />
@@ -78,8 +78,8 @@ const OnboardingScreen = () => {
                     title={isLastSlide ? "Đăng ký" : "Bỏ qua"}
                     onPress={() =>
                         isLastSlide
-                            ? router.push("/(auth)/sign-up")
-                            : router.push("/(auth)/sign-in")
+                            ? router.push("/auth/sign-up")
+                            : router.push("/auth/sign-in")
                     }
                     className='w-full' />
             </div>

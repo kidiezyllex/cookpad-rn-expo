@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
 import BackHeader from "@/components/Common/BackHeader";
+import { Switch } from "@/components/ui/switch";
 
 const securityOptions = [
   {
@@ -10,7 +11,7 @@ const securityOptions = [
     title: "Đổi mật khẩu",
     icon: icons.lockIcon,
     hasToggle: false,
-    route: '/(auth)/change-password',
+    route: '/auth/change-password',
   },
   {
     id: 2,
@@ -43,21 +44,17 @@ const SecurityOption = ({ option }: { option: typeof securityOptions[0] }) => {
         {option.title}
       </span>
       {option.hasToggle ? (
-        <label className="relative inline-block w-11 h-6">
-          <input
-            type="checkbox"
-            checked={isEnabled}
-            onChange={(e) => setIsEnabled(e.target.checked)}
-            className="opacity-0 w-0 h-0"
-          />
-          <span className={`absolute cursor-pointer top-0 left-0 right-0 bottom-0 rounded-full transition-colors ${isEnabled ? 'bg-[#E36137]' : 'bg-[#E5E5E5]'
-            }`}>
-            <span className={`absolute h-5 w-5 rounded-full bg-white transition-transform ${isEnabled ? 'translate-x-5' : 'translate-x-0.5'
-              } top-0.5`} />
-          </span>
-        </label>
+        <Switch />
       ) : (
-        <span className="text-[#2D2D2D] text-xl">›</span>
+        <Image
+          src={icons.caretLeftIcon}
+          alt="back"
+          width={100}
+          height={100}
+          quality={100}
+          draggable={false}
+          className="h-6 w-auto object-contain scale-x-[-1]"
+        />
       )}
     </button>
   );
@@ -68,10 +65,11 @@ const MobileSecurityScreen = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-backgroundV1">
-      <BackHeader
-        headerTitle="Bảo mật"
-        onPress={() => router.back()}
-      />
+      <div className="px-4">
+        <BackHeader
+          headerTitle="Bảo mật"
+          onPress={() => router.back()}
+        /></div>
 
       <div className="flex-1 overflow-y-auto pb-30 px-4 pt-8">
         <div className="w-full">

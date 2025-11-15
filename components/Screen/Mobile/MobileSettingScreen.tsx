@@ -86,7 +86,7 @@ const SettingsSection = ({ section, onItemPress, router }: { section: typeof set
               className="object-contain h-6 w-auto"
             />
           }
-          onPress={() => router.replace('/(auth)/sign-in')}
+          onPress={() => router.replace('/auth/sign-in')}
         />
       </div>
     )}
@@ -102,10 +102,10 @@ const MobileSettingScreen = () => {
         router.push("/profile/edit");
         break;
       case "Premium":
-        router.push("/premium");
+        router.push("/profile/premium");
         break;
       case "Bảo mật":
-        router.push("/security");
+        router.push("/profile/security");
         break;
       default:
         break;

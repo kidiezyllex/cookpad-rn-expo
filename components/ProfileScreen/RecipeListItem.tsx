@@ -18,7 +18,7 @@ interface RecipeListItemProps {
 
 const RecipeListItem = ({ item }: RecipeListItemProps) => (
   <div
-    className="flex flex-row rounded-lg bg-white mb-2 cursor-pointer"
+    className="flex flex-row rounded-lg bg-white cursor-pointer shadow-md"
   >
     <Image
       src={item.image}

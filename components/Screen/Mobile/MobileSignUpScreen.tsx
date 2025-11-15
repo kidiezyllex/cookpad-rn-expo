@@ -31,7 +31,7 @@ const MobileSignUpScreen = () => {
     }
 
     // Navigate to OTP screen
-    router.push('/(auth)/otp');
+    router.push('/auth/otp');
   }, [form.email, form.phone, form.password, form.confirmPassword, router]);
 
   const onBackPress = useCallback(() => {
@@ -150,7 +150,7 @@ const MobileSignUpScreen = () => {
             <span className="justify-start text-black text-sm">
               Đã có tài khoản?
             </span>
-            <Link href="/(auth)/sign-in">
+            <Link href="/auth/sign-in">
               <span className="justify-start font-semibold text-black text-sm">
                 Đăng nhập
               </span>

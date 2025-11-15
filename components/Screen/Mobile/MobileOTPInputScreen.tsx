@@ -41,13 +41,13 @@ const MobileOTPInputScreen = () => {
       return;
     }
     if (isForgotPassword) {
-      router.replace('/(auth)/change-password');
+      router.replace('/auth/change-password');
       return;
     }
     // Đăng ký bình thường
     setIsLoading(true);
-    setSuccess('Đăng ký thành công!', 'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.', '/(auth)/sign-in');
-    router.replace('/(auth)/register-success');
+    setSuccess('Đăng ký thành công!', 'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.', '/auth/sign-in');
+    router.replace('/auth/register-success');
   }, [otp, isForgotPassword, setSuccess, router]);
 
   const onBackPress = useCallback(() => {

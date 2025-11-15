@@ -108,7 +108,7 @@ const MobileLogInScreen = () => {
             <span className="justify-start text-black text-sm">
               Bạn chưa có tài khoản?
             </span>
-            <Link href="/(auth)/sign-up">
+            <Link href="/auth/sign-up">
               <span className="justify-start font-semibold text-black text-sm">
                 Đăng ký
               </span>

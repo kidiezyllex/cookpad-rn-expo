@@ -9,13 +9,15 @@ const MobilePremiumScreen = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#2D2D2D]">
-      <BackHeader
-        headerTitle="Premium"
-        onPress={() => router.back()}
-        isDark={true}
-      />
+      <div className="px-4">
+        <BackHeader
+          headerTitle="Premium"
+          onPress={() => router.back()}
+          isDark={true}
+        />
+      </div>
 
-      <div className="flex-1 overflow-y-auto pb-30 px-4 flex flex-col items-start gap-20 mt-8">
+      <div className="flex-1 overflow-y-auto pb-30 px-4 flex flex-col items-start gap-20 mt-10">
         {/* Title Section */}
         <div className="flex flex-col justify-start items-start w-full">
           <span className="font-bold text-white text-xl">
@@ -82,10 +84,12 @@ const MobilePremiumScreen = () => {
           </div>
 
           {/* Premium Button */}
-          <CustomButton
-            title="Chuyển đổi thành Premium"
-            className="max-w-[265px]"
-          />
+          <div className="w-full flex justify-center mt-8">
+            <CustomButton
+              title="Chuyển đổi thành Premium"
+              className="max-w-[265px]"
+            />
+          </div>
         </div>
       </div>
     </div>
