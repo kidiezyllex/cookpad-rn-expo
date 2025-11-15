@@ -44,7 +44,6 @@ const MobileOTPInputScreen = () => {
       router.replace('/auth/change-password');
       return;
     }
-    // Đăng ký bình thường
     setIsLoading(true);
     setSuccess('Đăng ký thành công!', 'Bạn đã đăng ký thành công, vui lòng đăng nhập với tài khoản mới của bạn.', '/auth/sign-in');
     router.replace('/auth/register-success');
@@ -56,71 +55,71 @@ const MobileOTPInputScreen = () => {
 
   return (
     <div className='flex flex-col min-h-screen bg-backgroundV1'>
-      <div className='flex flex-col min-h-screen bg-backgroundV1'>
+      <div className='px-4'>
         <BackHeader
           headerTitle="Nhập OTP"
           onPress={onBackPress}
         />
+      </div>
 
-        {/* Main Content */}
-        <div className="px-4 py-8 gap-8 flex flex-col justify-center items-center">
-          {/* Logo */}
-          <Image
-            src={images.logo}
-            alt="Logo"
-            width={100}
-            height={100}
-            quality={100}
-            draggable={false}
-            className="object-contain h-20 w-auto"
-          />
+      {/* Main Content */}
+      <div className="px-4 pt-6 gap-8 flex flex-col justify-center items-center">
+        {/* Logo */}
+        <Image
+          src={images.logo}
+          alt="Logo"
+          width={100}
+          height={100}
+          quality={100}
+          draggable={false}
+          className="object-contain h-20 w-auto"
+        />
 
-          {/* OTP Input Section */}
-          <div className="w-full">
-            {/* Instruction Text */}
-            <div className="w-full gap-2 flex flex-col justify-center items-center">
-              <span className="text-center text-textNeutralV1 text-base">
-                Nhập mã OTP vừa được gửi tới số điện thoại 0123456789
-              </span>
-            </div>
-
-            {/* OTP Input */}
-            <div className="mt-8 flex justify-center items-center gap-2">
-              {otp.map((digit, index) => (
-                <input
-                  key={index}
-                  id={`otp-${index}`}
-                  type="text"
-                  inputMode="numeric"
-                  maxLength={1}
-                  value={digit}
-                  onChange={(e) => handleOtpChange(index, e.target.value)}
-                  onKeyDown={(e) => handleKeyDown(index, e)}
-                  className="w-16 h-16 text-center text-4xl font-bold border-b-2 border-gray-800 focus:border-customPrimary focus:outline-none"
-                />
-              ))}
-            </div>
-
-            {/* Resend OTP Link */}
-            <div className="gap-1 mt-8 flex flex-row justify-center">
-              <span className="text-black text-sm">
-                Bạn không nhận được mã?
-              </span>
-              <button
-                onClick={() => alert("Mã OTP mới đã được gửi")}
-                className="font-semibold text-black text-sm"
-              >
-                Gửi lại mã xác thực
-              </button>
-            </div>
+        {/* OTP Input Section */}
+        <div className="w-full">
+          {/* Instruction Text */}
+          <div className="w-full gap-2 flex flex-col justify-center items-center">
+            <span className="text-center text-textNeutralV1 text-base">
+              Nhập mã OTP vừa được gửi tới số điện thoại 0123456789
+            </span>
           </div>
 
-          {/* Verify Button */}
-          <CustomButton
-            title="Xác nhận"
-            onPress={handlePress}
-          />
+          {/* OTP Input */}
+          <div className="mt-8 flex justify-center items-center gap-4">
+            {otp.map((digit, index) => (
+              <input
+                key={index}
+                id={`otp-${index}`}
+                type="number"
+                inputMode="numeric"
+                maxLength={1}
+                value={digit}
+                onChange={(e) => handleOtpChange(index, e.target.value)}
+                onKeyDown={(e) => handleKeyDown(index, e)}
+                className="w-16 h-16 text-center text-4xl font-bold border-b-2 border-gray-800 focus:border-customPrimary focus:outline-none bg-transparent"
+              />
+            ))}
+          </div>
+
+          {/* Resend OTP Link */}
+          <div className="gap-1 mt-8 flex flex-row justify-center">
+            <span className="text-black text-sm">
+              Bạn không nhận được mã?
+            </span>
+            <button
+              onClick={() => alert("Mã OTP mới đã được gửi")}
+              className="font-semibold text-black text-sm"
+            >
+              Gửi lại mã xác thực
+            </button>
+          </div>
         </div>
+
+        {/* Verify Button */}
+        <CustomButton
+          title="Xác nhận"
+          onPress={handlePress}
+        />
       </div>
     </div>
   );

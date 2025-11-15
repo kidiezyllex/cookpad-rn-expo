@@ -5,6 +5,7 @@ import { useSuccessStore } from '@/store/successStore';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
+import { Eye, EyeSlash } from 'iconsax-reactjs';
 
 const MobileChangePasswordScreen = () => {
   const [form, setForm] = useState({
@@ -35,13 +36,15 @@ const MobileChangePasswordScreen = () => {
 
   return (
     <div className='flex flex-col min-h-screen bg-backgroundV1'>
-      <BackHeader
-        headerTitle="Đổi mật khẩu"
-        onPress={onBackPress}
-      />
+      <div className='px-4'>
+        <BackHeader
+          headerTitle="Đổi mật khẩu"
+          onPress={onBackPress}
+        />
+      </div>
 
       {/* Main Content */}
-      <div className="px-4 py-8 gap-8 flex flex-col justify-start items-center">
+      <div className="px-4 pt-6 gap-8 flex flex-col justify-start items-center">
         {/* Logo */}
         <Image
           src={images.logo}
@@ -57,26 +60,32 @@ const MobileChangePasswordScreen = () => {
         <div className="gap-4 flex flex-col justify-start items-end w-full">
           {/* Password Input */}
           <div className="gap-1 flex flex-col justify-start items-start w-full">
-            <div className="flex gap-1 justify-start items-center">
-              <span className="justify-start font-bold text-base">
-                Mật khẩu mới
-              </span>
-            </div>
+            <span className="justify-start font-bold text-base">
+              Mật khẩu mới
+            </span>
             <div className="relative w-full">
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Mật khẩu"
+                placeholder="Mật khẩu mới"
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
-                className="w-full p-2 pr-10 h-10 bg-white rounded-lg text-base placeholder-gray-400"
+                className="w-full p-2 pr-10 h-10 bg-white rounded-lg text-base placeholder-gray-400 border-2 border-transparent focus:outline-none focus:border-customPrimary"
               />
               <button
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-2 top-2 w-6 h-6 flex justify-center items-center"
               >
-                <span className="text-gray-400">
-                  {showPassword ? '🙈' : '👁️'}
-                </span>
+                {showPassword ? (
+                  <Eye
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                ) : (
+                  <EyeSlash
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                )}
               </button>
             </div>
           </div>
@@ -94,15 +103,23 @@ const MobileChangePasswordScreen = () => {
                 placeholder="Nhập lại mật khẩu"
                 value={form.confirmPassword}
                 onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
-                className="w-full p-2 pr-10 h-10 bg-white rounded-lg text-base placeholder-gray-400"
+                className="w-full p-2 pr-10 h-10 bg-white rounded-lg text-base placeholder-gray-400 border-2 border-transparent focus:outline-none focus:border-customPrimary"
               />
               <button
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 className="absolute right-2 top-2 w-6 h-6 flex justify-center items-center"
               >
-                <span className={`${showConfirmPassword ? 'text-gray-600' : 'text-gray-400'}`}>
-                  {showConfirmPassword ? '🙈' : '👁️'}
-                </span>
+                {showConfirmPassword ? (
+                  <Eye
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                ) : (
+                  <EyeSlash
+                    size="20"
+                    color="#5B5B5C"
+                  />
+                )}
               </button>
             </div>
           </div>

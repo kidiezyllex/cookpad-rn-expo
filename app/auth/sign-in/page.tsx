@@ -5,7 +5,7 @@ import LogInScreen from "@/components/Screen/Desktop/LogInScreen";
 import MobileLogInScreen from "@/components/Screen/Mobile/MobileLogInScreen";
 import useMobile from "@/hooks/useMobile";
 
-export default function SettingPage() {
+export default function SignInPage() {
     const { isLoading, isMobile } = useMobile();
     if (isLoading) {
         return <Loading />;

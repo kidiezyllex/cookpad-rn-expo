@@ -6,9 +6,6 @@ import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperInstance } from 'swiper/types';
 import 'swiper/css';
-
-const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1200;
-
 const slides = [
   {
     title: "Kĩ thuật nấu nướng của bạn hiện tại?",
@@ -70,15 +67,14 @@ const FavoriteTopicScreen = () => {
 
   return (
     <div
-      className="flex min-h-dvh bg-backgroundV1 px-4"
+      className="flex min-h-dvh bg-backgroundV1 px-4 overflow-hidden flex-col"
     >
       <div className="flex-1">
         {/* Progress bar */}
-        <div
-          className={`rounded-full bg-[#FFEFE9] h-1 mt-6 mb-12 w-[${screenWidth - 32}px]`}
-        >
+        <div className={`rounded-full bg-[#FFEFE9] h-1 mt-6 mb-12 w-full`}>
           <div
-            className={`rounded-full bg-customPrimary h-1 w-[${progressWidths[activeIndex]}%]`}
+            className="rounded-full bg-customPrimary h-1 transition-all duration-300"
+            style={{ width: `${progressWidths[activeIndex]}%` }}
           />
         </div>
 
@@ -88,35 +84,31 @@ const FavoriteTopicScreen = () => {
           onSlideChange={(s: SwiperInstance) => setActiveIndex(s.activeIndex)}
         >
           {slides.map((item, index) => (
-            <SwiperSlide key={index}>
-                <div className={`w-[${screenWidth - 34}px]`}>
-                  <p
-                  className="font-bold text-start text-black min-h-[60px] mb-8 text-[22px]"
-                >
-                  {item.title}
-                </p>
+            <SwiperSlide key={index} className="!w-full">
+              <p
+                className="font-bold text-start text-black min-h-[60px] mb-8 text-[22px]"
+              >
+                {item.title}
+              </p>
 
-                <div
-                  className="flex flex-col gap-2 w-full"
-                >
-                  {item.options.map((option: string) => (
-                    <button
-                      key={option}
-                      className={`w-full px-8 py-3 rounded-lg shadow-[0px_3px_12px_rgba(0,0,0,0.10)] text-left ${
-                        selections[index] === option ? 'bg-[#E36137]' : 'bg-white'
+              <div
+                className="flex flex-col gap-2 w-full"
+              >
+                {item.options.map((option: string) => (
+                  <button
+                    key={option}
+                    className={`w-full px-8 py-3 rounded-lg shadow-[0px_3px_12px_rgba(0,0,0,0.10)] text-left ${selections[index] === option ? 'bg-[#E36137]' : 'bg-white'
                       }`}
-                      onClick={() => handleSelectOption(index, option)}
-                    >
-                      <p
-                        className={`font-bold text-start ${
-                          selections[index] === option ? 'text-white' : 'text-customPrimary'
+                    onClick={() => handleSelectOption(index, option)}
+                  >
+                    <p
+                      className={`font-bold text-start ${selections[index] === option ? 'text-white' : 'text-customPrimary'
                         } text-base`}
-                      >
-                        {option}
-                      </p>
-                    </button>
-                  ))}
-                </div>
+                    >
+                      {option}
+                    </p>
+                  </button>
+                ))}
               </div>
             </SwiperSlide>
           ))}
