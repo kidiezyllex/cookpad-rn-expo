@@ -1,6 +1,7 @@
 import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface PostItemProps {
     item: {
@@ -26,7 +27,8 @@ interface PostItemProps {
 
 const PostItem = ({ item }: PostItemProps) => {
     return (
-        <div
+        <Link
+            href="/food-detail?id=${item.id}"
             className="flex flex-col items-start justify-start w-full h-full rounded-lg gap-1 min-w-[290px]"
         >
             <div
@@ -43,14 +45,10 @@ const PostItem = ({ item }: PostItemProps) => {
                     <div
                         className="flex flex-col items-start justify-start"
                     >
-                        <p
-                            className="font-medium text-black text-nowrap text-sm"
-                        >
+                        <p className="font-medium text-black text-nowrap text-sm">
                             {item.user.name}
                         </p>
-                        <p
-                            className="text-textNeutralV1 text-xs"
-                        >
+                        <p className="text-textNeutralV1 text-xs">
                             {item.user.timeAgo}
                         </p>
                     </div>
@@ -62,8 +60,7 @@ const PostItem = ({ item }: PostItemProps) => {
                 />
             </div>
 
-            <div
-                className="w-full pb-4 border-t gap-1 rounded-lg flex flex-col items-center justify-start bg-white shadow-md flex-1 border-[1px] border-gray-300"
+            <div className="w-full pb-4 border-t gap-1 rounded-lg flex flex-col items-center justify-start bg-white shadow-md flex-1 border-[1px] border-gray-300"
             >
                 {/* Phần Food Image  */}
                 <div className="relative w-full h-[200px]">
@@ -171,7 +168,7 @@ const PostItem = ({ item }: PostItemProps) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

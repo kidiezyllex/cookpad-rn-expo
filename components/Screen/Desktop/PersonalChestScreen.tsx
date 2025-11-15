@@ -54,16 +54,16 @@ const PersonalChestScreen = () => {
         : (images.personalChestBg as StaticImageData)?.src || images.personalChestBg;
     return (
         <div
-            className="flex items-center justify-center w-full"
+            className="flex items-center justify-center w-full h-[calc(100vh)] overflow-hidden"
             style={{
                 backgroundImage: `url(${backgroundImageUrl})`,
                 backgroundRepeat: 'repeat',
-                backgroundSize: 'auto 200vh',
+                backgroundSize: 'auto 150vh',
                 backgroundPosition: '0 0',
             }}
         >
             <div
-                className="w-full h-fit pt-12 relative overflow-hidden flex flex-col items-center justify-center"
+                className="w-full mt-12 h-fit relative overflow-hidden flex flex-col items-center justify-center"
             >
                 <div className='flex flex-col justify-center items-center gap-9 max-w-2xl'>
                     <div className="w-[200px] h-[200px]">
@@ -93,6 +93,11 @@ const PersonalChestScreen = () => {
                                 <Link
                                     href={item.id === '1' ? '/create/recipe' : ''}
                                     key={item.id}
+                                    onClick={() => {
+                                        if (item.id === '1') {
+                                            router.push('/create/recipe');
+                                        }
+                                    }}
                                 >
                                     {renderActionCard({ item })}
                                 </Link>

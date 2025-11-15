@@ -15,7 +15,7 @@ export default function CreateRecipePage() {
     return (
         isMobile ? (<MobilePersonalChestScreen />) : (<>
             <Header />
-            <main className="w-full py-16 min-h-screen bg-backgroundV1">
+            <main className="w-full overflow-hidden">
                 <PersonalChestScreen />
             </main>
         </>

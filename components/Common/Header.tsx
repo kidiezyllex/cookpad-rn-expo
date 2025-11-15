@@ -79,13 +79,14 @@ export default function Header() {
         {/* Search Field */}
         <Link href="/search" className="relative flex flex-col items-start justify-start">
           <div
-            className="flex border w-96 border-gray-300 flex-row items-center justify-start rounded-lg bg-gray-50 h-10 px-2 gap-4 relative z-10"
+            className="flex border w-96 border-customPrimary flex-row items-center justify-start rounded-lg bg-orange-50 h-10 px-2 gap-4 relative z-10"
           >
             <Image
               src={icons.searchIcon}
               alt="search"
               width={24}
               height={24}
+              style={{ filter: 'invert(41%) sepia(63%) saturate(1216%) hue-rotate(345deg) brightness(96%) contrast(92%)' }}
             />
             <div
               className="flex flex-row items-center justify-start rounded bg-[rgba(239,68,68,0.2)] px-1 py-0.5 gap-0.5"
@@ -102,10 +103,11 @@ export default function Header() {
                 Hot
               </span>
             </div>
-            <input
-              placeholder="Tìm kiếm..."
-              className="text-sm font-medium text-black border-none outline-none flex-1 bg-transparent"
-            />
+            <span
+              className="text-sm font-medium text-gray-600 border-none outline-none flex-1 bg-transparent"
+            >
+              Tìm kiếm...
+            </span>
           </div>
         </Link>
         {/* Navigation menu bên phải */}
