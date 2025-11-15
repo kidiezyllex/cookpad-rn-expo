@@ -1,6 +1,7 @@
 import { icons } from '@/constants';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navigationTabs = [
   {
@@ -37,7 +38,6 @@ const navigationTabs = [
 
 export default function TabBarWrapper() {
   const pathname = usePathname();
-  const router = useRouter();
   const getActiveTab = () => {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
     if (normalizedPath === "/") return "home";
@@ -55,11 +55,6 @@ export default function TabBarWrapper() {
   };
 
   const activeTab = getActiveTab();
-
-  const handleTabPress = (route: string) => {
-    router.push(route);
-  };
-
   return (
     <div
       className="border-t border-gray-200 bg-white fixed bottom-0 left-0 right-0"
@@ -70,9 +65,9 @@ export default function TabBarWrapper() {
         {navigationTabs.map((tab) => {
           const isTabActive = activeTab === tab.id;
           return (
-            <button
+            <Link
+              href={tab.route}
               key={tab.id}
-              onClick={() => handleTabPress(tab.route)}
               className="flex flex-1 items-center justify-center"
               aria-label={tab.id}
             >
@@ -81,7 +76,7 @@ export default function TabBarWrapper() {
                 alt={tab.id}
                 className="w-6 h-6"
               />
-            </button>
+            </Link>
           );
         })}
       </div>

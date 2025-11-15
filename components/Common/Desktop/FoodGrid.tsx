@@ -2,6 +2,7 @@ import { icons, images } from '@/constants';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { StaticImageData } from 'next/image';
+import Link from 'next/link';
 interface FoodItem {
     id: string;
     name: string;
@@ -57,8 +58,8 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
     const renderItem = (item: FoodItem, index: number) => {
         const height = imageHeights[index % imageHeights.length];
         return (
-            <button
-                onClick={() => router.push('/food-detail')}
+            <Link
+                href={`/food-detail?id=${item.id}`}
                 className="group w-full bg-white rounded-lg gap-1 flex flex-col items-start justify-start shadow-md transition-all duration-300 ease-in-out hover:shadow-xl cursor-pointer"
             >
                 <div
@@ -86,7 +87,7 @@ const FoodGrid = ({ featuredRecipesData }: FoodGridProps) => {
                         className="w-5 h-5 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80"
                     />
                 </div>
-            </button>
+            </Link>
         );
     };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { icons, images, videos } from '@/constants';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const mockSteps = [
   {
@@ -64,13 +65,12 @@ const CookingStepMasterTab: React.FC<CookingStepMasterTabProps> = () => {
           </p>
         </div>
         <div className="relative w-full h-80 bg-black/40 rounded-lg flex items-center justify-center">
-          <button
-            type="button"
+          <Link
+            href="/view-video"
             className="absolute z-10 top-1/2 left-1/2 -mt-7 -ml-7 w-14 h-14 rounded-full bg-[#F1EEE8] flex items-center justify-center shadow"
-            onClick={() => router.push('/view-video')}
           >
             <Image src={icons.playIcon} alt="play" width={40} height={40} className="w-10 h-10" />
-          </button>
+          </Link>
           <video
             className="absolute inset-0 w-full h-full rounded-lg object-cover"
             src={videos.videoTutorial as unknown as string}

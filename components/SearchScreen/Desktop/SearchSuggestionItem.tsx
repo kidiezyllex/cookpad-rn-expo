@@ -1,7 +1,6 @@
 import { icons } from '@/constants';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-
+import Link from 'next/link';
 interface SearchSuggestionItemProps {
     item: {
         id: string;
@@ -11,15 +10,9 @@ interface SearchSuggestionItemProps {
 }
 
 const SearchSuggestionItem = ({ item }: SearchSuggestionItemProps) => {
-    const router = useRouter();
-
-    const handlePress = () => {
-        router.push(`/search/result?query=${encodeURIComponent(item.name)}`);
-    };
-
     return (
-        <button
-            onClick={handlePress}
+        <Link
+            href={`/search/result?query=${encodeURIComponent(item.name)}`}
             className="flex flex-row items-center justify-start bg-transparent w-full gap-2 px-0"
         >
             <Image
@@ -45,7 +38,7 @@ const SearchSuggestionItem = ({ item }: SearchSuggestionItemProps) => {
                     />
                 </span>
             )}
-        </button>
+        </Link>
     );
 };
 

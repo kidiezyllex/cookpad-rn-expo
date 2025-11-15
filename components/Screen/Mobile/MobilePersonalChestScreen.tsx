@@ -2,6 +2,7 @@ import { images } from '@/constants';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import BottomNavigator from '@/components/Common/BottomNavigator';
+import Link from 'next/link';
 
 const actionCardsData = [
     {
@@ -75,17 +76,13 @@ const MobilePersonalChestScreen = () => {
                 {/* Action Cards */}
                 <div className="flex justify-center items-center gap-4">
                     {actionCardsData.map((item) => (
-                        <button
+                        <Link
                             key={item.id}
-                            onClick={() => {
-                                if (item.id === '1') {
-                                    router.push('/create/recipe');
-                                }
-                            }}
+                            href={item.id === '1' ? '/create/recipe' : ''}
                             className="bg-transparent border-none p-0 cursor-pointer"
                         >
                             {renderActionCard({ item })}
-                        </button>
+                        </Link>
                     ))}
                 </div>
             </div>

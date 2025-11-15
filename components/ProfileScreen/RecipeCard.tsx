@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import Image from 'next/image';
 
 import { StaticImageData } from 'next/image';
+import Link from "next/link";
 
 // Type definition for recipe item
 export interface RecipeItem {
@@ -20,8 +21,8 @@ interface RecipeCardProps {
 const RecipeCard = ({ item }: RecipeCardProps) => {
   const router = useRouter();
   return (
-    <button
-      onClick={() => router.push('/table-selection')}
+    <Link
+      href="/table-selection"
       className="rounded-lg bg-white shadow-sm"
     >
       <div className="flex flex-row">
@@ -67,7 +68,7 @@ const RecipeCard = ({ item }: RecipeCardProps) => {
           </span>
         </div>
       </div>
-    </button>
+    </Link>
   );
 };
 

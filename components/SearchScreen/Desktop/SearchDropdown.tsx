@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import SearchSuggestionItem from './SearchSuggestionItem';
 import { searchSuggestionsData } from '../mockData';
+import Link from 'next/link';
 
 interface SearchDropdownProps {
     searchText: string;
@@ -56,19 +57,12 @@ const SearchDropdown = ({ searchText, isOpen, onClose }: SearchDropdownProps) =>
                     </div>
                 ))}
             </div>
-            <button
-                onClick={() => {
-                    router.push('/search-bar');
-                    onClose();
-                }}
-                className="w-full text-center py-2 px-4"
+            <Link
+                href="/search/search-bar"
+                className="w-full text-center py-2 px-4 text-customPrimary cursor-pointer text-sm"
             >
-                <p
-                    className="text-customPrimary cursor-pointer text-sm"
-                >
-                    Xem tất cả
-                </p>
-            </button>
+                Xem tất cả
+            </Link>
         </div>
     );
 };

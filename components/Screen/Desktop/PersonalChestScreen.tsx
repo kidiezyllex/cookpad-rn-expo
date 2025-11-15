@@ -2,6 +2,7 @@
 
 import { images } from '@/constants';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const actionCardsData = [
@@ -89,16 +90,12 @@ const PersonalChestScreen = () => {
                             className="flex flex-row items-center justify-center gap-4 overflow-x-auto"
                         >
                             {actionCardsData.map((item) => (
-                                <button
+                                <Link
+                                    href={item.id === '1' ? '/create/recipe' : ''}
                                     key={item.id}
-                                    onClick={() => {
-                                        if (item.id === '1') {
-                                            router.push('/create/recipe');
-                                        }
-                                    }}
                                 >
                                     {renderActionCard({ item })}
-                                </button>
+                                </Link>
                             ))}
                         </div>
                     </div>

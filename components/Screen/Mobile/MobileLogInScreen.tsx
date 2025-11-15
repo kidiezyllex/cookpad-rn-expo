@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import Input from '@/components/Common/Input';
+import { Eye, EyeSlash } from 'iconsax-reactjs';
 
 const MobileLogInScreen = () => {
   const [form, setForm] = useState({
@@ -15,7 +16,6 @@ const MobileLogInScreen = () => {
   const router = useRouter();
 
   const onSignInPress = useCallback(async () => {
-    // Check for specific credentials to go to HomeScreen
     if (form.email === "H" && form.password === "1") {
       router.replace('/');
     } else {
@@ -27,14 +27,12 @@ const MobileLogInScreen = () => {
     <div className='flex flex-col min-h-screen bg-backgroundV1'>
       <div className='flex flex-col min-h-screen bg-backgroundV1'>
         {/* Header */}
-        <div className="h-11 min-h-11 relative flex-row justify-center items-center w-full">
-          <span className="justify-start font-bold text-center text-base">
-            Đăng nhập
-          </span>
+        <div className="h-11 min-h-11 relative flex flex-row justify-center items-center w-full font-bold text-center text-base">
+          Đăng nhập
         </div>
 
         {/* Main Content */}
-        <div className="px-4 py-8 gap-8 flex flex-col justify-start items-center">
+        <div className="px-4 pt-6 gap-8 flex flex-col justify-start items-center">
           {/* Logo */}
           <Image
             src={images.logo}
@@ -62,39 +60,43 @@ const MobileLogInScreen = () => {
 
             {/* Password Input */}
             <div className="gap-1 flex flex-col justify-start items-start w-full">
-              <div className="flex flex-col gap-1 justify-start items-center">
-                <span className="justify-start font-bold text-base">
-                  Mật khẩu
-                </span>
-              </div>
+              <span className="justify-start font-bold text-base">
+                Mật khẩu
+              </span>
               <div className="relative w-full">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Mật khẩu"
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
-                  className="w-full p-2 pr-10 h-10 bg-white rounded-lg text-base placeholder-gray-400"
+                  className="w-full p-2 pr-10 h-10 bg-white rounded-lg text-base placeholder-gray-400 border-2 border-transparent focus:outline-none focus:border-customPrimary"
                 />
                 <button
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-2 top-2 w-6 h-6 flex justify-center items-center"
                 >
-                  <span className={`${showPassword ? 'text-gray-600' : 'text-gray-400'}`}>
-                    {showPassword ? '🙈' : '👁️'}
-                  </span>
+                  {showPassword ? (
+                    <Eye
+                      size="20"
+                      color="#5B5B5C"
+                    />
+                  ) : (
+                    <EyeSlash
+                      size="20"
+                      color="#5B5B5C"
+                    />
+                  )}
                 </button>
               </div>
             </div>
 
             {/* Forgot Password */}
-            <button
-              onClick={() => router.push('/forgot-password')}
-              className="text-left"
+            <Link
+              href="/auth/forgot-password"
+              className="text-left justify-start font-semibold text-black text-sm"
             >
-              <span className="justify-start font-semibold text-black text-sm">
-                Quên mật khẩu?
-              </span>
-            </button>
+              Quên mật khẩu?
+            </Link>
           </div>
 
           {/* Login Button */}
@@ -108,10 +110,8 @@ const MobileLogInScreen = () => {
             <span className="justify-start text-black text-sm">
               Bạn chưa có tài khoản?
             </span>
-            <Link href="/auth/sign-up">
-              <span className="justify-start font-semibold text-black text-sm">
-                Đăng ký
-              </span>
+            <Link href="/auth/sign-up" className='font-semibold text-black text-sm'>
+              Đăng ký
             </Link>
           </div>
         </div>
