@@ -1,12 +1,10 @@
 import { icons, images, videos } from '@/constants';
 import { getScaleFactor } from '@/lib/scaling';
-import { useFocusEffect } from 'expo-router';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import { useVideoPlayer, VideoView } from 'expo-video';
-import { useMemo } from 'react';
-import { Image, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import SwiperFlatList from 'react-native-swiper-flatlist';
+import { useMemo, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode } from 'swiper/modules';
+import 'swiper/css';
 
 const mockSteps = [
   {
@@ -48,155 +46,133 @@ const mockSteps = [
 ];
 
 const ViewVideoScreen = () => {
-  const player = useVideoPlayer(videos.videoTutorial, (player) => {
-    player.loop = true;
-    player.muted = false;
-  });
-
+  const videoRef = useRef<HTMLVideoElement>(null);
   const scaleFactor = useMemo(() => getScaleFactor(), []);
 
-  // Khóa landscape ngay khi màn hình được focus (trước khi render)
-  useFocusEffect(
-    useMemo(() => () => {
-      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
-      return () => {
-        ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
-      };
-    }, [])
-  );
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.loop = true;
+      videoRef.current.muted = false;
+    }
+  }, []);
 
-  const renderStepItem = ({ item, index }: { item: typeof mockSteps[0]; index: number }) => {
+  const renderStepItem = (item: typeof mockSteps[0], index: number) => {
     return (
-      <View 
-        style={{ 
-          flexDirection: 'row', 
+      <div
+        className="flex flex-row"
+        style={{
           gap: scaleFactor * 24,
-          paddingHorizontal: scaleFactor * 12,
+          paddingLeft: scaleFactor * 12,
+          paddingRight: scaleFactor * 12,
           paddingTop: index === 0 ? scaleFactor * 24 : 0,
           paddingBottom: index === mockSteps.length - 1 ? scaleFactor * 16 : scaleFactor * 8,
         }}
       >
         {/* Step Number with Line */}
-        <View style={{ alignItems: 'center', gap: scaleFactor * 4 }}>
-          <View
+        <div className="flex flex-col items-center" style={{ gap: scaleFactor * 4 }}>
+          <div
+            className="flex items-center justify-center rounded-full"
             style={{
               width: scaleFactor * 24,
               height: scaleFactor * 24,
-              borderRadius: scaleFactor * 24,
               backgroundColor: item.isCompleted ? '#E36137' : '#9CA3AF',
-              alignItems: 'center',
-              justifyContent: 'center',
             }}
           >
             {item.isCompleted ? (
               <Image
-                source={icons.check2Icon}
-                style={{ 
-                  width: scaleFactor * 16, 
-                  height: scaleFactor * 16, 
-                  tintColor: '#EEEEEE'
-                }}
-                resizeMode="contain"
+                src={icons.check2Icon}
+                alt="Completed"
+                width={100}
+                height={100}
+                quality={100}
+                draggable={false}
+                className="object-contain h-4 w-auto brightness-0 invert"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
             ) : (
-              <Text style={{ color: '#EEEEEE', fontSize: scaleFactor * 14 }}>
+              <span className="text-[#EEEEEE]" style={{ fontSize: scaleFactor * 14 }}>
                 {item.stepNumber}
-              </Text>
+              </span>
             )}
-          </View>
+          </div>
           {item.showLine && index < mockSteps.length - 1 && (
-            <View
+            <div
+              className="flex-1"
               style={{
                 width: scaleFactor * 1,
-                flex: 1,
                 backgroundColor: item.isCompleted ? '#E36137' : '#9CA3AF',
               }}
             />
           )}
-        </View>
+        </div>
 
         {/* Step Content */}
-        <View style={{ flex: 1, gap: scaleFactor * 16 }}>
-          <View style={{ gap: scaleFactor * 8 }}>
-            <Text 
-              style={{ 
+        <div className="flex-1 flex flex-col" style={{ gap: scaleFactor * 16 }}>
+          <div className="flex flex-col" style={{ gap: scaleFactor * 8 }}>
+            <span
+              className="text-sm"
+              style={{
                 color: item.isCompleted ? '#E36137' : '#9CA3AF',
                 fontSize: scaleFactor * 14
               }}
             >
               {item.title}
-            </Text>
-            <Text 
-              style={{ 
+            </span>
+            <span
+              className="text-sm whitespace-pre-line"
+              style={{
                 color: item.isCompleted ? '#EEEEEE' : '#595959',
                 fontSize: scaleFactor * 14
               }}
             >
               {item.description}
-            </Text>
-          </View>
-        </View>
-      </View>
+            </span>
+          </div>
+        </div>
+      </div>
     );
   };
 
   return (
-    <SafeAreaView 
-      className="flex-1 bg-backgroundV1" 
-      edges={['top', 'bottom', 'left', 'right']} 
-      mode="padding"
-    >
-      <View style={{ flex: 1, flexDirection: 'row' }}>
+    <div className="flex flex-col min-h-screen bg-backgroundV1">
+      <div className="flex flex-row h-screen">
         {/* Video Section */}
-        <View style={{
-          flex: 2,
-          justifyContent: 'flex-end',
-          alignItems: 'flex-end',
-        }}>
-          <View style={{
-            width: '100%',
-            height: '100%',
-            position: 'relative',
-            overflow: 'hidden',
-          }}>
-            <VideoView
-              style={{
-                width: '100%',
-                height: '100%',
-                backgroundColor: '#000',
-              }}
-              player={player}
-              allowsFullscreen={true}
-              allowsPictureInPicture={false}
-              contentFit="contain"
-              nativeControls={true}
-            />
-          </View>
-        </View>
+        <div className="flex-[2] flex justify-end items-end">
+          <div className="relative w-full h-full overflow-hidden">
+            <video
+              ref={videoRef}
+              className="w-full h-full bg-black object-contain"
+              controls
+              playsInline
+            >
+              <source src={videos.videoTutorial} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
 
         {/* Steps List */}
-        <View 
-          style={{
-            flex: 1,
-            backgroundColor: '#2D2D2D',
-          }}
+        <div
+          className="flex-1 bg-[#2D2D2D] overflow-y-auto"
         >
-          <SwiperFlatList
-            data={mockSteps}
-            renderItem={renderStepItem}
-            keyExtractor={(item) => item.id.toString()}
-            vertical={true}
-            showsVerticalScrollIndicator={false}
-            scrollEnabled={true}
-            nestedScrollEnabled={true}
-            showPagination={false}
-          
-          />
-        </View>
-      </View>
-    </SafeAreaView>
+          <Swiper
+            direction="vertical"
+            slidesPerView="auto"
+            freeMode={true}
+            modules={[FreeMode]}
+            className="h-full"
+            style={{ height: '100%' }}
+          >
+            {mockSteps.map((item, index) => (
+              <SwiperSlide key={item.id} style={{ height: 'auto' }}>
+                {renderStepItem(item, index)}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default ViewVideoScreen;
-
