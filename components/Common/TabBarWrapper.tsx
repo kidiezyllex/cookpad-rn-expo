@@ -45,7 +45,7 @@ export default function TabBarWrapper() {
     if (normalizedPath === "/create") return "plus";
     if (normalizedPath === "/notification") return "bell";
     if (normalizedPath === "/profile") return "profile";
-    if (normalizedPath.includes('/home')) return "home";
+    if (normalizedPath.includes('/')) return "home";
     if (normalizedPath.includes('/search')) return "search";
     if (normalizedPath.includes('/plus')) return "plus";
     if (normalizedPath.includes('/notification')) return "bell";

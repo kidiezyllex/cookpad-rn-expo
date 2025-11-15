@@ -17,7 +17,7 @@ const MobileLogInScreen = () => {
   const onSignInPress = useCallback(async () => {
     // Check for specific credentials to go to HomeScreen
     if (form.email === "H" && form.password === "1") {
-      router.replace("/home");
+      router.replace('/');
     } else {
       router.replace("/favorite-topic");
     }
@@ -62,7 +62,7 @@ const MobileLogInScreen = () => {
 
             {/* Password Input */}
             <div className="gap-1 flex flex-col justify-start items-start w-full">
-              <div className="gap-1 justify-start items-center">
+              <div className="flex flex-col gap-1 justify-start items-center">
                 <span className="justify-start font-bold text-base">
                   Mật khẩu
                 </span>
@@ -104,7 +104,7 @@ const MobileLogInScreen = () => {
           />
 
           {/* Sign Up Link */}
-          <div className="gap-1 flex-row justify-start items-start">
+          <div className="flex gap-1 flex-row justify-start items-start">
             <span className="justify-start text-black text-sm">
               Bạn chưa có tài khoản?
             </span>

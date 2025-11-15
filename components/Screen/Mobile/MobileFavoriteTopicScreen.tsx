@@ -49,7 +49,7 @@ const FavoriteTopicScreen = () => {
       setSuccess(
         'Bạn đã hoàn thành các câu hỏi!',
         'Tuyệt vời! Lựa chọn của bạn đã được ghi nhận. Chúng tôi sẽ cá nhân hoá gợi ý món ăn phù hợp nhất với khẩu vị của bạn.',
-        '/home'
+        '/'
       );
       router.replace('/register-success');
     } else {
@@ -66,7 +66,7 @@ const FavoriteTopicScreen = () => {
   };
 
   const handleSkip = () => {
-    router.replace("/home");
+    router.replace('/');
   };
 
   return (

@@ -27,22 +27,22 @@ const MobileCreateRecipeScreen = () => {
         setSuccess(
             'Tạo công thức thành công!',
             'Công thức của bạn đã được đăng tải và sẽ hiển thị cho mọi người.',
-            '/home'
+            '/'
         );
         router.replace('/success');
     };
 
     return (
-        <div className="flex-1 bg-white min-h-screen relative w-full max-w-screen overflow-hidden ">
-            <div className='px-4'>
+        <div className="flex-1 bg-white min-h-screen relative w-full max-w-screen overflow-hidden pt-10">
+            <div className='bg-white w-full px-4 fixed top-0 left-0 right-0 z-50'>
                 <BackHeader
                     headerTitle="Công thức món ăn"
                     onPress={() => router.back()}
                 />
 
             </div>
-            <div className="flex-1 overflow-y-auto pb-32">
-                <div className="flex flex-col justify-center items-center gap-2 pt-2 pb-24 bg-[#F1EEE8] min-h-full">
+            <div className="flex-1 overflow-y-auto">
+                <div className="flex flex-col justify-center items-center gap-2 pt-2 pb-14 bg-[#F1EEE8] min-h-full">
                     {/* Main Form */}
                     <div className="w-full p-4 flex flex-col justify-center items-start gap-4">
                         {/* Image Upload */}

@@ -1,7 +1,7 @@
 import BackHeader from '@/components/Common/BackHeader';
-import CookingStepMasterTab from '@/components/RecipeScreen/CookingStepMasterTab';
-import CookingStepTab from '@/components/RecipeScreen/CookingStepTab';
-import MaterialTab from '@/components/RecipeScreen/MaterialTab';
+import CookingStepMasterTab from '@/components/RecipeScreen/Mobile/CookingStepMasterTab';
+import CookingStepTab from '@/components/RecipeScreen/Mobile/CookingStepTab';
+import MaterialTab from '@/components/RecipeScreen/Mobile/MaterialTab';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -11,8 +11,8 @@ const MobileRecipeScreen = () => {
   const [showMasterChef, setShowMasterChef] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <div className='bg-white w-full'>
+    <div className="flex flex-col min-h-screen pb-14 pt-10">
+      <div className='bg-white w-full px-4 fixed top-0 left-0 right-0 z-50'>
         <BackHeader
           headerTitle="Công thức món ăn"
           onPress={() => router.back()}
@@ -36,7 +36,7 @@ const MobileRecipeScreen = () => {
           <div className={`flex-1 rounded-md py-1 flex items-center ${activeTab === 'materials' ? 'bg-white' : 'bg-transparent'
             }`}>
             <button
-              className="w-full flex items-center bg-transparent border-none p-0 cursor-pointer"
+              className="w-full flex justify-center items-center bg-transparent border-none p-0 cursor-pointer"
               onClick={() => setActiveTab('materials')}
             >
               <span className={`font-semibold text-base ${activeTab === 'materials' ? 'text-customPrimary' : 'text-textNeutralV1'
@@ -48,7 +48,7 @@ const MobileRecipeScreen = () => {
           <div className={`flex-1 rounded-md py-1 flex items-center ${activeTab === 'cooking' ? 'bg-white' : 'bg-transparent'
             }`}>
             <button
-              className="w-full flex items-center bg-transparent border-none p-0 cursor-pointer"
+              className="w-full flex justify-center items-center bg-transparent border-none p-0 cursor-pointer"
               onClick={() => setActiveTab('cooking')}
             >
               <span className={`font-semibold text-base ${activeTab === 'cooking' ? 'text-customPrimary' : 'text-textNeutralV1'

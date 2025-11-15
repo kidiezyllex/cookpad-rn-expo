@@ -57,7 +57,7 @@ const MobileChangePasswordScreen = () => {
         <div className="gap-4 flex flex-col justify-start items-end w-full">
           {/* Password Input */}
           <div className="gap-1 flex flex-col justify-start items-start w-full">
-            <div className="gap-1 justify-start items-center">
+            <div className="flex gap-1 justify-start items-center">
               <span className="justify-start font-bold text-base">
                 Mật khẩu mới
               </span>

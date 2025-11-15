@@ -1,10 +1,8 @@
+'use client';
+
 import { icons, images, videos } from '@/constants';
-import { getScaleFactor } from '@/lib/scaling';
-import { useMemo, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode } from 'swiper/modules';
-import 'swiper/css';
 
 const mockSteps = [
   {
@@ -45,9 +43,65 @@ const mockSteps = [
   },
 ];
 
-const ViewVideoScreen = () => {
+const MobileViewVideoScreen = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const scaleFactor = useMemo(() => getScaleFactor(), []);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Force landscape layout by rotating container when in portrait
+  useEffect(() => {
+    const handleOrientation = () => {
+      const isPortrait = window.innerHeight > window.innerWidth;
+
+      if (containerRef.current) {
+        if (isPortrait) {
+          // Portrait mode - rotate 90deg to show landscape UI
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+
+          // Hide body overflow
+          document.body.style.overflow = 'hidden';
+          document.documentElement.style.overflow = 'hidden';
+
+          containerRef.current.style.transform = 'rotate(90deg)';
+          containerRef.current.style.transformOrigin = 'center center';
+          containerRef.current.style.width = `${height}px`;
+          containerRef.current.style.height = `${width}px`;
+          containerRef.current.style.position = 'fixed';
+          containerRef.current.style.left = '50%';
+          containerRef.current.style.top = '50%';
+          containerRef.current.style.marginLeft = `${-height / 2}px`;
+          containerRef.current.style.marginTop = `${-width / 2}px`;
+        } else {
+          // Landscape mode - normal display
+          document.body.style.overflow = '';
+          document.documentElement.style.overflow = '';
+
+          containerRef.current.style.transform = '';
+          containerRef.current.style.width = '';
+          containerRef.current.style.height = '';
+          containerRef.current.style.position = '';
+          containerRef.current.style.left = '';
+          containerRef.current.style.top = '';
+          containerRef.current.style.marginLeft = '';
+          containerRef.current.style.marginTop = '';
+        }
+      }
+    };
+
+    // Initial check
+    handleOrientation();
+
+    // Listen for orientation changes
+    window.addEventListener('resize', handleOrientation);
+    window.addEventListener('orientationchange', handleOrientation);
+
+    return () => {
+      window.removeEventListener('resize', handleOrientation);
+      window.removeEventListener('orientationchange', handleOrientation);
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, []);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -57,26 +111,18 @@ const ViewVideoScreen = () => {
   }, []);
 
   const renderStepItem = (item: typeof mockSteps[0], index: number) => {
+    const isFirstItem = index === 0;
+    const isLastItem = index === mockSteps.length - 1;
+
     return (
       <div
-        className="flex flex-row"
-        style={{
-          gap: scaleFactor * 24,
-          paddingLeft: scaleFactor * 12,
-          paddingRight: scaleFactor * 12,
-          paddingTop: index === 0 ? scaleFactor * 24 : 0,
-          paddingBottom: index === mockSteps.length - 1 ? scaleFactor * 16 : scaleFactor * 8,
-        }}
+        className={`flex flex-row gap-6 px-3 ${isFirstItem ? 'pt-6' : 'pt-0'} ${isLastItem ? 'pb-4' : 'pb-2'}`}
       >
         {/* Step Number with Line */}
-        <div className="flex flex-col items-center" style={{ gap: scaleFactor * 4 }}>
+        <div className="flex flex-col items-center gap-1">
           <div
-            className="flex items-center justify-center rounded-full"
-            style={{
-              width: scaleFactor * 24,
-              height: scaleFactor * 24,
-              backgroundColor: item.isCompleted ? '#E36137' : '#9CA3AF',
-            }}
+            className={`flex items-center justify-center rounded-full w-6 h-6 ${item.isCompleted ? 'bg-customPrimary' : 'bg-gray-400'
+              }`}
           >
             {item.isCompleted ? (
               <Image
@@ -87,43 +133,33 @@ const ViewVideoScreen = () => {
                 quality={100}
                 draggable={false}
                 className="object-contain h-4 w-auto brightness-0 invert"
-                style={{ filter: 'brightness(0) invert(1)' }}
               />
             ) : (
-              <span className="text-[#EEEEEE]" style={{ fontSize: scaleFactor * 14 }}>
+              <span className="text-[#EEEEEE] text-sm">
                 {item.stepNumber}
               </span>
             )}
           </div>
           {item.showLine && index < mockSteps.length - 1 && (
             <div
-              className="flex-1"
-              style={{
-                width: scaleFactor * 1,
-                backgroundColor: item.isCompleted ? '#E36137' : '#9CA3AF',
-              }}
+              className={`flex-1 w-px ${item.isCompleted ? 'bg-customPrimary' : 'bg-gray-400'
+                }`}
             />
           )}
         </div>
 
         {/* Step Content */}
-        <div className="flex-1 flex flex-col" style={{ gap: scaleFactor * 16 }}>
-          <div className="flex flex-col" style={{ gap: scaleFactor * 8 }}>
+        <div className="flex-1 flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
             <span
-              className="text-sm"
-              style={{
-                color: item.isCompleted ? '#E36137' : '#9CA3AF',
-                fontSize: scaleFactor * 14
-              }}
+              className={`text-sm ${item.isCompleted ? 'text-customPrimary' : 'text-gray-400'
+                }`}
             >
               {item.title}
             </span>
             <span
-              className="text-sm whitespace-pre-line"
-              style={{
-                color: item.isCompleted ? '#EEEEEE' : '#595959',
-                fontSize: scaleFactor * 14
-              }}
+              className={`text-sm whitespace-pre-line ${item.isCompleted ? 'text-[#EEEEEE]' : 'text-[#595959]'
+                }`}
             >
               {item.description}
             </span>
@@ -134,45 +170,34 @@ const ViewVideoScreen = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-backgroundV1">
-      <div className="flex flex-row h-screen">
-        {/* Video Section */}
-        <div className="flex-[2] flex justify-end items-end">
-          <div className="relative w-full h-full overflow-hidden">
-            <video
-              ref={videoRef}
-              className="w-full h-full bg-black object-contain"
-              controls
-              playsInline
-            >
-              <source src={videos.videoTutorial} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-
-        {/* Steps List */}
-        <div
-          className="flex-1 bg-[#2D2D2D] overflow-y-auto"
-        >
-          <Swiper
-            direction="vertical"
-            slidesPerView="auto"
-            freeMode={true}
-            modules={[FreeMode]}
-            className="h-full"
-            style={{ height: '100%' }}
+    <div ref={containerRef} className="flex flex-row overflow-hidden h-screen">
+      {/* Video Section */}
+      <div className="flex-[2] flex justify-end items-end overflow-hidden">
+        <div className="relative w-full h-full overflow-hidden">
+          <video
+            ref={videoRef}
+            className="w-full h-full bg-black object-contain"
+            controls
+            playsInline
           >
-            {mockSteps.map((item, index) => (
-              <SwiperSlide key={item.id} style={{ height: 'auto' }}>
-                {renderStepItem(item, index)}
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            <source src={videos.videoTutorial} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      {/* Steps List */}
+      <div className="flex-1 bg-[#2D2D2D] overflow-y-auto scroll-smooth">
+        <div className="h-full">
+          {mockSteps.map((item, index) => (
+            <div key={item.id}>
+              {renderStepItem(item, index)}
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default ViewVideoScreen;
+export default MobileViewVideoScreen;

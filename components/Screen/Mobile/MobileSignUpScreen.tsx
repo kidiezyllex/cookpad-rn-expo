@@ -88,7 +88,7 @@ const MobileSignUpScreen = () => {
 
             {/* Password Input */}
             <div className="gap-1 flex flex-col justify-start items-start w-full">
-              <div className="gap-1 justify-start items-center">
+              <div className="flex flex-col gap-1 justify-start items-center">
                 <span className="justify-start font-bold text-base">
                   Mật khẩu
                 </span>
@@ -113,8 +113,8 @@ const MobileSignUpScreen = () => {
             </div>
 
             {/* Confirm Password Input */}
-            <div className="gap-1 flex flex-col justify-start items-start w-full">
-              <div className="gap-1 justify-start items-center">
+            <div className="flex flex-col gap-1 justify-start items-start w-full">
+              <div className="flex flex-col gap-1 justify-start items-center">
                 <span className="justify-start font-bold text-base">
                   Nhập lại mật khẩu
                 </span>
@@ -146,7 +146,7 @@ const MobileSignUpScreen = () => {
           />
 
           {/* Sign In Link */}
-          <div className="gap-1 flex-row justify-start items-start">
+          <div className="flex flex-row justify-start items-start gap-1">
             <span className="justify-start text-black text-sm">
               Đã có tài khoản?
             </span>

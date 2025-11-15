@@ -21,13 +21,11 @@ const TableSelection = () => {
             <div className="px-16 flex flex-col items-start justify-start">
                 <div
                     className="flex w-full flex-col items-center justify-between mt-8 mb-8">
-                    <p
-                        className="font-bold text-black text-center text-3xl"
+                    <p className="font-bold text-black text-center text-3xl"
                     >
                         {boardName}
                     </p>
-                    <p
-                        className="font-light text-black text-center text-base"
+                    <p className="font-light text-black text-center text-base"
                     >
                         14 Ghim
                     </p>

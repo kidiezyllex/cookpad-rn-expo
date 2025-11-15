@@ -3,9 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import BackHeader from '../../Common/BackHeader';
-import CookingStepMasterTab from '../../RecipeScreen/CookingStepMasterTab';
-import CookingStepTab from '../../RecipeScreen/CookingStepTab';
-import MaterialTab from '../../RecipeScreen/MaterialTab';
+import CookingStepMasterTab from '../../RecipeScreen/Desktop/CookingStepMasterTab';
+import CookingStepTab from '../../RecipeScreen/Desktop/CookingStepTab';
+import MaterialTab from '../../RecipeScreen/Desktop/MaterialTab';
 
 const RecipeScreen = () => {
   const router = useRouter();

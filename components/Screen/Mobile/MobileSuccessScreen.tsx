@@ -36,7 +36,7 @@ const MobileSuccessScreen = () => {
             onClick={handleRedirect}
             className="flex-1 flex flex-col items-center justify-center w-full h-full bg-backgroundV1 border-none p-0 cursor-pointer"
         >
-            <div className="gap-14 px-4 flex flex-col justify-center items-center">
+            <div className="px-4 flex flex-col gap-14 justify-center items-center">
                 <Image
                     src={images.registerSuccess}
                     alt="Success"
@@ -46,7 +46,7 @@ const MobileSuccessScreen = () => {
                     draggable={false}
                     className="object-contain w-50 h-50"
                 />
-                <div className="gap-2 flex flex-col justify-start items-center">
+                <div className="flex flex-col gap-2 justify-start items-center">
                     <span className="font-medium leading-loose text-center text-black text-xl">
                         {successTitle || 'Đăng ký thành công!'}
                     </span>

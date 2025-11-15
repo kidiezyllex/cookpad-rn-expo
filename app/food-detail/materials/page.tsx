@@ -1,8 +1,17 @@
+'use client';
+
 import RecipeScreen from '@/components/Screen/Desktop/RecipeScreen';
 import Header from "@/components/Common/Header";
+import useMobile from '@/hooks/useMobile';
+import Loading from '@/components/Common/Loading';
+import MobileRecipeScreen from '@/components/Screen/Mobile/MobileRecipeScreen';
 
 export default function FoodMaterialsPage() {
-    return (
+    const { isMobile, isLoading } = useMobile();
+    if (isLoading) {
+        return <Loading />;
+    }
+    return isMobile ? <MobileRecipeScreen /> : (
         <>
             <Header />
             <main className="w-full py-16 min-h-screen bg-backgroundV1">

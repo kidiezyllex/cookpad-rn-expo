@@ -9,7 +9,7 @@ const navigationTabs = [
         id: "home",
         icon: icons.homeIcon,
         activeIcon: icons.activeHomeIcon,
-        route: "/home",
+        route: "/",
         size: 24
     },
     {
@@ -48,13 +48,13 @@ export default function BottomNavigator() {
 
     const getActiveTab = () => {
         const normalizedPath = pathname.replace(/\/$/, '') || '/';
-        if (normalizedPath === "/home" || normalizedPath === "/" || normalizedPath === "") return "home";
+        if (normalizedPath === '/' || normalizedPath === "/" || normalizedPath === "") return "home";
         if (normalizedPath === "/search") return "search";
         if (normalizedPath === "/create" || normalizedPath.includes('/create')) return "plus";
         if (normalizedPath === "/notification") return "bell";
         if (normalizedPath === "/profile") return "profile";
 
-        if (normalizedPath.includes('/home')) return "home";
+        if (normalizedPath.includes('/')) return "home";
         if (normalizedPath.includes('/search')) return "search";
         if (normalizedPath.includes('/create')) return "plus";
         if (normalizedPath.includes('/notification')) return "bell";
