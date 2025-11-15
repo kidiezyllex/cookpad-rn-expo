@@ -17,7 +17,7 @@ const MobilePremiumScreen = () => {
 
       <div className="flex-1 overflow-y-auto pb-30 px-4 flex flex-col items-start gap-20 mt-8">
         {/* Title Section */}
-        <div className="flex-col justify-start items-start w-full">
+        <div className="flex flex-col justify-start items-start w-full">
           <span className="font-bold text-white text-xl">
             Chuyển đổi sang gói Premium để trở thành{' '}
             <span className="font-bold text-customPrimary text-xl">
@@ -31,7 +31,7 @@ const MobilePremiumScreen = () => {
 
         {/* Avatar Section */}
         <div className="w-full flex-col justify-start items-center gap-8">
-          <div className="flex-row justify-center items-end gap-6">
+          <div className="flex flex-row justify-center items-end gap-6">
             {/* Regular User Avatar */}
             <Image
               src={images.sampleAvatar}
@@ -44,7 +44,7 @@ const MobilePremiumScreen = () => {
             />
 
             {/* Arrow Icon */}
-            <div className="flex-row justify-start items-center h-11">
+            <div className="flex flex-row justify-start items-center h-11">
               <Image
                 src={icons.forwardArrow}
                 alt="Arrow"

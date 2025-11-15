@@ -30,7 +30,7 @@ const navigationTabs = [
         id: "bell",
         icon: icons.bellIcon,
         activeIcon: icons.activeBellIcon,
-        route: "/bell",
+        route: "/notification",
         size: 24
     },
     {
@@ -51,13 +51,13 @@ export default function BottomNavigator() {
         if (normalizedPath === "/home" || normalizedPath === "/" || normalizedPath === "") return "home";
         if (normalizedPath === "/search") return "search";
         if (normalizedPath === "/create" || normalizedPath.includes('/create')) return "plus";
-        if (normalizedPath === "/bell") return "bell";
+        if (normalizedPath === "/notification") return "bell";
         if (normalizedPath === "/profile") return "profile";
 
         if (normalizedPath.includes('/home')) return "home";
         if (normalizedPath.includes('/search')) return "search";
         if (normalizedPath.includes('/create')) return "plus";
-        if (normalizedPath.includes('/bell')) return "bell";
+        if (normalizedPath.includes('/notification')) return "bell";
         if (normalizedPath.includes('/profile')) return "profile";
 
         return "home";

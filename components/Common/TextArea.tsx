@@ -18,7 +18,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     ...props
 }) => {
     const defaultClass = 'w-full rounded-md bg-white text-gray-900 placeholder:text-gray-400 outline-none min-h-[132px] px-2 py-2';
-    const ringClasses = 'ring-0 ring-gray-200 focus:ring-2 focus:ring-custom-primary';
+    const ringClasses = 'ring-0 ring-gray-200 focus:ring-2 focus:ring-customPrimary';
     const finalClassName = className
         ? `${className} ${ringClasses}`.trim()
         : `${defaultClass} ${ringClasses}`.trim();

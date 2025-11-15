@@ -23,8 +23,8 @@ const MobileTableSelection = () => {
                     </span>
                 </div>
                 {/* Search and Filter */}
-                <div className="flex-row items-center gap-1 w-full mb-4">
-                    <div className="flex-row items-center bg-white rounded-lg flex-1 h-8 px-2 gap-4">
+                <div className="flex flex-row items-center gap-1 w-full mb-4">
+                    <div className="flex flex-row items-center bg-white rounded-lg flex-1 h-8 px-2 gap-4">
                         <Image
                             src={icons.searchIcon}
                             alt="Search"

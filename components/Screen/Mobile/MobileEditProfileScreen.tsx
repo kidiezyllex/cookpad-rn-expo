@@ -16,12 +16,14 @@ const MobileEditProfileScreen = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-backgroundV1">
-      <BackHeader
-        headerTitle="Chỉnh sửa hồ sơ"
-        onPress={() => router.back()}
-      />
+      <div className="px-4">
+        <BackHeader
+          headerTitle="Chỉnh sửa hồ sơ"
+          onPress={() => router.back()}
+        />
+      </div>
 
-      <div className="flex-1 overflow-y-auto pb-30 px-4 flex flex-col items-center gap-9">
+      <div className="flex-1 overflow-y-auto pb-30 px-4 flex flex-col items-center gap-9 mt-10">
         {/* Avatar Section */}
         <div className="relative h-25">
           <Image
@@ -34,7 +36,7 @@ const MobileEditProfileScreen = () => {
             className="object-cover w-25 h-25 rounded-full"
           />
           <button
-            className="bg-[#FFEFE9] rounded-3xl absolute left-17 top-17 p-1"
+            className="bg-[#FFEFE9] rounded-full absolute right-0 bottom-0 p-1"
           >
             <Image
               src={icons.cameraIcon}
@@ -50,9 +52,9 @@ const MobileEditProfileScreen = () => {
         </div>
 
         {/* Form Fields */}
-        <div className="flex-col justify-start items-start w-full gap-3.5">
+        <div className="flex flex-col justify-start items-start w-full gap-3.5">
           {/* Name Input */}
-          <div className="flex-col justify-start items-start w-full gap-1">
+          <div className="flex flex-col justify-start items-start w-full gap-1">
             <span className="font-bold text-black text-base">
               Tên
             </span>
@@ -64,7 +66,7 @@ const MobileEditProfileScreen = () => {
           </div>
 
           {/* Bio Input */}
-          <div className="flex-col justify-start items-start w-full gap-1">
+          <div className="flex flex-col justify-start items-start w-full gap-1">
             <span className="font-bold text-black text-base">
               Giới thiệu
             </span>
@@ -76,7 +78,7 @@ const MobileEditProfileScreen = () => {
           </div>
 
           {/* Email Input */}
-          <div className="flex-col justify-start items-start w-full gap-1">
+          <div className="flex flex-col justify-start items-start w-full gap-1">
             <span className="font-bold text-black text-base">
               Email
             </span>

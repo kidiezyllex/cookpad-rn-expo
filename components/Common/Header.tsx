@@ -46,7 +46,7 @@ export default function Header() {
     if (normalizedPath.includes('/home')) return 'home';
     if (normalizedPath.includes('/search')) return 'search';
     if (normalizedPath.includes('/plus')) return 'plus';
-    if (normalizedPath.includes('/bell')) return 'bell';
+    if (normalizedPath.includes('/notification')) return 'bell';
     if (normalizedPath.includes('/profile')) return 'profile';
 
     return 'home';

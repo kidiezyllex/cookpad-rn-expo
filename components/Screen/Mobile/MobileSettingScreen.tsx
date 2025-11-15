@@ -38,7 +38,7 @@ const settingsSections = [
 const SettingItem = ({ item, section, onPress }: { item: any, section: any, onPress?: () => void }) => (
   <button
     onClick={onPress}
-    className="flex-row justify-between items-center min-h-10 gap-2 py-2 bg-transparent border-none p-0 cursor-pointer w-full"
+    className="flex flex-row justify-start items-center min-h-10 gap-2 py-2 bg-transparent border-none p-0 cursor-pointer w-full"
   >
     <span className="flex-1 font-bold text-black text-base text-left">
       {item.title}
@@ -99,7 +99,7 @@ const MobileSettingScreen = () => {
   const handleItemPress = (item: any) => {
     switch (item.title) {
       case "Chỉnh sửa hồ sơ":
-        router.push("edit-profile");
+        router.push("/profile/edit");
         break;
       case "Premium":
         router.push("/premium");
@@ -114,13 +114,14 @@ const MobileSettingScreen = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-backgroundV1">
-      <BackHeader
-        headerTitle="Cài đặt"
-        onPress={() => router.back()}
-      />
-
+      <div className="px-4">
+        <BackHeader
+          headerTitle="Cài đặt"
+          onPress={() => router.back()}
+        />
+      </div>
       <div className="flex-1 overflow-y-auto pb-30 px-4 pt-8">
-        <div className="flex-col justify-start items-start w-full gap-8">
+        <div className="flex flex-col justify-start items-start w-full gap-8">
           {settingsSections.map((section) => (
             <SettingsSection key={section.id} section={section} onItemPress={handleItemPress} router={router} />
           ))}

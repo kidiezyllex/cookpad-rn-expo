@@ -28,7 +28,7 @@ const SecurityOption = ({ option }: { option: typeof securityOptions[0] }) => {
   return (
     <button
       onClick={option.hasToggle ? undefined : () => router.push(option.route)}
-      className="flex-row justify-between items-center min-h-10 gap-2 py-2 bg-transparent border-none p-0 cursor-pointer w-full"
+      className="flex flex-row justify-between items-center min-h-10 gap-2 py-2 bg-transparent border-none p-0 cursor-pointer w-full"
     >
       <Image
         src={option.icon}

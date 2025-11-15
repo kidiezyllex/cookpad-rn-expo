@@ -54,9 +54,9 @@ const RecipeCard = ({ item }: RecipeCardProps) => {
             <Image
               src={icons.saveIcon}
               alt="save"
-              width={16}
-              height={16}
-              className="h-4 w-4 object-contain"
+              width={100}
+              height={100}
+              className="h-4 w-auto object-contain"
             />
             <span className="text-textNeutralV1 text-start text-xs">
               {item.views}

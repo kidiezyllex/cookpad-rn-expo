@@ -1,3 +1,5 @@
+"use client";
+
 import CustomButton from "@/components/Common/CustomButton";
 import RecipeCard from "@/components/ProfileScreen/RecipeCard";
 import RecipeListItem from "@/components/ProfileScreen/RecipeListItem";
@@ -6,10 +8,10 @@ import { getScaleFactor } from "@/lib/scaling";
 import { useRouter } from "next/navigation";
 import React from "react";
 import Image from "next/image";
-import FoodGrid from "../Common/FoodGrid";
-import { mockRecipeList, mockRecipes } from "../ProfileScreen/mockData";
+import { mockRecipeList, mockRecipes } from "@/components/ProfileScreen/mockData";
+import MobileFoodGrid from "@/components/Common/Mobile/FoodGrid";
 
-const ProfileScreen = () => {
+const MobileProfileScreen = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = React.useState('Bảng');
   const scaleFactor = getScaleFactor();
@@ -177,7 +179,7 @@ const ProfileScreen = () => {
 
         {activeTab === 'Yêu thích' && (
           <div style={{ paddingLeft: scaleFactor * 16, paddingRight: scaleFactor * 16 }}>
-            <FoodGrid />
+            <MobileFoodGrid />
           </div>
         )}
 
@@ -201,4 +203,4 @@ const ProfileScreen = () => {
   );
 };
 
-export default ProfileScreen;
+export default MobileProfileScreen;
