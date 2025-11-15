@@ -63,8 +63,10 @@ const ProfileScreen = () => {
               width: 'auto',
               height: scaleFactor * 40,
               marginBottom: scaleFactor * 24,
-              paddingHorizontal: scaleFactor * 24,
-              paddingVertical: scaleFactor * 8,
+              paddingLeft: scaleFactor * 24,
+              paddingRight: scaleFactor * 24,
+              paddingTop: scaleFactor * 8,
+              paddingBottom: scaleFactor * 8,
             }}
           />
         </div>
@@ -84,7 +86,8 @@ const ProfileScreen = () => {
                 style={{
                   borderBottomWidth: activeTab === tab ? scaleFactor * 2 : 0,
                   borderBottomColor: activeTab === tab ? '#000' : 'transparent',
-                  paddingHorizontal: scaleFactor * 16,
+                  paddingLeft: scaleFactor * 16,
+                  paddingRight: scaleFactor * 16,
                   paddingBottom: scaleFactor * 8,
                 }}
               >
@@ -101,13 +104,14 @@ const ProfileScreen = () => {
           {/* Search and Filter */}
           <div
             className="flex flex-row items-center w-full"
-            style={{ gap: scaleFactor * 4, paddingHorizontal: scaleFactor * 16, marginBottom: scaleFactor * 16 }}
+            style={{ gap: scaleFactor * 4, paddingLeft: scaleFactor * 16, paddingRight: scaleFactor * 16, marginBottom: scaleFactor * 16 }}
           >
             <div
               className="flex flex-row items-center bg-white rounded-lg flex-1"
               style={{
                 height: scaleFactor * 32,
-                paddingHorizontal: scaleFactor * 8,
+                paddingLeft: scaleFactor * 8,
+                paddingRight: scaleFactor * 8,
                 gap: scaleFactor * 16,
               }}
             >
@@ -158,12 +162,13 @@ const ProfileScreen = () => {
             <div
               className="w-full grid grid-cols-2"
               style={{
-                paddingHorizontal: scaleFactor * 16,
+                paddingLeft: scaleFactor * 16,
+                paddingRight: scaleFactor * 16,
                 paddingBottom: scaleFactor * 4,
                 gap: scaleFactor * 16,
               }}
             >
-              {mockRecipes.map((item) => (
+              {mockRecipes.map((item: any) => (
                 <RecipeCard key={item.id} item={item} />
               ))}
             </div>
@@ -171,7 +176,7 @@ const ProfileScreen = () => {
         )}
 
         {activeTab === 'Yêu thích' && (
-          <div style={{ paddingHorizontal: scaleFactor * 16 }}>
+          <div style={{ paddingLeft: scaleFactor * 16, paddingRight: scaleFactor * 16 }}>
             <FoodGrid />
           </div>
         )}
@@ -181,11 +186,12 @@ const ProfileScreen = () => {
             className="flex flex-col"
             style={{
               gap: scaleFactor * 8,
-              paddingHorizontal: scaleFactor * 16,
+              paddingLeft: scaleFactor * 16,
+              paddingRight: scaleFactor * 16,
               paddingBottom: scaleFactor * 16,
             }}
           >
-            {mockRecipeList.map((item) => (
+            {mockRecipeList.map((item: any) => (
               <RecipeListItem key={item.id} item={item} />
             ))}
           </div>

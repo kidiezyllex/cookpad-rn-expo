@@ -2,8 +2,10 @@ import { icons } from '@/constants';
 import { useSuccessStore } from '@/store/successStore';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { useState } from 'react';
 import BackHeader from '@/components/Common/BackHeader';
 import Input from '@/components/Common/Input';
+import TextArea from '@/components/Common/TextArea';
 import CustomButton from '@/components/Common/CustomButton';
 
 const ingredientsData = [
@@ -19,23 +21,26 @@ const cookingStepsData = [
 const MobileCreateRecipeScreen = () => {
     const router = useRouter();
     const setSuccess = useSuccessStore((state) => state.setSuccess);
+    const [description, setDescription] = useState('');
 
     const handlePublish = () => {
         setSuccess(
             'Tạo công thức thành công!',
             'Công thức của bạn đã được đăng tải và sẽ hiển thị cho mọi người.',
-            '/(root)/tabs/home'
+            '/home'
         );
-        router.replace('/(root)/success');
+        router.replace('/success');
     };
 
     return (
-        <div className="flex-1 bg-white min-h-screen relative">
-            <BackHeader
-                headerTitle="Công thức món ăn"
-                onPress={() => router.back()}
-            />
+        <div className="flex-1 bg-white min-h-screen relative w-full max-w-screen overflow-hidden ">
+            <div className='px-4'>
+                <BackHeader
+                    headerTitle="Công thức món ăn"
+                    onPress={() => router.back()}
+                />
 
+            </div>
             <div className="flex-1 overflow-y-auto pb-32">
                 <div className="flex flex-col justify-center items-center gap-2 pt-2 pb-24 bg-[#F1EEE8] min-h-full">
                     {/* Main Form */}
@@ -52,7 +57,7 @@ const MobileCreateRecipeScreen = () => {
                                     draggable={false}
                                     className="object-contain h-6 w-auto"
                                 />
-                                <span className="font-medium text-textNeutralV1 text-sm">
+                                <span className="font-medium text-textNeutralV1 text-sm text-nowrap">
                                     Đăng hình đại diện món ăn
                                 </span>
                             </div>
@@ -67,7 +72,6 @@ const MobileCreateRecipeScreen = () => {
                                 placeholder="Tên món ngon nhất nhà mình"
                                 value=""
                                 onChangeText={(text: string) => {
-                                    // Handle text change
                                 }}
                             />
                         </div>
@@ -77,11 +81,13 @@ const MobileCreateRecipeScreen = () => {
                             <span className="font-bold text-black text-base">
                                 Giới thiệu món ăn
                             </span>
-                            <div className="w-full flex-1 p-2 pb-7 bg-white rounded-lg flex flex-row justify-center items-start gap-2">
-                                <span className="font-light text-textNeutralV1 text-base">
-                                    Hãy chia sẻ với mọi người về món này của bạn nhé. Ai hay điều gì đã truyền cảm hứng cho bạn nấu nó? Tại sao nó đặc biệt? Bạn thích thưởng thức nó theo cách nào?
-                                </span>
-                            </div>
+                            <TextArea
+                                placeholder="Hãy chia sẻ với mọi người về món này của bạn nhé. Ai hay điều gì đã truyền cảm hứng cho bạn nấu nó? Tại sao nó đặc biệt? Bạn thích thưởng thức nó theo cách nào?"
+                                value={description}
+                                onChangeText={setDescription}
+                                className="w-full flex-1 p-2 pb-7 bg-white rounded-lg font-light text-textNeutralV1 text-base min-h-0 h-full resize-none !focus:ring-2 !focus:ring-custom-primary"
+                                rows={6}
+                            />
                         </div>
 
                         {/* Portion and Time */}
@@ -229,7 +235,7 @@ const MobileCreateRecipeScreen = () => {
                                         draggable={false}
                                         className="object-contain h-6 w-auto"
                                     />
-                                    <span className="font-medium text-textNeutralV1 text-sm">
+                                    <span className="font-medium text-textNeutralV1 text-sm text-nowrap">
                                         Thêm video nấu món ăn
                                     </span>
                                 </div>
@@ -305,11 +311,6 @@ const MobileCreateRecipeScreen = () => {
                             onPress={handlePublish}
                         />
                     </div>
-                </div>
-
-                {/* Home Indicator */}
-                <div className="w-full h-8 relative bg-white">
-                    <div className="w-32 h-1.5 left-[121px] top-5 absolute bg-black rounded-full" />
                 </div>
             </div>
         </div>

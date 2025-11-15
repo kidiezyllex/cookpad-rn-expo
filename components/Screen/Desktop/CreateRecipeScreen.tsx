@@ -173,7 +173,7 @@ const CreateRecipeScreen = () => {
             'Công thức của bạn đã được đăng tải và sẽ hiển thị cho mọi người.',
             '/'
         );
-        router.replace('/(root)/success');
+        router.replace('/success');
     };
 
     const renderIngredientItem = (item: typeof ingredientsData[0]) => (

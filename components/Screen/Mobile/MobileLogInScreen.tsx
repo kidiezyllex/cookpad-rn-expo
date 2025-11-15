@@ -17,9 +17,9 @@ const MobileLogInScreen = () => {
   const onSignInPress = useCallback(async () => {
     // Check for specific credentials to go to HomeScreen
     if (form.email === "H" && form.password === "1") {
-      router.replace("/(root)/tabs/home");
+      router.replace("/home");
     } else {
-      router.replace("/(auth)/favorite-topic");
+      router.replace("/favorite-topic");
     }
   }, [form.email, form.password, router]);
 

@@ -41,8 +41,8 @@ export default function Header() {
   const getActiveTab = () => {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
     if (normalizedPath === '/create') return 'plus';
-    if (normalizedPath === '/(root)/tabs/bell') return 'bell';
-    if (normalizedPath === '/(root)/tabs/profile') return 'profile';
+    if (normalizedPath === '/notification') return 'bell';
+    if (normalizedPath === '/profile') return 'profile';
     if (normalizedPath.includes('/home')) return 'home';
     if (normalizedPath.includes('/search')) return 'search';
     if (normalizedPath.includes('/plus')) return 'plus';
@@ -78,35 +78,35 @@ export default function Header() {
         </Link>
         {/* Search Field */}
         <Link href="/search" className="relative flex flex-col items-start justify-start">
+          <div
+            className="flex border w-96 border-gray-300 flex-row items-center justify-start rounded-lg bg-gray-50 h-10 px-2 gap-4 relative z-10"
+          >
+            <Image
+              src={icons.searchIcon}
+              alt="search"
+              width={24}
+              height={24}
+            />
             <div
-              className="flex border w-96 border-gray-300 flex-row items-center justify-start rounded-lg bg-gray-50 h-10 px-2 gap-4 relative z-10"
+              className="flex flex-row items-center justify-start rounded bg-[rgba(239,68,68,0.2)] px-1 py-0.5 gap-0.5"
             >
               <Image
-                src={icons.searchIcon}
-                alt="search"
-                width={24}
-                height={24}
+                src={icons.fireIcon}
+                alt="hot"
+                width={16}
+                height={16}
               />
-              <div
-                className="flex flex-row items-center justify-start rounded bg-[rgba(239,68,68,0.2)] px-1 py-0.5 gap-0.5"
+              <span
+                className="font-medium text-red-500 text-sm"
               >
-                <Image
-                  src={icons.fireIcon}
-                  alt="hot"
-                  width={16}
-                  height={16}
-                />
-                <span
-                  className="font-medium text-red-500 text-sm"
-                >
-                  Hot
-                </span>
-              </div>
-              <input
-                placeholder="Tìm kiếm..."
-                className="text-sm font-medium text-black border-none outline-none flex-1 bg-transparent"
-              />
+                Hot
+              </span>
             </div>
+            <input
+              placeholder="Tìm kiếm..."
+              className="text-sm font-medium text-black border-none outline-none flex-1 bg-transparent"
+            />
+          </div>
         </Link>
         {/* Navigation menu bên phải */}
         {/* <nav className="flex items-center gap-2">

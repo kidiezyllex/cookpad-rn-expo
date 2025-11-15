@@ -25,13 +25,13 @@ const navigationTabs = [
     id: "bell",
     icon: icons.bellIcon,
     activeIcon: icons.activeBellIcon,
-    route: "/(root)/tabs/bell",
+    route: "/notification",
   },
   {
     id: "profile",
     icon: icons.userIcon,
     activeIcon: icons.activeUserIcon,
-    route: "/(root)/tabs/profile",
+    route: "/profile",
   }
 ];
 
@@ -40,22 +40,22 @@ export default function TabBarWrapper() {
   const router = useRouter();
   const getActiveTab = () => {
     const normalizedPath = pathname.replace(/\/$/, '') || '/';
-    if (normalizedPath === "/" || normalizedPath === "/(root)/tabs" || normalizedPath === "/") return "home";
+    if (normalizedPath === "/") return "home";
     if (normalizedPath === "/search") return "search";
     if (normalizedPath === "/create") return "plus";
-    if (normalizedPath === "/(root)/tabs/bell") return "bell";
-    if (normalizedPath === "/(root)/tabs/profile") return "profile";
+    if (normalizedPath === "/notification") return "bell";
+    if (normalizedPath === "/profile") return "profile";
     if (normalizedPath.includes('/home')) return "home";
     if (normalizedPath.includes('/search')) return "search";
     if (normalizedPath.includes('/plus')) return "plus";
     if (normalizedPath.includes('/bell')) return "bell";
     if (normalizedPath.includes('/profile')) return "profile";
-    
+
     return "home";
   };
 
   const activeTab = getActiveTab();
-  
+
   const handleTabPress = (route: string) => {
     router.push(route);
   };

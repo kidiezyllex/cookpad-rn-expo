@@ -99,16 +99,15 @@ const MobileSettingScreen = () => {
   const handleItemPress = (item: any) => {
     switch (item.title) {
       case "Chỉnh sửa hồ sơ":
-        router.push("/(root)/edit-profile");
+        router.push("edit-profile");
         break;
       case "Premium":
-        router.push("/(root)/premium");
+        router.push("/premium");
         break;
       case "Bảo mật":
-        router.push("/(root)/security");
+        router.push("/security");
         break;
       default:
-        // Handle other items as needed
         break;
     }
   };
